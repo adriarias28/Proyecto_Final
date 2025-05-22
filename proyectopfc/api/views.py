@@ -21,6 +21,10 @@ class UltimosResultadosDetailView(RetrieveUpdateDestroyAPIView):
 class ProximosEventosListCreateView(ListCreateAPIView):
     queryset = ProximosEventos.objects.all()
     serializer_class = ProximosEventosSerializers
+    
+class ProximosEventosDetailView(RetrieveUpdateDestroyAPIView):
+    queryset = ProximosEventos.objects.all()
+    serializer_class = ProximosEventosSerializers
 
 class JugadoresDetailView(RetrieveUpdateDestroyAPIView):
     queryset = Jugadores.objects.all()

@@ -1,11 +1,9 @@
 from django.db import models
 
-
-
 class Partidos (models.Model):
     Ubicacion = models.CharField(max_length=100, null=False)
     Fecha = models.DateField()
-    Hora = models.TimeField  (auto_now=True)
+    Hora = models.TimeField  ()
     Equipos = models.CharField(max_length=100)
     
     def __str__(self):
@@ -39,7 +37,7 @@ class Jugadores (models.Model):
     
 class BiografiaJugador (models.Model):
     Descripcion = models.CharField(max_length=100)
-    Jugadrores = models.ForeignKey(Jugadores, on_delete=models.CASCADE, related_name="BiografiaJugador")
+    Jugadores = models.ForeignKey(Jugadores, on_delete=models.CASCADE, related_name="BiografiaJugador")
     
     def __str__(self):
         return self.Descripcion
