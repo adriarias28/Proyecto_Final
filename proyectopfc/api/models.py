@@ -39,7 +39,7 @@ class Jugadores (models.Model):
     
 class BiografiaJugador (models.Model):
     Descripcion = models.CharField(max_length=100)
-    Jugadrores = models.ForeignKey(Jugadores, on_delete=models.CASCADE, related_name="BiografiaJugador")
+    Jugadores = models.ForeignKey(Jugadores, on_delete=models.CASCADE, related_name="BiografiaJugador")
     
     def __str__(self):
         return self.Descripcion
@@ -52,7 +52,7 @@ class Usuario (models.Model):
     Telefono = models.CharField(max_length=100)
     
     def __str__(self):
-        return self.Nombre, self.Apellido
+        return self.Nombre, self.Apellido, self.Email
     
 class Membresia (models.Model):
     Nombre = models.CharField(max_length=100)
@@ -69,7 +69,7 @@ class MetodosPago (models.Model):
     
 class Boleteria (models.Model):
     Usuario = models.CharField(max_length=100)
-    Pago = models.DecimalField(max_length=100)
+    Pago = models.DecimalField(max_length=100, decimal_places=2)
     
     def __str__(self):
         return self.Usuario

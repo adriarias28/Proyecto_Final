@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import PartidosLisCreateView,PartidosDetailView,UltimosResultadosLisCreateView,UltimosResultadosDetailView,ProximosEventosLisCreateView, ProximosEventosDetailView, JugadroresLisCreateView, JugadroresDetailView, BiografiaJugadorLisCreateView, BiografiaJugadorDetailView, UsuarioLisCreateView, UsuarioDetailView, MembresiaLisCreateView, MembresiaDetailView, MetodosPagoLisCreateView, MetodosPagoDetailView,  BoleteriaLisCreateView, BoleteriaDetailView, LocalidadesLisCreateView, LocalidadesDetailView, DetalleVentaLisCreateView, DetalleVentaDetailView, LocalidadDetalleVentaLisCreateView, LocalidadDetalleVentaDetailView, VentaLisCreateView, VentaDetailView
+from .views import PartidosLisCreateView,PartidosDetailView,UltimosResultadosLisCreateView,UltimosResultadosDetailView,ProximosEventosLisCreateView, ProximosEventosDetailView, JugadoresLisCreateView, JugadoresDetailView, BiografiaJugadorLisCreateView, BiografiaJugadorDetailView, UsuarioLisCreateView, UsuarioDetailView, MembresiaLisCreateView, MembresiaDetailView, MetodosPagoLisCreateView, MetodosPagoDetailView,  BoleteriaLisCreateView, BoleteriaDetailView, LocalidadesLisCreateView, LocalidadesDetailView, DetalleVentaLisCreateView, DetalleVentaDetailView, LocalidadDetalleVentaLisCreateView, LocalidadDetalleVentaDetailView, VentaLisCreateView, VentaDetailView
 
 
 urlpatterns = [
@@ -9,8 +9,8 @@ urlpatterns = [
     path('ultimosResultados/<int:pk>/',UltimosResultadosDetailView.as_view(), name='ultimosResultados-editar-actualizar'),
     path('proximosEventos/',ProximosEventosLisCreateView.as_view(),name='proximosEventos-listar-crear'),
     path('proximosEventos/<int:pk>/',ProximosEventosDetailView.as_view(), name='proximosEventos-editar-actualizar'),
-    path('jugadores/',JugadroresLisCreateView.as_view(),name='jugadores-listar-crear'),
-    path('jugadores/<int:pk>/',JugadroresDetailView.as_view(), name='jugadores-editar-actualizar'),
+    path('jugadores/',JugadoresLisCreateView.as_view(),name='jugadores-listar-crear'),
+    path('jugadores/<int:pk>/',JugadoresDetailView.as_view(), name='jugadores-editar-actualizar'),
     path('biografiaJugador/',BiografiaJugadorLisCreateView.as_view(),name='biografiaJugador-listar-crear'),
     path('biografiaJugador/<int:pk>/',BiografiaJugadorDetailView.as_view(), name='biografiaJugador-editar-actualizar'),
     path('usuario/',UsuarioLisCreateView.as_view(),name='usuario-listar-crear'),
