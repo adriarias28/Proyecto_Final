@@ -6,6 +6,10 @@ class PartidosSerializer(serializers.ModelSerializer):
         model=Partidos
         fields = '__all__'
         
+    def validate_Ubicacion(self, value):
+        if len(value) < 10: 
+            raise serializers.ValidationError("La ubicaión tiene que ser mayor o igual a 10 caracteres")
+        return value
         
 class UltimosResultadosSerializers(serializers.ModelSerializer):
     partidos=PartidosSerializer(read_only=True)
@@ -14,7 +18,6 @@ class UltimosResultadosSerializers(serializers.ModelSerializer):
         model=UltimosResultados
         fields = '__all__'
     
-        
 class ProximosEventosSerializers(serializers.ModelSerializer):
     partidos=PartidosSerializer(read_only=True)
     partidos_id= serializers.PrimaryKeyRelatedField(queryset=Partidos.objects.all(), source='Partidos' ,write_only=True)
@@ -42,7 +45,7 @@ class JugadoresSerializers(serializers.ModelSerializer):
             raise serializers.ValidationError("El nombre del jugador tiene que tener un minimo de 3 letras")
         return value
     
-    def validate_edad(self, value):
+    def validate_Edad(self, value):
         if int(value) <= 0:
             raise serializers.ValidationError("La edad debe ser un número positivo.")
         return value
@@ -105,7 +108,7 @@ class LocalidadDetalleVentaSerializers(serializers.ModelSerializer):
     localidades=LocalidadesSerializers(read_only=True)
     localidades_id=serializers.PrimaryKeyRelatedField(queryset=Localidades.objects.all(), source='localidades' ,write_only=True)
     detalleventa=DetalleVentaSerializers(read_only=True)
-    detalleventa_id=serializers.PrimaryKeyRelatedField(queryset=DetalleVenta.objects.all(), source='detalelventa' ,write_only=True)
+    detalleventa_id=serializers.PrimaryKeyRelatedField(queryset=DetalleVenta.objects.all(), source='detalleventa' ,write_only=True)
     class Meta:
         model=LocalidadDetalleVenta
         fields = '__all__'

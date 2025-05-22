@@ -1,11 +1,9 @@
 from django.db import models
 
-
-
 class Partidos (models.Model):
     Ubicacion = models.CharField(max_length=100, null=False)
     Fecha = models.DateField()
-    Hora = models.TimeField  (auto_now=True)
+    Hora = models.TimeField  ()
     Equipos = models.CharField(max_length=100)
     
     def __str__(self):

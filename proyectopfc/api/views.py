@@ -21,8 +21,12 @@ class UltimosResultadosDetailView(RetrieveUpdateDestroyAPIView):
 class ProximosEventosListCreateView(ListCreateAPIView):
     queryset = ProximosEventos.objects.all()
     serializer_class = ProximosEventosSerializers
+    
+class ProximosEventosDetailView(RetrieveUpdateDestroyAPIView):
+    queryset = ProximosEventos.objects.all()
+    serializer_class = ProximosEventosSerializers
 
-class JugadoresDetailView(RetrieveUpdateDestroyAPIView):
+class JugadoresListCreateView(ListCreateAPIView):
     queryset = Jugadores.objects.all()
     serializer_class = JugadoresSerializers
 
@@ -30,7 +34,7 @@ class JugadoresDetailView(RetrieveUpdateDestroyAPIView):
     queryset = Jugadores.objects.all()
     serializer_class = JugadoresSerializers
     
-class BiografiaJugadorDetailView(RetrieveUpdateDestroyAPIView):
+class BiografiaJugadorListCreateView(ListCreateAPIView):
     queryset = BiografiaJugador.objects.all()
     serializer_class = BiografiaJugadoresSerializers
 
@@ -38,7 +42,7 @@ class BiografiaJugadorDetailView(RetrieveUpdateDestroyAPIView):
     queryset = BiografiaJugador.objects.all()
     serializer_class = BiografiaJugadoresSerializers
     
-class UsuarioDetailView(RetrieveUpdateDestroyAPIView):
+class UsuarioListCreateView(ListCreateAPIView):
     queryset = Usuario.objects.all()
     serializer_class = UsuarioSerializers
 
@@ -46,7 +50,7 @@ class UsuarioDetailView(RetrieveUpdateDestroyAPIView):
     queryset = Usuario.objects.all()
     serializer_class = UsuarioSerializers
     
-class MembresiaDetailView(RetrieveUpdateDestroyAPIView):
+class MembresiaListCreateView(ListCreateAPIView):
     queryset = Membresia.objects.all()
     serializer_class = MembresiaSerializers
 
@@ -54,7 +58,7 @@ class MembresiaDetailView(RetrieveUpdateDestroyAPIView):
     queryset = Membresia.objects.all()
     serializer_class = MembresiaSerializers
 
-class MetodosPagoDetailView(RetrieveUpdateDestroyAPIView):
+class MetodosPagoListCreateView(ListCreateAPIView):
     queryset = MetodosPago.objects.all()
     serializer_class = MetodosPagoSerializers
 
@@ -62,7 +66,7 @@ class MetodosPagoDetailView(RetrieveUpdateDestroyAPIView):
     queryset = MetodosPago.objects.all()
     serializer_class = MetodosPagoSerializers
 
-class BoleteriaDetailView(RetrieveUpdateDestroyAPIView):
+class BoleteriaListCreateView(ListCreateAPIView):
     queryset = Boleteria.objects.all()
     serializer_class = BoleteriaSerializers
 
@@ -70,7 +74,7 @@ class BoleteriaDetailView(RetrieveUpdateDestroyAPIView):
     queryset = Boleteria.objects.all()
     serializer_class = BoleteriaSerializers
     
-class LocalidadesDetailView(RetrieveUpdateDestroyAPIView):
+class LocalidadesListCreateView(ListCreateAPIView):
     queryset = Localidades.objects.all()
     serializer_class = LocalidadesSerializers
 
@@ -78,7 +82,7 @@ class LocalidadesDetailView(RetrieveUpdateDestroyAPIView):
     queryset = Localidades.objects.all()
     serializer_class = LocalidadesSerializers
     
-class DetalleVentaDetailView(RetrieveUpdateDestroyAPIView):
+class DetalleVentaListCreateView(ListCreateAPIView):
     queryset = DetalleVenta.objects.all()
     serializer_class = DetalleVentaSerializers
 
@@ -86,7 +90,7 @@ class DetalleVentaDetailView(RetrieveUpdateDestroyAPIView):
     queryset = DetalleVenta.objects.all()
     serializer_class = DetalleVentaSerializers
     
-class LocalidadDetalleVentaDetailView(RetrieveUpdateDestroyAPIView):
+class LocalidadDetalleVentaListCreateView(ListCreateAPIView):
     queryset = LocalidadDetalleVenta.objects.all()
     serializer_class = LocalidadDetalleVentaSerializers
 
@@ -94,7 +98,7 @@ class LocalidadDetalleVentaDetailView(RetrieveUpdateDestroyAPIView):
     queryset = LocalidadDetalleVenta.objects.all()
     serializer_class = LocalidadDetalleVentaSerializers
     
-class VentaDetailView(RetrieveUpdateDestroyAPIView):
+class VentaListCreateView(ListCreateAPIView):
     queryset = Venta.objects.all()
     serializer_class = VentaSerializers
 
