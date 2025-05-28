@@ -24,23 +24,21 @@ class ProximosEventos (models.Model):
     def __str__(self):
         return self.Eventos
     
-class Jugadores (models.Model):
-    Nombre = models.CharField(max_length=100)
-    Apellido = models.CharField(max_length=100)
-    Numero = models.DecimalField(max_digits=10, decimal_places=2)
-    Puesto = models.CharField(max_length=100)
-    Edad = models.CharField(max_length=100)
-    Nacionalidad = models.CharField(max_length=100)
-    
-    def __str__(self):
-        return self.Nombre, self.Apellido
-    
 class BiografiaJugador (models.Model):
-    Descripcion = models.CharField(max_length=100)
-    Jugadores = models.ForeignKey(Jugadores, on_delete=models.CASCADE, related_name="BiografiaJugador")
+    Nombre_Completo = models.CharField(max_length=100)
+    Fecha_Nacimiento = models.DateField()
+    Edad = models.CharField(max_length=100)
+    Lugar_Nacimiento = models.CharField(max_length=100)
+    Nacionalidad = models.CharField(max_length=100, null=False)
+    Altura = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=1.75)
+    Peso = models.DecimalField(max_digits=10, decimal_places=2)
+    Numero = models.DecimalField(max_digits=10, decimal_places=2)
+    Club_Actual = models.CharField(max_length=100)
+    Pie_Dominante = models.CharField(max_length=100)
+    Posicion = models.CharField(max_length=100)
     
     def __str__(self):
-        return self.Descripcion
+        return self.Nacionalidad
     
 class Usuario (models.Model):
     Nombre = models.CharField(max_length=100)

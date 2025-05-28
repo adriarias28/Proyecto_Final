@@ -1,4 +1,4 @@
-from .models import Partidos, UltimosResultados, ProximosEventos, Jugadores, BiografiaJugador, Usuario, Membresia, MetodosPago, Boleteria, Localidades, DetalleVenta, LocalidadDetalleVenta, Venta 
+from .models import Partidos, UltimosResultados, ProximosEventos, BiografiaJugador, Usuario, Membresia, MetodosPago, Boleteria, Localidades, DetalleVenta, LocalidadDetalleVenta, Venta 
 from rest_framework import serializers
 
 class PartidosSerializer(serializers.ModelSerializer):
@@ -35,11 +35,6 @@ class ProximosEventosSerializers(serializers.ModelSerializer):
             raise serializers.ValidationError("El nombre del equipo tiene que tener un minimo de 3 letras")
         return value
         
-class JugadoresSerializers(serializers.ModelSerializer):
-    class Meta:
-        model=Jugadores
-        fields = '__all__'
-        
     def validate_Nombre(self, value):
         if len(value) <= 3:
             raise serializers.ValidationError("El nombre del jugador tiene que tener un minimo de 3 letras")
@@ -51,8 +46,6 @@ class JugadoresSerializers(serializers.ModelSerializer):
         return value
 
 class BiografiaJugadoresSerializers(serializers.ModelSerializer):
-    jugadores=JugadoresSerializers(read_only=True)
-    jugadores_id=serializers.PrimaryKeyRelatedField(queryset=Jugadores.objects.all(), source='Jugadores' ,write_only=True)
     class Meta:
         model=BiografiaJugador
         fields = '__all__'
