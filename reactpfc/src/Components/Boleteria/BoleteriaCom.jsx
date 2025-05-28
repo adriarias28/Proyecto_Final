@@ -2,8 +2,8 @@ import React from 'react'
 
 function BoleteriaCom() {
   return (
-    <div>
-      
+    <div className='fooder'>
+      <h1>Puntarenas F.C</h1>   
     </div>
   )
 }

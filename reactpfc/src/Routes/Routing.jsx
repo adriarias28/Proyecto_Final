@@ -17,6 +17,7 @@ import UltimosResultados from '../Pages/UltimosResultados'
 import Usuario from '../Pages/Usuario'
 import Venta from '../Pages/Venta'
 import Administrador from '../Pages/Administrador'
+import PaginaPrincipal from '../Pages/PaginaPrincipal'
 
 function Routing() {
   return (
@@ -24,8 +25,8 @@ function Routing() {
       <Router>
         <Routes>
 
-            <Route path="/acercade" element={<Acercasde/>}/>
-            <Route path="/biografiajugadores" element={<BiografiaJugador/>}/>
+            <Route path="/acercasde" element={<Acercasde/>}/>
+            <Route path="/biografiaJugador" element={<BiografiaJugador/>}/>
             <Route path="/boleteria" element={<Boleteria/>}/>
             <Route path="/contactos" element={<Contactos/>}/>
             <Route path="/detalleventa" element={<DetalleVenta/>}/>
@@ -42,6 +43,7 @@ function Routing() {
             <Route path="/usuarios" element={<Usuario/>}/>
             <Route path="/venta" element={<Venta/>}/>
             <Route path="/admin" element={<Administrador/>}/>
+            <Route path="/paginaPrincipal" element={<PaginaPrincipal/>}/>
 
         </Routes>
       </Router>

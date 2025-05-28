@@ -1,6 +1,6 @@
 from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
-from .models import Partidos, UltimosResultados, ProximosEventos, Jugadores, BiografiaJugador, Usuario, Membresia, MetodosPago, Boleteria, Localidades, DetalleVenta, LocalidadDetalleVenta, Venta 
-from .serializers import PartidosSerializer, UltimosResultadosSerializers, ProximosEventosSerializers, JugadoresSerializers, BiografiaJugadoresSerializers, UsuarioSerializers, MembresiaSerializers, MetodosPagoSerializers, BoleteriaSerializers, LocalidadesSerializers, DetalleVentaSerializers, LocalidadDetalleVentaSerializers, VentaSerializers
+from .models import Partidos, UltimosResultados, ProximosEventos, BiografiaJugador, Usuario, Membresia, MetodosPago, Boleteria, Localidades, DetalleVenta, LocalidadDetalleVenta, Venta 
+from .serializers import PartidosSerializer, UltimosResultadosSerializers, ProximosEventosSerializers, BiografiaJugadoresSerializers, UsuarioSerializers, MembresiaSerializers, MetodosPagoSerializers, BoleteriaSerializers, LocalidadesSerializers, DetalleVentaSerializers, LocalidadDetalleVentaSerializers, VentaSerializers
 
 class PartidosListCreateView(ListCreateAPIView):
     queryset = Partidos.objects.all()
@@ -25,14 +25,6 @@ class ProximosEventosListCreateView(ListCreateAPIView):
 class ProximosEventosDetailView(RetrieveUpdateDestroyAPIView):
     queryset = ProximosEventos.objects.all()
     serializer_class = ProximosEventosSerializers
-
-class JugadoresListCreateView(ListCreateAPIView):
-    queryset = Jugadores.objects.all()
-    serializer_class = JugadoresSerializers
-
-class JugadoresDetailView(RetrieveUpdateDestroyAPIView):
-    queryset = Jugadores.objects.all()
-    serializer_class = JugadoresSerializers
     
 class BiografiaJugadorListCreateView(ListCreateAPIView):
     queryset = BiografiaJugador.objects.all()
