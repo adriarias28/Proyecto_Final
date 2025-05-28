@@ -1,6 +1,9 @@
-async function getUsers() {
+import CryptoJS from "crypto-js"; //import para el sha256 
+    
+    
+    async function getUsuarios() {
     try {
-        const response = await fetch('http://localhost:3000/users', {
+        const response = await fetch('http://127.0.0.1:8000/api/usuario/', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -19,22 +22,22 @@ async function getUsers() {
     }
 }
 
-//////////LLAMADO POST//////////
 
-async function postUsers(nombre,email,contrasena) {
+//////////LLAMADO POST//////////
+	
+async function postUsuarios(username, apellido, email, password) {
     try {
-     
         const userData = { 
-            nombre,
+            username,
             email,
-            contrasena,
-            rol: "usuario"
-        
+            password: CryptoJS.SHA256(password).toString(CryptoJS.enc.Hex), // codigo para implementar el sha256 
+            first_name: username,
+            last_name: apellido  // importante si tu serializer lo espera
         };
 
+        console.log(userData);
 
-
-        const response = await fetch("http://localhost:3000/users", {
+        const response = await fetch("http://127.0.0.1:8000/api/usuario/", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -42,10 +45,12 @@ async function postUsers(nombre,email,contrasena) {
             body: JSON.stringify(userData)
         });
 
-     
-        return await response.json();
-
+        const resp =  await response.json();
+        console.log('La respuesta del BackEnd:', resp);
+        return resp
         
+
+
     } catch (error) {
         console.error('Error posting user:', error);
         throw error;
@@ -56,22 +61,18 @@ async function postUsers(nombre,email,contrasena) {
 //////////////LLAMADO UPDATE/////////////
 
 
-async function updateUsers(nombre,email,contrasena,id) 
+async function updateUsuarios(usuario, password, id) 
 {
     try {
      
         const userData = { 
-            nombre, 
-            email,
-            contrasena
-        
+            usuario,
+            password,
+            id 
         };
 
 
-        
-
-
-        const response = await fetch("http://localhost:3000/users/"+id, {
+        const response = await fetch("http://127.0.0.1:8000/api/usuario/"+id, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
@@ -88,13 +89,12 @@ async function updateUsers(nombre,email,contrasena,id)
 }
 
 
-
 //////////////LLAMADO DELETE/////////////
 
 
-async function deleteUser(id) {
+async function deleteUsuarios(id) {
     try {
-        const response = await fetch(`http://localhost:3000/users/${id}`, {
+        const response = await fetch(`http://127.0.0.1:8000/api/usuario/${id}`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json'
@@ -112,4 +112,4 @@ async function deleteUser(id) {
     }
 }
 
-export default {getUsers, postUsers,deleteUser,updateUsers,}
+export default { deleteUsuarios, postUsuarios, updateUsuarios, getUsuarios }

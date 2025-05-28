@@ -1,0 +1,147 @@
+/* Contenedor principal */
+.contenedorPrincipalDos {
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-image: url(../../Images/vecteezy_white-background-with-orange-geometric_11171111-1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  gap: 10px;
+}
+
+/* Contenedor del formulario */
+.contenedorDosT {
+  background-color: #eeeeee;
+  padding: 40px 60px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  animation: slideIn 0.5s ease; 
+}
+
+.contenedorTres {
+  background-color: #eeeeee;
+  border-radius: 20px;
+    padding: 30px 40px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  animation: slideIn 0.5s ease; 
+  height: 250px;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+.tituloLogin {
+  color: #eb6e09;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.parraa {
+  text-align: center;
+  color: #3f3e3e;
+  margin-bottom: 25px;
+  font-size: 1rem;
+  font-weight: 600;
+
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #333333;
+}
+
+/* Inputs */
+.inpuestii {
+  width: 50%;
+  padding: 12px 15px;
+  margin-bottom: 5px;
+  border: 1.5px solid #ccc;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.inpuestii:focus {
+  border-color: #eb6e09;
+  box-shadow: 0 0 8px rgba(235, 110, 9, 0.3);
+  outline: none;
+}
+
+/* Botón de registro */
+.btnLogin {
+  width: 30%;
+  background-color: #eb6e09;
+  color: #ffffff;
+  padding: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btnLogin:hover {
+  background-color: #ff7301;
+  transform: translateY(-2px);
+}
+
+.btnLogin:active {
+  transform: scale(0.98);
+}
+
+/* Botón de registro */
+.btnNuevo {
+  width: 50%;
+  background-color: #eb6e09;
+  color: #ffffff;
+  padding: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btnNuevo:hover {
+  background-color: #ff7301;
+  transform: translateY(-2px);
+}
+
+.btnNuevo:active {
+  transform: scale(0.98);
+}
+
+/* Enlace a login */
+.linkclass {
+  color: #eb6e09;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.linkclass:hover {
+  text-decoration: underline;
+}
+
+/* SweetAlert personalizado */
+.contenedorAlert {
+  background-color: #fff;  
+  border-radius: 20px;         
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);  
+  text-align: center;
+}
+
