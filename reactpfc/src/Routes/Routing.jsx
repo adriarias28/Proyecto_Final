@@ -14,7 +14,6 @@ import Partidos from '../Pages/Partidos'
 import ProximosEventos from '../Pages/ProximosEventos'
 import Register from '../Pages/Register'
 import UltimosResultados from '../Pages/UltimosResultados'
-import Usuario from '../Pages/Usuario'
 import Venta from '../Pages/Venta'
 import Administrador from '../Pages/Administrador'
 
@@ -39,7 +38,6 @@ function Routing() {
             <Route path="/proximoseventos" element={<ProximosEventos/>}/>
             <Route path="/register" element={<Register/>}/>
             <Route path="/ultimosresultados" element={<UltimosResultados/>}/>
-            <Route path="/usuarios" element={<Usuario/>}/>
             <Route path="/venta" element={<Venta/>}/>
             <Route path="/admin" element={<Administrador/>}/>
 
