@@ -6,3 +6,61 @@
     padding: 15px 20px;
     color: black;
 }
+
+
+
+
+
+
+
+.tituloLibros{
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    color: #6C4F86;
+}
+.librosContenedor{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.libroCard{
+    margin: 20px;
+    padding: 20px;
+    background-color: #F9F9F9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    width: 400px;
+}
+.libroCard:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+.libroImagen{
+    margin-bottom: 20px;
+}
+.libroInfo {
+    font-size: 1em;
+    color: #555;
+    margin: 8px 0;
+  }
+  .libroInfo strong {
+    color: #333;
+  }
+  .libroAgregado{
+    text-align: center;
+  }
+  .btnCambiar{
+    padding: 10px 15px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  .btnCambiar {
+    background-color: #4CAF50;
+    color: white;
+  }
+  .btnCambiar:hover {
+    background-color: #62A5C4;
+  }

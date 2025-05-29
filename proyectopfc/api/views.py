@@ -1,6 +1,6 @@
 from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
-from .models import Partidos, UltimosResultados, ProximosEventos, BiografiaJugador, Usuario, Membresia, MetodosPago, Boleteria, Localidades, DetalleVenta, LocalidadDetalleVenta, Venta 
-from .serializers import PartidosSerializer, UltimosResultadosSerializers, ProximosEventosSerializers, BiografiaJugadoresSerializers, UsuarioSerializers, MembresiaSerializers, MetodosPagoSerializers, BoleteriaSerializers, LocalidadesSerializers, DetalleVentaSerializers, LocalidadDetalleVentaSerializers, VentaSerializers
+from .models import Partidos, UltimosResultados, ProximosEventos, BiografiaJugador, Usuario, Membresia, MetodosPago, Localidades, DetalleVenta, LocalidadDetalleVenta, Venta 
+from .serializers import PartidosSerializer, UltimosResultadosSerializers, ProximosEventosSerializers, BiografiaJugadoresSerializers, UserSerializers, MembresiaSerializers, MetodosPagoSerializers, LocalidadesSerializers, DetalleVentaSerializers, LocalidadDetalleVentaSerializers, VentaSerializers
 
 class PartidosListCreateView(ListCreateAPIView):
     queryset = Partidos.objects.all()
@@ -36,11 +36,11 @@ class BiografiaJugadorDetailView(RetrieveUpdateDestroyAPIView):
     
 class UsuarioListCreateView(ListCreateAPIView):
     queryset = Usuario.objects.all()
-    serializer_class = UsuarioSerializers
+    serializer_class = UserSerializers
 
 class UsuarioDetailView(RetrieveUpdateDestroyAPIView):
     queryset = Usuario.objects.all()
-    serializer_class = UsuarioSerializers
+    serializer_class = UserSerializers
     
 class MembresiaListCreateView(ListCreateAPIView):
     queryset = Membresia.objects.all()
@@ -58,13 +58,13 @@ class MetodosPagoDetailView(RetrieveUpdateDestroyAPIView):
     queryset = MetodosPago.objects.all()
     serializer_class = MetodosPagoSerializers
 
-class BoleteriaListCreateView(ListCreateAPIView):
+"""class BoleteriaListCreateView(ListCreateAPIView):
     queryset = Boleteria.objects.all()
     serializer_class = BoleteriaSerializers
 
 class BoleteriaDetailView(RetrieveUpdateDestroyAPIView):
     queryset = Boleteria.objects.all()
-    serializer_class = BoleteriaSerializers
+    serializer_class = BoleteriaSerializers"""
     
 class LocalidadesListCreateView(ListCreateAPIView):
     queryset = Localidades.objects.all()

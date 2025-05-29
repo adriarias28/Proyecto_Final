@@ -1,10 +1,9 @@
-import React from 'react'
-import '../../Components/PaginaPrin/PaginaPrin.css'
+import React,  { useEffect, useState } from 'react'
+
 
 function PaginaPrin() {
   return (
-    <div className='div'>
-     
+    <div>
     </div>
   )
 }

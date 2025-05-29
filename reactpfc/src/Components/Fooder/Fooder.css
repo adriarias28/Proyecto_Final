@@ -1,5 +1,5 @@
 .fooder{
-    background-color: orangered;
+    background-color:  #ff6600;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -40,7 +40,7 @@
     color: #ff6600;
   }
   .footer-container {
-    background-color: orangered;
+    background-color:  #ff6600;
     color: white;
     display: flex;
     justify-content: space-around;

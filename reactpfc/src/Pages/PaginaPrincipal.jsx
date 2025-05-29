@@ -8,7 +8,6 @@ function PaginaPrincipal() {
   return (
     <div>
       <NavbarCom />
-      <PaginaPrin />
       <Video/>
     </div>
   )
