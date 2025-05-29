@@ -5,6 +5,8 @@
   background-color: #fdfdfd;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: 30px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .divCont label {
@@ -47,4 +49,29 @@
   display: flex;
   flex-wrap: wrap;
   gap: 5px;
+}
+
+.btnJugador {
+  width: 25%;
+  background-color: #eb6e09;
+  color: #ffffff;
+  padding: 14px;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 30px;
+  align-items: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.btnJugador:hover {
+  background-color: #ff7301;
+  transform: translateY(-2px);
+}
+
+.btnJugador:active {
+  transform: scale(0.98);
 }

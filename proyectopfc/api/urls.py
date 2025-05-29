@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import PartidosListCreateView,PartidosDetailView,UltimosResultadosListCreateView,UltimosResultadosDetailView, ProximosEventosListCreateView, ProximosEventosDetailView, BiografiaJugadorListCreateView, BiografiaJugadorDetailView, UsuarioListCreateView, UsuarioDetailView, MembresiaListCreateView, MembresiaDetailView, MetodosPagoListCreateView, MetodosPagoDetailView,  BoleteriaListCreateView, BoleteriaDetailView, LocalidadesListCreateView, LocalidadesDetailView, DetalleVentaListCreateView, DetalleVentaDetailView, LocalidadDetalleVentaListCreateView, LocalidadDetalleVentaDetailView, VentaListCreateView, VentaDetailView
+from .views import PartidosListCreateView,PartidosDetailView,UltimosResultadosListCreateView,UltimosResultadosDetailView, ProximosEventosListCreateView, ProximosEventosDetailView, BiografiaJugadorListCreateView, BiografiaJugadorDetailView, UsuarioListCreateView, UsuarioDetailView, MembresiaListCreateView, MembresiaDetailView, MetodosPagoListCreateView, MetodosPagoDetailView, LocalidadesListCreateView, LocalidadesDetailView, DetalleVentaListCreateView, DetalleVentaDetailView, LocalidadDetalleVentaListCreateView, LocalidadDetalleVentaDetailView, VentaListCreateView, VentaDetailView
 
 urlpatterns = [
     path('partidos/',PartidosListCreateView.as_view(),name='partidos-listar-crear'),
@@ -16,8 +16,8 @@ urlpatterns = [
     path('membresia/<int:pk>/',MembresiaDetailView.as_view(), name='membresia-editar-actualizar'),
     path('metodosPago/',MetodosPagoListCreateView.as_view(),name='metodosPago-listar-crear'),
     path('metodosPago/<int:pk>/',MetodosPagoDetailView.as_view(), name='metodosPago-editar-actualizar'),
-    path('boleteria/',BoleteriaListCreateView.as_view(),name='boleteria-listar-crear'),
-    path('boleteria/<int:pk>/',BoleteriaDetailView.as_view(), name='boleteria-editar-actualizar'),
+    #path('boleteria/',BoleteriaListCreateView.as_view(),name='boleteria-listar-crear'),
+    #path('boleteria/<int:pk>/',BoleteriaDetailView.as_view(), name='boleteria-editar-actualizar'),
     path('localidades/',LocalidadesListCreateView.as_view(),name='localidades-listar-crear'),
     path('localidades/<int:pk>/',LocalidadesDetailView.as_view(), name='localidades-editar-actualizar'),
     path('detalleVenta/',DetalleVentaListCreateView.as_view(),name='detalleVenta-listar-crear'),

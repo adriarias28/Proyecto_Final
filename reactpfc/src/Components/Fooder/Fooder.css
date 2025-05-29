@@ -2,9 +2,7 @@
     background-color: orangered;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 15px 20px;
-    color: white;
+    align-items: center;    color: white;
   }
    .footer-section {
     flex: 1;
@@ -12,7 +10,7 @@
   }
   
   .footer-section h2 {
-    font-size: 18px;
+    font-size: 10px;
     margin-bottom: 10px;
   }
   

@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import '../../Components/Navbar/Navbar.css';
+import logo from '../../Images/logo.png'
 
 
 function NavbarCom() {
@@ -9,18 +10,43 @@ function NavbarCom() {
 
 
   return (
-    <nav className='navbar'>
-        <div className='logo'>
-            <h1 className='rs'>Puntarenas F.C</h1>
-        </div>
-        <ul className='nav-links'>
-          <h3></h3>
-          <h3>Sobre Nosotros</h3>
-          <h3>👤</h3>
-          <h3>🛒</h3>
-          <h3>Menú</h3>
-        </ul>
-   </nav>
+
+    <div>
+        <nav className='navbar'>
+            <div>
+              <img className='logo' src={logo} alt="..."/>
+            </div>
+
+            <div className='links'>    
+              <li>Inicio</li>
+            </div> 
+
+            <div> 
+              <li>Jugadores</li>
+            </div> 
+
+            <div>
+              <li> Contáctanos</li>
+            </div>
+
+            <div>
+              <li> Acerca de</li>
+            </div>
+            
+            <div>
+              <li>👤</li>
+            </div>
+
+            <div>
+              <li>🛒</li>
+            </div>
+
+            <div>
+              <li>Menú</li>
+            </div>
+
+        </nav> 
+    </div>
   )
 }
 

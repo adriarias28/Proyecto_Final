@@ -25,7 +25,7 @@ function AcercadeCom() {
             Descenso y lucha por el ascenso:
             Descendió a la Liga de Ascenso en 2014 y luchó por regresar, finalmente logrando ascender. 
             El PFC juega sus partidos como local en el Estadio Lito Pérez,
-              conocido como "La Olla Mágica" por la pasión de la afición y las altas temperaturas de la zona.
+            conocido como "La Olla Mágica" por la pasión de la afición y las altas temperaturas de la zona.
             Actualmente, el equipo milita en la Primera División de Costa Rica.
           </p>
         </div>

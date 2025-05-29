@@ -7,6 +7,7 @@ class Partidos (models.Model):
     Equipos = models.CharField(max_length=100)
     
     def __str__(self):
+        
         return self.Ubicacion
 
 class UltimosResultados (models.Model):
@@ -63,13 +64,6 @@ class MetodosPago (models.Model):
     def __str__(self):
         return self.NombreMetodo
     
-class Boleteria (models.Model):
-    Usuario = models.CharField(max_length=100)
-    Pago = models.DecimalField(max_digits=10, decimal_places=2)
-    
-    def __str__(self):
-        return self.Usuario
-    
 class Localidades (models.Model):
     Nombre = models.CharField(max_length=100)
     Precio = models.DecimalField(max_digits=10, decimal_places=2)
@@ -83,7 +77,7 @@ class DetalleVenta (models.Model):
     Localidades = models.ForeignKey(Localidades, on_delete=models.CASCADE, related_name="DetalleVenta")
     
     def __str__(self):
-        return self.Precio
+       return f"{self.id}" 
     
 class LocalidadDetalleVenta (models.Model):
     DetalleVenta = models.ForeignKey(DetalleVenta,on_delete=models.CASCADE, related_name='LocalidadDetalleVenta')
@@ -95,9 +89,8 @@ class LocalidadDetalleVenta (models.Model):
 class Venta (models.Model):
     Precio_Total = models.DecimalField(max_digits=10, decimal_places=2)
     Usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE, related_name="Venta")
-    Boleteria = models.ForeignKey(Boleteria, on_delete=models.CASCADE, related_name="Venta")
     MetodosPago = models.ForeignKey(MetodosPago, on_delete=models.CASCADE, related_name="Venta")
     DetalleVenta = models.ForeignKey(DetalleVenta, on_delete=models.CASCADE, related_name="Venta")
     
     def __str__(self):
-        return self.Boleteria
+        return f"{self.Precio_Total}" #utilizamos f de formato, que nos va dejar utilizar un formato en tipo numero no solo string
