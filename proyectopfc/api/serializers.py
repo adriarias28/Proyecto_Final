@@ -52,28 +52,41 @@ class UserSerializers(serializers.ModelSerializer):
     class Meta:
         model=User
         fields = '__all__'
+        
+    def create(self, validated_data):
+        return User.objects.create_user(**validated_data)
+        
+        
 class MembresiaSerializers(serializers.ModelSerializer):
     usuario=UserSerializers(read_only=True)
     usuario_id=serializers.PrimaryKeyRelatedField(queryset=User.objects.all(), source='User' ,write_only=True)
     class Meta:
         model=Membresia
         fields = '__all__'
+        
+        
 class MetodosPagoSerializers(serializers.ModelSerializer):
     class Meta:
         model=MetodosPago
         fields = '__all__'
+        
+        
 class LocalidadesSerializers(serializers.ModelSerializer):
     class Meta:
         model=Localidades
         fields = '__all__'
+        
+        
 class DetalleVentaSerializers(serializers.ModelSerializer):
     class Meta:
         model=DetalleVenta
         fields = '__all__'
+        
     def validate_Cantidad(self, value):
         if value <= 1:
             raise serializers.ValidationError("La cantidad tiene que ser igual o mayor a uno")
         return value
+    
 class LocalidadDetalleVentaSerializers(serializers.ModelSerializer):
     localidades=LocalidadesSerializers(read_only=True)
     localidades_id=serializers.PrimaryKeyRelatedField(queryset=Localidades.objects.all(), source='Localidades' ,write_only=True)
@@ -82,6 +95,8 @@ class LocalidadDetalleVentaSerializers(serializers.ModelSerializer):
     class Meta:
         model=LocalidadDetalleVenta
         fields = ['localidades', 'localidades_id', 'detalleventa', 'detalleventa_id']
+        
+        
 class VentaSerializers(serializers.ModelSerializer):
     usuario=UserSerializers(read_only=True)
     usuario_id=serializers.PrimaryKeyRelatedField(queryset=User.objects.all(), source='User' ,write_only=True)
