@@ -30,7 +30,7 @@ async function postUsuarios(username, apellido, email, password) {
         const userData = { 
             username,
             email,
-            password, //: CryptoJS.SHA256(password).toString(CryptoJS.enc.Hex),  codigo para implementar el sha256 
+            password, 
             first_name: username,
             last_name: apellido  // importante si tu serializer lo espera
         };
