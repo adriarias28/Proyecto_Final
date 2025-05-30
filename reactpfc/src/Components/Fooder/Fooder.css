@@ -1,47 +1,73 @@
-.fooder{
-    background-color: orangered;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;    color: white;
-  }
-   .footer-section {
-    flex: 1;
-    margin: 0 15px;
-  }
+
+.footer-container {
+  background-color: #1a1a1a;
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 40px 20px;
+  text-align: left;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 200px;
+  margin: 20px;
   
-  .footer-section h2 {
-    font-size: 10px;
-    margin-bottom: 10px;
-  }
-  
-  .footer-section ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .footer-section li {
-    font-size: 14px;
-    margin-bottom: 5px;
-    cursor: pointer;
-  }
-  
-  .footer-section li:hover {
-    text-decoration: underline;
-  }
-   .catg a {
-    text-decoration: none;
-    color: white;
-    font-size: 16px;
-    transition: color 0.3s ease;
-  }
-  .catg a:hover {
-    color: #ff6600;
-  }
-  .footer-container {
-    background-color: orangered;
-    color: white;
-    display: flex;
-    justify-content: space-around;
-    padding: 20px;
-    text-align: left;
-  }
+}
+
+.footer-section h3 {
+  border-bottom: 2px solid #f0811a;
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #ffffff;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section li {
+  font-size: 14px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #ccc;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+.footer-section li:hover {
+  color: #e46431;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.social-icons a {
+  font-size: 20px;
+  color: #ccc;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.social-icons a:hover {
+  transform: scale(1.2);
+}
+
+/* Colores por red social */
+.social-icons a:nth-child(1):hover { color: #1877f2; } /* Facebook */
+.social-icons a:nth-child(2):hover { color: #e4405f; } /* Instagram */
+.social-icons a:nth-child(3):hover { color: #e7eb19; } /* TikTok */
+
+.derechos{
+  font-size: smaller;
+}
+

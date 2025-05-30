@@ -6,9 +6,11 @@ import MapeoJuga from '../Components/MapeoJugadores/MapeoJuga'
 function BiografiaJugador() {
   return (
     <div>
+
       <NavbarCom/>
       <BioJugadorCom/>
-      <MapeoJuga/>
+      <MapeoJuga esAdmin={true} />
+      
     </div>
   )
 }

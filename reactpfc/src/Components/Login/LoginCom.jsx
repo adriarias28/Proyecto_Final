@@ -42,6 +42,8 @@ function LoginCom() {
 
     function btnIniciar() {
 
+      seteoLogin()
+
       const encontrarUsuario = usuarios.filter(usuarios => usuarios.correo === correoPersona && usuarios.password===passwordPersona)
      
       if (encontrarUsuario.length === 0 || correoPersona === "" || passwordPersona === "" ) {
@@ -66,6 +68,13 @@ function LoginCom() {
     function btnNuevaCuenta() {
       
       navigate('/register')
+
+    }
+
+    function seteoLogin() {
+      
+      setcorreoPersona('')
+      setpasswordPersona('')
 
     }
 

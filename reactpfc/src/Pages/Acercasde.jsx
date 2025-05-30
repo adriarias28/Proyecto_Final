@@ -1,5 +1,6 @@
 import AcercadeCom from '../Components/AcercaDe/AcercadeCom'
 import NavbarCom from '../Components/Navbar/NavbarCom'
+import FooderCom from '../Components/Fooder/FooderCom'
 
 function Acercasde() {
   return (
@@ -8,6 +9,7 @@ function Acercasde() {
 
       <NavbarCom/>
       <AcercadeCom/>
+      <FooderCom/>
 
     </div>
   )

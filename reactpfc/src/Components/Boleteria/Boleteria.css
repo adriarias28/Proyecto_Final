@@ -1,0 +1,63 @@
+.boleteria {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40vh;
+  background-color: #f5f5f5;
+  padding: 2rem;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.boleto-box {
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  max-width: 350px;
+  width: 100%;
+  padding: 3rem 2rem 4rem;
+  text-align: center;
+
+  /* Aquí la imagen de fondo */
+  background-image: url('../../Components/Imagenes/Tib.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+
+  background-color: rgba(255, 255, 255, 0.85);
+  background-blend-mode: lighten;
+}
+
+.barco {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #ff6f00;
+  margin-bottom: 0.5rem;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+
+.subtexto {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 2rem;
+  font-weight: 500;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.7);
+}
+
+.boleto {
+  background-color: #ff6f00;
+  color: #fff;
+  border: none;
+  padding: 0.85rem 2.2rem;
+  font-size: 1.1rem;
+  border-radius: 50px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 6px 15px rgba(255, 111, 0, 0.4);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease,
+    transform 0.2s ease;
+}
+
+.boleto:hover {
+  background-color: #e65c00;
+  box-shadow: 0 8px 25px rgba(230, 92, 0, 0.6);
+  transform: scale(1.05);
+}

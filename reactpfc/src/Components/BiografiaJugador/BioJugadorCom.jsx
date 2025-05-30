@@ -18,8 +18,6 @@ const[clubActual,setClubActual] = useState('')
 const[pieDominante,setPieDominante] = useState('')
 
 
-//GET
-
 
   function jugador(evento) {
     setNombreJugador(evento.target.value)
@@ -65,48 +63,64 @@ const[pieDominante,setPieDominante] = useState('')
     setPieDominante(evento.target.value)
   }
 
+  function setear(){
+    setNombreJugador('')
+    setFechaNacimiento('')
+    setEdadJugador('')
+    setLugarNacimiento('')
+    setNacionalidadJugador('')
+    setAlturaJugador('')
+    setPesoJugador('')
+    setPosicionJugador('')
+    setNumeroJugador('')
+    setClubActual('')
+    setPieDominante('')
+  }
+
   function btnAgregarJu() {
     
     CrudJugadores.postBiografiaJugador(nombreJugador,fechaNacimiento,edadJugador,lugarNacimiento,nacionalidadJugador,alturaJugador,pesoJugador,posicionJugador,numeroJugador,clubActual,pieDominante)
+    setear()
 
   }
 
 
 
-//BOTONES FUNCIONES
-
-//POST (AGREGAR PODUCTO)
-
-
   return (
-    <div className='divCont'>
-      <h1>Jugadores</h1>
-        <label>Nombre completo</label>
-        <input className='inputTodos' placeholder='Nombre' value={nombreJugador} onChange={jugador} type="text" />
-        <label>Fecha de Nacimiento</label>
-        <input className='inputTodos' placeholder='Fecha' value={fechaNacimiento} onChange={nacimiento} type="date" />
-        <label>Edad</label>
-        <input className='inputTodos' placeholder='Edad' value={edadJugador} onChange={edad} type="text" />
-        <label>Lugar de nacimiento</label>
-        <input className='inputTodos' placeholder='Lugar' value={lugarNacimiento} onChange={lugar} type="text" />
-        <label>Nacionalidad</label>
-        <input className='inputTodos' placeholder='Nacionalidad' value={nacionalidadJugador} onChange={nacionalidad} type="text" />
-        <label>Altura</label>
-        <input className='inputTodos' placeholder='Altura' value={alturaJugador} onChange={altura} type="text" />
-        <label>Peso</label>
-        <input className='inputTodos' placeholder='Peso' value={pesoJugador} onChange={peso} type="text" />
-        <label>Posicion</label>
-        <input className='inputTodos' placeholder='Posicion' value={posicionJugador} onChange={posicion} type="text" />
-        <label>Numero Jugador</label>
-        <input className='inputTodos' placeholder='Numero Jugador' value={numeroJugador} onChange={numero} type="number" />
-        <label >Club Actual</label>
-        <input className='inputTodos' placeholder='Club' value={clubActual} onChange={club} type="text" />
-        <label>Pie dominante</label>
-        <input className='inputTodos' placeholder='Dominante' value={pieDominante} onChange={dominante} type="text" />
-        <button className='btnJugador' onClick={btnAgregarJu}>Agregar Jugador</button>
-        
-   </div>
+
+    <div >
+      <div className='divCont'>
+        <h1>Jugadores</h1>
+          <label>Nombre completo</label>
+          <input className='inputTodos' placeholder='Nombre' value={nombreJugador} onChange={jugador} type="text" />
+          <label>Fecha de Nacimiento</label>
+          <input className='inputTodos' placeholder='Fecha' value={fechaNacimiento} onChange={nacimiento} type="date" />
+          <label>Edad</label>
+          <input className='inputTodos' placeholder='Edad' value={edadJugador} onChange={edad} type="number" />
+          <label>Lugar de nacimiento</label>
+          <input className='inputTodos' placeholder='Lugar' value={lugarNacimiento} onChange={lugar} type="text" />
+          <label>Nacionalidad</label>
+          <input className='inputTodos' placeholder='Nacionalidad' value={nacionalidadJugador} onChange={nacionalidad} type="text" />
+          <label>Altura</label>
+          <input className='inputTodos' placeholder='Altura' value={alturaJugador} onChange={altura} type="number" />
+          <label>Peso</label>
+          <input className='inputTodos' placeholder='Peso' value={pesoJugador} onChange={peso} type="number" />
+          <label>Posicion</label>
+          <input className='inputTodos' placeholder='Posicion' value={posicionJugador} onChange={posicion} type="text" />
+          <label>Numero Jugador</label>
+          <input className='inputTodos' placeholder='Numero Jugador' value={numeroJugador} onChange={numero} type="number" />
+          <label >Club Actual</label>
+          <input className='inputTodos' placeholder='Club' value={clubActual} onChange={club} type="text" />
+          <label>Pie dominante</label>
+          <input className='inputTodos' placeholder='Dominante' value={pieDominante} onChange={dominante} type="text" /><br /><br />
+          <input type="file" /><br /><br />
+          <button className='btnJugador' onClick={btnAgregarJu}>Agregar Jugador</button><br /><br /> 
+      </div><br /><br />
+
+            <h2 className="titulo-jugador">Jugadores Agregados</h2><br />
             
+   </div>
+
       )
     }
 

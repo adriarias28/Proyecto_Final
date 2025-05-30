@@ -1,7 +1,8 @@
 import CrudJugadores from '../../Services/CrudJugadores'
 import React, { useEffect, useState } from 'react'
+import '../../Components/MapeoJugadores/MapeoJugadores.css'
 
-function MapeoJuga() {
+function MapeoJuga({ esAdmin = false }) {
 
 const[guardarJugadores, setGuardarJugadores] = useState([])
 
@@ -9,44 +10,49 @@ const[guardarJugadores, setGuardarJugadores] = useState([])
 
         async function fetchDataUsers() {
             const dato = await CrudJugadores.getBiografiaJugador()
+            console.log(dato);
+            
             setGuardarJugadores(dato)
         };
         fetchDataUsers()
     }, []) 
 
+    
 
     function eliminar(id) {
     CrudJugadores.deleteBiografiaJugador(id)
     } 
 
-
     function editar() {
     CrudJugadores.updateBiografiaJugador(nombreJugador,fechaNacimiento,edadJugador,lugarNacimiento,nacionalidadJugador,alturaJugador,pesoJugador,posicionJugador,numeroJugador,clubActual,pieDominante)
     } 
 
-    
-
   return (
-    <div>
-
+    <div className="jugadores-grid">
         {guardarJugadores.map((dato,index) => (
-        <tr key={dato.id}>
-          <td>{dato.Nombre_Completo}</td>
-          <td>{dato.Fecha_Nacimiento}</td>
-          <td>{dato.Edad}</td>
-          <td>{dato.Lugar_Nacimiento}</td>
-          <td>{dato.Nacionalidad}</td>
-          <td>{dato.Altura}</td>
-          <td>{dato.Peso}</td>
-          <td>{dato.Posicion}</td>
-          <td>{dato.Numero}</td>
-          <td>{dato.Club_Actual}</td>
-          <td>{dato.Pie_Dominante}</td>
-          <td className='butt'>
-            <button className='boton' onClick={() => eliminar(dato.id)}>Eliminar</button>
-            <button className='boton' onClick={() => editar(dato.id)}>Editar</button>
-          </td>
-        </tr>
+        <div key={dato.id} className="jugador-card">
+            <div className='jugador-agregado'>
+                  <p className='datos'><strong>Nombre: </strong>{dato.Nombre_Completo}</p><br />
+                  <p className='datos'><strong>Fecha Nacimiento: </strong>{dato.Fecha_Nacimiento}</p><br />
+                  <p className='datos'><strong>Edad: </strong>{dato.Edad}</p><br />
+                  <p className='datos'><strong>Lugar Nacimiento: </strong>{dato.Lugar_Nacimiento}</p><br />
+                  <p className='datos'><strong>Nacionalidad: </strong>{dato.Nacionalidad}</p><br />
+                  <p className='datos'><strong>Altura: </strong>{dato.Altura}</p><br />
+                  <p className='datos'><strong>Peso: </strong>{dato.Peso}</p><br />
+                  <p className='datos'><strong>Posicion: </strong>{dato.Posicion}</p><br />
+                  <p className='datos'><strong>Numero: </strong>{dato.Numero}</p><br />
+                  <p className='datos'><strong>Club: </strong>{dato.Club_Actual}</p><br />
+                  <p className='datos'><strong>Pie Dominante: </strong>{dato.Pie_Dominante}</p>
+                {esAdmin && (
+                  <div className="botones-jugador">
+                    <p className='butt'>
+                        <button className='boton eliminar' onClick={() => eliminar(dato.id)}>Eliminar</button>
+                        <button className='boton editar' onClick={() => editar(dato.id)}>Editar</button>
+                    </p>
+                  </div>
+                )}
+            </div>
+        </div>
             ))}
 
     </div>

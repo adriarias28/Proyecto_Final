@@ -44,8 +44,20 @@ function RegistroCom() {
 
     }
 
+    function seteo() {
+      
+      setnombrePersona('')
+      setapellidoPersona('')
+      setcorreoPersona('')
+      setpasswordPersona('')
+      settelefonoPersona('')
+
+    }
+
     function btnRegistrar() {
-      console.log(nombrePersona, apellidoPersona, correoPersona, passwordPersona);
+
+      seteo()
+
      if (nombrePersona === "" || apellidoPersona === "" || correoPersona === "" || passwordPersona === "" || telefonoPersona === "") {
         Swal.fire({
           icon: "error",
@@ -57,7 +69,6 @@ function RegistroCom() {
           }, 
         });
       }else{ 
-      console.log(nombrePersona, apellidoPersona, correoPersona, passwordPersona);
       
       UsuariosCrud.postUsuarios(nombrePersona, apellidoPersona, correoPersona, passwordPersona);
       Swal.fire({

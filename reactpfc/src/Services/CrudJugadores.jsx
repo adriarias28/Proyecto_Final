@@ -21,10 +21,20 @@ async function getBiografiaJugador() {
 
 //////////LLAMADO POST//////////
 
-async function postBiografiaJugador(Jugador,Nacimiento,Edad,Lugar,Nacionalidad,Altura,Peso,Posicion,Numero,Club,Dominante) {
+async function postBiografiaJugador(Nombre_Completo,
+            Fecha_Nacimiento,
+            Edad,
+            Lugar_Nacimiento,
+            Nacionalidad,
+            Altura,
+            Peso,
+            Posicion,
+            Numero,
+            Club_Actual,
+            Pie_Dominante) {
     try {
      
-        const userData = { 
+        /* const userData = { 
             'Nombre_Completo': Jugador,
             'Fecha_Nacimiento': Nacimiento,
             'Edad': Edad,
@@ -39,6 +49,36 @@ async function postBiografiaJugador(Jugador,Nacimiento,Edad,Lugar,Nacionalidad,A
     
         };
 
+        const userData2 = { 
+            Nombre_Completo: Jugador,
+            Fecha_Nacimiento: Nacimiento,
+            Edad: Edad,
+            Lugar_Nacimiento: Lugar,
+            Nacionalidad: Nacionalidad,
+            Altura: Altura,
+            Peso: Peso,
+            Posicion :Posicion,
+            Numero: Numero,
+            Club_Actual: Club,
+            Pie_Dominante: Dominante
+    
+        };
+ */
+        const userData3 = { 
+            Nombre_Completo,
+            Fecha_Nacimiento,
+            Edad,
+            Lugar_Nacimiento,
+            Nacionalidad,
+            Altura,
+            Peso,
+            Posicion,
+            Numero,
+            Club_Actual,
+            Pie_Dominante
+        };
+
+
 
 
         const response = await fetch("http://127.0.0.1:8000/api/biografiaJugador/", {
@@ -46,7 +86,7 @@ async function postBiografiaJugador(Jugador,Nacimiento,Edad,Lugar,Nacionalidad,A
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(userData)
+            body: JSON.stringify(userData3)
         });
 
      
