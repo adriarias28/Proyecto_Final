@@ -38,3 +38,8 @@
 .tablaEntradas tr:hover {
   background-color: #e0e0e0;
 }
+
+.equipo {
+  width: 1550px;
+  height: 900px;
+}
