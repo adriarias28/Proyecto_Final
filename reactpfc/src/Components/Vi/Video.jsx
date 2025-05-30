@@ -11,6 +11,7 @@ function Video() {
       </div>
         <div>
             <video className="vid" autoPlay loop muted playsInline>
+
                 <source src={Vid} />
             </video>
         </div>

@@ -1,4 +1,4 @@
-import CryptoJS from "crypto-js"; //import para el sha256 
+/*import CryptoJS from "crypto-js"; //import para el sha256 */
     
     
     async function getUsuarios() {

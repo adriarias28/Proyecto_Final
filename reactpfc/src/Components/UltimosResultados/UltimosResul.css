@@ -1,0 +1,66 @@
+.bodyUltimosResul {
+  height: 600px;
+}
+
+.df {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+.resultados {
+
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.fecha,.equipos,.fut {
+  width: 250px;
+  text-align: center;
+}
+
+ .fecha {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.equipos {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.equipos img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.equipos h1 {
+  margin: 0 10px;
+  font-size: 1.5rem;
+}
+
+.fut {
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 0.5rem;
+}
+
+.h3 {
+  color: red;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.h1 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+

@@ -5,8 +5,7 @@ function ProximosEventosCom() {
 
   return (
     <div>
-      
-      
+
     </div>
   )
 }

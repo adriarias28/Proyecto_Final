@@ -9,7 +9,6 @@ function JugadoresCom() {
     <div>
 
       <h1 className='tituloJugador'>NUESTROS JUGADORES</h1>
-        
 
     </div>
   )
