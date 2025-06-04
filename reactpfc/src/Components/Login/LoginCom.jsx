@@ -14,18 +14,6 @@ function LoginCom() {
 
     const navigate = useNavigate()
 
-      
-  useEffect(() => {
-
-      async function fetchDataUsers() {
-          
-          const datos = await UsuariosCrud.getUsuarios() 
-
-          setUsuarios(datos)
-
-      };	
-      fetchDataUsers()
-  })
 
   
     function correo(evento) {
@@ -44,7 +32,7 @@ function LoginCom() {
 
       seteoLogin()
 
-      const encontrarUsuario = usuarios.filter(usuarios => usuarios.correo === correoPersona && usuarios.password===passwordPersona)
+      //const encontrarUsuario = usuarios.filter(usuarios => usuarios.correo === correoPersona && usuarios.password===passwordPersona)
      
       if (encontrarUsuario.length === 0 || correoPersona === "" || passwordPersona === "" ) {
     

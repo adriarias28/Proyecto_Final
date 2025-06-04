@@ -1,8 +1,8 @@
 import React from 'react'
 import '../../Components/UltimosResultados/UltimosResul.css'
-import escudopfc from '../../Components/Imagenes/escudopfc.png'
-import EscudoLiga from '../../Components/Imagenes/EscudoLiga.png'
-import SantaAna from '../../Components/Imagenes/SantaAna.jfif'
+import escudopfc from '../../Images/escudopfc.png'
+import EscudoLiga from '../../Images/EscudoLiga.png'
+import SantaAna from '../../Images/SantaAna.jfif'
 
 
 function UltimosResulCom() {

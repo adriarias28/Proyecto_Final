@@ -1,9 +1,9 @@
 /*import CryptoJS from "crypto-js"; //import para el sha256 */
     
     
-    async function getUsuarios() {
+    async function getEventos() {
     try {
-        const response = await fetch('http://127.0.0.1:8000/api/usuario/', {
+        const response = await fetch('http://127.0.0.1:8000/api/proximosEventos/', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -25,19 +25,16 @@
 
 //////////LLAMADO POST//////////
 	
-async function postUsuarios(username, apellido, email, password) {
+async function postEventos(Eventos, Descripcion) {
     try {
         const userData = { 
-            username,
-            email,
-            password, 
-            first_name: username,
-            last_name: apellido  // importante si tu serializer lo espera
+            Eventos,
+            Descripcion
         };
 
         console.log(userData);
 
-        const response = await fetch("http://127.0.0.1:8000/api/usuario/", {
+        const response = await fetch("http://127.0.0.1:8000/api/proximosEventos/", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -61,20 +58,18 @@ async function postUsuarios(username, apellido, email, password) {
 //////////////LLAMADO UPDATE/////////////
 
 
-async function updateUsuarios(usuario, password, id) 
+async function updateEventos(usuario, password, id) 
 {
     try {
      
         const userData = { 
-            username,
-            email,
-            password, 
-            first_name: username,
-            last_name: apellido
+            usuario,
+            password,
+            id 
         };
 
 
-        const response = await fetch("http://127.0.0.1:8000/api/usuario/"+id, {
+        const response = await fetch("http://127.0.0.1:8000/api/proximosEventos/"+id, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
@@ -94,9 +89,9 @@ async function updateUsuarios(usuario, password, id)
 //////////////LLAMADO DELETE/////////////
 
 
-async function deleteUsuarios(id) {
+async function deleteEventos(id) {
     try {
-        const response = await fetch(`http://127.0.0.1:8000/api/usuario/${id}`, {
+        const response = await fetch(`http://127.0.0.1:8000/api/proximosEventos/${id}/`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json'
@@ -114,4 +109,4 @@ async function deleteUsuarios(id) {
     }
 }
 
-export default { deleteUsuarios, postUsuarios, updateUsuarios, getUsuarios }
+export default { getEventos, postEventos, updateEventos, deleteEventos }

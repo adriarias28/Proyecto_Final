@@ -27,9 +27,10 @@ function NavbarCom() {
         <img  className="logo" src={logo} alt="Logo Puntarenas FC" />
 
         <ul className="nav-links">
-          <li><Link to="/paginaPrincipal">Inicio</Link></li>
+          <li><Link to="/">Inicio</Link></li>
           <li><Link to="/jugadores">Jugadores</Link></li>
           <li><Link to="/proximoseventos">Próximos Eventos</Link></li>
+          <li><Link to="/membresia">Membresias</Link></li>
           <li><Link to="/acercade">Historia</Link></li>
           <li><Link to="/contactos">Contactanos</Link></li>
 

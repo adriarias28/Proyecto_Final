@@ -1,19 +1,64 @@
 .container-historia {
-  padding: 20px;
-  background-color:#f9f9f9;
-  /* orangered*/
+  background-color: #ffffff;
+  padding: 3rem 1.5rem;
+  display: flex;
+  justify-content: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .historia {
-  display: flex;
-  gap: 20px;
-  /*align-items: flex-start;*/
-}  
+  max-width: 900px;
+  border-radius: 15px;
+  color: #e49a54;
+}
 
-.estadio {
-  width: 300px;
-  height: auto;
-  border-radius: 8px;
+.tituloHisto {
+  color: #000000;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.historia ul {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.historia ul li {
+  background-color: #ffffff;
+  border: 1px solid #bbbbbb;
+  border-radius: 12px;
+  padding: 1.5rem 1.8rem;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  color: #333;
+}
+
+.historia ul li strong {
+  color: #ff6600;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  display: block;
+  font-weight: 700;
+}
+
+.historia ul li::before {
+  font-size: 1.3rem;
+  margin-right: 0.5rem;
+  vertical-align: middle;
 }
 
 
+.parrafoHisto{
+  color: #000000;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  text-align: justify;
+  margin-bottom: 2rem;
+}
+
+.imagenhisto{
+  text-align: center;
+}

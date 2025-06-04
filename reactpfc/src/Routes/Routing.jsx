@@ -43,7 +43,7 @@ function Routing() {
             <Route path="/ultimosresultados" element={<UltimosResultados/>}/>
             <Route path="/venta" element={<Venta/>}/>
             <Route path="/admin" element={<Administrador/>}/>
-            <Route path="/paginaPrincipal" element={<PaginaPrincipal/>}/>
+            <Route path="/" element={<PaginaPrincipal/>}/>
             <Route path="/admineventos" element={<AdminEventos/>}/>
 
         </Routes>

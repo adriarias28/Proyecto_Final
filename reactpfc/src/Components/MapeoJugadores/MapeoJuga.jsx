@@ -24,6 +24,7 @@ const[guardarJugadores, setGuardarJugadores] = useState([])
     } 
 
     function editar() {
+      
     CrudJugadores.updateBiografiaJugador(nombreJugador,fechaNacimiento,edadJugador,lugarNacimiento,nacionalidadJugador,alturaJugador,pesoJugador,posicionJugador,numeroJugador,clubActual,pieDominante)
     } 
 

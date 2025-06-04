@@ -38,12 +38,11 @@ function FooderCom() {
           <a href="https://www.facebook.com/PuntarenasFCOficial" target="_blank" rel="noopener noreferrer"><FaFacebookF /></a>
           <a href="https://www.instagram.com/puntarenasfcoficial/?hl=es" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
           <a href="https://www.tiktok.com/@puntarenas_fc6?_t=ZM-8wnNY2Q4Uxs&_r=1" target="_blank" rel="noopener noreferrer"><FaTiktok /></a>
-
         </div>
 
         
       </div>
-         <p className='derechos'>© 2025 Deportivo Saprissa, Todos los Derechos Reservados.</p>
+         <p className='derechos'>© 2025 Puntarenas Fútbol Club, Todos los Derechos Reservados.</p>
     </footer>
   );
 }

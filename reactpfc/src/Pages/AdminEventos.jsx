@@ -1,5 +1,6 @@
 import NavbarCom from '../Components/Navbar/NavbarCom'
 import AdminEventosCom from '../Components/AdministrativoEventos/AdminEventosCom'
+import MapeoEventos from '../Components/MapeoEventos/MapeoEventos'
 
 function AdminEventos() {
   return (
@@ -8,6 +9,7 @@ function AdminEventos() {
 
         <NavbarCom/>
         <AdminEventosCom/>
+        <MapeoEventos esAdmin={true}/>
 
     </div>
   )

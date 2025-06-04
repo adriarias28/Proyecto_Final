@@ -1,12 +1,10 @@
 import React from 'react'
 import '../../Components/Membresia/Membresia.css'
-import Equipo from '../../Components/Imagenes/Equipo.jpeg'
 
 function MembresiaCom() {
   return (
     <div className='divContainer'>
       <h1 className='tit'>SOCIOS PFC</h1>
-      <img src={Equipo} alt="" className='equipo'/>
       <h2 className='precios'>Precios de Entradas por Localidad</h2>
       <table className='tablaEntradas'>
         <tr>
