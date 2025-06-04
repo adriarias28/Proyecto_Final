@@ -1,10 +1,11 @@
 import React from 'react'
 import '../../Components/AcercaDe/Acercade.css'
-//import litoperez from '../../Imagenes/litoperez.jfif'
+import Est from '../../Images/Est.png'
+
 
 function AcercadeCom() {
 
-   //<img src={litoperez} alt="" className='estadio'/>  
+   <img src={Est} alt="" className='estadio'/>  
 
   return (
 

@@ -6,18 +6,18 @@ import Video from '../Components/Vi/Video'
 import FooderCom from '../Components/Fooder/FooderCom'
 import UltimosResulCom from '../Components/UltimosResultados/UltimosResulCom'
 import BoleteriaCom from '../Components/Boleteria/BoleteriaCom'
+import MapeoPartidos from '../Components/MapeoPartidos/MapeoPartidos'
 
 function PaginaPrincipal() {
   return (
     <div>
       <NavbarCom />
       <Video/>
-      <FooderCom/>
-
       <UltimosResulCom/>
       <PaginaPrin/>
       <BoleteriaCom/>
-
+      <MapeoPartidos/>
+      <FooderCom/>
     </div>
   )
 }

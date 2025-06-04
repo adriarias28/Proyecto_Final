@@ -1,5 +1,6 @@
 import React from 'react';
 import '../../Components/Boleteria/Boleteria.css';
+import Tib from '../../Images/Tib.png'
 
 function BoleteriaCom() {
   return (

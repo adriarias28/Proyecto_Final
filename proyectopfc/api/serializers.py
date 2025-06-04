@@ -1,8 +1,5 @@
-<<<<<<< HEAD
+
 from .models import Partidos, UltimosResultados, ProximosEventos, BiografiaJugador, Usuario, Membresia, MetodosPago, Localidades, DetalleVenta, LocalidadDetalleVenta, Venta
-=======
-from .models import Partidos, UltimosResultados, ProximosEventos, BiografiaJugador, Usuario, Membresia, MetodosPago, Localidades, DetalleVenta, LocalidadDetalleVenta, Venta 
->>>>>>> d7e1386f73c57047f7433c15879b2334c0b53b3d
 from rest_framework import serializers
 from django.contrib.auth.models import User
 
@@ -21,15 +18,6 @@ class UltimosResultadosSerializers(serializers.ModelSerializer):
         model=UltimosResultados
         fields = '__all__'
 class ProximosEventosSerializers(serializers.ModelSerializer):
-<<<<<<< HEAD
-    class Meta:
-        model=ProximosEventos
-        fields = '__all__'
-    def validate_Eventos(self, value):
-        if len(value) < 10:
-            raise serializers.ValidationError("El evento tiene que ser mayor o igual a 10 caracteres")
-        return value
-=======
     class Meta: 
         model=ProximosEventos
         fields = '__all__'
@@ -39,31 +27,20 @@ class ProximosEventosSerializers(serializers.ModelSerializer):
             raise serializers.ValidationError("El evento tiene que ser mayor o igual a 10 caracteres")
         return value
 
->>>>>>> d7e1386f73c57047f7433c15879b2334c0b53b3d
 class BiografiaJugadoresSerializers(serializers.ModelSerializer):
     class Meta:
         model=BiografiaJugador
         fields = '__all__'
-<<<<<<< HEAD
-=======
-        
->>>>>>> d7e1386f73c57047f7433c15879b2334c0b53b3d
+
     def validate_Nombre_Completo(self, value):
         if len(value) <= 3:
             raise serializers.ValidationError("El nombre del jugador tiene que tener un minimo de 3 letras")
         return value
-<<<<<<< HEAD
-=======
-    
->>>>>>> d7e1386f73c57047f7433c15879b2334c0b53b3d
     def validate_Edad(self, value):
         if int(value) <= 0:
             raise serializers.ValidationError("La edad debe ser un número positivo.")
         return value
-<<<<<<< HEAD
-=======
-        
->>>>>>> d7e1386f73c57047f7433c15879b2334c0b53b3d
+
 """class UsuarioSerializers(serializers.ModelSerializer):
     class Meta:
         model=Usuario
@@ -80,18 +57,13 @@ class UserSerializers(serializers.ModelSerializer):
     class Meta:
         model=User
         fields = '__all__'
-<<<<<<< HEAD
-        
-    def create(self, validated_data):
-        return User.objects.create_user(**validated_data)
-        
-        
-=======
-    
-    def create(self, validated_data):
-        return User.objects.create_user(**validated_data)
 
->>>>>>> d7e1386f73c57047f7433c15879b2334c0b53b3d
+        
+    def create(self, validated_data):
+        return User.objects.create_user(**validated_data)
+        
+        
+
 class MembresiaSerializers(serializers.ModelSerializer):
     usuario=UserSerializers(read_only=True)
     usuario_id=serializers.PrimaryKeyRelatedField(queryset=User.objects.all(), source='User' ,write_only=True)
@@ -105,10 +77,6 @@ class MetodosPagoSerializers(serializers.ModelSerializer):
         model=MetodosPago
         fields = '__all__'
         
-<<<<<<< HEAD
-        
-=======
->>>>>>> d7e1386f73c57047f7433c15879b2334c0b53b3d
 class LocalidadesSerializers(serializers.ModelSerializer):
     class Meta:
         model=Localidades
@@ -133,10 +101,7 @@ class LocalidadDetalleVentaSerializers(serializers.ModelSerializer):
     class Meta:
         model=LocalidadDetalleVenta
         fields = ['localidades', 'localidades_id', 'detalleventa', 'detalleventa_id']
-<<<<<<< HEAD
-        
-=======
->>>>>>> d7e1386f73c57047f7433c15879b2334c0b53b3d
+
         
 class VentaSerializers(serializers.ModelSerializer):
     usuario=UserSerializers(read_only=True)
@@ -147,10 +112,5 @@ class VentaSerializers(serializers.ModelSerializer):
     detalleventa_id=serializers.PrimaryKeyRelatedField(queryset=DetalleVenta.objects.all(), source='DetalleVenta' ,write_only=True)
     class Meta:
         model=Venta
-        fields = ['Precio_Total','detalleventa','detalleventa_id','metodospago','metodospago_id', 'usuario', 'usuario_id']
-<<<<<<< HEAD
-#Cuando hay id no podemos poner all, tenemos que abrir corchetes y agregarlos con comillas
-=======
-#Cuando hay id no podemos poner all, tenemos que abrir corchetes y agregarlos con comillas
+        fields = ['Precio_Total','detalleventa','detalleventa_id','metodospago','metodospago_id', 'usuario', 'usuario_id'] #Cuando hay id no podemos poner all, tenemos que abrir corchetes y agregarlos con comillas
 
->>>>>>> d7e1386f73c57047f7433c15879b2334c0b53b3d

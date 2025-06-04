@@ -1,6 +1,6 @@
 import React from 'react'
 import '../../Components/Membresia/Membresia.css'
-import Equipo from '../../Components/Imagenes/Equipo.jpeg'
+import Equipo from '../../Images/Equipo.jpeg'
 
 function MembresiaCom() {
   return (

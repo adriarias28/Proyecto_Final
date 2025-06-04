@@ -48,10 +48,7 @@ class MetodosPago (models.Model):
     NombreMetodo = models.CharField(max_length=100)
     def __str__(self):
         return self.NombreMetodo
-<<<<<<< HEAD
-    
-=======
->>>>>>> d7e1386f73c57047f7433c15879b2334c0b53b3d
+
 class Localidades (models.Model):
     Nombre = models.CharField(max_length=100)
     Precio = models.DecimalField(max_digits=10, decimal_places=2)
@@ -62,12 +59,9 @@ class DetalleVenta (models.Model):
     Precio = models.DecimalField(max_digits=10, decimal_places=2)
     Localidades = models.ForeignKey(Localidades, on_delete=models.CASCADE, related_name="DetalleVenta")
     def __str__(self):
-<<<<<<< HEAD
+
        return f"{self.id}" 
-    
-=======
-       return f"{self.id}"
->>>>>>> d7e1386f73c57047f7433c15879b2334c0b53b3d
+
 class LocalidadDetalleVenta (models.Model):
     DetalleVenta = models.ForeignKey(DetalleVenta,on_delete=models.CASCADE, related_name='LocalidadDetalleVenta')
     Localidades = models.ForeignKey(Localidades,on_delete=models.CASCADE, related_name='LocalidadDetalleVenta')

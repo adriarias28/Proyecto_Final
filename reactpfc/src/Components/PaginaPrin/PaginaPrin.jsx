@@ -1,10 +1,10 @@
 import React,  { useEffect, useState } from 'react'
 import '../../Components/PaginaPrin/PaginaPrin.css'
-import Jean from '../../Components/Imagenes/Jean.png'
-import AndreyM from '../../Components/Imagenes/AndreyM.png'
-import Hiram from '../../Components/Imagenes/Hiram.png'
-import Gael from '../../Components/Imagenes/Gael.png'
-import Ulises from '../../Components/Imagenes/Ulises.png'
+import Jean from '../../Images/Jean.png'
+import AndreyM from  '../../Images/AndreyM.png'
+import Hiram from '../../Images/Hiram.png'
+import Gael from '../../Images/Gael.png'
+import Ulises from '../../Images/Ulises.png'
 
 function PaginaPrin() {
   return (

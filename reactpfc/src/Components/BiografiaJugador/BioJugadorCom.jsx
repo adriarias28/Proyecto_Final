@@ -88,9 +88,9 @@ const[pieDominante,setPieDominante] = useState('')
 
   return (
 
-    <div >
+    <div className='concontJugador'>
       <div className='divCont'>
-        <h1>Jugadores</h1>
+        <h1 className='tij'>Jugadores</h1> <br />
           <label>Nombre completo</label>
           <input className='inputTodos' placeholder='Nombre' value={nombreJugador} onChange={jugador} type="text" />
           <label>Fecha de Nacimiento</label>
@@ -103,6 +103,10 @@ const[pieDominante,setPieDominante] = useState('')
           <input className='inputTodos' placeholder='Nacionalidad' value={nacionalidadJugador} onChange={nacionalidad} type="text" />
           <label>Altura</label>
           <input className='inputTodos' placeholder='Altura' value={alturaJugador} onChange={altura} type="number" />
+        </div><br />
+
+      <div className='divCont'>
+
           <label>Peso</label>
           <input className='inputTodos' placeholder='Peso' value={pesoJugador} onChange={peso} type="number" />
           <label>Posicion</label>
@@ -113,12 +117,10 @@ const[pieDominante,setPieDominante] = useState('')
           <input className='inputTodos' placeholder='Club' value={clubActual} onChange={club} type="text" />
           <label>Pie dominante</label>
           <input className='inputTodos' placeholder='Dominante' value={pieDominante} onChange={dominante} type="text" /><br /><br />
-          <input type="file" /><br /><br />
-          <button className='btnJugador' onClick={btnAgregarJu}>Agregar Jugador</button><br /><br /> 
-      </div><br /><br />
+          <input type="file" />
 
-            <h2 className="titulo-jugador">Jugadores Agregados</h2><br />
-            
+          <button className='btnJugador' onClick={btnAgregarJu}>Agregar Jugador</button>
+      </div>       
    </div>
 
       )

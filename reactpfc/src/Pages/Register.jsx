@@ -1,13 +1,13 @@
 import FooderCom from '../Components/Fooder/FooderCom'
-import NavbarCom from '../Components/Navbar/NavbarCom'
+import AdminCom from '../Components/Administrador/AdminCom'
 import RegistroCom from '../Components/Registro/RegistroCom'
+import "../styles.css/PartidosPage.css"
 
 function Register() {
   return (
 
-    <div>
-
-      <NavbarCom/>
+    <div className='bodyPartidos'>
+      <AdminCom/>
       <RegistroCom/>
       <FooderCom/>
 
