@@ -1,6 +1,9 @@
 
 from .models import Partidos, UltimosResultados, ProximosEventos, BiografiaJugador, Usuario, Membresia, MetodosPago, Localidades, DetalleVenta, LocalidadDetalleVenta, Venta
+<<<<<<< HEAD
 
+=======
+>>>>>>> 5422867733dfc76e89227eb33b190a747917ef3a
 from rest_framework import serializers
 from django.contrib.auth.models import User
 
@@ -20,7 +23,10 @@ class UltimosResultadosSerializers(serializers.ModelSerializer):
         fields = '__all__'
         
 class ProximosEventosSerializers(serializers.ModelSerializer):
+<<<<<<< HEAD
 
+=======
+>>>>>>> 5422867733dfc76e89227eb33b190a747917ef3a
     class Meta: 
         model=ProximosEventos
         fields = '__all__'
@@ -39,7 +45,10 @@ class BiografiaJugadoresSerializers(serializers.ModelSerializer):
         if len(value) <= 3:
             raise serializers.ValidationError("El nombre del jugador tiene que tener un minimo de 3 letras")
         return value
+<<<<<<< HEAD
 
+=======
+>>>>>>> 5422867733dfc76e89227eb33b190a747917ef3a
     def validate_Edad(self, value):
         if int(value) <= 0:
             raise serializers.ValidationError("La edad debe ser un número positivo.")
@@ -61,12 +70,22 @@ class UserSerializers(serializers.ModelSerializer):
     class Meta:
         model=User
         fields = '__all__'
+<<<<<<< HEAD
         
     def create(self, validated_data):
         return User.objects.create_user(**validated_data)
         
         
 
+=======
+
+        
+    def create(self, validated_data):
+        return User.objects.create_user(**validated_data)
+        
+        
+
+>>>>>>> 5422867733dfc76e89227eb33b190a747917ef3a
 class MembresiaSerializers(serializers.ModelSerializer):
     usuario=UserSerializers(read_only=True)
     usuario_id=serializers.PrimaryKeyRelatedField(queryset=User.objects.all(), source='User' ,write_only=True)
@@ -80,7 +99,10 @@ class MetodosPagoSerializers(serializers.ModelSerializer):
         model=MetodosPago
         fields = '__all__'
         
+<<<<<<< HEAD
 
+=======
+>>>>>>> 5422867733dfc76e89227eb33b190a747917ef3a
 class LocalidadesSerializers(serializers.ModelSerializer):
     class Meta:
         model=Localidades

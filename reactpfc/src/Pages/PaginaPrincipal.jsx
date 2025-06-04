@@ -6,7 +6,11 @@ import Video from '../Components/Vi/Video'
 import FooderCom from '../Components/Fooder/FooderCom'
 import UltimosResulCom from '../Components/UltimosResultados/UltimosResulCom'
 import BoleteriaCom from '../Components/Boleteria/BoleteriaCom'
+<<<<<<< HEAD
 import MapeoEventos from '../Components/MapeoEventos/MapeoEventos'
+=======
+import MapeoPartidos from '../Components/MapeoPartidos/MapeoPartidos'
+>>>>>>> 5422867733dfc76e89227eb33b190a747917ef3a
 
 function PaginaPrincipal() {
   return (
@@ -16,9 +20,14 @@ function PaginaPrincipal() {
       <UltimosResulCom/>
       <PaginaPrin/>
       <BoleteriaCom/>
+<<<<<<< HEAD
       <MapeoEventos/>
       <FooderCom/>
 
+=======
+      <MapeoPartidos/>
+      <FooderCom/>
+>>>>>>> 5422867733dfc76e89227eb33b190a747917ef3a
     </div>
   )
 }

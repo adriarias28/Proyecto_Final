@@ -1,0 +1,51 @@
+/* Estilos generales */
+body {
+  background-color: #FFFFFF; /* Fondo blanco */
+  color: #000000; /* Texto negro */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 20px;
+}
+
+/* Contenedor principal */
+.di {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Etiquetas */
+label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+  color: #FF6000; /* Naranja */
+}
+
+/* Campos de entrada */
+.inputTodos {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 2px solid #FF6000; /* Borde naranja */
+  border-radius: 5px;
+  background-color: #FFFFFF; /* Fondo blanco */
+  color: #000000; /* Texto negro */
+  font-size: 16px;
+}
+
+/* Botón */
+.btnPartido {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #FF6000; /* Fondo naranja */
+  color: #FFFFFF; /* Texto blanco */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btnPartido:hover {
+  background-color: #e65c00; /* Naranja más oscuro al pasar el mouse */
+}

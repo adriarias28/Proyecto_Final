@@ -1,15 +1,17 @@
 import React from 'react'
 import BioJugadorCom from '../Components/BiografiaJugador/BioJugadorCom'
-import NavbarCom from '../Components/Navbar/NavbarCom'
+
+import AdminCom from '../Components/Administrador/AdminCom'
 import MapeoJuga from '../Components/MapeoJugadores/MapeoJuga'
+import "../styles.css/PartidosPage.css"
 
 function BiografiaJugador() {
   return (
-    <div>
+    <div className='bodyPartidos'>
 
-      <NavbarCom/>
+      <AdminCom/>
       <BioJugadorCom/>
-      <MapeoJuga esAdmin={true} />
+      <MapeoJuga esAdmin={true} /> 
       
     </div>
   )

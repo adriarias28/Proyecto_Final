@@ -6,8 +6,6 @@ import logros from '../../Images/logros.jpeg'
 
 function AcercadeCom() {
 
-   
-
   return (
     
     <div>
