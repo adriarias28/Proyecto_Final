@@ -1,17 +1,18 @@
 /* Contenedor de eventos */
 .eventos-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2rem;
+  gap: 1rem;
   padding: 2rem;
   background-color: #1e1e1e;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: auto;
+  width: 80%;
   margin-bottom: 40px;
 }
 
 /* Tarjeta de evento */
 .evento-card {
-  background-color: #F76300;
+  background-color: #f56511;
   color: white;
   padding: 1.8rem;
   border-radius: 16px;
@@ -34,7 +35,7 @@
 }
 
 .datoevento strong {
-  color: #fff;
+  color: #000000;
   font-weight: 600;
 }
 
@@ -59,7 +60,7 @@
 
 /* Botón eliminar (negro) */
 .botonEliminar {
-  background-color: #000;
+  background-color: #1e1e1e;
   color: #fff;
 }
 
