@@ -19,6 +19,7 @@ import EventosCRUD from '../Components/AccesoAdmin/EventosCRUD'
 import JugadoresCRUD from '../Components/AccesoAdmin/JugadoresCRUD'
 import PartidosCRUD from '../Components/AccesoAdmin/PartidosCRUD'
 import RegistroCRUD from '../Components/AccesoAdmin/RegistroCRUD'
+import Localidades from '../Pages/Localidades'
 
 
 function Routing() {
@@ -47,6 +48,8 @@ function Routing() {
             <Route path="/ultimosresultados" element={<UltimosResultados/>}/>
             <Route path="/venta" element={<Venta/>}/>
             <Route path="/" element={<PaginaPrincipal/>}/>
+
+            <Route path="/localidades" element={<Localidades/>}/>
 
         </Routes>
       </Router>

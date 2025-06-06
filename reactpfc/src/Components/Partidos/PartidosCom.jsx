@@ -40,8 +40,6 @@ const[equiposPartido,setEquiposPartido] = useState('')
 
   }
 
-
-
   return (
     <div className='contePrin'>
       <div className='di'>
@@ -63,5 +61,3 @@ const[equiposPartido,setEquiposPartido] = useState('')
 }
 
 export default PartidosCom
-
-

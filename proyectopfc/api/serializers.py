@@ -1,6 +1,4 @@
-
 from .models import Partidos, UltimosResultados, ProximosEventos, BiografiaJugador, Usuario, Membresia, MetodosPago, Localidades, DetalleVenta, LocalidadDetalleVenta, Venta
-
 from rest_framework import serializers
 from django.contrib.auth.models import User
 
@@ -67,8 +65,6 @@ class UserSerializers(serializers.ModelSerializer):
     def create(self, validated_data):
         return User.objects.create_user(**validated_data)
         
-        
-
 
 class MembresiaSerializers(serializers.ModelSerializer):
     usuario=UserSerializers(read_only=True)
@@ -82,7 +78,7 @@ class MetodosPagoSerializers(serializers.ModelSerializer):
     class Meta:
         model=MetodosPago
         fields = '__all__'
-        
+
 class LocalidadesSerializers(serializers.ModelSerializer):
     class Meta:
         model=Localidades
@@ -119,4 +115,3 @@ class VentaSerializers(serializers.ModelSerializer):
     class Meta:
         model=Venta
         fields = ['Precio_Total','detalleventa','detalleventa_id','metodospago','metodospago_id', 'usuario', 'usuario_id'] #Cuando hay id no podemos poner all, tenemos que abrir corchetes y agregarlos con comillas
-

@@ -1,6 +1,6 @@
 
 .navbar {
-  background: rgba(255, 106, 0, 0.95); /* naranja con transparencia */
+  background: rgba(255, 106, 0, 0.95); 
   backdrop-filter: blur(6px);
   display: flex;
   align-items: center;

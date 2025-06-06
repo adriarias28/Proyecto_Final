@@ -1,4 +1,4 @@
-async function getPartidos() {
+async function getBoleteria() {
     try {
         const response = await fetch('http://127.0.0.1:8000/api/partidos/ ', {
             method: 'GET',
@@ -21,7 +21,7 @@ async function getPartidos() {
 
 //////////LLAMADO POST//////////
 
-async function postPartidos(Ubicacion,Fecha,Hora,Equipos) {
+async function postBoleteria(Ubicacion,Fecha,Hora,Equipos) {
     try {
      
         const userData3 = { 
@@ -55,7 +55,7 @@ async function postPartidos(Ubicacion,Fecha,Hora,Equipos) {
 
 //////////////LLAMADO UPDATE/////////////
 
-async function updatePartidos(id, data) {
+async function updateBoleteria(id, data) {
     try {
       const response = await fetch(`http://127.0.0.1:8000/api/partidos/${id}/`, {
         method: 'PUT',
@@ -80,7 +80,7 @@ async function updatePartidos(id, data) {
 
 //////////////LLAMADO DELETE/////////////
 
-async function deletePartidos(id) {
+async function deleteBoleteria(id) {
     try {
         const response = await fetch(`http://127.0.0.1:8000/api/partidos/${id}/`, {
             method: 'DELETE',
@@ -100,4 +100,4 @@ async function deletePartidos(id) {
     }
 }
 
-export default {getPartidos, postPartidos,deletePartidos,updatePartidos,}
+export default {getBoleteria, postBoleteria,deleteBoleteria,updateBoleteria,}
