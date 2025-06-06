@@ -1,6 +1,4 @@
-
 from .models import Partidos, UltimosResultados, ProximosEventos, BiografiaJugador, Usuario, Membresia, MetodosPago, Localidades, DetalleVenta, LocalidadDetalleVenta, Venta
-
 from rest_framework import serializers
 from django.contrib.auth.models import User
 
@@ -12,6 +10,7 @@ class PartidosSerializer(serializers.ModelSerializer):
         if len(value) < 10:
             raise serializers.ValidationError("La ubicaión tiene que ser mayor o igual a 10 caracteres")
         return value
+
 class UltimosResultadosSerializers(serializers.ModelSerializer):
     partidos=PartidosSerializer(read_only=True)
     partidos_id= serializers.PrimaryKeyRelatedField(queryset=Partidos.objects.all(), source='Partidos' ,write_only=True)
@@ -56,6 +55,7 @@ class BiografiaJugadoresSerializers(serializers.ModelSerializer):
         if not ("@" in value and ".com" in value):
             raise serializers.ValidationError("El email no tiene el formato correcto")
         return value"""
+
 class UserSerializers(serializers.ModelSerializer):
     class Meta:
         model=User
@@ -64,15 +64,6 @@ class UserSerializers(serializers.ModelSerializer):
         
     def create(self, validated_data):
         return User.objects.create_user(**validated_data)
-        
-        
-
-
-
-        
-    def create(self, validated_data):
-        return User.objects.create_user(**validated_data)
-        
         
 
 class MembresiaSerializers(serializers.ModelSerializer):
@@ -88,7 +79,6 @@ class MetodosPagoSerializers(serializers.ModelSerializer):
         model=MetodosPago
         fields = '__all__'
     
- 
 class LocalidadesSerializers(serializers.ModelSerializer):
     class Meta:
         model=Localidades
@@ -125,4 +115,3 @@ class VentaSerializers(serializers.ModelSerializer):
     class Meta:
         model=Venta
         fields = ['Precio_Total','detalleventa','detalleventa_id','metodospago','metodospago_id', 'usuario', 'usuario_id'] #Cuando hay id no podemos poner all, tenemos que abrir corchetes y agregarlos con comillas
-

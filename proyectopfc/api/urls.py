@@ -16,7 +16,6 @@ urlpatterns = [
     path('membresia/<int:pk>/',MembresiaDetailView.as_view(), name='membresia-editar-actualizar'),
     path('metodosPago/',MetodosPagoListCreateView.as_view(),name='metodosPago-listar-crear'),
     path('metodosPago/<int:pk>/',MetodosPagoDetailView.as_view(), name='metodosPago-editar-actualizar'),
-
     path('localidades/',LocalidadesListCreateView.as_view(),name='localidades-listar-crear'),
     path('localidades/<int:pk>/',LocalidadesDetailView.as_view(), name='localidades-editar-actualizar'),
     path('detalleVenta/',DetalleVentaListCreateView.as_view(),name='detalleVenta-listar-crear'),
