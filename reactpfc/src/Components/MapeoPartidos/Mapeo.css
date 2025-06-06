@@ -1,0 +1,36 @@
+.jugador-agregado {
+  display: flex;            
+  flex-direction: row;        
+  flex-wrap: wrap;            
+  align-items: center;        
+  gap: 12px;                 
+}
+:root {
+  --pfc-naranja: #FF6000;
+  --pfc-negro: #000;
+  --pfc-blanco: #FFF;
+}
+
+.jugador-card {
+  background: var(--pfc-blanco);
+  border: 2px solid var(--pfc-negro);
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  display: flex;
+ }
+
+.jugador-agregado p.datos {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  color: var(--pfc-negro);
+}
+
+.jugador-agregado p.datos strong {
+  color: var(--pfc-naranja);
+}
+.hh{
+    display: flex;
+}

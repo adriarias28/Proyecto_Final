@@ -1,6 +1,6 @@
-async function getPartidos() {
+async function getLocalidades() {
     try {
-        const response = await fetch('http://127.0.0.1:8000/api/partidos/ ', {
+        const response = await fetch('http://127.0.0.1:8000/api/localidades/ ', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -21,20 +21,18 @@ async function getPartidos() {
 
 //////////LLAMADO POST//////////
 
-async function postPartidos(Ubicacion,Fecha,Hora,Equipos) {
+async function postLocalidades(Nombre,Precio) {
     try {
      
         const userData3 = { 
-            'Ubicacion': Ubicacion,
-            'Fecha': Fecha,
-            'Hora': Hora,
-            'Equipos': Equipos
+            'Nombre': Nombre,
+            'Precio': Precio
         };
 
 
 
 
-        const response = await fetch("http://127.0.0.1:8000/api/partidos/", {
+        const response = await fetch("http://127.0.0.1:8000/api/localidades/", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -55,9 +53,10 @@ async function postPartidos(Ubicacion,Fecha,Hora,Equipos) {
 
 //////////////LLAMADO UPDATE/////////////
 
-async function updatePartidos(id, data) {
+
+async function updateLocalidades(id, data) {
     try {
-      const response = await fetch(`http://127.0.0.1:8000/api/partidos/${id}/`, {
+      const response = await fetch(`http://127.0.0.1:8000/api/localidades/${id}/`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -80,9 +79,9 @@ async function updatePartidos(id, data) {
 
 //////////////LLAMADO DELETE/////////////
 
-async function deletePartidos(id) {
+async function deleteLocalidades(id) {
     try {
-        const response = await fetch(`http://127.0.0.1:8000/api/partidos/${id}/`, {
+        const response = await fetch(`http://127.0.0.1:8000/api/localidades/${id}/`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json'
@@ -100,4 +99,4 @@ async function deletePartidos(id) {
     }
 }
 
-export default {getPartidos, postPartidos,deletePartidos,updatePartidos,}
+export default {getLocalidades, postLocalidades,deleteLocalidades,updateLocalidades}

@@ -16,10 +16,7 @@ urlpatterns = [
     path('membresia/<int:pk>/',MembresiaDetailView.as_view(), name='membresia-editar-actualizar'),
     path('metodosPago/',MetodosPagoListCreateView.as_view(),name='metodosPago-listar-crear'),
     path('metodosPago/<int:pk>/',MetodosPagoDetailView.as_view(), name='metodosPago-editar-actualizar'),
-<<<<<<< HEAD
 
-=======
->>>>>>> 5422867733dfc76e89227eb33b190a747917ef3a
     path('localidades/',LocalidadesListCreateView.as_view(),name='localidades-listar-crear'),
     path('localidades/<int:pk>/',LocalidadesDetailView.as_view(), name='localidades-editar-actualizar'),
     path('detalleVenta/',DetalleVentaListCreateView.as_view(),name='detalleVenta-listar-crear'),

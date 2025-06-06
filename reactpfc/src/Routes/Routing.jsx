@@ -18,6 +18,8 @@ import Venta from '../Pages/Venta'
 import Administrador from '../Pages/Administrador'
 import PaginaPrincipal from '../Pages/PaginaPrincipal'
 import AdminEventos from '../Pages/AdminEventos'
+import Localidades from '../Pages/Localidades'
+
 
 
 function Routing() {
@@ -45,6 +47,7 @@ function Routing() {
             <Route path="/admin" element={<Administrador/>}/>
             <Route path="/" element={<PaginaPrincipal/>}/>
             <Route path="/admineventos" element={<AdminEventos/>}/>
+            <Route path="/localidades" element={<Localidades/>}/>
 
         </Routes>
       </Router>
