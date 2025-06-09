@@ -1,0 +1,87 @@
+.boleteria {
+  background-color: #000;
+  color: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 600px;
+  margin: 2rem auto;
+  box-shadow: 0 0 20px rgba(255, 94, 0, 0.5);
+  font-family: 'Arial', sans-serif;
+}
+
+.boleteria-titulo {
+  font-size: 2rem;
+  text-align: center;
+  color: #ff5e00;
+  margin-bottom: 1rem;
+}
+
+.boleteria-subtitulo {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  border-bottom: 2px solid #ff5e00;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.boleteria-detalles h3,
+.boleteria-label {
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+  color: #f0f0f0;
+}
+
+.boleteria-cargo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.boleteria-monto {
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+.boleteria-total {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 1rem;
+  color: #ff5e00;
+}
+
+.boleteria-botones {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 2rem;
+}
+
+.btn-cancelar,
+.btn-pagar {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-cancelar {
+  background-color: #666;
+  color: white;
+}
+
+.btn-cancelar:hover {
+  background-color: #999;
+}
+
+.btn-pagar {
+  background-color: #ff5e00;
+  color: #000;
+  font-weight: bold;
+}
+
+.btn-pagar:hover {
+  background-color: #e64a00;
+}

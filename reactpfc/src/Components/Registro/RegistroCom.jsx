@@ -5,6 +5,7 @@ import UsuariosCrud from '../../Services/UsuariosCrud'
 import "../../Components/Registro/Registro.css"
 import pfc from '../../Images/pfc.jpg'
 
+
 function RegistroCom() {
 
     const [nombrePersona,setnombrePersona]=useState("")
@@ -13,6 +14,7 @@ function RegistroCom() {
     const [passwordPersona,setpasswordPersona]=useState("")
     const [telefonoPersona,settelefonoPersona]=useState("")
 
+    
 
     function nombre(evento) {
     
@@ -44,8 +46,22 @@ function RegistroCom() {
 
     }
 
+    function seteo() {
+      
+      setnombrePersona('')
+      setapellidoPersona('')
+      setcorreoPersona('')
+      setpasswordPersona('')
+      settelefonoPersona('')
+
+    }
+
     function btnRegistrar() {
-      console.log(nombrePersona, apellidoPersona, correoPersona, passwordPersona);
+
+
+
+      seteo()
+
      if (nombrePersona === "" || apellidoPersona === "" || correoPersona === "" || passwordPersona === "" || telefonoPersona === "") {
         Swal.fire({
           icon: "error",
@@ -57,7 +73,6 @@ function RegistroCom() {
           }, 
         });
       }else{ 
-      console.log(nombrePersona, apellidoPersona, correoPersona, passwordPersona);
       
       UsuariosCrud.postUsuarios(nombrePersona, apellidoPersona, correoPersona, passwordPersona);
       Swal.fire({
@@ -82,9 +97,9 @@ function RegistroCom() {
             </div>
               <h3 className='titunueva'>NUEVA CUENTA</h3>
               <p className='parra'>¡GRACIAS POR REGISTRARSE EN PUNTARENAS FÚLTBOL CLUB!</p>
-              <label htmlFor="">Nombre</label><br />
+              <label htmlFor="">Username</label><br />
               <input className='inpuesti' value={nombrePersona} onChange={nombre} placeholder='Ingrese tu nombre' type="text" /><br /><br />
-              <label htmlFor="">Apellido</label><br />
+              <label htmlFor="">Nombre y Apellido</label><br />
               <input className='inpuesti' value={apellidoPersona} onChange={apellido} placeholder='Ingrese tu apellido' type="text" /><br /><br />
               <label htmlFor="">Correo Electrónico</label><br />
               <input className='inpuesti' value={correoPersona} onChange={correo} placeholder='Ingrese su correo electrónico' type="e-mail" /><br /><br />

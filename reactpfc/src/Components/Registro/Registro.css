@@ -4,7 +4,8 @@
   justify-content: center;
   padding: 40px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-image: url(../../Images/vecteezy_white-background-with-orange-geometric_11171111-1.jpg);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.301), rgba(255, 255, 255, 0.212)), 
+    url(../../Images/vecteezy_white-background-with-orange-geometric_11171111-1.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -30,7 +31,7 @@
 }
 
 .titunueva {
-  color: #eb6e09;
+  color: #e65c00;
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 10px;

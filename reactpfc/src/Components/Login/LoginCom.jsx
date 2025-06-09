@@ -14,18 +14,7 @@ function LoginCom() {
 
     const navigate = useNavigate()
 
-      
-  useEffect(() => {
-
-      async function fetchDataUsers() {
-          
-          const datos = await UsuariosCrud.getUsuarios() 
-
-          setUsuarios(datos)
-
-      };	
-      fetchDataUsers()
-  })
+    
 
   
     function correo(evento) {
@@ -42,9 +31,11 @@ function LoginCom() {
 
     function btnIniciar() {
 
-      const encontrarUsuario = usuarios.filter(usuarios => usuarios.correo === correoPersona && usuarios.password===passwordPersona)
+      seteoLogin()
+
+      //const encontrarUsuario = usuarios.filter(usuarios => usuarios.correo === correoPersona && usuarios.password===passwordPersona)
      
-      if (encontrarUsuario.length === 0 || correoPersona === "" || passwordPersona === "" ) {
+      if ( correoPersona === "" || passwordPersona === "" ) {
     
           Swal.fire({
             icon: "error",
@@ -56,8 +47,9 @@ function LoginCom() {
             }, 
           });
       }else{ 
+          UsuariosCrud.postApiUsuarios(correoPersona,passwordPersona)
 
-          navigate('/acercade')
+          navigate('/')
           Swal.fire("Bienvenido!");
           }
 
@@ -69,6 +61,13 @@ function LoginCom() {
 
     }
 
+    function seteoLogin() {
+      
+      setcorreoPersona('')
+      setpasswordPersona('')
+
+    }
+
   return (
 
     <div>
@@ -77,9 +76,9 @@ function LoginCom() {
           <div className='contenedorDosT'>
             <img className='pfc' src={pfc} width={600} alt="..." /> 
             <h1 className='tituloLogin'>USUARIO REGISTRADO</h1>
-            <p className='parraa'>INICIA SESIÓN CON UNA CUENTA EXISTENTE.</p>
+            <p className='parraa'>INICIA SESIÓN CON UNA CUENTA EXISTENTE</p>
             <h3>Iniciar sesión</h3>
-            <label htmlFor="">Correo Electrónico</label><br />
+            <label htmlFor="">Username</label><br />
             <input className='inpuestii' value={correoPersona} onChange={correo} placeholder='Correo electrónico'  type="text" /><br /><br />
             <label htmlFor="">Contraseña</label><br />
             <input className='inpuestii' value={passwordPersona} onChange={password} placeholder='Contraseña' type="password" /><br /><br />

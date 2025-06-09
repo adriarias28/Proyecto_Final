@@ -1,0 +1,70 @@
+.jugadores-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 30px;
+  padding: 20px;
+  justify-items: center;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.jugador-card {
+  background-color: #252525;
+  border-radius: 12px;
+  padding: 15px 12px;
+  width: 100%;
+  max-width: 240px;
+  color: #fff;
+  font-family: 'Segoe UI', sans-serif;
+  transition: transform 0.2s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+}
+
+.jugador-card:hover {
+  transform: scale(1.03);
+}
+
+.datos {
+  font-size: 0.85rem;
+  line-height: 1.3;
+  color: #f1f1f1;
+}
+
+.datos strong {
+  color: #f59608;
+}
+
+.botones-jugador {
+  margin-top: 5%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.boton {
+  padding: 6px 12px;
+  font-size: 0.75rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.boton.eliminar {
+  background-color: #f59608;
+  color: #000000;
+}
+
+.boton.eliminar:hover {
+  background-color: #c62828;
+  color: white;
+}
+
+.boton.editar {
+  background-color: #ffb300;
+  color: #000;
+}
+
+.boton.editar:hover {
+  background-color: #e65100;
+  color: white;
+}

@@ -1,0 +1,70 @@
+/* Título principal */
+.consultaTitulo {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  font-size: 2rem;
+  color: #000000;
+  margin-bottom: 10px;
+  padding-bottom: 30px;
+}
+
+/* Subtítulo */
+.consultaParrafo {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 40px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* Contenedor del formulario */
+.consultaInputs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  max-width: 500px;
+  margin: 0 auto 0px auto;
+  padding: 0 1rem;
+}
+
+/* Estilo de los inputs */
+.consultaInputs input {
+  width: 100%;
+  padding: 14px;
+  font-size: 1rem;
+  border: 1px solid #cccccc;
+  border-radius: 8px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: border-color 0.3s ease;
+}
+
+.consultaInputs input:focus {
+  outline: none;
+  border-color: #ff6600;
+  box-shadow: 0 0 0 3px rgba(255, 102, 0, 0.15);
+}
+
+/* Botón */
+.btnConsulta {
+  background-color: #0000007a;
+  color: #fff;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btnConsulta:hover {
+  background-color: #e55c00;
+  transform: scale(1.05);
+}
+
+.divConsulta{
+  background-image: linear-gradient(rgba(255, 255, 255, 0.418), rgba(255, 255, 255, 0.212)), url('../../Images/estacon.jpeg');
+  background-size: cover;
+  height:900px;
+}
