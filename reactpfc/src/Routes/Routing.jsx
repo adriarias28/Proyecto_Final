@@ -20,6 +20,7 @@ import JugadoresCRUD from '../Components/AccesoAdmin/JugadoresCRUD'
 import PartidosCRUD from '../Components/AccesoAdmin/PartidosCRUD'
 import RegistroCRUD from '../Components/AccesoAdmin/RegistroCRUD'
 import Localidades from '../Pages/Localidades'
+import LocalidadesCRUD from '../Components/AccesoAdmin/LocalidadesCRUD'
 
 
 function Routing() {
@@ -28,14 +29,14 @@ function Routing() {
       <Router>
         <Routes>
             <Route path="/admin" element={<Administrador/>}>
-            <Route path="partidos" element={< PartidosCRUD />} />
-            <Route path="eventos" element={< EventosCRUD />} />
-            <Route path="jugadorescrud" element={<JugadoresCRUD/>}/>
-            <Route path="usuarios" element={<RegistroCRUD/>}/> </Route>
+              <Route path="partidos" element={< PartidosCRUD />} />
+              <Route path="eventos" element={< EventosCRUD />} />
+              <Route path="jugadorescrud" element={<JugadoresCRUD/>}/>
+              <Route path="usuarios" element={<RegistroCRUD/>}/>
+              <Route path="localidades" element={<LocalidadesCRUD/>}/>
+            </Route>
             <Route path="/acercade" element={<Acercasde/>}/>
-            <Route path="/boleteria" element={<Boleteria/>}
-            
-            />
+            <Route path="/boleteria" element={<Boleteria/>}/>
             <Route path="/contactos" element={<Contactos/>}/>
             <Route path="/detalleventa" element={<DetalleVenta/>}/>
             <Route path="/fooder" element={<Fooder/>}/>
@@ -48,7 +49,6 @@ function Routing() {
             <Route path="/ultimosresultados" element={<UltimosResultados/>}/>
             <Route path="/venta" element={<Venta/>}/>
             <Route path="/" element={<PaginaPrincipal/>}/>
-
             <Route path="/localidades" element={<Localidades/>}/>
 
         </Routes>

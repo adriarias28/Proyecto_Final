@@ -6,9 +6,16 @@ import Hiram from '../../Images/Hiram.png'
 import Gael from '../../Images/Gael.png'
 import Ulises from '../../Images/Ulises.png'
 
+
 function PaginaPrin() {
+
+
   return (
+
+    
+
     <div className="paginaPrin">
+
         <h1 className="titulo">Nuestros Jugadores</h1>
         <div className="jugadoresCont">
           <div className='jugt'>

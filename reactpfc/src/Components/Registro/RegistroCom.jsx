@@ -5,6 +5,7 @@ import UsuariosCrud from '../../Services/UsuariosCrud'
 import "../../Components/Registro/Registro.css"
 import pfc from '../../Images/pfc.jpg'
 
+
 function RegistroCom() {
 
     const [nombrePersona,setnombrePersona]=useState("")
@@ -13,6 +14,7 @@ function RegistroCom() {
     const [passwordPersona,setpasswordPersona]=useState("")
     const [telefonoPersona,settelefonoPersona]=useState("")
 
+    
 
     function nombre(evento) {
     
@@ -55,6 +57,8 @@ function RegistroCom() {
     }
 
     function btnRegistrar() {
+
+
 
       seteo()
 
