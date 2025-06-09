@@ -4,7 +4,11 @@ import '../../Components/Membresia/Membresia.css'
 function MembresiaCom() {
   return (
     <div className='divContainer'>
-      <h1 className='tit'>SOCIOS PFC</h1>
+      <h1 className='tit'>Socios PFC</h1>
+      <div><br />
+        <p className='parrafoMem'>Podés adquirir tu membresía a través de nuestro WhatsApp 
+        8888-8888 o bien en las oficinas administrativas ubicadas en el Estadio José Rafael «Fello» Meza en horario de 8:00 a.m. a 12:00 m.d. y de 1:00 p.m. a 5:00 p.m.</p>
+      </div><br />
       <h2 className='precios'>Precios de Entradas por Localidad</h2>
       <table className='tablaEntradas'>
         <tr>

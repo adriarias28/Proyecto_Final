@@ -78,7 +78,7 @@ class MetodosPagoSerializers(serializers.ModelSerializer):
     class Meta:
         model=MetodosPago
         fields = '__all__'
-    
+
 class LocalidadesSerializers(serializers.ModelSerializer):
     class Meta:
         model=Localidades

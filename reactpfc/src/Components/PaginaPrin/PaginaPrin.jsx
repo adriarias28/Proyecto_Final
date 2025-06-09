@@ -1,9 +1,7 @@
 
 import '../../Components/PaginaPrin/PaginaPrin.css'
 import Jean from '../../Images/Jean.png'
-
 import AndreyM from '../../Images/AndreyM.png'
-
 import Hiram from '../../Images/Hiram.png'
 import Gael from '../../Images/Gael.png'
 import Ulises from '../../Images/Ulises.png'

@@ -4,6 +4,7 @@ import '../../Components/Localidad/Local.css'
 import Swal from 'sweetalert2'
 
 function MapeoLocalidad({ esAdmin = false }) {
+
 const[guardarLocalidad, setGuardarLocalidad] = useState([])
 
 
@@ -78,7 +79,7 @@ function eliminar(id) {
   return (
     <div>
         {guardarLocalidad.map((dato,index) => (
-        <div key={dato.id} className="jugador-card">
+        <div key={dato.id}>
             <div className='jugador-agregado'>
               <div className='hh'>
                   <p className='datos'><strong>Nombre: </strong>{dato.Nombre}</p><br />

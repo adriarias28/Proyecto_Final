@@ -115,8 +115,8 @@ const[pieDominante,setPieDominante] = useState('')
           <label >Club Actual</label>
           <input className='inputTodos' placeholder='Club' value={clubActual} onChange={club} type="text" />
           <label>Pie dominante</label>
-          <input className='inputTodos' placeholder='Dominante' value={pieDominante} onChange={dominante} type="text" /><br /><br />
-          <input type="file" />
+          <input className='inputTodos' placeholder='Dominante' value={pieDominante} onChange={dominante} type="text" /><br />
+          <input type="file" /><br /><br />
 
           <button className='btnJugador' onClick={btnAgregarJu}>Agregar Jugador</button>
       </div>       

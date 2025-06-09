@@ -10,7 +10,7 @@ function AcercadeCom() {
     
     <div>
         <div className='imagenhisto'>
-          <img className='estadio' src={estadio} width={1335} height={800} alt="..." />
+          <img className='estadio' src={estadio} width={1295} height={800} alt="..." />
         </div>
       <div className='container-historia'>
         <div className='historia'> 

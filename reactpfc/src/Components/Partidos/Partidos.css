@@ -1,51 +1,63 @@
 /* Estilos generales */
-body {
-  background-color: #FFFFFF; /* Fondo blanco */
-  color: #000000; /* Texto negro */
+.contePrin {
+  max-width: 600px;
+  margin: 40px auto;
+  background: #fff;
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  padding: 20px;
 }
 
 /* Contenedor principal */
 .di {
   max-width: 600px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 10px;
 }
 
 /* Etiquetas */
 label {
   display: block;
-  margin-top: 15px;
-  font-weight: bold;
-  color: #FF6000; /* Naranja */
+  margin-bottom: 8px;
+  color: #333;
+  font-weight: 600;
+}
+
+.tituloPartido{
+  font-size: 25px;
+  color: #e65c00;
+  margin-bottom: 25px;
+  text-align: center;
 }
 
 /* Campos de entrada */
 .inputTodos {
   width: 100%;
-  padding: 10px;
-  margin-top: 5px;
-  border: 2px solid #FF6000; /* Borde naranja */
-  border-radius: 5px;
-  background-color: #FFFFFF; /* Fondo blanco */
-  color: #000000; /* Texto negro */
+  padding: 10px 14px;
+  margin-bottom: 20px;
+  border: 1.5px solid #ddd;
+  border-radius: 6px;
   font-size: 16px;
+  transition: border 0.3s ease;
 }
+
 
 /* Botón */
 .btnPartido {
-  margin-top: 20px;
-  padding: 10px 20px;
-  background-color: #FF6000; /* Fondo naranja */
-  color: #FFFFFF; /* Texto blanco */
+  width: 50%;
+  padding: 12px;
+  background-color: #000000;
+  color: white;
   border: none;
-  border-radius: 5px;
+  font-size: 16px;
+  border-radius: 6px;
   cursor: pointer;
-  font-weight: bold;
+  text-transform: uppercase;
   transition: background-color 0.3s ease;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .btnPartido:hover {
-  background-color: #e65c00; /* Naranja más oscuro al pasar el mouse */
+  background-color: #e55a00;
 }
