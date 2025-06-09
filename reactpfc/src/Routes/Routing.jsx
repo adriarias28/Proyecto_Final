@@ -35,7 +35,6 @@ function Routing() {
               <Route path="usuarios" element={<RegistroCRUD/>}/>
               <Route path="localidades" element={<LocalidadesCRUD/>}/>
             </Route>
-
             <Route path="/acercade" element={<Acercasde/>}/>
             <Route path="/boleteria" element={<Boleteria/>}/>
             <Route path="/contactos" element={<Contactos/>}/>

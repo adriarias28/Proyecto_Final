@@ -4,6 +4,7 @@ import '../../Components/Localidad/Local.css'
 import Swal from 'sweetalert2'
 
 function MapeoLocalidad({ esAdmin = false }) {
+
 const[guardarLocalidad, setGuardarLocalidad] = useState([])
 
 
