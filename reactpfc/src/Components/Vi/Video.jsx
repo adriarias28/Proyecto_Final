@@ -5,7 +5,6 @@ import Vid from '../../Components/Vi/Vid.mp4'
 
 function Video() {
 
-
     const navigate = useNavigate()
       function btnBoleteria() {
       
