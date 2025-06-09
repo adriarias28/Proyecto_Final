@@ -74,15 +74,14 @@ function eliminar(id) {
     }
   }
 
-  
   return (
-    <div>
+    <div className='localidad-container'>
         {guardarLocalidad.map((dato,index) => (
-        <div key={dato.id} className="jugador-card">
+        <div key={dato.id} className="localidad-card">
             <div className='jugador-agregado'>
               <div className='hh'>
-                  <p className='datos'><strong>Nombre: </strong>{dato.Nombre}</p><br />
-                  <p className='datos'><strong>Precio: </strong>{dato.Precio}</p><br />
+                  <p className='datolocal'><strong>Nombre: </strong>{dato.Nombre}</p><br />
+                  <p className='datolocal'><strong>Precio: </strong>{dato.Precio}</p><br />
                   </div>
                 {esAdmin && (
                   <div className="botones-partidos">

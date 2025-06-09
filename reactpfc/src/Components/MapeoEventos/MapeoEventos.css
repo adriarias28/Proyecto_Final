@@ -22,7 +22,7 @@
   overflow: hidden;
 }
 
-.evento-card:hover {
+.localidad-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 10px 18px rgba(0, 0, 0, 0.6);
 }
