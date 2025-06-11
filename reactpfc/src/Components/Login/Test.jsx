@@ -1,4 +1,5 @@
 
+
 import { Link, useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import UsuariosCrud from '../../Services/UsuariosCrud'
@@ -72,7 +73,7 @@ function Test() {
             <p className='parraa'>INICIA SESIÓN CON UNA CUENTA EXISTENTE</p>
             <h3>Iniciar sesión</h3>
             <label htmlFor="">Username</label><br />
-            <input className='inpuestii' value={correoPersona} onChange={correo} placeholder='Nombre Usuario'  type="text" /><br /><br />
+            <input className='inpuestii' value={correoPersona} onChange={correo} placeholder='Correo electrónico'  type="text" /><br /><br />
             <label htmlFor="">Contraseña</label><br />
             <input className='inpuestii' value={passwordPersona} onChange={password} placeholder='Contraseña' type="password" /><br /><br />
             <button className='btnLogin' onClick={btnIniciar}>INGRESAR</button>

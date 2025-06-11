@@ -1,22 +1,146 @@
-.inputTodos {
+:root {
+  --pfc-naranja: #FF6000;
+  --pfc-negro: #000000;
+  --pfc-blanco: #ffffff;
+  --gris-claro: #f4f4f4;
+  --sombra: rgba(0, 0, 0, 0.08);
+}
+
+/* Contenedor principal */
+.localidad-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--gris-claro);
+  padding: 1rem;
+  min-height: 100vh;
+  gap: 1rem;
+}
+
+/* Tarjetas de entradas */
+.localidad-card {
+  background-color: var(--pfc-blanco);
+  border-left: 4px solid var(--pfc-naranja);
+  border-radius: 8px;
+  box-shadow: 0 2px 6px var(--sombra);
   width: 100%;
-  padding: 0.5rem;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  font-size: 1rem;
+  max-width: 360px;
+  padding: 0.8rem;
+  font-size: 0.9rem;
 }
 
-.btn {
-  background-color: #ff6600;
-  color: white;
+/* Información de la entrada */
+.entrada-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.tipo-entrada {
+  color: var(--pfc-negro);
+  font-weight: 600;
+}
+
+.precio-entrada {
+  color: var(--pfc-naranja);
+  font-weight: 600;
+}
+
+/* Controles de cantidad */
+.cantidad-control {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.cantidad-btn {
+  background-color: var(--pfc-naranja);
+  color: var(--pfc-blanco);
   border: none;
-  padding: 0.7rem 1.2rem;
-  font-size: 1rem;
-  border-radius: 6px;
+  border-radius: 4px;
+  width: 30px;
+  height: 30px;
+  font-size: 1.1rem;
+  font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s;
 }
 
-.btn:hover {
-  background-color: #e65c00;
+.cantidad-btn:hover {
+  background-color: #e05400;
+}
+
+.cantidad-num {
+  width: 30px;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* Botones de Admin */
+.botones-partidos {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.4rem;
+}
+
+.boton {
+  padding: 0.3rem 0.6rem;
+  font-size: 0.8rem;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.boton.delete {
+  background-color: #b00020;
+}
+.boton.delete:hover {
+  background-color: #7c0016;
+}
+
+.boton.update {
+  background-color: #007bff;
+}
+.boton.update:hover {
+  background-color: #0056b3;
+}
+
+/* Total de entradas */
+.total-container {
+  background-color: var(--pfc-blanco);
+  border-left: 4px solid var(--pfc-naranja);
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 2px 6px var(--sombra);
+  max-width: 360px;
+  width: 100%;
+  text-align: center;
+  font-size: 0.9rem;
+  color: black;
+}
+
+.total-container p {
+  margin: 0.4rem 0;
+  font-weight: 500;
+}
+
+.btnPagar {
+  background-color: var(--pfc-naranja);
+  color: var(--pfc-blanco);
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  margin-top: 0.8rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btnPagar:hover {
+  background-color: #e05400;
 }
