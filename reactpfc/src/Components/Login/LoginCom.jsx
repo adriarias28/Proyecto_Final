@@ -1,5 +1,3 @@
-
-
 import { Link, useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import UsuariosCrud from '../../Services/UsuariosCrud'
@@ -11,13 +9,10 @@ function Test() {
 
     const[correoPersona,setcorreoPersona]=useState("")
     const[passwordPersona,setpasswordPersona]=useState("")
-    const [usuarios,setUsuarios]=useState()
+    /* const [usuarios,setUsuarios]=useState() */
 
     const navigate = useNavigate()
 
-    
-
-  
     function correo(evento) {
 
       setcorreoPersona(evento.target.value)
@@ -41,7 +36,7 @@ function Test() {
         expires: 1,/*Expira en un día*/ 
         secure: true, 
         sameSite: "Strict",
-        path: "/", /*las cookies e puedan usar en todas las páginas*/ 
+        path: "/", /*las cookies se puedan usar en todas las páginas*/ 
       });
       Cookies.set("refresh_token", tokenData.refresh, {
         expires: 7, // Por lo general el refresh token dura más
