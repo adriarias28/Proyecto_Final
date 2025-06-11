@@ -1,4 +1,6 @@
 /*import CryptoJS from "crypto-js"; //import para el sha256 */
+import Cookies from 'js-cookie'
+const token = Cookies.get("access_token");
     
     
     async function getUsuarios() {
@@ -6,7 +8,8 @@
         const response = await fetch('http://127.0.0.1:8000/api/usuario/', {
             method: 'GET',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
             }
         });
 
@@ -114,11 +117,14 @@ async function deleteUsuarios(id) {
     }
 }
 
-async function postApiUsuarios(username, password) {
+
+//////////// llamamdos login
+
+async function postApiToken(username,password) {
     try {
         const userData = { 
-            username,
-            password
+            username: username,
+            password: password // importante si tu serializer lo espera
         };
 
         console.log(userData);
@@ -131,12 +137,15 @@ async function postApiUsuarios(username, password) {
             body: JSON.stringify(userData)
         });
 
-        const resp =  await response.json();
-        console.log('La respuesta del BackEnd:', resp);
-        return resp
+        if (!response.ok) {
+            const errorData = await res.json();
+            console.error("Backend error:", errorData); 
+            throw new Error("Error posting user");
+        }
+        const result = await response.json();
+        console.log(result);
+         return result;
         
-
-
     } catch (error) {
         console.error('Error posting user:', error);
         throw error;
@@ -144,4 +153,4 @@ async function postApiUsuarios(username, password) {
 }
 
 
-export default { deleteUsuarios, postUsuarios, updateUsuarios, getUsuarios, postApiUsuarios }
+export default { deleteUsuarios, postUsuarios, updateUsuarios, getUsuarios,postApiToken }

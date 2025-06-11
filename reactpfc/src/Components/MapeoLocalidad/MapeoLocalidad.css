@@ -1,3 +1,4 @@
+/*
 .localidad-container {
   display: grid;
   gap: 1rem;
@@ -28,7 +29,7 @@
 
 
 
-
+ 
 
 .datolocal {
   font-size: 1.1rem;
@@ -39,4 +40,75 @@
 .datolocal strong {
   color: #000000;
   font-weight: 600;
+} */
+
+
+
+
+
+
+
+.entrada-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  margin: 10px;
+  border: 1px solid #ccc;
+  background: #f9f9f9;
+  border-radius: 8px;
+}
+
+.entrada-info {
+  flex: 1;
+}
+
+.tipo-entrada {
+  font-weight: bold;
+  display: block;
+}
+
+.precio-entrada {
+  color: #333;
+}
+
+.cantidad-control {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cantidad-btn {
+  background-color: #7ED957;
+  color: black;
+  border: none;
+  font-size: 1.5rem;
+  padding: 5px 12px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.cantidad-num {
+  min-width: 20px;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.total-container {
+  margin-top: 20px;
+  padding: 10px;
+  background: #e8f4ec;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.seleccionar-asientos-btn {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #7ED957;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
 }

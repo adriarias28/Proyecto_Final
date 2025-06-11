@@ -7,7 +7,6 @@ function MapeoLocalidad({ esAdmin = false }) {
 
 const[guardarLocalidad, setGuardarLocalidad] = useState([])
 
-
     useEffect(() => {
 
         async function fetchDataUsers() {
@@ -75,27 +74,70 @@ function eliminar(id) {
     }
   }
 
+
   return (
     <div className='localidad-container'>
-        {guardarLocalidad.map((dato,index) => (
-        <div key={dato.id} className="localidad-card">
-            <div className='jugador-agregado'>
-              <div className='hh'>
-                  <p className='datolocal'><strong>Nombre: </strong>{dato.Nombre}</p><br />
-                  <p className='datolocal'><strong>Precio: </strong>{dato.Precio}</p><br />
-                  </div>
-                {esAdmin && (
-                  <div className="botones-partidos">
-                    <p className='but'>
-                        <button className='boton delete' onClick={() => eliminar(dato.id)}>Eliminar</button>
-                        <button className='boton update' onClick={() => editar(dato.id)}>Editar</button>
-                    </p>
-                  </div>
-                )}
-            </div>
+  {guardarLocalidad.map((dato, index) => {
+    const cantidad = dato.cantidad || 0;
+
+    /* functión Suma */
+    const suma = () => {
+      const nuevasLocalidades = guardarLocalidad.map(loc => 
+        loc.id === dato.id ? { ...loc, cantidad: (loc.cantidad || 0) + 1 } : loc
+      );
+      setGuardarLocalidad(nuevasLocalidades);
+    };
+    /* ...loc= cantidad anterior, 
+         nueva cantidad y va sumando 1 al tocar el botón
+         Todo en un mapeo, para que se realice el ciclo*/
+
+    /* functión Resta */
+    const resta = () => {
+      const nuevasLocalidades = guardarLocalidad.map(loc =>
+        loc.id === dato.id && (loc.cantidad || 0) > 0
+          ? { ...loc, cantidad: loc.cantidad - 1 }
+          : loc
+      );
+      setGuardarLocalidad(nuevasLocalidades);
+      /* va restando 1 al tocar el botón  */
+    };
+
+    return (
+      <div key={dato.id} className="localidad-card entrada-item">
+        <div className='entrada-info'>
+          <div className='tipo-entrada'>{dato.Nombre}</div>
+          <div className='precio-entrada'>₡ {parseFloat(dato.Precio).toLocaleString()}</div>
+        </div>  {/* parseFloat= convierte una cadena de texto en un número de punto flotante*/} 
+
+        <div className="cantidad-control">
+          <button className="cantidad-btn" onClick={resta}>−</button>
+          <span className="cantidad-num">{cantidad}</span>
+          <button className="cantidad-btn" onClick={suma}>+</button>
         </div>
-            ))} 
-    </div>
+
+        {esAdmin && (
+          <div className="botones-partidos">
+            <button className='boton delete' onClick={() => eliminar(dato.id)}>Eliminar</button>
+            <button className='boton update' onClick={() => editar(dato.id)}>Editar</button>
+          </div>
+        )}
+      </div>
+    );
+  })}
+
+  {/* Mostrar total de entradas y total en colones */}
+  <div className='total-container'>
+    <p><strong>CANTIDAD DE ENTRADAS:</strong> {
+      guardarLocalidad.reduce((acc, loc) => acc + (loc.cantidad || 0), 0)
+    }</p>
+     {/* reduce= suma la cantidad total de entradas compradas */}
+    <p><strong>TOTAL A PAGAR:</strong> ₡ {
+      guardarLocalidad.reduce((acc, loc) => acc + (loc.cantidad || 0) * parseFloat(loc.Precio || 0), 0).toLocaleString()
+    } <div>IVA incluido</div></p>
+    <button className='btnPagar'>PAGAR</button>
+  </div>
+</div>
+
   )
 }
 

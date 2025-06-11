@@ -1,4 +1,4 @@
-.jugador-agregado {
+/* .jugador-agregado {
   display: flex;            
   flex-direction: row;        
   flex-wrap: wrap;            
@@ -33,4 +33,92 @@
 }
 .hh{
     display: flex;
+} */
+
+
+
+
+.partidos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 15px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.jugador-card {
+  background-color: #000000;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #FF6000AA;
+  padding: 18px 22px;
+  color: #FFFFFF;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: transform 0.3s ease;
+}
+
+.jugador-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px #FF6000;
+}
+
+.jugador-agregado {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.hh {
+  margin-bottom: 12px;
+}
+
+.datos {
+  font-size: 14px;
+  margin: 6px 0;
+  line-height: 1.3;
+  color: #FF6000;
+}
+
+.datos strong {
+  color: #FFFFFF;
+}
+
+.botones-partidos {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.boton {
+  cursor: pointer;
+  border: none;
+  padding: 7px 15px;
+  font-weight: 600;
+  border-radius: 6px;
+  font-size: 13px;
+  transition: background-color 0.3s ease;
+  color: #FFFFFF;
+}
+
+.boton.delete {
+  background-color: #FF6000;
+}
+
+.boton.delete:hover {
+  background-color: #e65100;
+}
+
+.boton.update {
+  background-color: #222222;
+  border: 1.5px solid #FF6000;
+}
+
+.boton.update:hover {
+  background-color: #FF6000;
+  color: #000000;
+}
+
+.but {
+  margin: 0;
 }
