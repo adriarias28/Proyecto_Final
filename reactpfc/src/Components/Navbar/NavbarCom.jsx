@@ -1,6 +1,9 @@
 import { Link, useNavigate} from 'react-router-dom'
 import '../../Components/Navbar/Navbar.css';
 import logo from '../../Images/logo.png'
+import { FaFacebookF, FaInstagram, FaTiktok } from 'react-icons/fa';
+import NavSocialCom from './NavSocialCom';
+
 
 
 function NavbarCom() {
@@ -23,6 +26,8 @@ function NavbarCom() {
   return (
 
     <div>
+      
+      <NavSocialCom/>
       <nav className="navbar">
         <img  className="logo" src={logo} alt="Logo Puntarenas FC" />
 
@@ -40,6 +45,7 @@ function NavbarCom() {
           <button onClick={btnIngreso}>Ingreso</button>
           <button onClick={btnRegistro}>Registro</button>
         </div>
+        
       </nav>
     </div>
   )

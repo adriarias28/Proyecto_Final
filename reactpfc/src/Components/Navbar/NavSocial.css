@@ -1,0 +1,16 @@
+.social-bar {
+  background-color: #f5f5f5;
+  padding: 8px 20px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+}
+
+.social-bar .social-icon {
+  height: 35px !important;
+  width: 35px !important;   
+}
+
+.social-bar .social-icon:hover {
+  transform: scale(1.15);
+}

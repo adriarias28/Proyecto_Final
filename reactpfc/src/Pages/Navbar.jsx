@@ -4,7 +4,7 @@ function Navbar() {
   return (
     
     <div>
-
+      
       <NavbarCom/>
 
     </div>
