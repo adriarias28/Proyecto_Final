@@ -22,13 +22,11 @@ const[guardarJugadores, setGuardarJugadores] = useState([])
     
 
     function eliminar(id) {
+
     CrudJugadores.deleteBiografiaJugador(id)
+    
     } 
 
-   /*  function editar() {
-      
-    CrudJugadores.updateBiografiaJugador(nombreJugador,fechaNacimiento,edadJugador,lugarNacimiento,nacionalidadJugador,alturaJugador,pesoJugador,posicionJugador,numeroJugador,clubActual,pieDominante)
-    }  */
 
   async function editar(id) {
     const jugador = guardarJugadores.find(j => j.id === id)

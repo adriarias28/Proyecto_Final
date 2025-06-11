@@ -3,7 +3,7 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   text-align: center;
   font-size: 2rem;
-  color: #000000;
+  color: #ffffff;
   margin-bottom: 10px;
   padding-bottom: 30px;
 }
@@ -34,7 +34,6 @@
   padding: 14px;
   font-size: 1rem;
   border: 1px solid #cccccc;
-  border-radius: 8px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   transition: border-color 0.3s ease;
 }
@@ -66,5 +65,6 @@
 .divConsulta{
   background-image: linear-gradient(rgba(255, 255, 255, 0.418), rgba(255, 255, 255, 0.212)), url('../../Images/estacon.jpeg');
   background-size: cover;
-  height:900px;
+  height: 800px;
+  background-color: #4e4e4e18;
 }

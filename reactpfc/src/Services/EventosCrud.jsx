@@ -56,34 +56,32 @@ async function postEventos(Eventos, Descripcion) {
 
 
 //////////////LLAMADO UPDATE/////////////
+//http://127.0.0.1:8000/api/proximosEventos/
 
 
-async function updateEventos(usuario, password, id) 
-{
+async function updateEventos(id, data) {
     try {
-     
-        const userData = { 
-            usuario,
-            password,
-            id 
-        };
-
-
-        const response = await fetch("http://127.0.0.1:8000/api/proximosEventos/"+id, {
-            method: 'PUT',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(userData)
-        });
-
-     
-        return await response.json();
+      const response = await fetch(`http://127.0.0.1:8000/api/proximosEventos/${id}/`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+  
+      if (!response.ok) {
+        // Manejar errores HTTP
+        const errorText = await response.text();
+        throw new Error(`Error HTTP: ${response.status} - ${errorText}`);
+      }
+  
+      return await response.json();
     } catch (error) {
-        console.error('Error update user:', error);
-        throw error;
+      console.error('Error update user:', error);
+      throw error;
     }
-}
+  }
+
 
 
 //////////////LLAMADO DELETE/////////////

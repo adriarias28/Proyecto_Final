@@ -21,7 +21,9 @@ const[guardarLocalidad, setGuardarLocalidad] = useState([])
 
 //ELIMINAR
 function eliminar(id) {
+
     CrudLocalidad.deleteLocalidades(id)
+
     } 
 
   // EDITAR
@@ -33,7 +35,7 @@ function eliminar(id) {
     }
 
     const { value: formValues } = await Swal.fire({
-      title: 'Editar Localidad',
+      title: 'Editar Localidad',  
       html: `
         <input id="swal-input1" class="swal2-input" placeholder="Nombre" value="${localidadEditar.Nombre || ''}">
         <input id="swal-input2" class="swal2-input" placeholder="Precio" type="number" value="${localidadEditar.Precio || ''}">

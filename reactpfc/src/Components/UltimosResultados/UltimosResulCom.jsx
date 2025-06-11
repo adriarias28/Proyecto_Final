@@ -8,9 +8,7 @@ import SantaAna from '../../Images/SantaAna.jfif'
 function UltimosResulCom() {
   return (
     <div className='bodyUltimosResul'>
-      <h3 className='h3'>PARTIDOS</h3>
-      <h1 className='h1'>ÚLTIMOS RESULTADOS</h1>
-
+      <h1 className='tituloUl'>ÚLTIMOS RESULTADOS</h1>
       <div className='df'>
       <div className="resultados">
         <div className="fecha">14 mayo, 2025</div>
