@@ -115,3 +115,20 @@ class VentaSerializers(serializers.ModelSerializer):
     class Meta:
         model=Venta
         fields = ['Precio_Total','detalleventa','detalleventa_id','metodospago','metodospago_id', 'usuario', 'usuario_id'] #Cuando hay id no podemos poner all, tenemos que abrir corchetes y agregarlos con comillas
+        
+        
+#Agrega el grupo del usuario al token
+
+from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
+
+class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):
+    def validate(self, attrs):
+        data = super().validate(attrs)
+
+        # Obtener el grupo del usuario (rol)
+        groups = self.user.groups.values_list('name', flat=True)
+
+        # Agrega el primer grupo como 'role'
+        data['role'] = groups[0] if groups else None
+
+        return data

@@ -97,3 +97,13 @@ class VentaListCreateView(ListCreateAPIView):
 class VentaDetailView(RetrieveUpdateDestroyAPIView):
     queryset = Venta.objects.all()
     serializer_class = VentaSerializers
+    
+#Token 
+from rest_framework_simplejwt.views import TokenObtainPairView
+from .serializers import CustomTokenObtainPairSerializer
+
+class CustomTokenObtainPairView(TokenObtainPairView):
+    serializer_class = CustomTokenObtainPairSerializer
+    
+    
+    
