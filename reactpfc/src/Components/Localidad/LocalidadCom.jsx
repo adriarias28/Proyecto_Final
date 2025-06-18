@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import '../../Components/Localidad/Local.css';
-import Graderia from '../../Images/Graderia.jpg'
+import '../../Components/Localidad/Localidad.css';
 import CrudLocalidad from '../../Services/CrudLocalidad'
 
 function LocalidadCom() {
@@ -34,7 +33,7 @@ const[precioLocalidad,setPrecioLocalidad] = useState('')
           <input className='inputTodos' placeholder='Nombre' value={nombreLocalidad} onChange={nombre} type="text" />
           <label>Precio</label>
           <input className='inputTodos' placeholder='Precio' value={precioLocalidad} onChange={precio} type="text" />
-          <button className='btn' onClick={btnAgregar}>Agregar </button><br /><br /> 
+          <button  onClick={btnAgregar}>Agregar </button><br /><br /> 
       </div>
     </div>
   );

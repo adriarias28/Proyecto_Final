@@ -1,41 +1,4 @@
-/* .jugador-agregado {
-  display: flex;            
-  flex-direction: row;        
-  flex-wrap: wrap;            
-  align-items: center;        
-  gap: 12px;                 
-}
-:root {
-  --pfc-naranja: #FF6000;
-  --pfc-negro: #000;
-  --pfc-blanco: #FFF;
-}
-
-.jugador-card {
-  background: var(--pfc-blanco);
-  border: 2px solid var(--pfc-negro);
-  border-radius: 8px;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  display: flex;
- }
-
-.jugador-agregado p.datos {
-  margin: 0;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.9rem;
-  color: var(--pfc-negro);
-}
-
-.jugador-agregado p.datos strong {
-  color: var(--pfc-naranja);
-}
-.hh{
-    display: flex;
-} */
-
-
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Poppins:wght@400;500&display=swap');
 
 
 .partidos-grid {
@@ -53,13 +16,8 @@
   box-shadow: 0 0 10px #FF6000AA;
   padding: 18px 22px;
   color: #FFFFFF;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Poppins', sans-serif;
   transition: transform 0.3s ease;
-}
-
-.jugador-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 15px #FF6000;
 }
 
 .jugador-agregado {

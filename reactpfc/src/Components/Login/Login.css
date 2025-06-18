@@ -1,14 +1,16 @@
-/* Contenedor principal */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Poppins:wght@400;500&display=swap');
+
+
 .contenedorPrincipalDos {
   display: flex;
   justify-content: center;
   padding: 40px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Poppins', sans-serif;
   background-image: linear-gradient(rgba(255, 255, 255, 0.301), rgba(255, 255, 255, 0.212)), 
     url(../../Images/vecteezy_white-background-with-orange-geometric_11171111-1.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  gap: 10px;
+  gap: 30px;
 }
 
 
@@ -88,10 +90,10 @@ label {
   color: #ffffff;
   padding: 10px;
   font-size: 1rem;
-  font-weight: bold;
   border: none;
   border-radius: 30px;
   cursor: pointer;
+  font-family: 'Poppins', sans-serif;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
@@ -111,10 +113,10 @@ label {
   color: #ffffff;
   padding: 10px;
   font-size: 1rem;
-  font-weight: bold;
   border: none;
   border-radius: 30px;
   cursor: pointer;
+  font-family: 'Poppins', sans-serif;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 

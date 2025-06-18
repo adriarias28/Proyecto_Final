@@ -10,7 +10,7 @@ function AcercadeCom() {
     
     <div>
         <div className='imagenhisto'>
-          <img className='estadio' src={estadio} width={1295} height={800} alt="..." />
+          <img className='estadio' src={estadio} width={1335} height={800} alt="..." />
         </div>
       <div className='container-historia'>
         <div className='historia'> 
@@ -37,8 +37,8 @@ function AcercadeCom() {
             <div className='imagenhisto'>
               <img className='logros' src={logros} width={900} height={500} alt="..." />
             </div><br /><br />
-            <h2 className='tituloHisto'>🏆 Principales Logros</h2><br />
-          <ul>
+            <h2 className='tituloHisto'> Principales Logros</h2><br />
+          <ul className='logrosLista'>
             <li> <strong>Campeón de la Copa Interclubes UNCAF (2006)</strong><br />
               Primer equipo costarricense en ganarla sin pertenecer a los llamados "grandes".</li>
             <li> <strong>Subcampeón Nacional (2005-2006 e Invierno 2009)</strong><br />

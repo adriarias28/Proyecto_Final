@@ -1,13 +1,15 @@
-/* Contenedor principal */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Poppins:wght@400;500&display=swap');
+
 .contenedorPrincipal {
   display: flex;
   justify-content: center;
   padding: 40px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Poppins', sans-serif;
   background-image: linear-gradient(rgba(255, 255, 255, 0.301), rgba(255, 255, 255, 0.212)), 
     url(../../Images/vecteezy_white-background-with-orange-geometric_11171111-1.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+  font-size: medium;
 }
 
 /* Contenedor del formulario */
@@ -32,6 +34,7 @@
 
 .titunueva {
   color: #e65c00;
+  font-family: 'Poppins', sans-serif;
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 10px;
@@ -76,11 +79,11 @@ label {
   color: #ffffff;
   padding: 14px;
   font-size: 1rem;
-  font-weight: bold;
   border: none;
   border-radius: 30px;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
+  font-family: 'Poppins', sans-serif;
 }
 
 .btnRegis:hover {

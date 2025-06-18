@@ -1,70 +1,107 @@
-/* Título principal */
-.consultaTitulo {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  text-align: center;
-  font-size: 2rem;
-  color: #ffffff;
-  margin-bottom: 10px;
-  padding-bottom: 30px;
-}
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Poppins:wght@400;500&display=swap');
 
-/* Subtítulo */
-.consultaParrafo {
-  text-align: center;
-  font-size: 1.1rem;
-  color: #555;
-  margin-bottom: 40px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
-/* Contenedor del formulario */
-.consultaInputs {
+/* Fondo general del contenedor */
+.divConsulta {
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 20px;
-  max-width: 500px;
-  margin: 0 auto 0px auto;
-  padding: 0 1rem;
+  justify-content: center;
+  padding: 100px 20px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../../Images/contac.png');
+  background-size: cover;
+  background-position: center;
 }
 
-/* Estilo de los inputs */
-.consultaInputs input {
+/* Formulario principal */
+#formContact {
+  background-color: rgba(255, 255, 255, 0.103);
+  padding: 50px;
+  border-radius: 16px;
+  max-width: 600px;
   width: 100%;
-  padding: 14px;
-  font-size: 1rem;
-  border: 1px solid #cccccc;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  transition: border-color 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-.consultaInputs input:focus {
-  outline: none;
+/* Título y subtítulo */
+.consultaTitulo {
+  font-size: 2rem;
+  color: #e05a0c;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.consultaParrafo {
+  font-size: 1.1rem;
+  color: #dfdddd;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Etiquetas */
+#labelContact {
+  color: #d6d6d6;
+  font-weight: 400;
+  margin-top: 15px;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Input y Textarea */
+.inputCon,
+.inputmensaje {
+  width: 100%;
+  padding: 15px;
+  margin-top: 8px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+.inputCon:focus,
+.inputmensaje:focus {
   border-color: #ff6600;
-  box-shadow: 0 0 0 3px rgba(255, 102, 0, 0.15);
+  box-shadow: 0 0 5px rgba(255, 102, 0, 0.4);
+  outline: none;
 }
 
 /* Botón */
-.btnConsulta {
-  background-color: #0000007a;
-  color: #fff;
-  padding: 12px 24px;
-  font-size: 1rem;
-  font-weight: 600;
+.btnConsul {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: #e55c00;
+  color: white;
+  padding: 14px 28px;
   border: none;
   border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 300;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  align-self: center;
+  transition: background 0.3s ease, transform 0.2s ease;
+  font-family: 'Poppins', sans-serif;
 }
 
-.btnConsulta:hover {
-  background-color: #e55c00;
+.btnConsul:hover {
+  background-color: #47423f;
   transform: scale(1.05);
 }
 
-.divConsulta{
-  background-image: linear-gradient(rgba(255, 255, 255, 0.418), rgba(255, 255, 255, 0.212)), url('../../Images/estacon.jpeg');
-  background-size: cover;
-  height: 800px;
-  background-color: #4e4e4e18;
+/* Responsive */
+@media (max-width: 600px) {
+  #formContact {
+    padding: 25px;
+  }
+
+  .consultaTitulo {
+    font-size: 1.6rem;
+  }
+
+  .inputmensaje {
+    height: 120px;
+  }
 }

@@ -1,13 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Poppins:wght@400;500&display=swap');
+
 /* Contenedor de eventos */
 .eventos-container {
   display: grid;
   gap: 1rem;
-  padding: 2rem;
+  padding: 8.3rem;
   background-color: #1e1e1e;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Poppins', sans-serif;
   margin: auto;
   width: 80%;
   margin-bottom: 40px;
+  
 }
 
 /* Tarjeta de evento */
@@ -16,15 +19,9 @@
   color: white;
   padding: 1.8rem;
   border-radius: 16px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
   overflow: hidden;
-}
-
-.localidad-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.6);
 }
 
 /* Datos del evento */

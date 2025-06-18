@@ -29,10 +29,17 @@ function Test() {
 
     }
 
+    function btnNuevaCuenta() {
+      
+      navigate('/register')
+
+    }
+
    async  function btnIniciar() {
          try {
           const tokenData = await UsuariosCrud.postApiToken(correoPersona, passwordPersona);
     console.log(tokenData);
+
     
     if (tokenData && tokenData.access && tokenData.refresh) {
       // Guardar cada token en una cookie individual
@@ -49,7 +56,7 @@ function Test() {
         path: "/",
       }); 
       
-            navigate("/boleteria");
+            navigate("/mi-perfil");
         } else {
           Swal.fire({
             icon: "error",
@@ -68,9 +75,9 @@ function Test() {
         <div className='contenedorPrincipalDos'>
           <div className='contenedorDosT'>
             <img className='pfc' src={pfc} width={600} alt="..." /> 
-            <h1 className='tituloLogin'>USUARIO REGISTRADO</h1>
+            <h1 className='tituloLogin'>
+            <h3>Iniciar sesión</h3></h1>
             <p className='parraa'>INICIA SESIÓN CON UNA CUENTA EXISTENTE</p>
-            <h3>Iniciar sesión</h3>
             <label htmlFor="">Username</label><br />
             <input className='inpuestii' value={correoPersona} onChange={correo} placeholder='Nombre Usuario'  type="text" /><br /><br />
             <label htmlFor="">Contraseña</label><br />
@@ -78,7 +85,12 @@ function Test() {
             <button className='btnLogin' onClick={btnIniciar}>INGRESAR</button>
           </div>
 
-          
+          <div className='contenedorTres'>
+            <h3 className='tituloLogin'>Usuario nuevo</h3>
+            <p className='parraa'>Crea una nueva cuenta para acelerar tu próxima compra.</p>
+            <button className='btnNuevo' onClick={btnNuevaCuenta}>NUEVA CUENTA</button>
+          </div>
+
         </div>
 
     </div>

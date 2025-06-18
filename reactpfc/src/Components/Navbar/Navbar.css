@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Poppins:wght@400;500&display=swap');
+
 
 .navbar {
   background: rgba(255, 106, 0, 0.95); 
@@ -7,7 +9,7 @@
   justify-content: space-between;
   padding: 0 40px;
   height: 75px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Poppins', sans-serif;
   position: sticky;
   top: 0;
   z-index: 1000;

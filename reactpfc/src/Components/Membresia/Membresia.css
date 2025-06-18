@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Poppins:wght@400;500&display=swap');
+
 .divContainer {
   padding: 250px 200px;
   padding-bottom: 300px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Poppins', sans-serif;
   background-image: linear-gradient(rgba(255, 255, 255, 0.247), rgba(255, 255, 255, 0.733)), url('../../Images/aficion.jpg');
   background-size: cover;
   background-position: center;
@@ -13,7 +15,7 @@
 .tit {
   text-align: center;
   color: #ff6600;
-  font-size: 2rem;
+  font-size: 2.5rem;
   margin-bottom: 15px;
 }
 

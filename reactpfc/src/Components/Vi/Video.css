@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Poppins:wght@400;500&display=swap');
+
 .vid {
   width: 100%;
   height: 100vh;              /* Ocupar toda la altura de la pantalla */
@@ -16,10 +18,9 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: rgba(255, 255, 255, 0.836);
+  color: rgba(255, 255, 255, 0.932);
   text-align: center;
-  z-index: 2;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 .video-overlay h1 {
@@ -36,7 +37,8 @@
   cursor: pointer;
   margin-left: 1000px;
   margin-top: 300px;
-  border-radius: 200px;
+  border-radius: 10px;
+  font-family: 'Poppins', sans-serif;
 }
 
 .video-overlay button:hover {

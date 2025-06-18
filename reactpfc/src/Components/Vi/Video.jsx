@@ -32,7 +32,7 @@ function Video() {
         </div>
 
       <div className="video-overlay">
-        <h1>BIENVENIDOS A TIERRA DE TIBURONES</h1>
+        <h1>Bienvenidos a tierra de tiburones</h1>
           <button onClick={btnBoleteria}>Boletería</button>
       </div>
         <div>

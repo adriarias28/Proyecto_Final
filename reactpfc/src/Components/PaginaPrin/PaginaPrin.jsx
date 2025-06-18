@@ -4,7 +4,6 @@ import Jean from '../../Images/Jean.png'
 import AndreyM from '../../Images/AndreyM.png'
 import Hiram from '../../Images/Hiram.png'
 import Gael from '../../Images/Gael.png'
-import Ulises from '../../Images/Ulises.png'
 
 
 function PaginaPrin() {
@@ -36,11 +35,6 @@ function PaginaPrin() {
           <div className='jugt'>
               <img src={Gael} alt="" />
               <h2>Gael Alpizar</h2>
-              <h3>Defensa</h3>
-          </div>
-          <div className='jugt'>
-              <img src={Ulises} alt="" />
-              <h2>Ulises Segura</h2>
               <h3>Defensa</h3>
           </div>
         </div>

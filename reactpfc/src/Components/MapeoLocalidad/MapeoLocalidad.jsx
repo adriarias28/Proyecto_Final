@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import CrudLocalidad from '../../Services/CrudLocalidad'
-import '../../Components/Localidad/Local.css'
+import '../../Components/MapeoLocalidad/MapeoLocalidad.css'
 import Swal from 'sweetalert2'
 
 function MapeoLocalidad({ esAdmin = false }) {
