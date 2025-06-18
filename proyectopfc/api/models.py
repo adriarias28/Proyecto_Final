@@ -16,6 +16,7 @@ class UltimosResultados (models.Model):
 class ProximosEventos (models.Model):
     Eventos = models.CharField(max_length=100)
     Descripcion = models.CharField(max_length=100)
+    Imagen = models.CharField(max_length=100)
     def __str__(self):
         return self.Eventos
     
@@ -31,6 +32,7 @@ class BiografiaJugador (models.Model):
     Club_Actual = models.CharField(max_length=100)
     Pie_Dominante = models.CharField(max_length=100)
     Posicion = models.CharField(max_length=100)
+    Imagen = models.CharField(max_length=100)
     def __str__(self):
         return self.Nacionalidad
     

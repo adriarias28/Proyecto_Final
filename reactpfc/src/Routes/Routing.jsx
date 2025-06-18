@@ -13,14 +13,17 @@ import ProximosEventos from '../Pages/ProximosEventos'
 import Register from '../Pages/Register'
 import UltimosResultados from '../Pages/UltimosResultados'
 import Venta from '../Pages/Venta'
+import TerminosYCondiciones from '../Pages/TerminosYCondiciones'
 import Administrador from '../Pages/Administrador'
 import PaginaPrincipal from '../Pages/PaginaPrincipal'
 import EventosCRUD from '../Components/AccesoAdmin/EventosCRUD'
 import JugadoresCRUD from '../Components/AccesoAdmin/JugadoresCRUD'
 import PartidosCRUD from '../Components/AccesoAdmin/PartidosCRUD'
 import RegistroCRUD from '../Components/AccesoAdmin/RegistroCRUD'
+import UltimosResCrud from '../Components/AccesoAdmin/UltimosResCrud'
 import Localidades from '../Pages/Localidades'
 import LocalidadesCRUD from '../Components/AccesoAdmin/LocalidadesCRUD'
+
 
 
 function Routing() {
@@ -34,6 +37,7 @@ function Routing() {
               <Route path="jugadorescrud" element={<JugadoresCRUD/>}/>
               <Route path="usuarios" element={<RegistroCRUD/>}/>
               <Route path="localidades" element={<LocalidadesCRUD/>}/>
+              <Route path="ultimosResultados" element={<UltimosResCrud/>}/>
             </Route>
             <Route path="/acercade" element={<Acercasde/>}/>
             <Route path="/boleteria" element={<Boleteria/>}/>
@@ -50,6 +54,7 @@ function Routing() {
             <Route path="/venta" element={<Venta/>}/>
             <Route path="/" element={<PaginaPrincipal/>}/>
             <Route path="/localidades" element={<Localidades/>}/>
+            <Route path="/terminosYCondiciones" element={<TerminosYCondiciones/>}/>
 
         </Routes>
       </Router>

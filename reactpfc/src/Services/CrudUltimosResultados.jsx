@@ -1,9 +1,6 @@
-/*import CryptoJS from "crypto-js"; //import para el sha256 */
-    
-    
-    async function getEventos() {
+async function getUltimosResultados() {
     try {
-        const response = await fetch('http://127.0.0.1:8000/api/proximosEventos/', {
+        const response = await fetch('http://127.0.0.1:8000/api/ultimosResultados/ ', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -22,33 +19,35 @@
     }
 }
 
-
 //////////LLAMADO POST//////////
-	
-async function postEventos(Eventos, Descripcion,Imagen) {
+
+async function postUltimosResultados(Resultado, partidos_id) {
     try {
-        const userData = { 
-            Eventos,
-            Descripcion,
-            Imagen
+     
+        const userData3 = { 
+            Resultado, 
+            partidos_id
         };
 
-        console.log(userData);
+        console.log(userData3);
+        
 
-        const response = await fetch("http://127.0.0.1:8000/api/proximosEventos/", {
+
+        const response = await fetch("http://127.0.0.1:8000/api/ultimosResultados/", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(userData)
+            body: JSON.stringify(userData3)
         });
 
-        const resp =  await response.json();
-        console.log('La respuesta del BackEnd:', resp);
+     
+        const resp = await response.json();
+        /* console.log('Respuesta del BK: ' + response.json()); */
         return resp
         
 
-
+        
     } catch (error) {
         console.error('Error posting user:', error);
         throw error;
@@ -57,12 +56,10 @@ async function postEventos(Eventos, Descripcion,Imagen) {
 
 
 //////////////LLAMADO UPDATE/////////////
-//http://127.0.0.1:8000/api/proximosEventos/
 
-
-async function updateEventos(id, data) {
+async function updateUltimosResultados(id, data) {
     try {
-      const response = await fetch(`http://127.0.0.1:8000/api/proximosEventos/${id}/`, {
+      const response = await fetch(`http://127.0.0.1:8000/api/ultimosResultados/${id}/`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -83,14 +80,13 @@ async function updateEventos(id, data) {
     }
   }
 
-
-
 //////////////LLAMADO DELETE/////////////
 
-
-async function deleteEventos(id) {
+async function deleteUltimosResultados(id) {
+    console.log(id);
+    
     try {
-        const response = await fetch(`http://127.0.0.1:8000/api/proximosEventos/${id}/`, {
+        const response = await fetch(`http://127.0.0.1:8000/api/ultimosResultados/${id}/`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json'
@@ -108,4 +104,4 @@ async function deleteEventos(id) {
     }
 }
 
-export default { getEventos, postEventos, updateEventos, deleteEventos }
+export default {getUltimosResultados, postUltimosResultados,deleteUltimosResultados,updateUltimosResultados,}

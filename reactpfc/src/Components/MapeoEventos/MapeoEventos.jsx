@@ -17,12 +17,14 @@ const[guardarEvento, setguardarEvento] = useState([])
         fetchDataUsers()
     }, []) 
 
-    function eliminarEvento(id) {
-        
-        EventosCrud.deleteEventos(id)
 
+//ELIMINAR 
+    function eliminarEvento(id) {
+        EventosCrud.deleteEventos(id)
     }
 
+
+//EDITAR 
     async function editarEvento(id) {
         const eventoEditar = guardarEvento.find((loc) => loc.id === id);
         if (!eventoEditar) {
@@ -85,6 +87,7 @@ const[guardarEvento, setguardarEvento] = useState([])
                             <p className='butt'>
                                 <button className='botonEliminar' onClick={() => eliminarEvento(data.id)}>Eliminar</button>
                                 <button className='botonEditar' onClick={() => editarEvento(data.id)}>Editar</button>
+                                <img src={data.Imagen} alt="" />
                             </p>
                         </div>
                     )}

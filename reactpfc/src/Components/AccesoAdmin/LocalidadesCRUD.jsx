@@ -8,7 +8,7 @@ function LocalidadesCRUD() {
     <div>
 
         <LocalidadCom/>
-        <MapeoLocalidad/>
+        <MapeoLocalidad esAdmin={true}/>
 
     </div>
   )
