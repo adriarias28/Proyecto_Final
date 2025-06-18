@@ -1,0 +1,71 @@
+/* Base reset para bordes y cajas */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Variables para colores */
+:root {
+  --bg-page: #f9fafb;
+  --bg-card: #ffffff;
+  --text-main: #333;
+  --accent:#e55a00;;
+}
+
+/* Diseño general de la página */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+  background: var(--bg-page);
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+/* Contenedor del componente */
+.terms-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  background: var(--bg-card);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* Encabezados */
+.terms-container h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--accent);
+}
+
+.terms-container h3 {
+  font-size: 1.2rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 0.2rem;
+}
+
+/* Párrafos */
+.terms-container p {
+  font-size: 1rem;
+  margin: 0.5rem 0;
+}
+
+/* Responsividad */
+@media (max-width: 600px) {
+  .terms-container {
+    padding: 1rem;
+    margin: 1rem;
+  }
+
+  .terms-container h1 {
+    font-size: 1.5rem;
+  }
+}
+
+.ip{
+  display: flex;
+}

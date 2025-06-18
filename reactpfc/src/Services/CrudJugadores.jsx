@@ -31,7 +31,7 @@ async function postBiografiaJugador(Nombre_Completo,
             Posicion,
             Numero,
             Club_Actual,
-            Pie_Dominante) {
+            Pie_Dominante, Imagen) {
     try {
      
         /* const userData = { 
@@ -75,10 +75,12 @@ async function postBiografiaJugador(Nombre_Completo,
             Posicion,
             Numero,
             Club_Actual,
-            Pie_Dominante
+            Pie_Dominante,
+            Imagen
         };
 
-
+        console.log(userData3);
+        
 
 
         const response = await fetch("http://127.0.0.1:8000/api/biografiaJugador/", {

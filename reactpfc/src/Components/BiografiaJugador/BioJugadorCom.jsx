@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import CrudJugadores from '../../Services/CrudJugadores'
 import '../../Components/BiografiaJugador/BioJugador.css'
+import uploadImageToS3 from '../../Components/AWS/AwsConection'
+
 
 
 function BioJugadorCom() {
@@ -16,6 +18,7 @@ const[posicionJugador,setPosicionJugador] = useState('')
 const[numeroJugador,setNumeroJugador] = useState('')
 const[clubActual,setClubActual] = useState('')
 const[pieDominante,setPieDominante] = useState('')
+const[imagenJugador,setImagenJugador] = useState(null)
 
 
 
@@ -63,6 +66,10 @@ const[pieDominante,setPieDominante] = useState('')
     setPieDominante(evento.target.value)
   }
 
+  function imagen(evento) {
+    setImagenJugador(evento.target.files[0])
+  }
+
   function setear(){
     setNombreJugador('')
     setFechaNacimiento('')
@@ -75,11 +82,14 @@ const[pieDominante,setPieDominante] = useState('')
     setNumeroJugador('')
     setClubActual('')
     setPieDominante('')
+    setImagenJugador('')
   }
 
-  function btnAgregarJu() {
+    async function btnAgregarJu() {
+    const rest_amazon = await uploadImageToS3(imagenJugador)
+    console.log(rest_amazon.Location);
     
-    CrudJugadores.postBiografiaJugador(nombreJugador,fechaNacimiento,edadJugador,lugarNacimiento,nacionalidadJugador,alturaJugador,pesoJugador,posicionJugador,numeroJugador,clubActual,pieDominante)
+    CrudJugadores.postBiografiaJugador(nombreJugador,fechaNacimiento,edadJugador,lugarNacimiento,nacionalidadJugador,alturaJugador,pesoJugador,posicionJugador,numeroJugador,clubActual,pieDominante, rest_amazon.Location)
     setear()
 
   }
@@ -116,7 +126,8 @@ const[pieDominante,setPieDominante] = useState('')
           <input className='inputTodos' placeholder='Club' value={clubActual} onChange={club} type="text" />
           <label>Pie dominante</label>
           <input className='inputTodos' placeholder='Dominante' value={pieDominante} onChange={dominante} type="text" /><br />
-          <input type="file" /><br /><br />
+
+          <input className='img' placeholder='Imagen' onChange={imagen} type="file"/><br /><br />
 
           <button className='btnJugador' onClick={btnAgregarJu}>Agregar Jugador</button>
       </div>       

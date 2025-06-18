@@ -4,9 +4,10 @@ import PaginaPrin from '../Components/PaginaPrin/PaginaPrin'
 import NavbarCom from '../Components/Navbar/NavbarCom'
 import Video from '../Components/Vi/Video'
 import FooderCom from '../Components/Fooder/FooderCom'
-import UltimosResulCom from '../Components/UltimosResultados/UltimosResulCom'
+/* import UltimosResulCom from '../Components/UltimosResultados/UltimosResulCom' */
 import MapeoEventos from '../Components/MapeoEventos/MapeoEventos'
 import MapeoPartidos from '../Components/MapeoPartidos/MapeoPartidos'
+import MapeoJuga from '../Components/MapeoJugadores/MapeoJuga'
 
 
 function PaginaPrincipal() {
@@ -14,7 +15,8 @@ function PaginaPrincipal() {
     <div>
       <NavbarCom/>
       <Video/>
-      <UltimosResulCom/>
+      {/* <UltimosResulCom/> */}
+      <MapeoJuga/>
       <PaginaPrin/>
       <MapeoEventos/>
       <MapeoPartidos/>

@@ -5,7 +5,6 @@ import AndreyM from '../../Images/AndreyM.png'
 import Hiram from '../../Images/Hiram.png'
 import Gael from '../../Images/Gael.png'
 
-
 function PaginaPrin() {
 
 
@@ -14,6 +13,7 @@ function PaginaPrin() {
     
 
     <div className="paginaPrin">
+      <postJug/>
 
         <h1 className="titulo">Nuestros Jugadores</h1>
         <div className="jugadoresCont">

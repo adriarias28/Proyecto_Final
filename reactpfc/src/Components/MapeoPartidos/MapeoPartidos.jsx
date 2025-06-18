@@ -87,15 +87,18 @@ function eliminar(id) {
 
 
 
-
-   // function editar() {
-   // CrudPartidos.updatePartidos(ubicacionPartido,fechaPartido,horaPartido,equiposPartido)
-   // } 
-
   return (
     <div className="partidos-grid">
         {guardarPartidos.map((dato,index) => (
         <div key={dato.id} className="jugador-card">
+          {esAdmin === false &&(
+            <div className='jugador-agregado'>
+              <p className='datos'><strong>Ubicacion: </strong>{dato.Ubicacion}</p><br />
+              <p className='datos'><strong>Equipos: </strong>{dato.Equipos}</p><br />
+            </div>
+          )
+
+          }
             <div className='jugador-agregado'>
               <div className='hh'>
                   <p className='datos'><strong>Ubicacion: </strong>{dato.Ubicacion}</p><br />

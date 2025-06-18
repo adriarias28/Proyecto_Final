@@ -1,4 +1,5 @@
 import '../../Components/Fooder/Fooder.css';
+import { Link, useNavigate} from 'react-router-dom'
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaFacebookF, FaInstagram, FaTiktok } from 'react-icons/fa';
 
 function FooderCom() {
@@ -27,7 +28,7 @@ function FooderCom() {
           <li>Política de Privacidad</li>
           <li>Accesibilidad</li>
           <li>Política de Envío</li>
-          <li>Términos y Condiciones</li>
+          <li className='tc'><Link to="/terminosYCondiciones">TÉrminos Y Condiciones</Link></li>
           <li>Política de Reembolso</li>
         </ul>
       </div>

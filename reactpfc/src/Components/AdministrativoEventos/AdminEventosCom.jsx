@@ -1,34 +1,40 @@
 import { useState, useEffect} from 'react'
 import '../../Components/AdministrativoEventos/AdminEventos.css'
 import EventosCrud from '../../Services/EventosCrud'
+import uploadImageToS3 from '../../Components/AWS/AwsConection'
 
 function AdminEventosCom() {
 
   const [nombreEvento,setnombreEvento]=useState("")
   const [nombreDescrip,setnombreDescrip]=useState("")
+  const[imagenEvento,setImagenEvento] = useState(null)
 
   function eventos(evento) {
     
     setnombreEvento(evento.target.value)
-
   }
 
   function descripcion(evento) {
     
     setnombreDescrip(evento.target.value)
+  }
 
+  function imagen(evento) {
+    setImagenEvento(evento.target.files[0])
   }
 
   function seteareventos() {
 
     setnombreEvento('')
     setnombreDescrip('')
+    setImagenEvento('')
     
   }
 
-  function btnEvento() {
-
-    EventosCrud.postEventos(nombreEvento,nombreDescrip)    
+  async function btnEvento() {
+    const rest_amazon = await uploadImageToS3(imagenEvento)
+    console.log(rest_amazon.Location);
+    EventosCrud.postEventos(nombreEvento,nombreDescrip,rest_amazon.Location) 
     seteareventos()
 
   }
@@ -46,7 +52,7 @@ function AdminEventosCom() {
         <label htmlFor="descripcion">Descripción</label>
         <input value={nombreDescrip} onChange={descripcion} type="text" id="descripcion" placeholder="Descripción del evento" />
 
-        <input type="file" />
+        <input className='img' placeholder='Imagen' onChange={imagen} type="file"/><br /><br />
 
         <button onClick={btnEvento} className="admin-btn">Registrar Evento</button>
         </div>

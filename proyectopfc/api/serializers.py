@@ -15,8 +15,8 @@ class UltimosResultadosSerializers(serializers.ModelSerializer):
     partidos=PartidosSerializer(read_only=True)
     partidos_id= serializers.PrimaryKeyRelatedField(queryset=Partidos.objects.all(), source='Partidos' ,write_only=True)
     class Meta:
-        model=UltimosResultados
-        fields = '__all__'
+        model = UltimosResultados
+        fields = ['id', 'Resultado', 'partidos', 'partidos_id']
         
 class ProximosEventosSerializers(serializers.ModelSerializer):
     class Meta: 
