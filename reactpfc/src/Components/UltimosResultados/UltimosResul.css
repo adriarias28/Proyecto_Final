@@ -1,92 +1,113 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Poppins:wght@400;500&display=swap');
-
-
-.bodyUltimosResul {
-  font-family: 'Poppins', sans-serif;
-  background-color: #f9f9f9; /* fondo suave para mejor lectura */
-  color: #333; /* texto un poco más oscuro para mejor contraste */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 10rem 1rem;
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
-.df {
-  margin: 0 auto; /* centrado horizontal */
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap; /* que los elementos puedan ir a la siguiente línea si no entran */
-  gap: 2rem;
-  max-width: 1200px; /* límite máximo para que no se extienda demasiado */
-}
-
-
-.fecha, .equipos, .fut {
-  width: 250px;
-  text-align: center;
-}
-
-.fecha {
-  font-weight: 700;
-  margin-bottom: 1rem;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  font-size: 1.1rem;
-  color: #222;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.equipos {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+/* Contenedor principal con vibra de cancha y puerto */
+.bodyUltimosResul {
+  max-width: 540px;
+  margin: 40px auto;
+  padding: 26px;
   background-color: #fff;
-  padding: 1rem 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.3s ease;
-  cursor: default;
+  border: 4px solid #FF6000; /* naranja PFC :contentReference[oaicite:1]{index=1} */
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+  font-family: 'Roboto', sans-serif;
+  color: #000;
 }
 
-.equipos:hover {
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-}
-
-.equipos img {
-  width: 50px;
-  height: 50px;
-  object-fit: contain;
-  border-radius: 6px;
-  transition: transform 0.3s ease;
-}
-
-.equipos img:hover {
-  transform: scale(1.1);
-}
-
-.equipos h1 {
-  margin: 0 10px;
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #333;
-  user-select: none;
-}
-
-.fut {
-  font-size: 0.9rem;
-  color: #555;
-  margin-top: 2rem;
-  line-height: 1.4;
-}
-
+/* Título grande con acento de estadio */
 .tituloUl {
   text-align: center;
-  margin-bottom: 3rem;
   font-size: 2rem;
-  font-weight: 700;
-  color: #070301; 
-  text-transform: uppercase;
+  margin-bottom: 18px;
+  color: #FF6000;
+  text-shadow: 1px 1px #000;
   letter-spacing: 2px;
-  margin-bottom: 100px;
+}
+
+/* Etiquetas estilo marcador */
+.bodyUltimosResul label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #FF6000;
+}
+
+/* Inputs blancos con borde y sombra suave */
+.inputTodos {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 16px;
+  border: 2px solid #000;
+  border-radius: 6px;
+  background-color: #fff;
+  font-size: 1rem;
+  color: #000;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.inputTodos:focus {
+  border-color: #FF6000;
+  box-shadow: 0 0 5px rgba(255,96,0,0.5);
+  outline: none;
+}
+
+/* Select con detalles de cancha y puerto */
+.bodyUltimosResul select {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 20px;
+  border: 2px solid #000;
+  border-radius: 6px;
+  background-color: #fff;
+  font-size: 1rem;
+  color: #000;
+}
+.bodyUltimosResul select:focus {
+  border-color: #FF6000;
+  box-shadow: 0 0 5px rgba(255,96,0,0.5);
+  outline: none;
+}
+
+/* Botón con estilo camiseta PFC y efecto hover */
+/* (el resto del CSS permanece igual, solo se actualiza la sección del botón) */
+
+/* Botón compacto con estilo camiseta PFC, centrado */
+.butt {
+  display: block;
+  width: 60%;                /* botón más pequeño */
+  max-width: 200px;
+  margin: 10px auto 0;       /* centrado con margin auto */
+  padding: 10px 0;           /* alto reducido */
+  font-size: 1rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  background-color: #FF6000; /* naranja oficial */
+  color: #fff;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: background-color 0.2s, transform 0.1s, box-shadow 0.2s;
+}
+.butt:hover {
+  background-color: #e65500;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+}
+.butt:active {
+  transform: scale(0.97);
+}
+
+
+/* Encabezado secundario con estilo de cancha */
+.bodyUltimosResul h1 {
+  font-size: 1.4rem;
+  margin: 30px 0 12px;
+  color: #000;
+  text-align: center;
+  border-bottom: 2px solid #FF6000;
+  padding-bottom: 4px;
 }

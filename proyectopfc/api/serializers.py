@@ -14,9 +14,15 @@ class PartidosSerializer(serializers.ModelSerializer):
 class UltimosResultadosSerializers(serializers.ModelSerializer):
     partidos=PartidosSerializer(read_only=True)
     partidos_id= serializers.PrimaryKeyRelatedField(queryset=Partidos.objects.all(), source='Partidos' ,write_only=True)
+    fecha = serializers.SerializerMethodField()
+    equipos = serializers.SerializerMethodField()
     class Meta:
         model = UltimosResultados
-        fields = ['id', 'Resultado', 'partidos', 'partidos_id']
+        fields = ['id', 'Resultado', 'partidos', 'partidos_id', 'fecha', 'equipos']
+    def get_fecha(self, obj):
+        return obj.Partidos.Fecha if obj.Partidos else None
+    def get_equipos(self, obj):
+        return obj.Partidos.Equipos if obj.Partidos else None
         
 class ProximosEventosSerializers(serializers.ModelSerializer):
     class Meta: 

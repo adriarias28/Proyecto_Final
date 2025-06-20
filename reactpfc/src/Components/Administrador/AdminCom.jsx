@@ -30,6 +30,7 @@ function AdminCom() {
           <Link to="eventos">Crud Eventos</Link>
           <Link to="localidades">Crud Localidades</Link>
           <Link to="usuarios">Crud Usuarios</Link>
+          <Link to="ultimosResultados">Crud Ultimos Resultados</Link>
         </nav>
         <button className="logout-btn" onClick={handleLogout}>Cerrar sesión</button>
       </div>

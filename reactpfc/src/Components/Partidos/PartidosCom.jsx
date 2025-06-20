@@ -36,6 +36,7 @@ const[equiposPartido,setEquiposPartido] = useState('')
 
   function btnAgregarPar() {
     CrudPartidos.postPartidos(ubicacionPartido,fechaPartido,horaPartido,equiposPartido)
+    location.reload();
     setear()
 
   }
@@ -44,7 +45,6 @@ const[equiposPartido,setEquiposPartido] = useState('')
     <div className='contePrin'>
       <div className='di'>
       <div className='conDiv'>
-        <h1 className='tituloPartido'>Partidos</h1>
           <label>Ubicación</label>
           <input className='inputTodos' placeholder='Ubicacion' value={ubicacionPartido} onChange={ubicacion} type="text" />
           <label>Fecha</label>

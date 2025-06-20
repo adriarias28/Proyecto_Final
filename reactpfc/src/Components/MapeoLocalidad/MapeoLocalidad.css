@@ -1,12 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600;700&display=swap');
-
 :root {
-  --naranja: #f56511;
-  --gris: #2d2d2d;
+  --naranja: #F56511;
+  --gris: #2D2D2D;
   --blanco: #fff;
-  --borde: #c92323;
+  --borde: #C92323;
 }
-
 .localidad-container {
   display: grid;
   gap: 2rem;
@@ -17,7 +15,6 @@
   margin: auto;
   color: var(--blanco);
 }
-
 .localidad-card {
   background-color: var(--gris);
   border-radius: 14px;
@@ -25,29 +22,24 @@
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
   transition: transform 0.2s ease;
 }
-
 .localidad-card:hover {
   transform: translateY(-4px);
 }
-
 .entrada-info {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-
 .tipo-entrada {
   font-size: 1.3rem;
   font-weight: 700;
   color: var(--naranja);
 }
-
 .precio-entrada {
   font-size: 1.2rem;
   font-weight: 600;
   color: var(--blanco);
 }
-
 .cantidad-control {
   display: flex;
   justify-content: center;
@@ -55,7 +47,6 @@
   margin-top: 1rem;
   gap: 10px;
 }
-
 .cantidad-btn {
   background-color: var(--naranja);
   color: var(--blanco);
@@ -68,24 +59,20 @@
   font-weight: bold;
   transition: background 0.3s;
 }
-
 .cantidad-btn:hover {
-  background-color: #ff7a2b;
+  background-color: #FF7A2B;
 }
-
 .cantidad-num {
   font-size: 1.1rem;
   font-weight: 600;
   padding: 0 10px;
 }
-
 .botones-partidos {
   margin-top: 1.2rem;
   display: flex;
   gap: 10px;
   justify-content: flex-end;
 }
-
 .boton {
   border: none;
   padding: 6px 14px;
@@ -95,36 +82,29 @@
   transition: 0.3s ease;
   font-size: 0.9rem;
 }
-
 .boton.delete {
-  background-color: #e63946;
+  background-color: #E63946;
   color: white;
 }
-
 .boton.delete:hover {
-  background-color: #c82333;
+  background-color: #C82333;
 }
-
 .boton.update {
-  background-color: #0077cc;
+  background-color: #0077CC;
   color: white;
 }
-
 .boton.update:hover {
-  background-color: #005fa3;
+  background-color: #005FA3;
 }
-
 .total-container {
   background-color: var(--gris);
   padding: 1rem 1.5rem;
   border-radius: 12px;
   font-size: 1.1rem;
 }
-
 .total-container p {
   margin: 0.5rem 0;
 }
-
 .btnPagar {
   margin-top: 1rem;
   background-color: var(--naranja);
@@ -137,7 +117,7 @@
   cursor: pointer;
   transition: background 0.3s ease;
 }
-
 .btnPagar:hover {
-  background-color: #ff7a2b;
+  background-color: #FF7A2B;
 }
+

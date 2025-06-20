@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import CrudLocalidad from '../../Services/CrudLocalidad'
 import '../../Components/MapeoLocalidad/MapeoLocalidad.css'
 import Swal from 'sweetalert2'
+import Paypal from '../../Components/Boleteria/PayPal'
 
 function MapeoLocalidad({ esAdmin = false }) {
 
@@ -20,7 +21,7 @@ const[guardarLocalidad, setGuardarLocalidad] = useState([])
 
 //ELIMINAR
 function eliminar(id) {
-
+  location.reload();
     CrudLocalidad.deleteLocalidades(id)
 
     } 
@@ -58,6 +59,7 @@ function eliminar(id) {
 
     if (formValues) {
       try {
+        location.reload();
         await CrudLocalidad.updateLocalidades(id, formValues);
 
         setGuardarLocalidad(prev =>
@@ -138,6 +140,7 @@ function eliminar(id) {
     } <div>IVA incluido</div></p>
     <button className='btnPagar'>PAGAR</button>
   </div>
+  <Paypal/>
 </div>
 
   )

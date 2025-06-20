@@ -88,7 +88,7 @@ const[imagenJugador,setImagenJugador] = useState(null)
     async function btnAgregarJu() {
     const rest_amazon = await uploadImageToS3(imagenJugador)
     console.log(rest_amazon.Location);
-    
+    location.reload();
     CrudJugadores.postBiografiaJugador(nombreJugador,fechaNacimiento,edadJugador,lugarNacimiento,nacionalidadJugador,alturaJugador,pesoJugador,posicionJugador,numeroJugador,clubActual,pieDominante, rest_amazon.Location)
     setear()
 

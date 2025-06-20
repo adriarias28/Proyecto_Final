@@ -1,10 +1,10 @@
-/* .ptcb{
-background-color: var(--pfc-blanco);
-  border-left: 4px solid var(--pfc-naranja);
+.diivtc{
+  background-color: #fff;
   border-radius: 8px;
-  box-shadow: 0 2px 6px var(--sombra);
-  width: 100%;
-  max-width: 360px;
-  padding: 0.8rem;
-  font-size: 0.9rem;
-} */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  padding: 16px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

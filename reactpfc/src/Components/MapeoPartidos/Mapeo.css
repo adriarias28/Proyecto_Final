@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Poppins:wght@400;500&display=swap');
 
 
-.partidos-grid {
+.partidoss {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 20px;
@@ -10,39 +10,39 @@
   margin: 0 auto;
 }
 
-.jugador-card {
-  background-color: #000000;
+.cardjugador {
+  background-color: white;
   border-radius: 10px;
   box-shadow: 0 0 10px #FF6000AA;
   padding: 18px 22px;
-  color: #FFFFFF;
+  color: black;
   font-family: 'Poppins', sans-serif;
   transition: transform 0.3s ease;
 }
 
-.jugador-agregado {
+.jugadoresagregados{
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
 }
 
-.hh {
+.dh {
   margin-bottom: 12px;
 }
 
-.datos {
+.p {
   font-size: 14px;
   margin: 6px 0;
   line-height: 1.3;
   color: #FF6000;
 }
 
-.datos strong {
-  color: #FFFFFF;
+.p {
+  color: black;
 }
 
-.botones-partidos {
+.partidosbotones {
   display: flex;
   justify-content: flex-end;
   gap: 12px;
@@ -76,7 +76,15 @@
   background-color: #FF6000;
   color: #000000;
 }
-
-.but {
+.buttt {
   margin: 0;
+}
+
+
+.h1partido{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.5rem;
+  color: black;
+  text-align: center;
+  margin: 2rem 0;
 }

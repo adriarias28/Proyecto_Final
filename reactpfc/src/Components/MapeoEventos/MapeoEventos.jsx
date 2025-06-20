@@ -77,9 +77,11 @@ const[guardarEvento, setguardarEvento] = useState([])
 
   return (
     <div className="eventos-container">
+        <h1>Próximos Eventos</h1>
          {guardarEvento.map((data,index) => ( 
             <div key={data.id} className="evento-card">
                 <div>
+                     <img className='imm' src={data.Imagen} alt="" />
                      <p className='datoevento'><strong>Evento: </strong>{data.Eventos}</p>
                      <p className='datoevento'><strong>Descripcion: </strong>{data.Descripcion}</p>
                     {esAdmin && (
