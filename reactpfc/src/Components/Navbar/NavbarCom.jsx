@@ -36,6 +36,7 @@ function NavbarCom() {
           <li><Link to="/jugadores">Jugadores</Link></li>
           <li><Link to="/proximoseventos">Próximos Eventos</Link></li>
           <li><Link to="/membresia">Socios</Link></li>
+          <li><Link to="/boleteria">Boleteria</Link></li>
           <li><Link to="/acercade">Historia</Link></li>
           <li><Link to="/contactos">Contactanos</Link></li>
 

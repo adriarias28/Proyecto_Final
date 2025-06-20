@@ -23,6 +23,7 @@ import RegistroCRUD from '../Components/AccesoAdmin/RegistroCRUD'
 import UltimosResCrud from '../Components/AccesoAdmin/UltimosResCrud'
 import Localidades from '../Pages/Localidades'
 import LocalidadesCRUD from '../Components/AccesoAdmin/LocalidadesCRUD'
+import MiPerfil from '../Pages/Perfil'
 
 
 
@@ -55,6 +56,7 @@ function Routing() {
             <Route path="/" element={<PaginaPrincipal/>}/>
             <Route path="/localidades" element={<Localidades/>}/>
             <Route path="/terminosYCondiciones" element={<TerminosYCondiciones/>}/>
+            <Route path="/mi-perfil" element={<MiPerfil/>}/>
 
         </Routes>
       </Router>

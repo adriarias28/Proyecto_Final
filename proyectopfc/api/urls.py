@@ -1,6 +1,6 @@
 from django.urls import path
 from .views import PartidosListCreateView,PartidosDetailView,UltimosResultadosListCreateView,UltimosResultadosDetailView, ProximosEventosListCreateView, ProximosEventosDetailView, BiografiaJugadorListCreateView, BiografiaJugadorDetailView, UsuarioListCreateView, UsuarioDetailView, MembresiaListCreateView, MembresiaDetailView, MetodosPagoListCreateView, MetodosPagoDetailView, LocalidadesListCreateView, LocalidadesDetailView, DetalleVentaListCreateView, DetalleVentaDetailView, LocalidadDetalleVentaListCreateView, LocalidadDetalleVentaDetailView, VentaListCreateView, VentaDetailView
-from .views import CustomTokenObtainPairView
+from .views import CustomTokenObtainPairView, UserGroupView
 from rest_framework_simplejwt.views import TokenRefreshView
 
 urlpatterns = [
@@ -26,8 +26,9 @@ urlpatterns = [
     path('localidadDetalleVenta/<int:pk>/',LocalidadDetalleVentaDetailView.as_view(), name='localidadDetalleVenta-editar-actualizar'),
     path('venta/',VentaListCreateView.as_view(),name='venta-listar-crear'),
     path('venta/<int:pk>/',VentaDetailView.as_view(), name='venta-editar-actualizar'),
+    path('usergroup/',UserGroupView.as_view(), name='usergroup-listar-crear'),
     #Tokens
-    path('api/token/', CustomTokenObtainPairView.as_view(), name='token_obtain_pair'),
-    path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+    path('token/', CustomTokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     
 ]

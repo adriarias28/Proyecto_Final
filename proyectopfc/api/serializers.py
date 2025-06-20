@@ -1,6 +1,17 @@
 from .models import Partidos, UltimosResultados, ProximosEventos, BiografiaJugador, Usuario, Membresia, MetodosPago, Localidades, DetalleVenta, LocalidadDetalleVenta, Venta
 from rest_framework import serializers
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User, Group
+
+UserGroup = User.groups.through
+
+class UserGroupSerializers(serializers.ModelSerializer):
+    class Meta:
+        model=UserGroup
+        fields = '__all__'     
+    def validate(self, data):
+        if UserGroup.objects.filter(user_id=data['user'], group_id=data['group']).exists():
+            raise serializers.ValidationError("Ya tiene ese grupo asignado.")
+        return data
 
 class PartidosSerializer(serializers.ModelSerializer):
     class Meta:
@@ -127,8 +138,10 @@ class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):
 
         # Obtener el grupo del usuario (rol)
         groups = self.user.groups.values_list('name', flat=True)
+        user = self.user.groups.values_list('name', flat=True)
 
         # Agrega el primer grupo como 'role'
         data['role'] = groups[0] if groups else None
+        data['id'] = self.user.id 
 
         return data

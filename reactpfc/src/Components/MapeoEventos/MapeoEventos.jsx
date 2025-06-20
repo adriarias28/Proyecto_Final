@@ -82,12 +82,12 @@ const[guardarEvento, setguardarEvento] = useState([])
                 <div>
                      <p className='datoevento'><strong>Evento: </strong>{data.Eventos}</p>
                      <p className='datoevento'><strong>Descripcion: </strong>{data.Descripcion}</p>
+                     <img src={data.Imagen} className='imagenDato' alt="" />
                     {esAdmin && (
                         <div className='botones'>
                             <p className='butt'>
                                 <button className='botonEliminar' onClick={() => eliminarEvento(data.id)}>Eliminar</button>
                                 <button className='botonEditar' onClick={() => editarEvento(data.id)}>Editar</button>
-                                <img src={data.Imagen} alt="" />
                             </p>
                         </div>
                     )}

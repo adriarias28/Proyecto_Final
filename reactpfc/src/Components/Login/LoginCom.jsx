@@ -4,14 +4,16 @@ import UsuariosCrud from '../../Services/UsuariosCrud'
 import "../../Components/Login/Login.css"
 import pfc from '../../Images/pfc.jpg'
 import Cookies from 'js-cookie'
+import tiburon from '../../Images/tiburon.png'
+import Swal from 'sweetalert2'
 
 function Test() {
 
     const[correoPersona,setcorreoPersona]=useState("")
     const[passwordPersona,setpasswordPersona]=useState("")
-    /* const [usuarios,setUsuarios]=useState() */
-
     const navigate = useNavigate()
+    const [loading, setLoading] = useState(false); //costante para recargar
+
 
     function correo(evento) {
 
@@ -34,7 +36,9 @@ function Test() {
    async  function btnIniciar() {
          try {
           const tokenData = await UsuariosCrud.postApiToken(correoPersona, passwordPersona);
-    console.log(tokenData);
+
+      setLoading(true);
+      setTimeout(() => navigate('/mi-perfil'), 2000);
 
     
     if (tokenData && tokenData.access && tokenData.refresh) {
@@ -51,16 +55,25 @@ function Test() {
         sameSite: "Strict",
         path: "/",
       }); 
-      
-            navigate("/mi-perfil");
-        } else {
-          Swal.fire({
-            icon: "error",
-            title: "datos incorrectos",
-            text: "llene los datos de nuevo",
-              });
+      Cookies.set("role", tokenData.role, {
+        expires: 7, // Cookie para guardar el rol
+        secure: true,
+        sameSite: "Strict",
+        path: "/",
+      });
+      Cookies.set("id", tokenData.id, {
+      expires: 7, // Cookie para guardar el ID del usuario
+      secure: true,
+      sameSite: "Strict",
+      path: "/",
+      }); 
         }
         } catch (error) {
+                Swal.fire({
+        icon: "error",
+        title: "Error",
+        text: "Usuario o contraseña incorrecto"
+      });
         }
             }
 
@@ -87,7 +100,20 @@ function Test() {
             <button className='btnNuevo' onClick={btnNuevaCuenta}>NUEVA CUENTA</button>
           </div>
 
+          <div>
+              {loading && (
+                <div className="LoadingOverlay">
+                  <div className="LoadingContent">
+                      <img src={tiburon} alt="Cargando" className="LoadingLogo" />
+                      <div className="Spinner"></div>
+                  </div>
+                </div>
+              )}
+          </div>
+
         </div>
+
+
 
     </div>
   )

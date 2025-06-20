@@ -4,6 +4,7 @@ import Swal from 'sweetalert2'
 import UsuariosCrud from '../../Services/UsuariosCrud'
 import "../../Components/Registro/Registro.css"
 import pfc from '../../Images/pfc.jpg'
+import UserGroupCrud from '../../Services/UserGroupCrud'
 
 
 function RegistroCom() {
@@ -56,7 +57,7 @@ function RegistroCom() {
 
     }
 
-    function btnRegistrar() {
+    async function btnRegistrar() {
 
 
 
@@ -74,7 +75,12 @@ function RegistroCom() {
         });
       }else{ 
       
-      UsuariosCrud.postUsuarios(nombrePersona, apellidoPersona, correoPersona, passwordPersona);
+      const respuesta = await UsuariosCrud.postUsuarios(nombrePersona, apellidoPersona, correoPersona, passwordPersona);
+      console.log(respuesta);
+      const respuestaDos = await UserGroupCrud.postUserGroup(respuesta.id)
+      console.log(respuestaDos);
+      
+      
       Swal.fire({
           title: "Registrado correctamente",
           icon: "success",
@@ -98,9 +104,9 @@ function RegistroCom() {
               <h3 className='titunueva'>NUEVA CUENTA</h3>
               <p className='parra'>¡GRACIAS POR REGISTRARSE EN PUNTARENAS FÚLTBOL CLUB!</p>
               <label htmlFor="">Username</label><br />
-              <input className='inpuesti' value={nombrePersona} onChange={nombre} placeholder='Ingrese tu nombre' type="text" /><br /><br />
+              <input className='inpuesti' value={nombrePersona} onChange={nombre} placeholder='Ingrese un nombre de usuario' type="text" /><br /><br />
               <label htmlFor="">Nombre y Apellido</label><br />
-              <input className='inpuesti' value={apellidoPersona} onChange={apellido} placeholder='Ingrese tu apellido' type="text" /><br /><br />
+              <input className='inpuesti' value={apellidoPersona} onChange={apellido} placeholder='Ingrese tu nombre' type="text" /><br /><br />
               <label htmlFor="">Correo Electrónico</label><br />
               <input className='inpuesti' value={correoPersona} onChange={correo} placeholder='Ingrese su correo electrónico' type="e-mail" /><br /><br />
               <label htmlFor="">Contraseña</label><br />

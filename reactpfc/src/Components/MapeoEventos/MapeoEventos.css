@@ -4,13 +4,10 @@
 .eventos-container {
   display: grid;
   gap: 1rem;
-  padding: 8.3rem;
+  padding: 10rem;
   background-color: #1e1e1e;
   font-family: 'Poppins', sans-serif;
-  margin: auto;
-  width: 80%;
-  margin-bottom: 40px;
-  
+  text-align: center;
 }
 
 /* Tarjeta de evento */
@@ -19,7 +16,6 @@
   color: white;
   padding: 1.8rem;
   border-radius: 16px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
   overflow: hidden;
 }
@@ -77,3 +73,15 @@
   color: #d94e00;
   border-color: #d94e00;
 }
+
+/* Imagen */
+.imagenDato {
+  width: 70%;
+  height: auto;
+  max-height: 400px;
+  border-radius: 14px;
+  object-fit: cover;
+  margin-top: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+

@@ -1,6 +1,13 @@
-from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
+from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView, ListAPIView, CreateAPIView, DestroyAPIView, UpdateAPIView
 from .models import Partidos, UltimosResultados, ProximosEventos, BiografiaJugador, Usuario, Membresia, MetodosPago, Localidades, DetalleVenta, LocalidadDetalleVenta, Venta 
-from .serializers import PartidosSerializer, UltimosResultadosSerializers, ProximosEventosSerializers, BiografiaJugadoresSerializers, UserSerializers, MembresiaSerializers, MetodosPagoSerializers, LocalidadesSerializers, DetalleVentaSerializers, LocalidadDetalleVentaSerializers, VentaSerializers
+from .serializers import PartidosSerializer, UltimosResultadosSerializers, ProximosEventosSerializers, BiografiaJugadoresSerializers, UserSerializers, MembresiaSerializers, MetodosPagoSerializers, LocalidadesSerializers, DetalleVentaSerializers, LocalidadDetalleVentaSerializers, VentaSerializers, UserGroupSerializers
+from django.contrib.auth.models import User
+
+UserGroup = User.groups.through
+
+class UserGroupView(ListCreateAPIView):
+    queryset = UserGroup.objects.all()
+    serializer_class = UserGroupSerializers
 
 class PartidosListCreateView(ListCreateAPIView):
     queryset = Partidos.objects.all()
@@ -9,6 +16,7 @@ class PartidosListCreateView(ListCreateAPIView):
 class PartidosDetailView(RetrieveUpdateDestroyAPIView):
     queryset = Partidos.objects.all()
     serializer_class = PartidosSerializer
+    
 
 class UltimosResultadosListCreateView(ListCreateAPIView):
     queryset = UltimosResultados.objects.all()
@@ -35,11 +43,11 @@ class BiografiaJugadorDetailView(RetrieveUpdateDestroyAPIView):
     serializer_class = BiografiaJugadoresSerializers
     
 class UsuarioListCreateView(ListCreateAPIView):
-    queryset = Usuario.objects.all()
+    queryset = User.objects.all()
     serializer_class = UserSerializers
 
 class UsuarioDetailView(RetrieveUpdateDestroyAPIView):
-    queryset = Usuario.objects.all()
+    queryset = User.objects.all()
     serializer_class = UserSerializers
     
 class MembresiaListCreateView(ListCreateAPIView):

@@ -12,29 +12,29 @@ class UltimosResultados (models.Model):
     Partidos = models.ForeignKey(Partidos, on_delete=models.CASCADE, related_name="UltimosResultados")
     def __str__(self):
         return self.Resultado
-    
+        
 class ProximosEventos (models.Model):
-    Eventos = models.CharField(max_length=100)
-    Descripcion = models.CharField(max_length=100)
-    Imagen = models.CharField(max_length=100)
-    def __str__(self):
-        return self.Eventos
-    
+        Eventos = models.CharField(max_length=100)
+        Descripcion = models.CharField(max_length=100)
+        Imagen = models.CharField(max_length=100)
+        def __str__(self):
+            return self.Eventos
+        
 class BiografiaJugador (models.Model):
-    Nombre_Completo = models.CharField(max_length=100)
-    Fecha_Nacimiento = models.DateField()
-    Edad = models.CharField(max_length=100)
-    Lugar_Nacimiento = models.CharField(max_length=100)
-    Nacionalidad = models.CharField(max_length=100, null=False)
-    Altura = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=1.75)
-    Peso = models.DecimalField(max_digits=10, decimal_places=2)
-    Numero = models.DecimalField(max_digits=10, decimal_places=2)
-    Club_Actual = models.CharField(max_length=100)
-    Pie_Dominante = models.CharField(max_length=100)
-    Posicion = models.CharField(max_length=100)
-    Imagen = models.CharField(max_length=100)
-    def __str__(self):
-        return self.Nacionalidad
+        Nombre_Completo = models.CharField(max_length=100)
+        Fecha_Nacimiento = models.DateField()
+        Edad = models.CharField(max_length=100)
+        Lugar_Nacimiento = models.CharField(max_length=100)
+        Nacionalidad = models.CharField(max_length=100, null=False)
+        Altura = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=1.75)
+        Peso = models.DecimalField(max_digits=10, decimal_places=2)
+        Numero = models.DecimalField(max_digits=10, decimal_places=2)
+        Club_Actual = models.CharField(max_length=100)
+        Pie_Dominante = models.CharField(max_length=100)
+        Posicion = models.CharField(max_length=100)
+        Imagen = models.CharField(max_length=100)
+        def __str__(self):
+            return self.Nacionalidad
     
 class Usuario (models.Model):
     Nombre = models.CharField(max_length=100)

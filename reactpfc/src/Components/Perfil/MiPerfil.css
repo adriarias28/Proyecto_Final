@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Poppins:wght@400;500&display=swap');
+
+.perfil-container {
+    display: flex;
+    padding-left: 50px;
+    padding-top: 40px;
+    background-color: #eeeeee;
+    min-height: 90vh;
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.perfil-card {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+    width: 350px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.perfil-containerDos {   
+    display: flex;
+    padding-left: 50px;
+    background-color: #eeeeee;
+}
+
+.perfil-cardDos {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 30px;
+    width: 800px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.avatar {
+    width: 100px;
+    height: 100px;
+    background-color: #eeeeee; 
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    color: white;
+    font-weight: bold;
+}
+
+.btnEditar {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    background-color: #fd800c;
+    color: white;
+}
+
+.btnCerrar {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    background-color: #585858;
+    color: white;
+}
+
+
+.tituloPerfil{
+    background-color: #eeeeee;
+    height: 50px;
+    border-radius: 10px;
+    padding-left: 10px;
+    padding-top: 13px;
+    margin-top: 10px;
+}
+
+.inputPerfil{
+    width: 40%;
+  padding: 12px 15px;
+  border: 1.5px solid #ccc;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+  color: #0a0a0a;
+}
+
+.btnCambios{
+    text-align: center;
+    width: 30%;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    background-color: #000000;
+    color: white;
+    
+}

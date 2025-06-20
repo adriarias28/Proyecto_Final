@@ -42,7 +42,7 @@ function eliminar(id) {
         {guardarUltimosResultados.map((dato,index) => (
         <div key={dato.id} className="jugador-card">
            {/* <MapeoPartidos/>  */}
-            <div className='jugador-agregado'>
+            <div className=''>
               <div className='hh'>
                   <p className='datos'><strong>Resultado: </strong>{dato.Resultado}</p><br />{/* 
                   <p className='datos'><strong>Partido: </strong>{dato.Partido}</p><br /> */}

@@ -14,12 +14,12 @@ function Video() {
     const btnBoleteria = () => {
         setLoading(true);
         setTimeout(() => navigate('/boleteria'), 3000);
-    };	
 
-
+    };
+    
   return (
-    <div className="video-container">
 
+    <div className="video-container">
         <div>
           {loading && (
             <div className="LoadingOverlay">
@@ -30,19 +30,16 @@ function Video() {
             </div>
           )}
         </div>
-
       <div className="video-overlay">
-        <h1>Bienvenidos a tierra de tiburones</h1>
+        <h1>BIENVENIDOS A TIERRA DE TIBURONES</h1>
           <button onClick={btnBoleteria}>Boletería</button>
       </div>
         <div>
             <video className="vid" autoPlay loop muted playsInline>
-
                 <source src={Vid} />
             </video>
         </div>
     </div>
   )
 }
-
 export default Video

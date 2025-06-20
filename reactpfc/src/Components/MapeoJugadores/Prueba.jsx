@@ -1,4 +1,4 @@
-import CrudJugadores from '../../Services/CrudJugadores'
+/*import CrudJugadores from '../../Services/CrudJugadores'
 import React, { useEffect, useState } from 'react'
 import '../../Components/MapeoJugadores/MapeoJugadores.css'
 import Swal from 'sweetalert2'
@@ -105,7 +105,7 @@ const filJug = (e) => {
   console.log(postJug);
 } */
 
-  return (
+  /*return (
     <div className="jugadores-grid">
         {guardarJugadores.map((dato,index) => (
         <div key={dato.id} className="jugador-card">
@@ -136,4 +136,4 @@ const filJug = (e) => {
   )
 }
 
-export default Prueba
+export default Prueba*/

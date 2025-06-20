@@ -26,6 +26,30 @@ const token = Cookies.get("access_token");
 }
 
 
+
+async function getUsuariosid(id) {
+    try {
+        const response = await fetch(`http://127.0.0.1:8000/api/usuario/${id}/`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            }
+        });
+
+        if (!response.ok) {
+            throw new Error('Error fetching users');
+        }
+
+        const users = await response.json();
+        return users;
+    } catch (error) {
+        console.error('Error fetching users:', error);
+        throw error;
+    }
+}
+
+
 //////////LLAMADO POST//////////
 	
 async function postUsuarios(username, apellido, email, password) {
@@ -64,16 +88,14 @@ async function postUsuarios(username, apellido, email, password) {
 //////////////LLAMADO UPDATE/////////////
 
 
-async function updateUsuarios(usuario, password, id) 
+async function updateUsuarios(username, last_name, email, id ) 
 {
     try {
      
         const userData = { 
             username,
-            email,
-            password, 
-            first_name: username,
-            last_name: apellido
+            last_name,
+            email
         };
 
 
@@ -153,4 +175,4 @@ async function postApiToken(username,password) {
 }
 
 
-export default { deleteUsuarios, postUsuarios, updateUsuarios, getUsuarios,postApiToken }
+export default { deleteUsuarios, postUsuarios, updateUsuarios, getUsuarios,postApiToken, getUsuariosid }
