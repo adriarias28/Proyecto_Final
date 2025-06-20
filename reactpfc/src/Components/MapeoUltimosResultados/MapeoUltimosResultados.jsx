@@ -29,6 +29,7 @@ function valor(evento) {
 
 function eliminar(id) {
     console.log(id);
+    location.reload();
     CrudUltimosResultados.deleteUltimosResultados(id)
 } 
 
@@ -39,13 +40,15 @@ function eliminar(id) {
 
   return (
     <div className="partidos-grid">
-        {guardarUltimosResultados.map((dato,index) => (
-        <div key={dato.id} className="jugador-card">
+     {/*  <h1>ÚLTIMOS RESULTADOS</h1> */}
+        {guardarUltimosResultados/* .slice(-3) */.map((dato,index) => (
+        <div key={dato.id} className="crdur">
            {/* <MapeoPartidos/>  */}
             <div className=''>
               <div className='hh'>
-                  <p className='datos'><strong>Resultado: </strong>{dato.Resultado}</p><br />{/* 
-                  <p className='datos'><strong>Partido: </strong>{dato.Partido}</p><br /> */}
+                  <p className='datos'><strong>Resultado: </strong>{dato.Resultado}</p><br /> 
+                  <p className='datos'>{/* <strong>Partido: </strong> */}{dato.equipos}</p><br />
+                  <p className='datos'>{/* <strong>Partido: </strong> */}{dato.fecha}</p><br />
                   </div>
                 {esAdmin && (
                   <div className="botones-partidos">

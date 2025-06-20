@@ -22,6 +22,7 @@ const[precioLocalidad,setPrecioLocalidad] = useState('')
 
    function btnAgregar() {
      CrudLocalidad.postLocalidades(nombreLocalidad,precioLocalidad)
+     location.reload();
      setear()
    } 
 

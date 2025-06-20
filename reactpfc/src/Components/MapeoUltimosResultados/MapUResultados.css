@@ -1,0 +1,70 @@
+/* Contenedor grid */
+.partidos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 24px;
+  padding: 20px;
+}
+
+/* Tarjeta individual */
+.crdur{
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  padding: 16px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /*  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../../Images/Tib.png'); */
+}
+.crdur:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* Contenido dentro de tarjeta */
+.jugador-agregado {
+  margin-bottom: 12px;
+}
+.jugador-agregado .hh {
+  margin-bottom: 16px;
+}
+.datos {
+  margin: 4px 0;
+  font-size: 0.95rem;
+  color: #333;
+}
+.datos strong {
+  color: #000;
+}
+
+/* Botones de acción estilo futbolero */
+.botones-partidos {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+.boton {
+  padding: 6px 14px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.boton.delete {
+  background-color:  #f0811a;
+  color: #fff;
+}
+.boton.delete:hover {
+  background-color: #f0811a;
+}
+.boton.update {
+  background-color: #f0811a;
+  color: #fff;
+}
+.boton.update:hover {
+  background-color: #31b0d5;
+}

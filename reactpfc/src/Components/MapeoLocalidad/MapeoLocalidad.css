@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
+:root {
+  --naranja: #F56511;
+  --gris: #2D2D2D;
+  --blanco: #fff;
+  --borde: #C92323;
+}
 .localidad-container {
   font-family: 'Poppins', sans-serif;
   padding: 2rem;
@@ -9,13 +15,19 @@
   border-radius: 16px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
-
 .localidad-card {
   background-color: #fff;
   border: 2px solid #eb6e09;
   border-radius: 12px;
   padding: 1.5rem;
   margin-bottom: 1.5rem;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s ease;
+}
+.localidad-card:hover {
+  transform: translateY(-4px);
+}
+.entrada-info {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -26,26 +38,22 @@
   flex: 1;
   margin-bottom: 1rem;
 }
-
 .tipo-entrada {
   font-size: 1.4rem;
   font-weight: 600;
   color: #222;
 }
-
 .precio-entrada {
   font-size: 1.2rem;
   color: #444;
   margin-top: 0.5rem;
 }
-
 .cantidad-control {
   display: flex;
   align-items: center;
   gap: 1rem;
   margin: 0.5rem 0;
 }
-
 .cantidad-btn {
   background-color: #eb6e09;
   color: white;
@@ -56,24 +64,20 @@
   cursor: pointer;
   transition: background 0.3s ease;
 }
-
 .cantidad-btn:hover {
-  background-color: #cf5c03;
+  background-color: #FF7A2B;
 }
-
 .cantidad-num {
   font-size: 1.4rem;
   font-weight: 600;
   min-width: 30px;
   text-align: center;
 }
-
 .botones-partidos {
   display: flex;
   gap: 0.8rem;
   margin-top: 1rem;
 }
-
 .boton {
   padding: 0.5rem 1rem;
   border: none;
@@ -83,23 +87,25 @@
   font-weight: 600;
   transition: background 0.3s;
 }
-
 .boton.delete {
   background-color: #e74c3c;
+  background-color: #E63946;
+  color: white;
 }
-
 .boton.delete:hover {
   background-color: #c0392b;
+  background-color: #C82333;
 }
-
 .boton.update {
   background-color: #3498db;
-}
 
+  background-color: #0077CC;
+  color: white;
+}
 .boton.update:hover {
   background-color: #2980b9;
+  background-color: #005FA3;
 }
-
 .total-container {
   text-align: center;
   margin-top: 2rem;
@@ -107,12 +113,10 @@
   border-top: 2px solid #ddd;
   font-size: 1.2rem;
 }
-
 .total-container p {
   margin: 0.5rem 0;
 }
-
-.btnPagar, .seleccionar-asientos-btn {
+.btnPagar {
   margin-top: 1rem;
   background-color: #eb6e09;
   color: white;
@@ -125,6 +129,7 @@
   transition: background 0.3s ease;
 }
 
-.btnPagar:hover, .seleccionar-asientos-btn:hover {
-  background-color: #d25a03;
+.btnPagar:hover {
+  background-color: #FF7A2B;
 }
+

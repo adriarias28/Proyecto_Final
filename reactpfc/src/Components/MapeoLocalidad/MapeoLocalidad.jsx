@@ -15,6 +15,7 @@ const[guardarLocalidad, setGuardarLocalidad] = useState([])
     }, [])
 //ELIMINAR
 function eliminar(id) {
+  location.reload();
     CrudLocalidad.deleteLocalidades(id)
     }
   // EDITAR
@@ -46,6 +47,7 @@ function eliminar(id) {
     });
     if (formValues) {
       try {
+        location.reload();
         await CrudLocalidad.updateLocalidades(id, formValues);
         setGuardarLocalidad(prev =>
           prev.map((loc) =>

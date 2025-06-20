@@ -65,6 +65,7 @@ export const ContactosCom = () => {
               </div>
           </form>
       </div>
+     
           <MapaCom/>
     </div>
   )

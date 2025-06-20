@@ -6,6 +6,7 @@ import SantaAna from '../../Images/SantaAna.jfif'  */
 import CrudUltimosResultados from '../../Services/CrudUltimosResultados'
 import MapeoPartidos from '../MapeoPartidos/MapeoPartidos'
 import CrudPartidos from '../../Services/CrudPartidos'
+import Tib from '../../Images/Tib.png'
 
 
 function UltimosResulCom() {
@@ -40,23 +41,24 @@ const[datoselect, setdatoselect] = useState("")
 
   function button() {
     console.log(datoselect);
-    
+    location.reload();
     CrudUltimosResultados.postUltimosResultados(resultadonPartido, datoselect)
     setear()
   }
 
   return (
     <div className='bodyUltimosResul'>
-       <h1 className='tituloUl'>ÚLTIMOS RESULTADOS</h1>
+       <h3 className='tituloUl'>ÚLTIMOS RESULTADOS</h3>
           <label>Resultado</label>
           <input className='inputTodos' placeholder='Resultado' value={resultadonPartido} onChange={resultado} type="text" /> 
           {/* <MapeoPartidos esAdmin={true}/>    esAdmin={true}/ */}
 
           <h1>Fecha y Equipos</h1>
         <select name="" id="" onChange={seleccionado}>
+          {/* <option value="PFC" disabled>⚽ PFC</option> */}
             {guardarPartidos.map((dato,index) => (
 
-              <option value={dato.id}>{dato.Fecha} - {dato.Equipos}</option>
+              <option value={dato.id}>{dato.Fecha} - PFC vs {dato.Equipos}</option>
         
             ))}
         </select>

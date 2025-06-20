@@ -1,9 +1,9 @@
 
 import '../../Components/PaginaPrin/PaginaPrin.css'
-import Jean from '../../Images/Jean.png'
+/* import Jean from '../../Images/Jean.png'
 import AndreyM from '../../Images/AndreyM.png'
 import Hiram from '../../Images/Hiram.png'
-import Gael from '../../Images/Gael.png'
+import Gael from '../../Images/Gael.png' */
 
 function PaginaPrin() {
 
@@ -15,7 +15,7 @@ function PaginaPrin() {
     <div className="paginaPrin">
       <postJug/>
 
-        <h1 className="titulo">Nuestros Jugadores</h1>
+       {/*  <h1 className="titulo">Nuestros Jugadores</h1>
         <div className="jugadoresCont">
           <div className='jugt'>
               <img src={Jean} alt="" />
@@ -37,7 +37,7 @@ function PaginaPrin() {
               <h2>Gael Alpizar</h2>
               <h3>Defensa</h3>
           </div>
-        </div>
+        </div> */}
     </div>
   )
 }

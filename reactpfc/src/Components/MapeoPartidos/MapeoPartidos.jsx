@@ -20,6 +20,7 @@ const[guardarPartidos, setGuardarPartidos] = useState([])
 
 //ELIMINAR
 function eliminar(id) {
+  location.reload();
     CrudPartidos.deletePartidos(id)
     } 
 
@@ -61,6 +62,7 @@ function eliminar(id) {
 
     if (formValues) {
       try {
+        location.reload();
         await CrudPartidos.updatePartidos(id, formValues)
 
         setGuardarPartidos(
@@ -88,9 +90,11 @@ function eliminar(id) {
 
 
   return (
-    <div className="partidos-grid">
+    <div>
+      <h1 className='h1partido'>Partidos</h1>
+      <div className="partidoss">
         {guardarPartidos.map((dato,index) => (
-        <div key={dato.id} className="jugador-card">
+        <div key={dato.id} className="cardjugador">
           {esAdmin === false &&(
             <div className='jugador-agregado'>
               <p className='datos'><strong>Ubicacion: </strong>{dato.Ubicacion}</p><br />
@@ -99,16 +103,16 @@ function eliminar(id) {
           )
 
           }
-            <div className='jugador-agregado'>
-              <div className='hh'>
-                  <p className='datos'><strong>Ubicacion: </strong>{dato.Ubicacion}</p><br />
-                  <p className='datos'><strong>Fecha: </strong>{dato.Fecha}</p><br />
-                  <p className='datos'><strong>Hora: </strong>{dato.Hora}</p><br />
-                  <p className='datos'><strong>Equipos: </strong>{dato.Equipos}</p><br />
+            <div className='jugadoresagregados'>
+              <div className='dh'>
+                  <p className='p'><strong>Ubicacion: </strong>{dato.Ubicacion}</p><br />
+                  <p className='p'><strong>Fecha: </strong>{dato.Fecha}</p><br />
+                  <p className='p'><strong>Hora: </strong>{dato.Hora}</p><br />
+                  <p className='p'><strong>Equipos: </strong>{dato.Equipos}</p><br />
                   </div>
                 {esAdmin && (
-                  <div className="botones-partidos">
-                    <p className='but'>
+                  <div className="partidosbotones">
+                    <p className='buttt'>
                         <button className='boton delete' onClick={() => eliminar(dato.id)}>Eliminar</button>
                         <button className='boton update' onClick={() => editar(dato.id)}>Editar</button>
                     </p>
@@ -117,7 +121,7 @@ function eliminar(id) {
             </div>
         </div>
             ))}
-
+    </div>
     </div>
   )
 }

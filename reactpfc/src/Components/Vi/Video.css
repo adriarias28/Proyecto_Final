@@ -19,13 +19,15 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: rgba(255, 255, 255, 0.932);
+  color: rgba(255, 255, 255, 0.836);
   text-align: center;
   font-family: 'Poppins', sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
   z-index: 10;
+  z-index: 2;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .video-overlay h1 {
@@ -45,6 +47,9 @@
   font-family: 'Poppins', sans-serif;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
   transition: all 0.3s ease;
+  margin-left: 1000px;
+  margin-top: 300px;
+  border-radius: 200px;
 }
 
 .video-overlay button:hover {

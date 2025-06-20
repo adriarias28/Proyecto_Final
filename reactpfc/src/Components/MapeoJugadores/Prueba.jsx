@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /*import CrudJugadores from '../../Services/CrudJugadores'
+=======
+/* import CrudJugadores from '../../Services/CrudJugadores'
+>>>>>>> 9ae05c13b5739717a41b03bbb20188a6dbf99250
 import React, { useEffect, useState } from 'react'
 import '../../Components/MapeoJugadores/MapeoJugadores.css'
 import Swal from 'sweetalert2'
@@ -20,12 +24,11 @@ const[guardarJugadores, setGuardarJugadores] = useState([])
     }, []) 
 
     
-//ELIMINAR
+
     function eliminar(id) {
     CrudJugadores.deleteBiografiaJugador(id)
     } 
 
-//EDITAR
   async function editar(id) {
     const jugador = guardarJugadores.find(j => j.id === id)
     if (!jugador) return Swal.fire('Error', 'Jugador no encontrado', 'error')
@@ -99,11 +102,6 @@ const filJug = (e) => {
   console.log(postJug);
 }
 
-/* const filJug = (e) => {
- const postJug = Nombre_Completo.filer((i) => i.Nombre_Completo === e.target.value)
-  setNombre_Completo(postJug);
-  console.log(postJug);
-} */
 
   /*return (
     <div className="jugadores-grid">
@@ -136,4 +134,8 @@ const filJug = (e) => {
   )
 }
 
+<<<<<<< HEAD
 export default Prueba*/
+=======
+export default Prueba */
+>>>>>>> 9ae05c13b5739717a41b03bbb20188a6dbf99250
