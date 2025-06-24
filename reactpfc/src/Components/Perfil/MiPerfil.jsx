@@ -5,7 +5,7 @@
     import { useEffect, useState } from 'react'
     import Cookies from 'js-cookie'
     import tiburonpeque from '../../Images/tiburonpeque.ico'
-    import { FaUser, FaEnvelope, FaCalendarAlt, FaEdit, FaSignOutAlt, FaSave } from 'react-icons/fa';
+    import { FaUser, FaCalendarAlt, FaSignOutAlt, FaSave } from 'react-icons/fa';
 
 
     function MiperfilCom() {

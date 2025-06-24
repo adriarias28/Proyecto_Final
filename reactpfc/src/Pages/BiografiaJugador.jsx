@@ -1,7 +1,7 @@
 import React from 'react'
 import BioJugadorCom from '../Components/BiografiaJugador/BioJugadorCom'
 import AdminCom from '../Components/Administrador/AdminCom'
-import MapeoJuga from '../Components/MapeoJugadores/MapeoJuga'
+import MapeoJugAdmin from '../Components/MapeoJugadores/MapeoJugAdmin'
 
 
 function BiografiaJugador() {
@@ -10,8 +10,7 @@ function BiografiaJugador() {
 
       <AdminCom/>
       <BioJugadorCom/>
-      <MapeoJuga esAdmin={true} /> 
-      
+      <MapeoJugAdmin/>
     </div>
   )
 }

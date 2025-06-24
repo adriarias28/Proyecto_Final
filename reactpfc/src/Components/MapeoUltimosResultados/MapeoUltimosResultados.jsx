@@ -39,19 +39,19 @@ function eliminar(id) {
 
 
   return (
-    <div className="partidos-grid">
+    <div className="divPrin">
      {/*  <h1>ÚLTIMOS RESULTADOS</h1> */}
         {guardarUltimosResultados/* .slice(-3) */.map((dato,index) => (
-        <div key={dato.id} className="crdur">
+        <div key={dato.id} className="caj">
            {/* <MapeoPartidos/>  */}
             <div className=''>
               <div className='hh'>
-                  <p className='datos'><strong>Resultado: </strong>{dato.Resultado}</p><br /> 
-                  <p className='datos'>{/* <strong>Partido: </strong> */}{dato.equipos}</p><br />
-                  <p className='datos'>{/* <strong>Partido: </strong> */}{dato.fecha}</p><br />
+                  <p className='ps'><strong>Resultado: </strong>{dato.Resultado}</p><br /> 
+                  <p className='ps'>{/* <strong>Partido: </strong> */}{dato.equipos}</p><br />
+                  <p className='ps'>{/* <strong>Partido: </strong> */}{dato.fecha}</p><br />
                   </div>
                 {esAdmin && (
-                  <div className="botones-partidos">
+                  <div className="bottns">
                     <p className='but'>
                         <button className='boton delete' onClick={() => eliminar(dato.id)}>Eliminar</button>
                         <button className='boton update' onClick={() => editar(dato.id)}>Editar</button>

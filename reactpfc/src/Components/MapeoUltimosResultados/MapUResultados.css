@@ -1,5 +1,5 @@
 /* Contenedor grid */
-.partidos-grid {
+.divPrin {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 24px;
@@ -7,8 +7,8 @@
 }
 
 /* Tarjeta individual */
-.crdur{
-  background-color: #fff;
+.caj{
+  background-image:url('../../Images/Captura de pantalla (79).png');
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.15);
   padding: 16px;
@@ -16,9 +16,8 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  /*  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../../Images/Tib.png'); */
 }
-.crdur:hover {
+.caj:hover {
   transform: translateY(-4px);
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
@@ -30,17 +29,17 @@
 .jugador-agregado .hh {
   margin-bottom: 16px;
 }
-.datos {
+.ps {
   margin: 4px 0;
   font-size: 0.95rem;
   color: #333;
 }
-.datos strong {
+.ps strong {
   color: #000;
 }
 
 /* Botones de acción estilo futbolero */
-.botones-partidos {
+.bottns {
   display: flex;
   justify-content: center;
   gap: 12px;
