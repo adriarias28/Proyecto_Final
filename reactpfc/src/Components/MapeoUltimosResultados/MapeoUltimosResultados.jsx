@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import CrudUltimosResultados from '../../Services/CrudUltimosResultados'
 import Swal from 'sweetalert2'
 import '../../Components/MapeoUltimosResultados/MapUResultados.css'
-import MapeoPartidos from '../MapeoPartidos/MapeoPartidos'
+import Escudopfc from '../../Images/Escudopfc.png'
 
 function MapeoUltimosResultados({ esAdmin = false }) {
 
@@ -40,16 +40,20 @@ function eliminar(id) {
 
   return (
     <div className="divPrin">
-     {/*  <h1>ÚLTIMOS RESULTADOS</h1> */}
+      {/* <h1 className='urs'>Útimos Resultados</h1> */}
         {guardarUltimosResultados/* .slice(-3) */.map((dato,index) => (
         <div key={dato.id} className="caj">
-           {/* <MapeoPartidos/>  */}
             <div className=''>
               <div className='hh'>
                   <p className='ps'><strong>Resultado: </strong>{dato.Resultado}</p><br /> 
-                  <p className='ps'>{/* <strong>Partido: </strong> */}{dato.equipos}</p><br />
-                  <p className='ps'>{/* <strong>Partido: </strong> */}{dato.fecha}</p><br />
-                  </div>
+                  <p className='ps'><strong>Fecha: </strong>{dato.fecha}</p><br />
+                  <p className='ps'><strong>Equipos: </strong>{dato.equipos}</p><br />
+                 <div className='vs'>
+                    <img className='imgEscudo' src={Escudopfc} alt="" />
+                    <p className='vs'><strong>VS</strong></p>
+                    <img src={dato.Imagen} className='imagenEquipo' alt="" />
+                 </div>
+              </div>
                 {esAdmin && (
                   <div className="bottns">
                     <p className='but'>

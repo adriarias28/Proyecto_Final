@@ -1,15 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Poppins:wght@400;500&display=swap');
+
 /* Contenedor grid */
 .divPrin {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 24px;
+  gap: 80px;
   padding: 20px;
+  margin: 100px;
 }
 
 /* Tarjeta individual */
 .caj{
-  background-image:url('../../Images/Captura de pantalla (79).png');
-  border-radius: 8px;
+/*   background-image:url('../../Images/Captura de pantalla (79).png');
+ */  border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.15);
   padding: 16px;
   transition: transform 0.2s, box-shadow 0.2s;
@@ -66,4 +69,29 @@
 }
 .boton.update:hover {
   background-color: #31b0d5;
+}
+
+.imgEscudo{
+  width: 50px;
+  margin-right: 10%;
+}
+
+.imagenEquipo{
+  width: 50px;
+}
+
+.vs {
+  display: flex;
+  align-items: center;      /* centra verticalmente */
+  justify-content: center;  /* centra horizontalmente los elementos */
+  gap: 10px;                /* separa los elementos, ajusta a tu gusto */
+}
+
+.urs{
+  color: black;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.5rem;
+  color: black;
+  text-align: center;
+  margin: 2rem 
 }

@@ -1,4 +1,4 @@
-<div className='localidad-container'>
+{/* <div className='localidad-container'>
   {guardarLocalidad.map((dato, index) => {
     const cantidad = dato.cantidad || 0;
 
@@ -41,7 +41,7 @@
     );
   })}
 
-  {/* Mostrar total de entradas y total en colones */}
+  Mostrar total de entradas y total en colones
   <div className='total-container'>
     <p><strong>CANTIDAD DE ENTRADAS:</strong> {
       guardarLocalidad.reduce((acc, loc) => acc + (loc.cantidad || 0), 0)
@@ -51,4 +51,4 @@
     } <span style={{ fontSize: "0.8rem" }}>IVA incluido</span></p>
     <button className='seleccionar-asientos-btn'>SELECCIONAR ASIENTOS</button>
   </div>
-</div>
+</div> */}

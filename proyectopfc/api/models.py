@@ -10,6 +10,7 @@ class Partidos (models.Model):
 class UltimosResultados (models.Model):
     Resultado = models.CharField(max_length=100)
     Partidos = models.ForeignKey(Partidos, on_delete=models.CASCADE, related_name="UltimosResultados")
+    Imagen = models.CharField(max_length=100)
     def __str__(self):
         return self.Resultado
         

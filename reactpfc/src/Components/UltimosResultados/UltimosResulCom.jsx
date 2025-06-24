@@ -1,12 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import '../../Components/UltimosResultados/UltimosResul.css'
-/* import escudopfc from '../../Images/escudopfc.png'
-import EscudoLiga from '../../Images/EscudoLiga.png'
-import SantaAna from '../../Images/SantaAna.jfif'  */
 import CrudUltimosResultados from '../../Services/CrudUltimosResultados'
-import MapeoPartidos from '../MapeoPartidos/MapeoPartidos'
 import CrudPartidos from '../../Services/CrudPartidos'
-import Tib from '../../Images/Tib.png'
+import uploadImageToS3 from '../../Components/AWS/AwsConection'
 
 
 function UltimosResulCom() {
@@ -14,6 +10,7 @@ function UltimosResulCom() {
 const[resultadonPartido,setResultadonPartido] = useState('')
 const[guardarPartidos, setGuardarPartidos] = useState([])
 const[datoselect, setdatoselect] = useState("")
+const[imagenEquipos,setImagenEquipos] = useState(null)
 
     useEffect(() => {
 
@@ -35,14 +32,20 @@ const[datoselect, setdatoselect] = useState("")
     setdatoselect(evento.target.value)
   }
 
+  function imagen(evento) {
+    setImagenEquipos(evento.target.files[0])
+  }
   function setear(){
     setResultadonPartido('')
+    setImagenEquipos('')
+    
   }
 
-  function button() {
-    console.log(datoselect);
+ async function button() {
+    const rest_amazon = await uploadImageToS3(imagenEquipos)
+    console.log(rest_amazon.Location);
+    CrudUltimosResultados.postUltimosResultados(resultadonPartido, datoselect, rest_amazon.Location)
     location.reload();
-    CrudUltimosResultados.postUltimosResultados(resultadonPartido, datoselect)
     setear()
   }
 
@@ -51,14 +54,13 @@ const[datoselect, setdatoselect] = useState("")
        <h3 className='tituloUl'>ÚLTIMOS RESULTADOS</h3>
           <label>Resultado</label>
           <input className='inputTodos' placeholder='Resultado' value={resultadonPartido} onChange={resultado} type="text" /> 
-          {/* <MapeoPartidos esAdmin={true}/>    esAdmin={true}/ */}
-
+          <input className='img' placeholder='Imagen' onChange={imagen} type="file"/><br /><br />
           <h1>Fecha y Equipos</h1>
-        <select name="" id="" onChange={seleccionado}>
-          {/* <option value="PFC" disabled>⚽ PFC</option> */}
-            {guardarPartidos.map((dato,index) => (
+        <select name="" id="" onChange={seleccionado} value={datoselect}>
+            {guardarPartidos.map((dato) => (
 
-              <option value={dato.id}>{dato.Fecha} - PFC vs {dato.Equipos}</option>
+              <option key={dato.id} value={dato.id}>{dato.Fecha} - PFC vs {dato.Equipos}</option>
+              
         
             ))}
         </select>
@@ -67,42 +69,6 @@ const[datoselect, setdatoselect] = useState("")
 
           <button className='butt' onClick={button}>Agregar Partido</button><br /><br /> 
 
-    {/*   <h1 className='tituloUl'>ÚLTIMOS RESULTADOS</h1>
-       <div className='df'>
-      <div className="resultados">
-        <div className="fecha">14 mayo, 2025</div>
-        <div className="equipos">
-          <img src={escudopfc} alt="" />
-          <h1>0 - 1</h1>
-          <img src={EscudoLiga} alt="" />
-        </div>
-        <div className="fut">
-          Fútbol de Primera División - Liga Promerica
-        </div>
-        </div>
-        <div className='resultados'>
-        <div className="fecha">11 mayo, 2025</div>
-        <div className="equipos">
-          <img src={escudopfc} alt="" />
-          <h1>0 - 0</h1>
-          <img src={EscudoLiga} alt="" />
-        </div>
-        <div className="fut">
-          Fútbol de Primera División - Liga Promerica
-        </div>
-        </div>
-        <div className='resultados'>
-        <div className="fecha">07 mayo, 2025</div>
-        <div className="equipos">
-          <img src={escudopfc} alt="" />
-          <h1>1 - 0</h1>
-          <img src={SantaAna} alt="" />
-        </div>
-        <div className="fut">
-          Fútbol de Primera División - Liga Promerica
-        </div>
-        </div>
-      </div>  */}
     </div>
   );
 }
