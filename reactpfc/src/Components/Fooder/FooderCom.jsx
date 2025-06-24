@@ -28,7 +28,7 @@ function FooderCom() {
           <li>Política de Privacidad</li>
           <li>Accesibilidad</li>
           <li>Política de Envío</li>
-          <li className='tc'><Link to="/terminosYCondiciones">TÉrminos Y Condiciones</Link></li>
+          <li>Términos y Condiciones</li>
           <li>Política de Reembolso</li>
         </ul>
       </div>

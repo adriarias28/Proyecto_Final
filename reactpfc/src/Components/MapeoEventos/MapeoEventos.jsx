@@ -81,7 +81,6 @@ const[guardarEvento, setguardarEvento] = useState([])
          {guardarEvento.map((data,index) => ( 
             <div key={data.id} className="evento-card">
                 <div>
-                     <img className='imm' src={data.Imagen} alt="" />
                      <p className='datoevento'><strong>Evento: </strong>{data.Eventos}</p>
                      <p className='datoevento'><strong>Descripcion: </strong>{data.Descripcion}</p>
                      <img src={data.Imagen} className='imagenDato' alt="" />

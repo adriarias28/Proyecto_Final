@@ -12,7 +12,6 @@ function ProximosEventos() {
       <NavbarCom/>
       <ProximosEventosCom/>
       <MapeoEventos/>
-      <MapeoPartidos/>
       <FooderCom/>
 
     </div>

@@ -93,14 +93,16 @@ async function updateUsuarios(username, last_name, email, id )
     try {
      
         const userData = { 
-            username,
-            last_name,
-            email
+            username, 
+            last_name, 
+            email,
+            id
         };
 
-
-        const response = await fetch("http://127.0.0.1:8000/api/usuario/"+id, {
-            method: 'PUT',
+        console.log(userData);
+        
+        const response = await fetch("http://127.0.0.1:8000/api/usuario/"+id+'/', {
+            method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json'
             },

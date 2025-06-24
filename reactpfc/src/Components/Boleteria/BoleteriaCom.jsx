@@ -1,6 +1,7 @@
 import React from 'react';
 import '../../Components/Boleteria/Boleteria.css';
 import MapeoLocalidad from '../MapeoLocalidad/MapeoLocalidad';
+import TyCBoleteria from '../TerminosCondiciones/TyCBoleteria';
 
 function BoleteriaCom() {
   return (
@@ -8,6 +9,7 @@ function BoleteriaCom() {
       {/* <h1 className="boleteria-titulo barco">EL BARCO VA QUE VA</h1> */}
       <h2 className="boleteria-titulo ">¡Nos vemos en La Olla Mágica!</h2>
       <MapeoLocalidad/>
+      <TyCBoleteria/>
     </div>
   );
 }

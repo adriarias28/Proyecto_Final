@@ -103,9 +103,9 @@ function RegistroCom() {
             </div>
               <h3 className='titunueva'>NUEVA CUENTA</h3>
               <p className='parra'>¡GRACIAS POR REGISTRARSE EN PUNTARENAS FÚLTBOL CLUB!</p>
-              <label htmlFor="">Username</label><br />
+              <label htmlFor="">Nombre</label><br />
               <input className='inpuesti' value={nombrePersona} onChange={nombre} placeholder='Ingrese un nombre de usuario' type="text" /><br /><br />
-              <label htmlFor="">Nombre y Apellido</label><br />
+              <label htmlFor="">Apellido</label><br />
               <input className='inpuesti' value={apellidoPersona} onChange={apellido} placeholder='Ingrese tu nombre' type="text" /><br /><br />
               <label htmlFor="">Correo Electrónico</label><br />
               <input className='inpuesti' value={correoPersona} onChange={correo} placeholder='Ingrese su correo electrónico' type="e-mail" /><br /><br />
@@ -113,7 +113,7 @@ function RegistroCom() {
               <input className='inpuesti' value={passwordPersona} onChange={password} placeholder='Ingrese una contraseña' type="password" /><br /><br />
               <label htmlFor="">Telefono</label><br />
               <input className='inpuesti' value={telefonoPersona} onChange={telefono} placeholder='Ingrese un numero telefonico' type="number" /><br /><br />
-              <button className='btnRegis' onClick={btnRegistrar}>CREAR CUENTA</button>
+              <button className='btnRegis' onClick={btnRegistrar}>CREAR CUENTA</button><br /><br />
               <p>¿Ya tienes una cuenta? <Link to= "/login" className='linkclass'>¡Inicia sesión aquí!</Link></p>
           </div>
         </div>

@@ -87,7 +87,7 @@ function Test() {
             <h1 className='tituloLogin'>
             <h3>Iniciar sesión</h3></h1>
             <p className='parraa'>INICIA SESIÓN CON UNA CUENTA EXISTENTE</p>
-            <label htmlFor="">Username</label><br />
+            <label htmlFor="">Nombre</label><br />
             <input className='inpuestii' value={correoPersona} onChange={correo} placeholder='Nombre Usuario'  type="text" /><br /><br />
             <label htmlFor="">Contraseña</label><br />
             <input className='inpuestii' value={passwordPersona} onChange={password} placeholder='Contraseña' type="password" /><br /><br />

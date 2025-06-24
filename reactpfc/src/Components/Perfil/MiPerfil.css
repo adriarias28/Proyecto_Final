@@ -1,111 +1,143 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Poppins:wght@400;500&display=swap');
 
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
 .perfil-container {
-    display: flex;
-    padding-left: 50px;
-    padding-top: 40px;
-    background-color: #eeeeee;
-    min-height: 90vh;
-    padding-top: 80px;
-    padding-bottom: 80px;
+  display: flex;
+  gap: 40px;
+  padding: 80px 50px;
+  background-color: #f5f5f5;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.perfil-card, .perfil-cardDos {
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  padding: 30px;
+  font-family: 'Poppins', sans-serif;
 }
 
 .perfil-card {
-    background: #ffffff;
-    border-radius: 10px;
-    padding: 30px;
-    text-align: center;
-    width: 350px;
-    font-family: 'Poppins', sans-serif;
+  text-align: center;
+  width: 320px;
 }
 
-.perfil-containerDos {   
-    display: flex;
-    padding-left: 50px;
-    background-color: #eeeeee;
-}
-
-.perfil-cardDos {
-    background: #ffffff;
-    border-radius: 10px;
-    padding: 30px;
-    width: 800px;
-    font-family: 'Poppins', sans-serif;
+.tituloPerfil{
+  font-size: 1.8rem;
+  color: #000000;
 }
 
 .avatar {
-    width: 100px;
-    height: 100px;
-    background-color: #eeeeee; 
-    border-radius: 50%;
-    margin: 0 auto 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 40px;
-    color: white;
-    font-weight: bold;
+  width: 90px;
+  height: 90px;
+  background-color: #fd800c;
+  border-radius: 50%;
+  margin: 20px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.estadio {
+  border-radius: 50%;
+}
+
+.correo {
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.botones-perfil .btnEditar,
+.botones-perfil .btnCerrar {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: background 0.3s ease;
 }
 
 .btnEditar {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    margin-top: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 400;
-    background-color: #fd800c;
-    color: white;
+  background-color: #fd800c;
+  color: white;
+}
+
+.btnEditar:hover {
+  background-color: #e86e00;
 }
 
 .btnCerrar {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    margin-top: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 400;
-    background-color: #585858;
-    color: white;
+  background-color: #6c757d;
+  color: white;
 }
 
-
-.tituloPerfil{
-    background-color: #eeeeee;
-    height: 50px;
-    border-radius: 10px;
-    padding-left: 10px;
-    padding-top: 13px;
-    margin-top: 10px;
+.btnCerrar:hover {
+  background-color: #5a6268;
 }
 
-.inputPerfil{
-    width: 40%;
-  padding: 12px 15px;
+.perfil-containerDos {
+  width: 800px;
+  max-width: 100%;
+}
+
+.perfil-cardDos h2 {
+  color: #333;
+  font-size: 1.5rem;
+  border-left: 5px solid #fd800c;
+  padding-left: 10px;
+}
+
+.inputPerfil {
+  width: 100%;
+  padding: 12px;
+  margin-top: 8px;
   border: 1.5px solid #ccc;
-  border-radius: 10px;
+  border-radius: 8px;
   font-size: 1rem;
-  transition: border 0.3s ease, box-shadow 0.3s ease;
-  color: #0a0a0a;
+  transition: all 0.3s ease;
 }
 
-.btnCambios{
-    text-align: center;
-    width: 30%;
-    padding: 10px;
-    margin-top: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 400;
-    background-color: #000000;
-    color: white;
-    
+.inputPerfil:focus {
+  border-color: #fd800c;
+  box-shadow: 0 0 5px rgba(253, 128, 12, 0.5);
+  outline: none;
+}
+
+.perfil-cardDos label {
+  font-weight: 500;
+  margin-top: 15px;
+  display: block;
+}
+
+.btnCambios {
+  margin-top: 20px;
+  background-color: #0a0a0a;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btnCambios:hover {
+  background-color: #fd800c;
+}
+
+@media (max-width: 768px) {
+  .perfil-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .perfil-card,
+  .perfil-containerDos {
+    width: 90%;
+  }
 }

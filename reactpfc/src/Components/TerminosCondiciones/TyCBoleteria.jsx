@@ -23,7 +23,6 @@ function TyCBoleteria() {
            casos no previstos anteriormente.”
         </p>
         <div className='ip'>
-          {/* <input className='inpuesti' value={nombrePersona} onChange={nombre} placeholder='Ingrese tu nombre' type="text" /> */}
           <input value={aceptoTC} onChange={acepto} type="checkbox" />
           <p> <strong>Acepto los Términos y Condiciones</strong></p>
        </div>
