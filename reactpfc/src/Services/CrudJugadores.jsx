@@ -19,6 +19,29 @@ async function getBiografiaJugador() {
     }
 }
 
+//SEGUNDO GET PARA JUGADORES 
+async function getJugadorid(id) {
+    try {
+        const response = await fetch(`http://127.0.0.1:8000/api/biografiaJugador/${id}/`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+
+        if (!response.ok) {
+            throw new Error('Error fetching users');
+        }
+
+        const users = await response.json();
+        return users;
+    } catch (error) {
+        console.error('Error fetching users:', error);
+        throw error;
+    }
+}
+
+
 //////////LLAMADO POST//////////
 
 async function postBiografiaJugador(Nombre_Completo,
@@ -149,4 +172,4 @@ async function deleteBiografiaJugador(id) {
     }
 }
 
-export default {getBiografiaJugador, postBiografiaJugador,deleteBiografiaJugador,updateBiografiaJugador,}
+export default {getBiografiaJugador, postBiografiaJugador,deleteBiografiaJugador,updateBiografiaJugador,getJugadorid}

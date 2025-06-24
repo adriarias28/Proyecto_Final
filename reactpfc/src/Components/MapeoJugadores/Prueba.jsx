@@ -1,8 +1,8 @@
-<<<<<<< HEAD
+
 /*import CrudJugadores from '../../Services/CrudJugadores'
 =======
 /* import CrudJugadores from '../../Services/CrudJugadores'
->>>>>>> 9ae05c13b5739717a41b03bbb20188a6dbf99250
+
 import React, { useEffect, useState } from 'react'
 import '../../Components/MapeoJugadores/MapeoJugadores.css'
 import Swal from 'sweetalert2'
@@ -136,6 +136,5 @@ const filJug = (e) => {
 
 <<<<<<< HEAD
 export default Prueba*/
-=======
-export default Prueba */
->>>>>>> 9ae05c13b5739717a41b03bbb20188a6dbf99250
+
+export default Prueba 

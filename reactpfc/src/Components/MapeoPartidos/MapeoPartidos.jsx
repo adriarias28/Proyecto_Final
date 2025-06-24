@@ -97,13 +97,13 @@ function eliminar(id) {
         <div key={dato.id} className="cardjugador">
           {esAdmin === false &&(
             <div className='jugador-agregado'>
-              <p className='datos'><strong>Ubicacion: </strong>{dato.Ubicacion}</p><br />
-              <p className='datos'><strong>Equipos: </strong>{dato.Equipos}</p><br />
+              <p className='pstrong'><strong>Ubicacion: </strong>{dato.Ubicacion}</p><br />
+              <p className='pstrong'><strong>Equipos: </strong>{dato.Equipos}</p><br />
             </div>
           )
 
           }
-            <div className='jugadoresagregados'>
+            <div className='jugs'>
               <div className='dh'>
                   <p className='p'><strong>Ubicacion: </strong>{dato.Ubicacion}</p><br />
                   <p className='p'><strong>Fecha: </strong>{dato.Fecha}</p><br />
