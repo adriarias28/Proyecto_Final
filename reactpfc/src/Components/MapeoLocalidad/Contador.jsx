@@ -1,3 +1,7 @@
+
+
+
+
 <div className='localidad-container'>
   {guardarLocalidad.map((dato, index) => {
     const cantidad = dato.cantidad || 0;

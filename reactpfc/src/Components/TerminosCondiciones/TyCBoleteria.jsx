@@ -1,34 +1,42 @@
 import React from 'react'
 import { useState } from 'react'
-import '../../Components/TerminosCondiciones/TycB.css'
+import '../../Components/TerminosCondiciones/TyC.css'
 
-function TyCBoleteria() {
 
-  const [aceptoTC,setAceptoTC]=useState("")
+function TyCBoleteria({ aceptoTC, setAceptoTC }) {
 
-    function acepto(evento) {
-    
-      setAceptoTC(evento.target.value)
+  //aplicamos un modal para que sea una ventana emergente
+  const [mostrarModal, setMostrarModal] = useState(false);
 
-    }
+  const abrirModal = () => setMostrarModal(true); 
+  const cerrarModal = () => setMostrarModal(false);
 
   return (
-    <div className='ptcb'>
-        <p className='ptcb'>
-          El evento es cancelado, reprogramado o cambia de lugar. 
-           En tal caso deberá seguir el procedimiento publicado en el sitio web 
-           dentro del plazo indicado.
-           Si no se solicita el reembolso o cambio en el tiempo establecido,
-           se entenderá que el Comprador acepta las condiciones nuevas.
-           No se realizan devoluciones por no asistencia, pérdida de boletos o 
-           casos no previstos anteriormente.”
+
+    <div className="contenedorTer">
+      <div className="ip">
+
+        <input type="checkbox" checked={aceptoTC} onChange={(e) => setAceptoTC(e.target.checked)} />
+        <p><strong>Acepto los </strong>
+          <button className="btn-ver-tyc" onClick={abrirModal}>Términos y Condiciones</button>
         </p>
-        <div className='ip'>
-          <input value={aceptoTC} onChange={acepto} type="checkbox" />
-          <p> <strong>Acepto los Términos y Condiciones</strong></p>
-       </div>
-  </div>
-  )
+      </div>
+
+      {mostrarModal && (
+        <div className="modal-overlay">
+          <div className="modal-contenido">
+            <h3><span className="icono-alerta">⚠️</span> Términos y Condiciones</h3>
+            <p>
+              El evento puede ser cancelado, reprogramado o cambiar de lugar. En tal caso, deberá seguir el procedimiento publicado en el sitio web dentro del plazo indicado.
+              Si no se solicita el reembolso o cambio en el tiempo establecido, se entenderá que el<strong> comprador acepta las nuevas condiciones.</strong>
+              No se realizan devoluciones por no asistencia, pérdida de boletos o casos no previstos anteriormente.
+            </p>
+            <button className="btn-cerrar" onClick={cerrarModal}>Cerrar</button>
+          </div>
+        </div>
+      )}
+    </div>
+  );
 }
 
-export default TyCBoleteria
+export default TyCBoleteria;

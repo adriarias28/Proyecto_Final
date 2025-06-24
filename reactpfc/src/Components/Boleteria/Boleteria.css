@@ -1,12 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Poppins:wght@400;500&display=swap');
 
+.boleteria{
+  background-color: #f5f4f4
+}
+
 .boleteria-titulo {
   font-family: 'Poppins', sans-serif;
   font-size: 2rem;
   text-align: center;
   color: #ff5e00;
-  margin-bottom: 2rem;
-  margin-top: 6rem;
+  padding-top: 180px;
 }
 
 .boleteria-subtitulo {
@@ -77,4 +80,30 @@
 
 .btn-pagar:hover {
   background-color: #e64a00;
+}
+
+.btn-comprar {
+  margin-top: 20px;
+  background-color: #eb6e09;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  max-width: 400px;
+}
+
+.btn-comprar:hover {
+  background-color: #d45e00;
+}
+
+/* 🔒 Estado desactivado */
+.btn-comprar:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  opacity: 0.7;
 }

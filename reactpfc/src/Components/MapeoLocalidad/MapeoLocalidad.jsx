@@ -3,7 +3,26 @@ import CrudLocalidad from '../../Services/CrudLocalidad'
 import '../../Components/MapeoLocalidad/MapeoLocalidad.css'
 import Swal from 'sweetalert2'
 import Paypal from '../../Components/Boleteria/PayPal'
+import TyCBoleteria from '../TerminosCondiciones/TyCBoleteria';
+
 function MapeoLocalidad({ esAdmin = false }) {
+
+const [aceptoTC, setAceptoTC] = useState(false); 
+
+const [total, setTotal] = useState(); 
+
+//validacion para aceptar la compra
+const realizarCompra = () => {
+  if (!aceptoTC) return; //no hace nada si no ha aceptado
+
+  Swal.fire({
+    icon: 'success',
+    title: 'Compra realizada',
+    text: '¡Tus boletos han sido generados correctamente!',
+    confirmButtonColor: '#eb6e09'
+  });
+};
+
 const[guardarLocalidad, setGuardarLocalidad] = useState([])
     useEffect(() => {
         async function fetchDataUsers() {
@@ -63,7 +82,13 @@ function eliminar(id) {
       }
     }
   }
+
+
+  console.log(guardarLocalidad);
+  
+
   return (
+
     <div className='localidad-container'>
   {guardarLocalidad.map((dato, index) => {
     const cantidad = dato.cantidad || 0;
@@ -113,12 +138,22 @@ function eliminar(id) {
       guardarLocalidad.reduce((acc, loc) => acc + (loc.cantidad || 0), 0)
     }</p>
      {/* reduce= suma la cantidad total de entradas compradas */}
-    <p><strong>TOTAL A PAGAR:</strong> ₡ {
+    <p><strong>TOTAL A PAGAR:</strong> ₡ 
+    
+    {
       guardarLocalidad.reduce((acc, loc) => acc + (loc.cantidad || 0) * parseFloat(loc.Precio || 0), 0).toLocaleString()
+
     } <div>IVA incluido</div></p>
-    <button className='btnPagar'>PAGAR</button>
   </div>
-  <Paypal/>
+  
+    {/* Términos y Condiciones con modal */}
+    <TyCBoleteria aceptoTC={aceptoTC} setAceptoTC={setAceptoTC} />
+
+    {/*bloquea si no acepta los terminos*/}
+    {/* <button className="btn-comprar" onClick={realizarCompra} disabled={!aceptoTC}>Comprar boletos</button> */}
+
+  <Paypal valor={guardarLocalidad.reduce((acc, loc) => acc + (loc.cantidad || 0) * parseFloat(loc.Precio || 0), 0)
+}/>
 </div>
   )
 }

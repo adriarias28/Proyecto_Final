@@ -1,15 +1,22 @@
 import React from 'react';
 import '../../Components/Boleteria/Boleteria.css';
 import MapeoLocalidad from '../MapeoLocalidad/MapeoLocalidad';
-import TyCBoleteria from '../TerminosCondiciones/TyCBoleteria';
+import { useState } from 'react';
+import Swal from 'sweetalert2';
 
 function BoleteriaCom() {
+
+
+
   return (
+
     <div className="boleteria">
-      {/* <h1 className="boleteria-titulo barco">EL BARCO VA QUE VA</h1> */}
-      <h2 className="boleteria-titulo ">¡Nos vemos en La Olla Mágica!</h2>
-      <MapeoLocalidad/>
-      <TyCBoleteria/>
+      
+      <h2 className="boleteria-titulo">¡Nos vemos en La Olla Mágica!</h2>
+      
+      <MapeoLocalidad />
+
+      
     </div>
   );
 }

@@ -13,7 +13,6 @@ function Boleteria() {
       <NavbarCom/>
       {/* <MapeoPartidos/> */}
       <BoleteriaCom/>
-      <TyCBoleteria/>
       <FooderCom/>
     </div>
   )
