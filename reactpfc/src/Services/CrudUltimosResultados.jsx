@@ -21,12 +21,13 @@ async function getUltimosResultados() {
 
 //////////LLAMADO POST//////////
 
-async function postUltimosResultados(Resultado, partidos_id) {
+async function postUltimosResultados(Resultado, partidos_id, Imagen) {
     try {
      
         const userData3 = { 
             Resultado, 
-            partidos_id
+            partidos_id,
+            Imagen
         };
 
         console.log(userData3);

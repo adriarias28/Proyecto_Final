@@ -29,7 +29,7 @@ class UltimosResultadosSerializers(serializers.ModelSerializer):
     equipos = serializers.SerializerMethodField()
     class Meta:
         model = UltimosResultados
-        fields = ['id', 'Resultado', 'partidos', 'partidos_id', 'fecha', 'equipos']
+        fields = ['id', 'Resultado', 'partidos', 'partidos_id', 'fecha', 'equipos', 'Imagen']
     def get_fecha(self, obj):
         return obj.Partidos.Fecha if obj.Partidos else None
     def get_equipos(self, obj):

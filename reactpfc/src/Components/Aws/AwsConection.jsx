@@ -19,7 +19,3 @@ const s3 = new AWS.S3({
   return s3.upload(params).promise();
 };
 export default uploadImageToS3 
-
-
- /* accessKeyId: import.meta.env.VITE_AWS_ACCESS_KEY_ID, // si usas Vite
-  secretAccessKey: import.meta.env.VITE_AWS_SECRET_ACCESS_KEY, */

@@ -21,6 +21,7 @@ const[guardarEvento, setguardarEvento] = useState([])
 //ELIMINAR 
     function eliminarEvento(id) {
         EventosCrud.deleteEventos(id)
+        location.reload();
     }
 
 
@@ -77,7 +78,7 @@ const[guardarEvento, setguardarEvento] = useState([])
 
   return (
     <div className="eventos-container">
-        <h1>Próximos Eventos</h1>
+        <h1 className='pxev'>Próximos Eventos</h1>
          {guardarEvento.map((data,index) => ( 
             <div key={data.id} className="evento-card">
                 <div>
