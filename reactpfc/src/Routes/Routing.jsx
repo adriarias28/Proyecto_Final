@@ -24,6 +24,7 @@ import UltimosResCrud from '../Components/AccesoAdmin/UltimosResCrud'
 import Localidades from '../Pages/Localidades'
 import LocalidadesCRUD from '../Components/AccesoAdmin/LocalidadesCRUD'
 import MiPerfil from '../Pages/Perfil'
+import JugadoresCom from '../Components/Jugadores/JugadoresCom'
 
 
 
@@ -57,6 +58,8 @@ function Routing() {
             <Route path="/localidades" element={<Localidades/>}/>
             <Route path="/terminosYCondiciones" element={<TerminosYCondiciones/>}/>
             <Route path="/mi-perfil" element={<MiPerfil/>}/>
+            <Route path="/jugador/:id" element={<JugadoresCom />} />
+
 
         </Routes>
       </Router>

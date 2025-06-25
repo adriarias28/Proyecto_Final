@@ -29,6 +29,7 @@ function FooderCom() {
           <li>Accesibilidad</li>
           <li>Política de Envío</li>
           <li>Términos y Condiciones</li>
+          <a className='tyc' href="terminosYCondiciones" target="_blank" rel="noopener noreferrer">Términos y Condiciones</a>
           <li>Política de Reembolso</li>
         </ul>
       </div>
