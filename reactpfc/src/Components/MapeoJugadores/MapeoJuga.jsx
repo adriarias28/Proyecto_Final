@@ -22,8 +22,7 @@ const navigate= useNavigate()
 
     function cargarid(id){
       console.log(id);
-      localStorage.setItem("cargarid", id)
-      navigate ("/")
+      navigate(`/jugador/${id}`)
     }
   
   return (

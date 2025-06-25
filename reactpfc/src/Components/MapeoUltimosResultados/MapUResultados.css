@@ -78,13 +78,15 @@
 
 .imagenEquipo{
   width: 50px;
+  margin-left: 15px;
 }
 
 .vs {
   display: flex;
   align-items: center;      /* centra verticalmente */
-  justify-content: center;  /* centra horizontalmente los elementos */
-  gap: 10px;                /* separa los elementos, ajusta a tu gusto */
+  justify-content: center; 
+  gap: 10px;      
+  margin-right: 10px;          
 }
 
 .urs{

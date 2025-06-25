@@ -1,16 +1,9 @@
 import React from 'react'
 import { useState } from 'react'
-import '../../Components/TerminosCondiciones/TyC.css'
+import '../../Components/TerminosCondiciones/TermYCond.css'
 
 function TermCondi() {
-/* 
-  const [aceptoTC,setAceptoTC]=useState("")
 
-    function acepto(evento) {
-    
-      setAceptoTC(evento.target.value)
-
-    } */
   return (
     <div className="terms-container">
         <h1>TÉRMINOS Y CONDICIONES DE USO</h1>
@@ -39,11 +32,6 @@ function TermCondi() {
         <h3>Jurisdicción</h3>
         <p>Cualquier disputa se resolverá conforme a las leyes de [Costa Rica]; los tribunales competentes serán los de [Puntarenas, CR].</p>
 
-       {/*  <div className='ip'>
-          <input className='inpuesti' value={nombrePersona} onChange={nombre} placeholder='Ingrese tu nombre' type="text" />
-          <input value={aceptoTC} onChange={acepto} type="checkbox" />
-          <p> <strong>Acepto los Términos y Condiciones</strong></p>
-        </div> */}
         
     </div>
   )

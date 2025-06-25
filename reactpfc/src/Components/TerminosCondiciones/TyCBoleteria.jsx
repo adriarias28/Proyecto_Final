@@ -5,7 +5,6 @@ import '../../Components/TerminosCondiciones/TyC.css'
 
 function TyCBoleteria({ aceptoTC, setAceptoTC }) {
 
-  //aplicamos un modal para que sea una ventana emergente
   const [mostrarModal, setMostrarModal] = useState(false);
 
   const abrirModal = () => setMostrarModal(true); 
