@@ -1,29 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
-:root {
-  --naranja: #F56511;
-  --gris: #2D2D2D;
-  --blanco: #fff;
-  --borde: #C92323;
-}
-
 .localidad-container {
   font-family: 'Poppins', sans-serif;
+  max-width: 1000px;
+  margin: 2rem auto;
   padding: 2rem;
-  max-width: 800px;
-  margin: auto;
-  background: linear-gradient(to right, #f5f5f5, #f5f5f5);
-  border-radius: 16px;
-  box-shadow: 1 4px 10px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, #ffffff, #ffffff);
+  border-radius: 20px;
 }
 
 .localidad-card {
-  background-color: #fff;
-  border: 2px solid #eb6e09;
+  text-align: center;
   border-radius: 12px;
-  padding: 1.5rem;
-  margin-bottom: 1.5rem;
-  transition: transform 0.2s ease;
+  max-width: 400px;
+  padding: 13px;
 }
 
 .entrada-info {
@@ -33,35 +23,19 @@
   flex-wrap: wrap;
 }
 
-.entrada-info {
-  flex: 1;
-  margin-bottom: 1rem;
-}
-
-.tipo-entrada {
-  font-size: 1.4rem;
-  font-weight: 600;
-  color: #222;
-}
-
-.precio-entrada {
-  font-size: 1.2rem;
-  color: #444;
-  margin-top: 0.5rem;
-}
 
 .cantidad-control {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  margin: 0.5rem 0;
+  gap: 5px;
+  margin: 0.2rem 0;
 }
 
 .cantidad-btn {
   background-color: #eb6e09;
   color: white;
-  font-size: 1.2rem;
-  padding: 0.4rem 1rem;
+  font-size: 1rem;
+  padding: 0.2rem 0.4rem;
   border: none;
   border-radius: 8px;
   cursor: pointer;
@@ -69,12 +43,12 @@
 }
 
 .cantidad-btn:hover {
-  background-color: #FF7A2B;
+  background-color: #ff792bb6;
 }
 
 .cantidad-num {
-  font-size: 1.4rem;
-  font-weight: 600;
+  font-size: 1.3rem;
+  font-weight: 450;
   min-width: 30px;
   text-align: center;
 }
@@ -85,67 +59,24 @@
   margin-top: 1rem;
 }
 
-.boton {
-  padding: 0.5rem 1rem;
-  border: none;
-  border-radius: 8px;
-  color: white;
-  cursor: pointer;
-  font-weight: 600;
-  transition: background 0.3s;
-}
-
-.boton.delete {
-  background-color: #e74c3c;
-  background-color: #E63946;
-  color: white;
-}
-
-.boton.delete:hover {
-  background-color: #c0392b;
-  background-color: #C82333;
-}
-
-.boton.update {
-  background-color: #3498db;
-  background-color: #0077CC;
-  color: white;
-}
-
-.boton.update:hover {
-  background-color: #2980b9;
-  background-color: #005FA3;
-}
-
 .total-container {
-  text-align: center;
   margin-top: 2rem;
-  padding-top: 1rem;
-  border-top: 2px solid #ddd;
-  font-size: 1.2rem;
+  padding-top: 1.5rem;
+  border-top: 2px solid #ccc;
+  font-size: 1.06rem;
+  color: #333;
 }
 
 .total-container p {
-  margin: 0.5rem 0;
+  margin: 0.4em 0;
 }
 
-.btnPagar {
-  margin-top: 1rem;
-  background-color: #eb6e09;
-  color: white;
-  padding: 0.8rem 2rem;
-  font-size: 1.1rem;
-  border: none;
-  border-radius: 10px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background 0.3s ease;
+.total-container div {
+  font-size: 0.9rem;
+  color: #777;
 }
 
-.btnPagar:hover {
-  background-color: #FF7A2B;
-}
+.imagenFrase{
+  border-radius: 30px;
 
-.total-container{
-  font-family: 'Poppins', sans-serif;
 }

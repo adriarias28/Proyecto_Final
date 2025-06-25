@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import CrudPartidos from '../../Services/CrudPartidos'
 import '../../Components/MapeoPartidos/Mapeo.css'
 import Swal from 'sweetalert2'
+import { FaMapMarkerAlt, FaCalendarAlt, FaClock, FaUsers, FaTrashAlt, FaEdit, FaTicketAlt } from 'react-icons/fa'
+
 
 function MapeoPartidos({ esAdmin = false }) {
 
@@ -88,40 +90,32 @@ function eliminar(id) {
   }
 
 
-
   return (
-    <div>
-      <h1 className='h1partido'>Partidos</h1>
-      <div className="partidoss">
-        {guardarPartidos.map((dato,index) => (
-        <div key={dato.id} className="cardjugador">
-          {esAdmin === false &&(
-            <div className='jugador-agregado'>
-              <p className='pstrong'><strong>Ubicacion: </strong>{dato.Ubicacion}</p><br />
-              <p className='pstrong'><strong>Equipos: </strong>{dato.Equipos}</p><br />
+    
+    <div className="partidoss">
+      {guardarPartidos.map((dato) => (
+        <div key={dato.id} className="cardpartido">
+          {!esAdmin && (
+            <div className='partido-agregado'>
+              <h2 className='tituloPar'><FaTicketAlt className="iconDos" /> Detalle de compra</h2>
             </div>
-          )
-
-          }
-            <div className='jugs'>
-              <div className='dh'>
-                  <p className='p'><strong>Ubicacion: </strong>{dato.Ubicacion}</p><br />
-                  <p className='p'><strong>Fecha: </strong>{dato.Fecha}</p><br />
-                  <p className='p'><strong>Hora: </strong>{dato.Hora}</p><br />
-                  <p className='p'><strong>Equipos: </strong>{dato.Equipos}</p><br />
-                  </div>
-                {esAdmin && (
-                  <div className="partidosbotones">
-                    <p className='buttt'>
-                        <button className='boton delete' onClick={() => eliminar(dato.id)}>Eliminar</button>
-                        <button className='boton update' onClick={() => editar(dato.id)}>Editar</button>
-                    </p>
-                  </div>
-                )}
+          )}
+          <div className='partido'>
+            <div className='pt'>
+              <p><FaMapMarkerAlt className="icon" /><strong className='pa'> Ubicación: </strong>{dato.Ubicacion}</p>
+              <p><FaCalendarAlt className="icon" /><strong className='pa'> Fecha: </strong>{dato.Fecha}</p>
+              <p><FaClock className="icon" /><strong className='pa'> Hora: </strong>{dato.Hora}</p>
+              <p><FaUsers className="icon" /><strong className='pa'> Equipos: </strong>{dato.Equipos}</p>
             </div>
+            {esAdmin && (
+              <div className="partidosbotones">
+                <button className='botondelete' onClick={() => eliminar(dato.id)}><FaTrashAlt /> Eliminar</button>
+                <button className='botonupdate' onClick={() => editar(dato.id)}><FaEdit /> Editar</button>
+              </div>
+            )}
+          </div>
         </div>
-            ))}
-    </div>
+      ))}
     </div>
   )
 }

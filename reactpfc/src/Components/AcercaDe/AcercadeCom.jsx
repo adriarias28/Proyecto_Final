@@ -1,7 +1,7 @@
 import React from 'react'
 import '../../Components/AcercaDe/Acercade.css'
-import estadio from '../../Images/estadio.jpeg'
 import logros from '../../Images/logros.jpeg'
+import estadio from '../../Images/estadio.jpeg'
 
 
 function AcercadeCom() {
@@ -10,7 +10,7 @@ function AcercadeCom() {
     
     <div>
         <div className='imagenhisto'>
-          <img className='estadio' src={estadio} width={1335} height={800} alt="..." />
+            <img className='logros' src={estadio} width={1351} height={700} alt="..." />
         </div>
       <div className='container-historia'>
         <div className='historia'> 

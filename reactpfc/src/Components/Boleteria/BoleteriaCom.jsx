@@ -1,22 +1,20 @@
 import React from 'react';
 import '../../Components/Boleteria/Boleteria.css';
 import MapeoLocalidad from '../MapeoLocalidad/MapeoLocalidad';
-import { useState } from 'react';
-import Swal from 'sweetalert2';
+import MapeoPartidos from '../MapeoPartidos/MapeoPartidos';
 
 function BoleteriaCom() {
 
 
-
   return (
+    <div className="boleteria-wrapper">
 
-    <div className="boleteria">
+      <h2 className='tituloBole'>¡El barco va que va!</h2>
       
-      <h2 className="boleteria-titulo">¡Nos vemos en La Olla Mágica!</h2>
-      
-      <MapeoLocalidad />
-
-      
+      <div className="contenedor-flex">
+        <MapeoPartidos esAdmin={false}/>  
+        <MapeoLocalidad esAdmin={false}/>
+      </div>
     </div>
   );
 }

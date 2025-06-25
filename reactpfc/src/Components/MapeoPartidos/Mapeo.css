@@ -1,90 +1,85 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Poppins:wght@400;500&display=swap');
 
-
 .partidoss {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
-  padding: 15px;
-  max-width: 900px;
+  padding: 20px;
+  max-width: 600px;
   margin: 0 auto;
-}
-
-.cardjugador {
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 0 10px #FF6000AA;
-  padding: 18px 22px;
-  color: black;
   font-family: 'Poppins', sans-serif;
-  transition: transform 0.3s ease;
 }
 
-.jugs{
+.tituloPar {
+  color: #000000;
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.cardpartido {
+  border-radius: 12px;
+  padding: 1.2rem 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.pa {
+  font-weight: 600;
+  color: #2D2D2D;
+}
+
+.pt p {
+  font-size: 15px;
+  margin: 10px 0;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
+  align-items: center;
+  gap: 8px;
 }
 
-.dh {
-  margin-bottom: 12px;
-}
-
-.p {
-  font-size: 14px;
-  margin: 6px 0;
-  line-height: 1.3;
+.icon {
   color: #FF6000;
+  font-size: 1rem;
 }
 
-.p {
-  color: black;
+.iconDos {
+  color: #000000;
+  margin-right: 8px;
+  vertical-align: middle;
+  font-size: 1.3rem;
 }
+
 
 .partidosbotones {
   display: flex;
   justify-content: flex-end;
-  gap: 12px;
+  gap: 10px;
+  margin-top: 1rem;
 }
 
-.boton {
-  cursor: pointer;
-  border: none;
-  padding: 7px 15px;
+.botondelete,
+.botonupdate {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
   font-weight: 600;
-  border-radius: 6px;
-  font-size: 13px;
-  transition: background-color 0.3s ease;
-  color: #FFFFFF;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  color: white;
+  transition: background 0.3s ease;
 }
 
-.boton.delete {
-  background-color: #FF6000;
+.botondelete {
+  background-color: #E63946;
 }
 
-.boton.delete:hover {
-  background-color: #e65100;
+.botondelete:hover {
+  background-color: #C82333;
 }
 
-.boton.update {
-  background-color: #222222;
-  border: 1.5px solid #FF6000;
+.botonupdate {
+  background-color: #0077CC;
 }
 
-.boton.update:hover {
-  background-color: #FF6000;
-  color: #000000;
-}
-.buttt {
-  margin: 0;
-}
-
-
-.h1partido{
-  font-family: 'Montserrat', sans-serif;
-  font-size: 2.5rem;
-  color: black;
-  text-align: center;
-  margin: 2rem 0;
+.botonupdate:hover {
+  background-color: #005FA3;
 }

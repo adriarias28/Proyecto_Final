@@ -4,15 +4,15 @@ import '../../Components/MapeoLocalidad/MapeoLocalidad.css'
 import Swal from 'sweetalert2'
 import Paypal from '../../Components/Boleteria/PayPal'
 import TyCBoleteria from '../TerminosCondiciones/TyCBoleteria';
+/* import MapeoPartidos from '../MapeoPartidos/MapeoPartidos' */
 
 function MapeoLocalidad({ esAdmin = false }) {
 
 const [aceptoTC, setAceptoTC] = useState(false); 
 
-const [total, setTotal] = useState(); 
 
 //validacion para aceptar la compra
-const realizarCompra = () => {
+/*const realizarCompra = () => {
   if (!aceptoTC) return; //no hace nada si no ha aceptado
 
   Swal.fire({
@@ -21,7 +21,7 @@ const realizarCompra = () => {
     text: '¡Tus boletos han sido generados correctamente!',
     confirmButtonColor: '#eb6e09'
   });
-};
+};*/
 
 const[guardarLocalidad, setGuardarLocalidad] = useState([])
     useEffect(() => {
@@ -32,12 +32,14 @@ const[guardarLocalidad, setGuardarLocalidad] = useState([])
         };
         fetchDataUsers()
     }, [])
+
 //ELIMINAR
-function eliminar(id) {
+  function eliminar(id) {
   location.reload();
     CrudLocalidad.deleteLocalidades(id)
     }
   // EDITAR
+  
   async function editar(id) {
     const localidadEditar = guardarLocalidad.find((loc) => loc.id === id);
     if (!localidadEditar) {
@@ -83,40 +85,49 @@ function eliminar(id) {
     }
   }
 
-
-  console.log(guardarLocalidad);
-  
-
   return (
+    
+
 
     <div className='localidad-container'>
-  {guardarLocalidad.map((dato, index) => {
-    const cantidad = dato.cantidad || 0;
-    /* functión Suma */
-    const suma = () => {
-      const nuevasLocalidades = guardarLocalidad.map(loc =>
-        loc.id === dato.id ? { ...loc, cantidad: (loc.cantidad || 0) + 1 } : loc
-      );
-      setGuardarLocalidad(nuevasLocalidades);
-    };
-    /* ...loc= cantidad anterior,
-         nueva cantidad y va sumando 1 al tocar el botón
-         Todo en un mapeo, para que se realice el ciclo*/
-    /* functión Resta */
-    const resta = () => {
-      const nuevasLocalidades = guardarLocalidad.map(loc =>
-        loc.id === dato.id && (loc.cantidad || 0) > 0
-          ? { ...loc, cantidad: loc.cantidad - 1 }
-          : loc
-      );
-      setGuardarLocalidad(nuevasLocalidades);
-      /* va restando 1 al tocar el botón  */
-    };
+     
+    {/* <MapeoPartidos/> */}
+      {guardarLocalidad.map((dato, index) => {
+        const cantidad = dato.cantidad || 0;
+        /* functión Suma */
+        const suma = () => {
+          const nuevasLocalidades = guardarLocalidad.map(loc =>
+            loc.id === dato.id ? { ...loc, cantidad: (loc.cantidad || 0) + 1 } : loc
+          );
+          setGuardarLocalidad(nuevasLocalidades);
+        };
+        /* ...loc= cantidad anterior,
+            nueva cantidad y va sumando 1 al tocar el botón
+            Todo en un mapeo, para que se realice el ciclo*/
+        /* functión Resta */
+        const resta = () => {
+          const nuevasLocalidades = guardarLocalidad.map(loc =>
+            loc.id === dato.id && (loc.cantidad || 0) > 0
+              ? { ...loc, cantidad: loc.cantidad - 1 }
+              : loc
+          );
+          setGuardarLocalidad(nuevasLocalidades);
+          /* va restando 1 al tocar el botón  */
+        };
+    
+
     return (
+
+
       <div key={dato.id} className="localidad-card entrada-item">
         <div className='entrada-info'>
-          <div className='tipo-entrada'>{dato.Nombre}</div>
-          <div className='precio-entrada'>₡ {parseFloat(dato.Precio).toLocaleString()}</div>
+
+          <div className='tipo-entrada'>
+          <strong> Localidad: </strong>{dato.Nombre}</div>
+
+          <div className='precio-entrada'>
+          <strong>Precio: </strong>₡ {parseFloat(dato.Precio).toLocaleString()}</div>
+
         </div>  {/* parseFloat= convierte una cadena de texto en un número de punto flotante*/}
         <div className="cantidad-control">
           <button className="cantidad-btn" onClick={resta}>−</button>
@@ -132,6 +143,7 @@ function eliminar(id) {
       </div>
     );
   })}
+  
   {/* Mostrar total de entradas y total en colones */}
   <div className='total-container'>
     <p><strong>CANTIDAD DE ENTRADAS:</strong> {
@@ -145,15 +157,13 @@ function eliminar(id) {
 
     } <div>IVA incluido</div></p>
   </div>
-  
     {/* Términos y Condiciones con modal */}
     <TyCBoleteria aceptoTC={aceptoTC} setAceptoTC={setAceptoTC} />
 
     {/*bloquea si no acepta los terminos*/}
     {/* <button className="btn-comprar" onClick={realizarCompra} disabled={!aceptoTC}>Comprar boletos</button> */}
 
-  <Paypal valor={guardarLocalidad.reduce((acc, loc) => acc + (loc.cantidad || 0) * parseFloat(loc.Precio || 0), 0)
-}/>
+  <Paypal valor={guardarLocalidad.reduce((acc, loc) => acc + (loc.cantidad || 0) * parseFloat(loc.Precio || 0), 0)}/>
 </div>
   )
 }
