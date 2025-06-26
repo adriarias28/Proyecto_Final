@@ -4,6 +4,76 @@
     padding-top: 100px;
 }
 
-.pagJugadores{
-    
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap');
+
+.infJug {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: start;
+  gap: 300px;
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 20px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  font-family: 'Oswald', sans-serif;
+}
+
+.contenedor-imagen {
+  grid-column: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.imgBio {
+  width: 100%;
+  max-width: 320px;
+  border-radius: 8px;
+  border: 4px solid #000;
+}
+
+.contenedor-datos {
+  grid-column: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.datBio {
+  display: flex;
+  align-items: baseline;
+  font-size: 1rem;
+  color: #333;
+}
+
+.datBio label {
+  display: inline-block;
+  font-weight: 700;
+  min-width: 160px;
+  text-transform: uppercase;
+  color: #e65c00;
+  margin: 10px;
+}
+
+/* Responsive: apila en móviles */
+@media (max-width: 700px) {
+  .infJug {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .contenedor-imagen,
+  .contenedor-datos {
+    justify-content: center;
+  }
+  .datBio {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .datBio label {
+    min-width: auto;
+    margin-right: 6px;
+  }
 }

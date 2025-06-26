@@ -87,6 +87,9 @@ const[imagenJugador,setImagenJugador] = useState(null)
   }
 
     async function btnAgregarJu() {
+
+    console.log(imagenJugador);
+      
     const rest_amazon = await uploadImageToS3(imagenJugador)
     console.log(rest_amazon.Location);
     location.reload();
@@ -114,9 +117,9 @@ const[imagenJugador,setImagenJugador] = useState(null)
           <label className='labelBio'>Altura</label>
           <input className='inputTodos' placeholder='Altura' value={alturaJugador} onChange={altura} type="number" />
         </div><br />
-
       <div className='divCont'>
           <label className='labelBio'>Peso</label>
+          <label>Peso</label>
           <input className='inputTodos' placeholder='Peso' value={pesoJugador} onChange={peso} type="number" />
           <label className='labelBio'>Posicion</label>
           <input className='inputTodos' placeholder='Posicion' value={posicionJugador} onChange={posicion} type="text" />
