@@ -122,7 +122,6 @@ async function editar(id) {
 }
 
 
-
   return (
     <div className='divPrincipal'>
       <div className="mapeoadm">

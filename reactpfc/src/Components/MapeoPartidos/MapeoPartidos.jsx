@@ -93,11 +93,11 @@ function eliminar(id) {
   return (
     
     <div className="partidoss">
-      {guardarPartidos.map((dato) => (
+      {guardarPartidos.slice(-1).map((dato) => (
         <div key={dato.id} className="cardpartido">
           {!esAdmin && (
             <div className='partido-agregado'>
-              <h2 className='tituloPar'><FaTicketAlt className="iconDos" /> Detalle de compra</h2>
+              <h2 className='tituloPT'>Partido</h2>
             </div>
           )}
           <div className='partido'>

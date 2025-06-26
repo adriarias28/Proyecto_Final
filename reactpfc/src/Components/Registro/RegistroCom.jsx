@@ -7,7 +7,7 @@ import pfc from '../../Images/pfc.jpg'
 import UserGroupCrud from '../../Services/UserGroupCrud'
 
 
-function RegistroCom() {
+function RegistroCom({ esAdmin = true }) {
 
     const [nombrePersona,setnombrePersona]=useState("")
     const [apellidoPersona,setapellidoPersona]=useState("")
@@ -114,7 +114,14 @@ function RegistroCom() {
               <label htmlFor="">Telefono</label><br />
               <input className='inpuesti' value={telefonoPersona} onChange={telefono} placeholder='Ingrese un numero telefonico' type="number" /><br /><br />
               <button className='btnRegis' onClick={btnRegistrar}>CREAR CUENTA</button><br /><br />
-              <p>¿Ya tienes una cuenta? <Link to= "/login" className='linkclass'>¡Inicia sesión aquí!</Link></p>
+              <p>¿Ya tienes una cuenta? <Link to= "/login" className='linkclass'>¡Inicia sesión aquí!</Link></p><br />
+            
+               {esAdmin && (
+                <div className="">
+                  <input type="checkbox" name="" id="" />
+                  <p>Registrar administrador</p>
+                </div>
+              )}
           </div>
         </div>
     </div>

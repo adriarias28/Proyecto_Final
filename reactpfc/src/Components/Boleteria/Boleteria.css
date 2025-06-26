@@ -3,9 +3,10 @@
 .contenedor-flex {
   display: flex;
   justify-content: space-between;
-  max-width: 1300px;
+  max-width: 1400px;
   font-family: 'Poppins', sans-serif;
-  margin-top: 100px;
+  background-color: #fcfafa;
+  padding-left: 150px;
 }
 
 /* Aseguramos que cada componente ocupe la mitad (ajustable) */
@@ -13,10 +14,13 @@
   flex: 1; 
 }
 
-.tituloBole{
-  margin-left: 500px;
+.tituloPar {
+  color: #2b2a2a;
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 1rem;
   margin-top: 100px;
-  font-size: 30px;
+
 }
 
 

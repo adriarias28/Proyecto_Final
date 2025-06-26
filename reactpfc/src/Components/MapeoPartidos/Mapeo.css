@@ -5,13 +5,8 @@
   max-width: 600px;
   margin: 0 auto;
   font-family: 'Poppins', sans-serif;
-}
+  background-color: #fcfafa;
 
-.tituloPar {
-  color: #000000;
-  text-align: center;
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
 }
 
 .cardpartido {
@@ -39,7 +34,7 @@
 }
 
 .iconDos {
-  color: #000000;
+  color: #FF6000;
   margin-right: 8px;
   vertical-align: middle;
   font-size: 1.3rem;
@@ -82,4 +77,8 @@
 
 .botonupdate:hover {
   background-color: #005FA3;
+}
+
+.tituloPT{
+  font-size: 40px;
 }

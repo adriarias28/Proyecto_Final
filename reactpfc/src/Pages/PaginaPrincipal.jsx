@@ -17,11 +17,11 @@ function PaginaPrincipal() {
       <NavbarCom/>
       <Video/>
       <MapeoUltimosResultados/>
+      <MapeoPartidos/>
       {/* <UltimosResulCom/> */}
       <MapeoJuga/>
       <PaginaPrin/>
       <MapeoEventos/>
-      <MapeoPartidos/>
       <FooderCom/>
     </div>
   )

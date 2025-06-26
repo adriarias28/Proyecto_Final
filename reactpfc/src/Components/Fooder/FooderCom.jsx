@@ -28,7 +28,6 @@ function FooderCom() {
           <li>Política de Privacidad</li>
           <li>Accesibilidad</li>
           <li>Política de Envío</li>
-          <li>Términos y Condiciones</li>
           <a className='tyc' href="terminosYCondiciones" target="_blank" rel="noopener noreferrer">Términos y Condiciones</a>
           <li>Política de Reembolso</li>
         </ul>
@@ -44,7 +43,10 @@ function FooderCom() {
 
         
       </div>
-         <p className='derechos'>© 2025 Puntarenas Fútbol Club, Todos los Derechos Reservados.</p>
+        {/* Párrafo centrado al final */}
+        <div className="footer-rights">
+          <p className="derechos">© 2025 Puntarenas Fútbol Club, Todos los Derechos Reservados.</p>
+        </div>
     </footer>
   );
 }

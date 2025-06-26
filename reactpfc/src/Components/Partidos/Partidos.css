@@ -1,12 +1,14 @@
 /* Estilos generales */
 .contePrin {
-  max-width: 600px;
-  margin: 40px auto;
-  background: #fff;
-  padding: 30px 40px;
-  border-radius: 12px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #1e1e1e;
+  padding: 3rem 1rem;
+  border-radius: 16px;
+  max-width: 500px;
+  margin: 3rem auto;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
 /* Contenedor principal */
@@ -16,12 +18,11 @@
   padding: 10px;
 }
 
-/* Etiquetas */
-label {
-  display: block;
-  margin-bottom: 8px;
-  color: #333;
+.labelLocal {
+  color: white;
   font-weight: 600;
+  margin-bottom: 0.2rem;
+  font-size: 20px;
 }
 
 .tituloPartido{
@@ -33,31 +34,36 @@ label {
 
 /* Campos de entrada */
 .inputTodos {
-  width: 100%;
-  padding: 10px 14px;
-  margin-bottom: 20px;
-  border: 1.5px solid #ddd;
-  border-radius: 6px;
-  font-size: 16px;
-  transition: border 0.3s ease;
+  padding: 0.7rem 1rem;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  background-color: #fff;
+  color: #000;
+  outline: none;
+}
+
+.inputTodos:focus {
+  border: 2px solid #f56511;
 }
 
 
 /* Botón */
 .btnPartido {
-  width: 50%;
-  padding: 12px;
-  background-color: #000000;
+  gap: 0.5rem;
+  background-color: #f56511;
   color: white;
+  padding: 0.8rem;
   border: none;
-  font-size: 16px;
-  border-radius: 6px;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 1rem;
   cursor: pointer;
-  text-transform: uppercase;
   transition: background-color 0.3s ease;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .btnPartido:hover {
-  background-color: #e55a00;
+  background-color: #d44e0a;
 }
+
+

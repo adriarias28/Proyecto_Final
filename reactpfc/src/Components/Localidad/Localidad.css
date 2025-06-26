@@ -1,33 +1,68 @@
-.localidad-container {
-  display: grid;
-  gap: 1rem;
-  padding: 2rem;
-  background-color: #1E1E1E;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  margin: auto;
-  width: 80%;
-  margin-bottom: 40px;
-}
-.evento-card {
-  background-color: #F56511;
-  color: white;
-  padding: 1.8rem;
+.form-localidad-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #1e1e1e;
+  padding: 3rem 1rem;
   border-radius: 16px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  position: relative;
-  overflow: hidden;
+  max-width: 500px;
+  margin: 3rem auto;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
-.evento-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 10px 18px rgba(236, 229, 229, 0.6);
+
+.form-title {
+  color: #f56511;
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  font-family: 'Poppins', sans-serif;
 }
-.datolocal {
-  font-size: 1.1rem;
-  margin-bottom: 0.6rem;
-  line-height: 1.5;
+
+.form-localidad {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
-.datolocal strong {
-  color: #000000;
+
+.labelLocal {
+  color: white;
   font-weight: 600;
+  margin-bottom: 0.2rem;
+  font-size: 20px;
+}
+
+.input-localidad {
+  padding: 0.7rem 1rem;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  background-color: #fff;
+  color: #000;
+  outline: none;
+}
+
+.input-localidad:focus {
+  border: 2px solid #f56511;
+}
+
+.btn-agregar {
+  width: 100%;
+  padding: 12px;
+  background-color: #000000;
+  color: white;
+  border: none;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.btn-agregar:hover {
+  background-color: #d44e0a;
+}
+
+.icon {
+  font-size: 1rem;
 }

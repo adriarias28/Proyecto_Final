@@ -1,7 +1,6 @@
 import CrudJugadores from '../../Services/CrudJugadores'
 import React, { useEffect, useState } from 'react'
 import '../../Components/MapeoJugadores/MapeoJugadores.css'
-import Swal from 'sweetalert2'
 import { Link, useNavigate } from 'react-router-dom';
 
 function MapeoJuga({ esAdmin = false }) {

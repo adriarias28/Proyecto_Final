@@ -2,6 +2,7 @@ import { useState, useEffect} from 'react'
 import '../../Components/AdministrativoEventos/AdminEventos.css'
 import EventosCrud from '../../Services/EventosCrud'
 import uploadImageToS3 from '../../Components/AWS/AwsConection'
+import { FaCloudUploadAlt, FaPlusCircle} from 'react-icons/fa';
 
 function AdminEventosCom() {
 
@@ -41,25 +42,21 @@ function AdminEventosCom() {
   }
 
   return (
+    <div className="admin-event-form">
+      <h1 className="form-title">Agregar Eventos</h1>
+      <div className='form-evento'> 
+        <label className='labelEvento' htmlFor="">Evento</label>
+        <input className="input-evento" value={nombreEvento} onChange={eventos} type="text" id="evento" placeholder="Nombre del evento"/>
 
-    <div>
+        <label className='labelEvento' htmlFor="">Descripción</label>
+        <input className="input-evento" value={nombreDescrip}onChange={descripcion} type="text" id="descripcion"placeholder="Descripción del evento"/>
+        
+        <input id="imagen" type="file" onChange={imagen} className="file-input"/>
 
-        <div className="admin-event-form">
-        <h1>Agrega los Próximos Eventos</h1>
-
-        <label htmlFor="evento">Evento</label>
-        <input value={nombreEvento} onChange={eventos} type="text" id="evento" placeholder="Nombre del evento" />
-
-        <label htmlFor="descripcion">Descripción</label>
-        <input value={nombreDescrip} onChange={descripcion} type="text" id="descripcion" placeholder="Descripción del evento" />
-
-        <input className='img' placeholder='Imagen' onChange={imagen} type="file"/><br /><br />
-
-        <button onClick={btnEvento} className="admin-btn">Registrar Evento</button>
-        </div>
-
+        <button onClick={btnEvento} className="btn-agregar"><FaPlusCircle className="icon" /> Registrar Evento </button>
+      </div>
     </div>
-  )
+  );
 }
 
-export default AdminEventosCom
+export default AdminEventosCom;

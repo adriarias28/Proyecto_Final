@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import CrudJugadores from '../../Services/CrudJugadores'
 import '../../Components/BiografiaJugador/BioJugador.css'
 import uploadImageToS3 from '../../Components/AWS/AwsConection'
+import { FaPlusCircle } from 'react-icons/fa';
 
 
 
@@ -99,37 +100,36 @@ const[imagenJugador,setImagenJugador] = useState(null)
 
     <div className='concontJugador'>
       <div className='divCont'>
-        <h1 className='tij'>Jugadores</h1> <br />
-          <label>Nombre completo</label>
+        <h1 className='tij'>Agregar Jugadores</h1> <br />
+          <label className='labelBio'>Nombre completo</label>
           <input className='inputTodos' placeholder='Nombre' value={nombreJugador} onChange={jugador} type="text" />
-          <label>Fecha de Nacimiento</label>
+          <label className='labelBio'>Fecha de Nacimiento</label>
           <input className='inputTodos' placeholder='Fecha' value={fechaNacimiento} onChange={nacimiento} type="date" />
-          <label>Edad</label>
+          <label className='labelBio'>Edad</label>
           <input className='inputTodos' placeholder='Edad' value={edadJugador} onChange={edad} type="number" />
-          <label>Lugar de nacimiento</label>
+          <label className='labelBio'>Lugar de nacimiento</label>
           <input className='inputTodos' placeholder='Lugar' value={lugarNacimiento} onChange={lugar} type="text" />
-          <label>Nacionalidad</label>
+          <label className='labelBio'>Nacionalidad</label>
           <input className='inputTodos' placeholder='Nacionalidad' value={nacionalidadJugador} onChange={nacionalidad} type="text" />
-          <label>Altura</label>
+          <label className='labelBio'>Altura</label>
           <input className='inputTodos' placeholder='Altura' value={alturaJugador} onChange={altura} type="number" />
         </div><br />
 
       <div className='divCont'>
-
-          <label>Peso</label>
+          <label className='labelBio'>Peso</label>
           <input className='inputTodos' placeholder='Peso' value={pesoJugador} onChange={peso} type="number" />
-          <label>Posicion</label>
+          <label className='labelBio'>Posicion</label>
           <input className='inputTodos' placeholder='Posicion' value={posicionJugador} onChange={posicion} type="text" />
-          <label>Numero Jugador</label>
+          <label className='labelBio'>Numero Jugador</label>
           <input className='inputTodos' placeholder='Numero Jugador' value={numeroJugador} onChange={numero} type="number" />
-          <label >Club Actual</label>
+          <label className='labelBio'>Club Actual</label>
           <input className='inputTodos' placeholder='Club' value={clubActual} onChange={club} type="text" />
-          <label>Pie dominante</label>
+          <label className='labelBio'>Pie dominante</label>
           <input className='inputTodos' placeholder='Dominante' value={pieDominante} onChange={dominante} type="text" /><br />
 
-          <input className='img' placeholder='Imagen' onChange={imagen} type="file"/><br /><br />
+          <input className="file-input" placeholder='Imagen' onChange={imagen} type="file"/><br /><br />
 
-          <button className='btnJugador' onClick={btnAgregarJu}>Agregar Jugador</button>
+          <button className='btnJugador' onClick={btnAgregarJu}><FaPlusCircle className="icon" /> Agregar Jugador</button>
       </div>       
    </div>
 

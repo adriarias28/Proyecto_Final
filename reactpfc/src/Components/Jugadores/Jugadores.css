@@ -1,8 +1,9 @@
-.tituloJugador {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+.tituloJuga{
     text-align: center;
-    margin-top: 100px;
-    margin-bottom: 70px;
-    color: black;
+    background-color: #f5f5f5;
+    padding-top: 100px;
 }
 
+.pagJugadores{
+    
+}

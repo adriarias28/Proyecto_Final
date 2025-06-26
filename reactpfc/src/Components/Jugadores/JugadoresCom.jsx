@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import CrudJugadores from '../../Services/CrudJugadores'
 import { useParams } from 'react-router-dom';
+import '../../Components/Jugadores/Jugadores.css'
 
 //useParams: es una libreria propia
 function JugadoresCom() {
@@ -30,9 +31,12 @@ const[guardarJugadoresid, setGuardarJugadoresid] = useState({})
 
   return (
     
-    <div>
+    <div className='pagJugadores'>
+      <h2 className='tituloJuga'>Nuestros Jugadores</h2>
+      <div>
         <p>{guardarJugadoresid.Nombre_Completo}</p>
         <p>{guardarJugadoresid.Posicion}</p>
+      </div>
     </div>
   )
 }

@@ -65,14 +65,6 @@ class MetodosPagoListCreateView(ListCreateAPIView):
 class MetodosPagoDetailView(RetrieveUpdateDestroyAPIView):
     queryset = MetodosPago.objects.all()
     serializer_class = MetodosPagoSerializers
-
-"""class BoleteriaListCreateView(ListCreateAPIView):
-    queryset = Boleteria.objects.all()
-    serializer_class = BoleteriaSerializers
-
-class BoleteriaDetailView(RetrieveUpdateDestroyAPIView):
-    queryset = Boleteria.objects.all()
-    serializer_class = BoleteriaSerializers"""
     
 class LocalidadesListCreateView(ListCreateAPIView):
     queryset = Localidades.objects.all()

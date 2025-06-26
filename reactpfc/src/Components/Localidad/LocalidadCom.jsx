@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '../../Components/Localidad/Localidad.css';
 import CrudLocalidad from '../../Services/CrudLocalidad'
+import { FaPlusCircle } from 'react-icons/fa';
 
 function LocalidadCom() {
 
@@ -26,15 +27,17 @@ const[precioLocalidad,setPrecioLocalidad] = useState('')
      setear()
    } 
 
+ return (
+    <div className="form-localidad-wrapper">
+      <h2 className="form-title">Agregar Localidad</h2>
+      <div className="form-localidad">
+        
+        <label className='labelLocal' htmlFor="">Nombre</label>
+        <input className="input-localidad" id="nombre" placeholder="Ej: Sombra Oeste" value={nombreLocalidad} onChange={nombre} type="text"/>
+        <label className='labelLocal' htmlFor="">Precio</label>
+        <input className="input-localidad" id="precio" placeholder="Ej: 10000" value={precioLocalidad} onChange={precio} type="number"/>
 
-  return (
-    <div className="localidades-background">
-      <div>
-        <label>Nombre</label>
-          <input className='inputTodos' placeholder='Nombre' value={nombreLocalidad} onChange={nombre} type="text" />
-          <label>Precio</label>
-          <input className='inputTodos' placeholder='Precio' value={precioLocalidad} onChange={precio} type="text" />
-          <button  onClick={btnAgregar}>Agregar </button><br /><br /> 
+        <button className="btn-agregar" onClick={btnAgregar}><FaPlusCircle className="icon" /> Agregar</button>
       </div>
     </div>
   );

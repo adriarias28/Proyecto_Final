@@ -7,7 +7,7 @@ function Register() {
 
     <div>
       <NavbarCom/>
-      <RegistroCom/>
+      <RegistroCom esAdmin={false}/>
       <FooderCom/>
 
     </div>

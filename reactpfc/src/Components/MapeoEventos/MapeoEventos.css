@@ -4,7 +4,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  background: #e0e0e0; /* fondo suave */
+  background-color: #f5f5f5;/* fondo suave */
   padding: 20px;
 }
 
