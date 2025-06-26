@@ -3,6 +3,8 @@ import React, { useEffect, useState } from 'react'
 import Swal from 'sweetalert2'
 import '../../Components/MapeoJugadores/Admin.css'
 
+
+import uploadImageToS3 from '../../Components/AWS/AwsConection'
 function MapeoJugAdmin() {
 const[guardarJugadores, setGuardarJugadores] = useState([])
 
@@ -27,8 +29,11 @@ const[guardarJugadores, setGuardarJugadores] = useState([])
     
 //EDITAR
 async function editar(id) {
+  
   const jugador = guardarJugadores.find(j => j.id === id);
+
   if (!jugador) return Swal.fire('Error', 'Jugador no encontrado', 'error');
+
 
   const { value: formValues } = await Swal.fire({
     title: 'Editar Jugador',
@@ -54,7 +59,47 @@ async function editar(id) {
     showCancelButton: true,
     confirmButtonText: 'Guardar',
     cancelButtonText: 'Cancelar',
+
     preConfirm: () => {
+
+  //Aqui va la imagen de file escogida nueva
+//const actualizaAmazon =  uploadImageToS3()
+
+
+//ESTA ES LA NUEVA
+    const imagenActualizar = document.getElementById('imagen').files[0]
+
+//Esto para que guarde la imagen nueva con el mismo nombre que la vieja
+    const url = jugador.Imagen
+    const partes = url.split("/");
+    const nombreArchivo = decodeURIComponent(partes[partes.length - 1]);
+
+     // Supongamos que tienes el archivo original
+    const archivoOriginal = imagenActualizar; // por ejemplo, el que obtienes con un input type="file"
+    const nuevoNombre = nombreArchivo;
+
+    // Crear un nuevo archivo con el nuevo nombre
+    const archivoRenombrado = new File([archivoOriginal], nuevoNombre, {
+      type: archivoOriginal.type,
+      lastModified: archivoOriginal.lastModified,
+});
+
+
+//Subir la nueva imagen
+    subirAWS(archivoRenombrado)
+    
+    async  function subirAWS(imagenActualizar) {
+        const rest_amazon = await uploadImageToS3(imagenActualizar)
+
+        console.log(rest_amazon);
+        
+    }
+
+      // Aqui hacemos la peticion a amazon para editar la imagen yb colocarla en el obj del la BD
+   
+     //   console.log(jugador.Imagen);
+      
+     
       const campos = {
         Nombre_Completo: document.getElementById('nombre').value.trim(),
         Fecha_Nacimiento: document.getElementById('fecha').value.trim(),
@@ -69,6 +114,9 @@ async function editar(id) {
         Pie_Dominante: document.getElementById('pie').value.trim(),
         ImagenFile: document.getElementById('imagen').files[0] || null
       };
+
+      console.log(campos);
+      
 
       const hayVacios = Object.values(campos).some(val => !val && val !== null);
       if (hayVacios) {
