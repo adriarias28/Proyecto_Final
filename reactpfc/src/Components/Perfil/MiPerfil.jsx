@@ -13,6 +13,8 @@
     const[guardarPerfil, setguardarPerfil] = useState([])  
     const navigate = useNavigate()
     const id = Cookies.get('id')
+    console.log(id);
+    
     const [perfilNombre,setperfilNombre]=useState("")
     const [perfilApellido,setperfilApellido]=useState("")
     const [perfilCorreo,setperfilCorreo]=useState("")
@@ -21,6 +23,8 @@
     
             async function fetchDataUsers() {
                 const data = await UsuariosCrud.getUsuariosid(id)
+                console.log(data);
+                
                 setguardarPerfil(data)
                 setperfilNombre(data.username || "");
                 setperfilApellido(data.last_name || "");
@@ -70,6 +74,12 @@
         function btnCerrar() {
 
         navigate('/')
+
+        }
+
+        function btnAdmin() {
+        
+        navigate('/admin')
 
         }
 

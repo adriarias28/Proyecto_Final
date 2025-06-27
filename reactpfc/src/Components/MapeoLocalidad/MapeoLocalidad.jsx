@@ -150,12 +150,12 @@ const[guardarLocalidad, setGuardarLocalidad] = useState([])
       guardarLocalidad.reduce((acc, loc) => acc + (loc.cantidad || 0), 0)
     }</p>
      {/* reduce= suma la cantidad total de entradas compradas */}
-    <p><strong>TOTAL A PAGAR:</strong> ₡ 
+    <strong>TOTAL A PAGAR:</strong> ₡ 
     
     {
       guardarLocalidad.reduce((acc, loc) => acc + (loc.cantidad || 0) * parseFloat(loc.Precio || 0), 0).toLocaleString()
 
-    } <div>IVA incluido</div></p>
+    } <div>IVA incluido</div>
   </div>
     {/* Términos y Condiciones con modal */}
     <TyCBoleteria aceptoTC={aceptoTC} setAceptoTC={setAceptoTC} />

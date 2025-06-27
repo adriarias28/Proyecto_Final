@@ -1,3 +1,8 @@
+import Cookies from 'js-cookie'
+const token = Cookies.get("access_token")
+
+console.log(token);
+
 async function getUltimosResultados() {
     try {
         const response = await fetch('http://127.0.0.1:8000/api/ultimosResultados/ ', {
@@ -64,6 +69,7 @@ async function updateUltimosResultados(id, data) {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
+           'Authorization': `Bearer ${token}`
         },
         body: JSON.stringify(data),
       });
@@ -90,7 +96,9 @@ async function deleteUltimosResultados(id) {
         const response = await fetch(`http://127.0.0.1:8000/api/ultimosResultados/${id}/`, {
             method: 'DELETE',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+                
             }
         });
 

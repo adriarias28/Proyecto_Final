@@ -3,28 +3,36 @@ from .models import Partidos, UltimosResultados, ProximosEventos, BiografiaJugad
 from .serializers import PartidosSerializer, UltimosResultadosSerializers, ProximosEventosSerializers, BiografiaJugadoresSerializers, UserSerializers, MembresiaSerializers, MetodosPagoSerializers, LocalidadesSerializers, DetalleVentaSerializers, LocalidadDetalleVentaSerializers, VentaSerializers, UserGroupSerializers
 from django.contrib.auth.models import User
 
+from .permisos import *
+
 UserGroup = User.groups.through
 
 class UserGroupView(ListCreateAPIView):
     queryset = UserGroup.objects.all()
     serializer_class = UserGroupSerializers
+    
 
 class PartidosListCreateView(ListCreateAPIView):
     queryset = Partidos.objects.all()
     serializer_class = PartidosSerializer
 
+
 class PartidosDetailView(RetrieveUpdateDestroyAPIView):
     queryset = Partidos.objects.all()
     serializer_class = PartidosSerializer
+    permission_classes = [IsAuthenticated, IsAdminUserGroup]
     
 
 class UltimosResultadosListCreateView(ListCreateAPIView):
     queryset = UltimosResultados.objects.all()
     serializer_class = UltimosResultadosSerializers
+    
 
 class UltimosResultadosDetailView(RetrieveUpdateDestroyAPIView):
     queryset = UltimosResultados.objects.all()
     serializer_class = UltimosResultadosSerializers
+    permission_classes = [IsAuthenticated, IsAdminUserGroup]
+    
 
 class ProximosEventosListCreateView(ListCreateAPIView):
     queryset = ProximosEventos.objects.all()
@@ -33,22 +41,33 @@ class ProximosEventosListCreateView(ListCreateAPIView):
 class ProximosEventosDetailView(RetrieveUpdateDestroyAPIView):
     queryset = ProximosEventos.objects.all()
     serializer_class = ProximosEventosSerializers
+    permission_classes = [IsAuthenticated, IsAdminUserGroup]
     
 class BiografiaJugadorListCreateView(ListCreateAPIView):
     queryset = BiografiaJugador.objects.all()
     serializer_class = BiografiaJugadoresSerializers
+    
 
 class BiografiaJugadorDetailView(RetrieveUpdateDestroyAPIView):
     queryset = BiografiaJugador.objects.all()
     serializer_class = BiografiaJugadoresSerializers
+    permission_classes = [IsAuthenticated, IsAdminUserGroup]
     
-class UsuarioListCreateView(ListCreateAPIView):
+class UsuarioListCreateView(CreateAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializers
+    permission_classes = [AllowAny]
+    
+class UsuarioListCreateViewDos(ListAPIView):
+    queryset = User.objects
+    serializer_class = UserSerializers
+    permission_classes = [IsAuthenticated]
 
 class UsuarioDetailView(RetrieveUpdateDestroyAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializers
+    permission_classes = [IsAuthenticated]
+    
     
 class MembresiaListCreateView(ListCreateAPIView):
     queryset = Membresia.objects.all()
@@ -57,6 +76,7 @@ class MembresiaListCreateView(ListCreateAPIView):
 class MembresiaDetailView(RetrieveUpdateDestroyAPIView):
     queryset = Membresia.objects.all()
     serializer_class = MembresiaSerializers
+    permission_classes = [IsAuthenticated, IsAdminUserGroup]
 
 class MetodosPagoListCreateView(ListCreateAPIView):
     queryset = MetodosPago.objects.all()
@@ -73,6 +93,7 @@ class LocalidadesListCreateView(ListCreateAPIView):
 class LocalidadesDetailView(RetrieveUpdateDestroyAPIView):
     queryset = Localidades.objects.all()
     serializer_class = LocalidadesSerializers
+    permission_classes = [IsAuthenticated, IsAdminUserGroup]
     
 class DetalleVentaListCreateView(ListCreateAPIView):
     queryset = DetalleVenta.objects.all()
@@ -81,6 +102,7 @@ class DetalleVentaListCreateView(ListCreateAPIView):
 class DetalleVentaDetailView(RetrieveUpdateDestroyAPIView):
     queryset = DetalleVenta.objects.all()
     serializer_class = DetalleVentaSerializers
+    permission_classes = [IsAuthenticated, IsAdminUserGroup]
     
 class LocalidadDetalleVentaListCreateView(ListCreateAPIView):
     queryset = LocalidadDetalleVenta.objects.all()

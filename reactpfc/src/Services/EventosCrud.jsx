@@ -1,7 +1,10 @@
 /*import CryptoJS from "crypto-js"; //import para el sha256 */
+import Cookies from 'js-cookie'
+const token = Cookies.get("access_token")
+
+console.log(token);
     
-    
-    async function getEventos() {
+async function getEventos() {
     try {
         const response = await fetch('http://127.0.0.1:8000/api/proximosEventos/', {
             method: 'GET',
@@ -65,7 +68,8 @@ async function updateEventos(id, data) {
       const response = await fetch(`http://127.0.0.1:8000/api/proximosEventos/${id}/`, {
         method: 'PUT',
         headers: {
-          'Content-Type': 'application/json',
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
         },
         body: JSON.stringify(data),
       });
@@ -93,7 +97,8 @@ async function deleteEventos(id) {
         const response = await fetch(`http://127.0.0.1:8000/api/proximosEventos/${id}/`, {
             method: 'DELETE',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
             }
         });
 

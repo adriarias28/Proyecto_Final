@@ -45,7 +45,7 @@ function FooderCom() {
       </div>
         {/* Párrafo centrado al final */}
         <div className="footer-rights">
-          <p className="derechos">© 2025 Puntarenas Fútbol Club, Todos los Derechos Reservados.</p>
+          <p className="derechos">© 2025 Puntarenas Fútbol Club. Todos los Derechos Reservados.</p>
         </div>
     </footer>
   );

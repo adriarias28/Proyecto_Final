@@ -115,7 +115,6 @@ function RegistroCom({ esAdmin = true }) {
               <input className='inpuesti' value={telefonoPersona} onChange={telefono} placeholder='Ingrese un numero telefonico' type="number" /><br /><br />
               <button className='btnRegis' onClick={btnRegistrar}>CREAR CUENTA</button><br /><br />
               <p>¿Ya tienes una cuenta? <Link to= "/login" className='linkclass'>¡Inicia sesión aquí!</Link></p><br />
-            
                {esAdmin && (
                 <div className="">
                   <input type="checkbox" name="" id="" />

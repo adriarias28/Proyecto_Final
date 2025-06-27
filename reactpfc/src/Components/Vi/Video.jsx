@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link, useNavigate} from 'react-router-dom'
 import '../../Components/Vi/Video.css'
-import Vid from '../../Components/Vi/Vid.mp4'
+import VidPFC from '../../Components/Vi/VidePFC.mp4'
 import tiburon from '../../Images/tiburon.png'
 
 function Video() {
@@ -36,7 +36,7 @@ function Video() {
       </div>
         <div>
             <video className="vid" autoPlay loop muted playsInline>
-                <source src={Vid} />
+                <source src={VidPFC} />
             </video>
         </div>
     </div>

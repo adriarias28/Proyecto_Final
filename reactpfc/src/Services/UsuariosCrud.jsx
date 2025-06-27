@@ -1,7 +1,9 @@
 /*import CryptoJS from "crypto-js"; //import para el sha256 */
 import Cookies from 'js-cookie'
 const token = Cookies.get("access_token");
-    
+
+console.log(token);
+
     
     async function getUsuarios() {
     try {
@@ -104,7 +106,8 @@ async function updateUsuarios(username, last_name, email, id )
         const response = await fetch("http://127.0.0.1:8000/api/usuario/"+id+'/', {
             method: 'PATCH',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
             },
             body: JSON.stringify(userData)
         });
@@ -126,7 +129,8 @@ async function deleteUsuarios(id) {
         const response = await fetch(`http://127.0.0.1:8000/api/usuario/${id}`, {
             method: 'DELETE',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
             }
         });
 

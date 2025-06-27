@@ -1,3 +1,8 @@
+import Cookies from 'js-cookie'
+const token = Cookies.get("access_token")
+
+console.log(token);
+
 async function getLocalidades() {
     try {
         const response = await fetch('http://127.0.0.1:8000/api/localidades/ ', {
@@ -60,6 +65,7 @@ async function updateLocalidades(id, data) {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`
         },
         body: JSON.stringify(data),
       });
@@ -84,7 +90,8 @@ async function deleteLocalidades(id) {
         const response = await fetch(`http://127.0.0.1:8000/api/localidades/${id}/`, {
             method: 'DELETE',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
             }
         });
 

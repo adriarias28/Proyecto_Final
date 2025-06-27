@@ -64,7 +64,7 @@ function eliminar(id) {
 
     if (formValues) {
       try {
-        location.reload();
+        /* location.reload(); */
         await CrudPartidos.updatePartidos(id, formValues)
 
         setGuardarPartidos(

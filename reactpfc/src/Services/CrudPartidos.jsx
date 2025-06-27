@@ -1,3 +1,9 @@
+import Cookies from 'js-cookie'
+const token = Cookies.get("access_token")
+
+console.log(token);
+
+
 async function getPartidos() {
     try {
         const response = await fetch('http://127.0.0.1:8000/api/partidos/ ', {
@@ -38,6 +44,7 @@ async function postPartidos(Ubicacion,Fecha,Hora,Equipos) {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
+
             },
             body: JSON.stringify(userData3)
         });
@@ -61,6 +68,7 @@ async function updatePartidos(id, data) {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
         },
         body: JSON.stringify(data),
       });
@@ -85,7 +93,8 @@ async function deletePartidos(id) {
         const response = await fetch(`http://127.0.0.1:8000/api/partidos/${id}/`, {
             method: 'DELETE',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
             }
         });
 
