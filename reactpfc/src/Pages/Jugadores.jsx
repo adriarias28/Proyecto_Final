@@ -8,7 +8,6 @@ function Jugadores() {
     <div>
 
       <NavbarCom/>
-      <JugadoresCom/>
       <MapeoJuga/>
       <FooderCom/>
       

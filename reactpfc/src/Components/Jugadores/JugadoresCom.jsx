@@ -26,6 +26,7 @@ const[guardarJugadoresid, setGuardarJugadoresid] = useState({})
   return (
     
     <div className='infJug'>
+      <p className="datBio">{guardarJugadoresid.Nombre_Completo}</p>
       <div className="contenedor-imagen">
         <img className='imgBio' src={guardarJugadoresid.Imagen} alt="" />
       </div>

@@ -35,7 +35,7 @@ async function editarEvento(id) {
   const { value: formValues } = await Swal.fire({
     title: 'Editar Evento',
     html: `
-      <input id="evento" class="swal2-input" placeholder="Evento" value="${evento.Eventos || ''}">
+      <input id="eventos" class="swal2-input" placeholder="Eventos" value="${evento.Eventos || ''}">
       <input id="descripcion" class="swal2-input" placeholder="Descripción" value="${evento.Descripcion || ''}">
       <input id="swal-imagen" type="file" accept="image/*" class="swal2-file">
       <div class="swal2-file">
@@ -111,7 +111,7 @@ async function editarEvento(id) {
       imageUrl = Location;
     }
 
-  location.reload();
+    location.reload();
     await EventosCrud.updateEventos(id, {
       Eventos: formValues.Nombre_Completo,
       Descripcion: formValues.Fecha_Nacimiento,

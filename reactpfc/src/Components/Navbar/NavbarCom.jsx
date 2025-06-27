@@ -34,7 +34,7 @@ function NavbarCom() {
         <ul className="nav-links">
           <li><Link to="/">Inicio</Link></li>
           <li><Link to="/jugadores">Jugadores</Link></li>
-          <li><Link to="/proximoseventos">Próximos Eventos</Link></li>
+          <li className='prxev'><Link to="/proximoseventos">Próximos Eventos</Link></li>
           <li><Link to="/membresia">Socios</Link></li>
           <li><Link to="/boleteria">Boleteria</Link></li>
           <li><Link to="/acercade">Historia</Link></li>

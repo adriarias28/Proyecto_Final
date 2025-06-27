@@ -4,8 +4,6 @@ import '../../Components/MapeoLocalidad/MapeoLocalidad.css'
 import Swal from 'sweetalert2'
 import Paypal from '../../Components/Boleteria/PayPal'
 import TyCBoleteria from '../TerminosCondiciones/TyCBoleteria';
-/* import MapeoPartidos from '../MapeoPartidos/MapeoPartidos' */
-
 function MapeoLocalidad({ esAdmin = false }) {
 
 const [aceptoTC, setAceptoTC] = useState(false); 
@@ -121,7 +119,6 @@ const[guardarLocalidad, setGuardarLocalidad] = useState([])
 
       <div key={dato.id} className="localidad-card entrada-item">
         <div className='entrada-info'>
-
           <div className='tipo-entrada'>
           <strong> Localidad: </strong>{dato.Nombre}</div>
 

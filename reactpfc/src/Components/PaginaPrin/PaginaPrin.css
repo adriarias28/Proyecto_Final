@@ -1,62 +1,48 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Poppins:wght@400;500&display=swap');
-
-.div {
-    background-color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 20px;
-    color: black;
-}
-
-
-
-  .paginaPrin {
-  background-color: #000;
-  color: white;
-  text-align: center;
-  padding: 2rem;
-  font-family: 'Arial', sans-serif;
-}
-
-.titulo {
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-  font-family: 'Poppins', sans-serif;
-}
-
-.jugadoresCont {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-}
-
-.jugt {
-  background-color: #111;
-  border-radius: 12px;
-  padding: 1rem;
-  width: 200px;
-  transition: transform 0.3s ease;
-}
-
-
-.jugt img {
+.paginaPrin {
+  position: relative;
   width: 100%;
-  border-radius: 10px;
+  height: 100vh;
+  overflow: hidden;
 }
 
-.jugt h2 {
-  margin: 1rem 0 0.3rem;
-  font-size: 1.1rem;
+.imagen-container {
+  position: relative;
+  width: 80%;
+  height: 80%;
+  margin-left: 120px;
+  margin-right: 120px;
+  border: 10px solid #fff; /* Borde blanco alrededor de la imagen */
+  border-radius: 20px; /* Esquinas redondeadas */
+  box-sizing: border-box;
+  overflow: hidden; /* Asegura que la imagen no sobresalga */
+}
+
+.fond {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px; /* Esquinas redondeadas */
+}
+
+.vaqva {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   color: white;
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.7), 0 0 10px rgba(255, 255, 255, 0.5), 0 0 15px rgba(255, 255, 255, 0.3);
+  animation: glow 1.5s ease-in-out infinite alternate;
 }
 
-.jugt h3 {
-  color: #FF6000; 
-  font-size: 1rem;
+/* @keyframes glow {
+  0% {
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.7), 0 0 10px rgba(255, 255, 255, 0.5), 0 0 15px rgba(255, 255, 255, 0.3);
+  }
+  100% {
+    text-shadow: 0 0 20px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 0.8), 0 0 40px rgba(255, 255, 255, 0.6);
+  }
 }
-
-.jugt:hover {
-  transform: scale(1.05);
-}
+ */

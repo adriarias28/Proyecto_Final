@@ -91,31 +91,38 @@ function eliminar(id) {
 
 
   return (
-    
-    <div className="partidoss">
-      {guardarPartidos.slice(-1).map((dato) => (
+   <div className="partidoss">
+        {guardarPartidos.slice(-1).map((dato,index) => (
         <div key={dato.id} className="cardpartido">
-          {!esAdmin && (
-            <div className='partido-agregado'>
-              <h2 className='tituloPT'>Partido</h2>
+          {esAdmin === false &&(
+             <div className='partido-agregado'>
+                <p><FaMapMarkerAlt className="icon" /><strong className='pa'> Ubicación: </strong>{dato.Ubicacion}</p>
+                <p><FaCalendarAlt className="icon" /><strong className='pa'> Fecha: </strong>{dato.Fecha}</p>
+                <p><FaClock className="icon" /><strong className='pa'> Hora: </strong>{dato.Hora}</p>
+                <p><FaUsers className="icon" /><strong className='pa'> Equipos: </strong>{dato.Equipos}</p>
             </div>
-          )}
-          <div className='partido'>
-            <div className='pt'>
-              <p><FaMapMarkerAlt className="icon" /><strong className='pa'> Ubicación: </strong>{dato.Ubicacion}</p>
-              <p><FaCalendarAlt className="icon" /><strong className='pa'> Fecha: </strong>{dato.Fecha}</p>
-              <p><FaClock className="icon" /><strong className='pa'> Hora: </strong>{dato.Hora}</p>
-              <p><FaUsers className="icon" /><strong className='pa'> Equipos: </strong>{dato.Equipos}</p>
-            </div>
-            {esAdmin && (
-              <div className="partidosbotones">
-                <button className='botondelete' onClick={() => eliminar(dato.id)}><FaTrashAlt /> Eliminar</button>
-                <button className='botonupdate' onClick={() => editar(dato.id)}><FaEdit /> Editar</button>
-              </div>
-            )}
-          </div>
+          )
+          } 
         </div>
-      ))}
+            ))} 
+            {guardarPartidos.map((dato,index) => (
+        <div key={dato.id} className="cardpartido">
+          {esAdmin && (
+             <div className='partido-agregado'>
+                <p><FaMapMarkerAlt className="icon" /><strong className='pa'> Ubicación: </strong>{dato.Ubicacion}</p>
+                <p><FaCalendarAlt className="icon" /><strong className='pa'> Fecha: </strong>{dato.Fecha}</p>
+                <p><FaClock className="icon" /><strong className='pa'> Hora: </strong>{dato.Hora}</p>
+                <p><FaUsers className="icon" /><strong className='pa'> Equipos: </strong>{dato.Equipos}</p>
+                 <div className="partidosbotones">
+                     <button className='botondelete' onClick={() => eliminar(dato.id)}><FaTrashAlt /> Eliminar</button>
+                     <button className='botonupdate' onClick={() => editar(dato.id)}><FaEdit /> Editar</button>
+                  </div>
+              </div>
+          )
+          } 
+        </div>
+            ))} 
+
     </div>
   )
 }
