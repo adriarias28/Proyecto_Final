@@ -143,7 +143,7 @@ async function editar(id) {
       const { Location } = await res.json();
       imageUrl = Location;
     }
-    location.reload();
+     location.reload();
     await CrudJugadores.updateBiografiaJugador(id, {
       Nombre_Completo: formValues.Nombre_Completo,
       Fecha_Nacimiento: formValues.Fecha_Nacimiento,

@@ -25,7 +25,6 @@ const[guardarUltimosResultados, setUltimosResultados] = useState([])
 //ELIMINAR
 
 function valor(evento) {
-
   setUltimosResultados(evento.target.value)
 }
 
@@ -154,35 +153,32 @@ async function editar(id) {
 
 
   return (
-    <div className="divPrin">
-      {/* <h1 className='urs'>Útimos Resultados</h1> */}
-        {guardarUltimosResultados/* .slice(-3) */.map((dato,index) => (
-        <div key={dato.id} className="caj">
-            <div className=''>
-              <div className='hh'>
-                  <p className='ps'><strong>Resultado: </strong>{dato.Resultado}</p><br /> 
-                  <p className='ps'><strong>Fecha: </strong>{dato.fecha}</p><br />
-                  <p className='ps'><strong>Equipos: </strong>{dato.equipos}</p><br />
-                 <div className='vs'>
-                    <img className='imgEscudo' src={Escudopfc} alt="" />
-                    <p className='vs'><strong>VS</strong></p>
-                    <img src={dato.Imagen} className='imagenEquipo' alt="" />
-                 </div>
+    <div>
+      <h1 className="urcl">ÚLTIMOS RESULTADOS</h1>
+      <div className="divPrin">
+        {guardarUltimosResultados.map(dato => (
+          <div key={dato.id} className="caj">
+            <div className="hh">
+              <p className="ps"><strong>Resultado:</strong> {dato.Resultado}</p>
+              <p className="ps"><strong>Fecha:</strong> {dato.fecha}</p>
+              <p className="ps"><strong>Equipos:</strong> {dato.equipos}</p>
+              <div className="vs">
+                <img className="imgEscudo" src={Escudopfc} alt="" />
+                <p className="vs"><strong>VS</strong></p>
+                <img src={dato.Imagen} className="imagenEquipo" alt="" />
               </div>
-                {esAdmin && (
-                  <div className="bottns">
-                    <p className='but'>
-                        <button className='boton delete' onClick={() => eliminar(dato.id)}>Eliminar</button>
-                        <button className='boton update' onClick={() => editar(dato.id)}>Editar</button>
-                    </p>
-                  </div>
-                )}
             </div>
-        </div>
-            ))}
-
+            {esAdmin && (
+              <div className="bottns">
+                <button className="boton delete" onClick={() => eliminar(dato.id)}>Eliminar</button>
+                <button className="boton update" onClick={() => editar(dato.id)}>Editar</button>
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
     </div>
-  )
+  );
 }
 
 export default MapeoUltimosResultados
