@@ -3,6 +3,8 @@ import React, { useEffect, useState } from 'react'
 import Swal from 'sweetalert2'
 import '../../Components/MapeoJugadores/Admin.css'
 
+
+import uploadImageToS3 from '../../Components/AWS/AwsConection'
 function MapeoJugAdmin() {
 const[guardarJugadores, setGuardarJugadores] = useState([])
 
@@ -27,8 +29,11 @@ const[guardarJugadores, setGuardarJugadores] = useState([])
     
 //EDITAR
 async function editar(id) {
+  
   const jugador = guardarJugadores.find(j => j.id === id);
+
   if (!jugador) return Swal.fire('Error', 'Jugador no encontrado', 'error');
+
 
   const { value: formValues } = await Swal.fire({
     title: 'Editar Jugador',
@@ -54,7 +59,47 @@ async function editar(id) {
     showCancelButton: true,
     confirmButtonText: 'Guardar',
     cancelButtonText: 'Cancelar',
+
     preConfirm: () => {
+
+  //Aqui va la imagen de file escogida nueva
+//const actualizaAmazon =  uploadImageToS3()
+
+
+//ESTA ES LA NUEVA
+    const imagenActualizar = document.getElementById('imagen').files[0]
+
+//Esto para que guarde la imagen nueva con el mismo nombre que la vieja
+    const url = jugador.Imagen
+    const partes = url.split("/");
+    const nombreArchivo = decodeURIComponent(partes[partes.length - 1]);
+
+     // Supongamos que tienes el archivo original
+    const archivoOriginal = imagenActualizar; // por ejemplo, el que obtienes con un input type="file"
+    const nuevoNombre = nombreArchivo;
+
+    // Crear un nuevo archivo con el nuevo nombre
+    const archivoRenombrado = new File([archivoOriginal], nuevoNombre, {
+      type: archivoOriginal.type,
+      lastModified: archivoOriginal.lastModified,
+});
+
+
+//Subir la nueva imagen
+    subirAWS(archivoRenombrado)
+    
+    async  function subirAWS(imagenActualizar) {
+        const rest_amazon = await uploadImageToS3(imagenActualizar)
+
+        console.log(rest_amazon);
+        
+    }
+
+      // Aqui hacemos la peticion a amazon para editar la imagen yb colocarla en el obj del la BD
+   
+     //   console.log(jugador.Imagen);
+      
+     
       const campos = {
         Nombre_Completo: document.getElementById('nombre').value.trim(),
         Fecha_Nacimiento: document.getElementById('fecha').value.trim(),
@@ -69,6 +114,9 @@ async function editar(id) {
         Pie_Dominante: document.getElementById('pie').value.trim(),
         ImagenFile: document.getElementById('imagen').files[0] || null
       };
+
+      console.log(campos);
+      
 
       const hayVacios = Object.values(campos).some(val => !val && val !== null);
       if (hayVacios) {
@@ -95,7 +143,7 @@ async function editar(id) {
       const { Location } = await res.json();
       imageUrl = Location;
     }
-    location.reload();
+     location.reload();
     await CrudJugadores.updateBiografiaJugador(id, {
       Nombre_Completo: formValues.Nombre_Completo,
       Fecha_Nacimiento: formValues.Fecha_Nacimiento,
@@ -122,14 +170,31 @@ async function editar(id) {
 }
 
 
+
   return (
-    <div className='divPrincipal'>
-      <div className="mapeoadm">
-            {guardarJugadores.map((dato,index) => (
-            <div key={dato.id} className="cardJug">
-                
-                <div className='agregado'>
-                      <p className='datostrong'><strong>Nombre: </strong>{dato.Nombre_Completo}</p><br />
+   <div className="divPp">
+      <div className="mapeoj">
+        {guardarJugadores.map((dato,index) => (
+        <div key={dato.id} className="jugadorr">
+          {esAdmin === false &&(
+            <div className='jugadoragregado'>
+              <img onClick={e=> cargarid(dato.id)} src={dato.Imagen} alt="im" />
+              <p className='dt'>{dato.Nombre_Completo}</p><br />
+              <p className='td'>{/* <strong>Posicion: </strong> */}{dato.Posicion}</p><br />
+            </div>
+           )
+          }
+        </div>
+        ))}
+      </div>
+
+
+      <div className="mapeoj">
+        {guardarJugadores/* .slice(-5) */.map((dato,index) => (
+        <div key={dato.id} className="jugadorr">
+          {esAdmin &&(
+            <div className='jugadoragregado'>
+              <p className='datostrong'><strong>Nombre: </strong>{dato.Nombre_Completo}</p><br />
                       <p className='datostrong'><strong>Posicion: </strong>{dato.Posicion}</p><br />
                       <p className='datostrong'><strong>Fecha Nacimiento: </strong>{dato.Fecha_Nacimiento}</p><br />
                       <p className='datostrong'><strong>Edad: </strong>{dato.Edad}</p><br />
@@ -141,21 +206,15 @@ async function editar(id) {
                       <p className='datostrong'><strong>Club: </strong>{dato.Club_Actual}</p><br />
                       <p className='datostrong'><strong>Pie Dominante: </strong>{dato.Pie_Dominante}</p>
                       <img className='imgs' src={dato.Imagen} alt="im" />
-                      
-                      <div className="botones-jugador">
-                        <p className='butt'>
-                            <button className='botoness' onClick={() => eliminar(dato.id)}>Eliminar</button>
-                            <button className='botoness' onClick={() => editar(dato.id)}>Editar</button>
-                        </p>
-                      </div>
-                  </div>
-                
-            
             </div>
-           ))} 
+           )
+          }
+        </div>
+          ))}
       </div>
-    </div>
-  )
-}
+   
+   </div>
+     )
+   }
 
 export default MapeoJugAdmin

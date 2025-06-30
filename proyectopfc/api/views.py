@@ -53,15 +53,11 @@ class BiografiaJugadorDetailView(RetrieveUpdateDestroyAPIView):
     serializer_class = BiografiaJugadoresSerializers
     permission_classes = [IsAuthenticated, IsAdminUserGroup]
     
-class UsuarioListCreateView(CreateAPIView):
+class UsuarioListCreateView(ListCreateAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializers
     permission_classes = [AllowAny]
     
-class UsuarioListCreateViewDos(ListAPIView):
-    queryset = User.objects
-    serializer_class = UserSerializers
-    permission_classes = [IsAuthenticated]
 
 class UsuarioDetailView(RetrieveUpdateDestroyAPIView):
     queryset = User.objects.all()

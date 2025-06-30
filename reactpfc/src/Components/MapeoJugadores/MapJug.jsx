@@ -2,8 +2,9 @@ import CrudJugadores from '../../Services/CrudJugadores'
 import React, { useEffect, useState } from 'react'
 import '../../Components/MapeoJugadores/MapeoJugadores.css'
 import { Link, useNavigate } from 'react-router-dom';
+import '../../Components/MapeoJugadores/Admin.css'
 
-function MapeoJuga({ esAdmin = false }) {
+function MapJug({ esAdmin = false }) {
 
 const[guardarJugadores, setGuardarJugadores] = useState([])
 const navigate= useNavigate()
@@ -27,7 +28,7 @@ const navigate= useNavigate()
   return (
     <div className='divPp'>
       <div className="mapeoj">
-        {guardarJugadores.slice(-5).map((dato,index) => (
+        {guardarJugadores.map((dato,index) => (
         <div key={dato.id} className="jugadorr">
           {esAdmin === false &&(
             <div className='jugadoragregado'>
@@ -43,4 +44,4 @@ const navigate= useNavigate()
   )
 }
 
-export default MapeoJuga
+export default MapJug

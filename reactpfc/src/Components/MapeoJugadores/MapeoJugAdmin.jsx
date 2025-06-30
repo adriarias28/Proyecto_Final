@@ -33,7 +33,8 @@ async function editar(id) {
   const jugador = guardarJugadores.find(j => j.id === id);
 
   if (!jugador) return Swal.fire('Error', 'Jugador no encontrado', 'error');
-
+  console.log(jugador);
+  
 
   const { value: formValues } = await Swal.fire({
     title: 'Editar Jugador',
@@ -84,7 +85,8 @@ async function editar(id) {
       lastModified: archivoOriginal.lastModified,
 });
 
-
+  console.log(archivoRenombrado);
+  
 //Subir la nueva imagen
     subirAWS(archivoRenombrado)
     

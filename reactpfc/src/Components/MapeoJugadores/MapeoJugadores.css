@@ -48,3 +48,10 @@ h1 {
   font-family: 'Poppins', sans-serif;
   font-weight: bolder;
 }
+.imgs{
+  width: 50px;
+  margin: 20px;
+  height: 200px;
+  border-radius: 10px;
+  margin-right: 10px;
+}
