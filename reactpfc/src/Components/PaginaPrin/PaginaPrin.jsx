@@ -1,6 +1,6 @@
 
 import '../../Components/PaginaPrin/PaginaPrin.css'
-import Fondo3 from '../../Images/Fondo3.png'
+import fondo2 from '../../Images/fondo2.png'
 
 function PaginaPrin() {
 
@@ -9,8 +9,7 @@ function PaginaPrin() {
 
     <div className="paginaPrin">
       <div className='imagen-container'>
-        <img className='fond' src={Fondo3} alt="Fondo" />
-        <h1 className='vaqva'>EL BARCO VA QUE VA</h1>
+        <img className='fond' src={fondo2} alt="Fondo" />
       </div>
     </div>
   )

@@ -1,4 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+/* Banner con fondo imagen */
+.banner {
+  background-image: url('../../Images/ImgTiburon2.png'); 
+  background-size: cover;
+  height: 230px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 200px; /* para evitar que se oculte debajo del navbar fijo */
+}
 
 .contenedor-flex {
   display: flex;
@@ -7,6 +21,7 @@
   font-family: 'Poppins', sans-serif;
   background-color: #fcfafa;
   padding-left: 150px;
+  margin-bottom: 100px;
 }
 
 /* Aseguramos que cada componente ocupe la mitad (ajustable) */
@@ -14,15 +29,27 @@
   flex: 1; 
 }
 
-.tituloPar {
-  color: #2b2a2a;
-  text-align: center;
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  margin-top: 100px;
-
+.imgBol {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
 }
 
+.boleteria-wrapper {
+  font-family: 'Poppins', sans-serif;
+  padding: 2rem;
+  max-width: 1400px;
+}
+
+.tituloPar {
+  font-size: 3.5rem;
+  color: #eb6e09;
+  text-align: center;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+  margin-top: 200px;
+  margin-bottom: 65px;
+  font-family: 'Bebas Neue', sans-serif;
+}
 
 /* Responsivo para celulares */
 @media (max-width: 768px) {

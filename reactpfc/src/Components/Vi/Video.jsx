@@ -3,6 +3,7 @@ import { Link, useNavigate} from 'react-router-dom'
 import '../../Components/Vi/Video.css'
 import VidPFC from '../../Components/Vi/VidePFC.mp4'
 import tiburon from '../../Images/tiburon.png'
+import { FaTicketAlt } from 'react-icons/fa';
 
 function Video() {
 
@@ -31,8 +32,8 @@ function Video() {
           )}
         </div>
       <div className="video-overlay">
-        <h1>¡BIENVENIDOS A TIERRA DE TIBURONES!</h1>
-          <button onClick={btnBoleteria}>Boletería</button>
+        <h1>BIENVENIDOS A TIERRA DE TIBURONES</h1>
+          <button onClick={btnBoleteria}> <FaTicketAlt style={{ marginRight: '10px' }} />Boletería</button>
       </div>
         <div>
             <video className="vid" autoPlay loop muted playsInline>

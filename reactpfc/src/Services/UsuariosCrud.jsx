@@ -181,4 +181,4 @@ async function postApiToken(username,password) {
 }
 
 
-export default { deleteUsuarios, postUsuarios, updateUsuarios, getUsuarios,postApiToken, getUsuariosid }
+export default { deleteUsuarios, postUsuarios, updateUsuarios, getUsuarios, postApiToken, getUsuariosid }

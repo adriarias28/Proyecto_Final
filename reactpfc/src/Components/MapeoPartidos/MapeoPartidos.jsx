@@ -96,6 +96,7 @@ function eliminar(id) {
         <div key={dato.id} className="cardpartido">
           {esAdmin === false &&(
              <div className='partido-agregado'>
+              <h1 className='tituloPT'>Partido</h1>
                 <p><FaMapMarkerAlt className="icon" /><strong className='pa'> Ubicación: </strong>{dato.Ubicacion}</p>
                 <p><FaCalendarAlt className="icon" /><strong className='pa'> Fecha: </strong>{dato.Fecha}</p>
                 <p><FaClock className="icon" /><strong className='pa'> Hora: </strong>{dato.Hora}</p>

@@ -8,8 +8,7 @@ function Login() {
     <div>
 
       <NavbarCom/>
-      {/* <Test/> */}
-     <LoginCom/> 
+      <LoginCom/> 
       <FooderCom/>
       
     </div>

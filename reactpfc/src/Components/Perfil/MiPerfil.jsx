@@ -5,19 +5,21 @@
     import { useEffect, useState } from 'react'
     import Cookies from 'js-cookie'
     import tiburonpeque from '../../Images/tiburonpeque.ico'
-    import { FaUser, FaCalendarAlt, FaSignOutAlt, FaSave } from 'react-icons/fa';
+    import { FaUser, FaCalendarAlt, FaSignOutAlt, FaSave, FaTools} from 'react-icons/fa';
 
 
     function MiperfilCom() {
         
     const[guardarPerfil, setguardarPerfil] = useState([])  
     const navigate = useNavigate()
-    const id = Cookies.get('id')
-    console.log(id);
-    
     const [perfilNombre,setperfilNombre]=useState("")
     const [perfilApellido,setperfilApellido]=useState("")
     const [perfilCorreo,setperfilCorreo]=useState("")
+
+    //para traer el rol y el id desde la cookie
+    const id = Cookies.get('id')
+    const rol = Cookies.get('role') 
+
 
         useEffect(() => {
     
@@ -101,11 +103,14 @@
           <div className="botones-perfil">
             <p className="but">
               <button className="btnEditar" onClick={btnEdita}>Editar Perfil</button>
-              <button className="btnCerrar" onClick={btnCerrar}> <FaSignOutAlt /> Cerrar Sesión</button>
             </p>
+            {/* Validacion para administradores*/}
+            {rol === 'admins' && (
+              <button className="btnAdmin" onClick={btnAdmin}><FaTools /> Panel Administrativo</button>
+            )}            
+              <button className="btnCerrar" onClick={btnCerrar}> <FaSignOutAlt /> Cerrar Sesión</button>
           </div>
       </div>
-    
       <div className="perfil-containerDos">
         <div className="perfil-cardDos">
         <h2 className='tituloPerfil'><FaUser /> Información Personal</h2><br /><br />

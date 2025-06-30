@@ -49,6 +49,35 @@ async function postUserGroup(user, group=2) {
     }
 }
 
+async function postUserGroupAdmin(user, group=1) {
+    try {
+     
+        const userData3 = { 
+          user,
+          group
+        };
+
+
+
+        const response = await fetch("http://127.0.0.1:8000/api/usergroup/", {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(userData3)
+        });
+
+     
+        return await response.json();
+
+        
+    } catch (error) {
+        console.error('Error posting user:', error);
+        throw error;
+    }
+}
+
+
 
 //////////////LLAMADO UPDATE/////////////
 
@@ -97,4 +126,4 @@ async function deleteUserGroup(id) {
     }
 }
 
-export default { getUserGroup, postUserGroup, updateUserGroup, deleteUserGroup }
+export default { getUserGroup, postUserGroup, updateUserGroup, deleteUserGroup, postUserGroupAdmin }

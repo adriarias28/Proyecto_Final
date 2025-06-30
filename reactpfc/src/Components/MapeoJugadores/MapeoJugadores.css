@@ -36,6 +36,7 @@ h1 {
 
 .divPp{
   background-color: #f5f5f5;
+  margin-top: 120px; /* para evitar que se oculte debajo del navbar fijo */
 }
 
 .dt{

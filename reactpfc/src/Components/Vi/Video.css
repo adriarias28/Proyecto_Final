@@ -27,34 +27,50 @@
   align-items: center;
   z-index: 10;
   z-index: 2;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  
 }
 
 .video-overlay h1 {
-  font-size: 3rem;
+  font-size: 3em;
   text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
   margin-bottom: 20px;
 }
 
 .video-overlay button {
-  padding: 15px 40px;
-  font-size: 1.2rem;
-  background-color: #eb6e09;
-  color: white;
+ padding: 16px 48px;
+  font-size: 1.25rem;
+  background: linear-gradient(135deg, #eb6e09, #ff912c);
+  color: #fff;
   border: none;
   cursor: pointer;
-  border-radius: 12px;
+  border-radius: 40px;
   font-family: 'Poppins', sans-serif;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 15px rgba(235, 110, 9, 0.8);
   transition: all 0.3s ease;
-  margin-left: 1000px;
-  margin-top: 300px;
-  border-radius: 200px;
+  animation: pulse 2s infinite;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-.video-overlay button:hover {
-  background-color: #c25e07;
-  transform: scale(1.05);
+/* Efecto al pasar el mouse */
+.video-overlay button:hover {  
+  background: linear-gradient(135deg, #ff7e00, #eb6e09);
+  transform: scale(1.08);
+  box-shadow: 0 0 25px rgba(235, 110, 9, 0.95);
+}
+
+/* Pulso */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(235, 110, 9, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 20px rgba(235, 110, 9, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(235, 110, 9, 0);
+  }
 }
 
 

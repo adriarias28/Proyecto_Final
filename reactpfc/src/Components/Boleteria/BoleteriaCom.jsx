@@ -2,9 +2,8 @@ import React from 'react';
 import '../../Components/Boleteria/Boleteria.css';
 import MapeoLocalidad from '../MapeoLocalidad/MapeoLocalidad';
 import MapeoPartidos from '../MapeoPartidos/MapeoPartidos';
-import ImgTiburon from '../../Images/ImgTiburon.png'
+import ImgTiburon2 from '../../Images/ImgTiburon2.png'
 
-import { FaTicketAlt } from 'react-icons/fa'
 
 function BoleteriaCom() {
 
@@ -12,8 +11,10 @@ function BoleteriaCom() {
   return (
     <div className="boleteria-wrapper">
       
-      <img className='imgBol' src={ImgTiburon} width={1500} height={230} alt="..." />
-      <h2 className='tituloPar'><FaTicketAlt className="iconDos" /> Detalle de compra</h2>
+            <div className="banner">
+        <h2 className='tituloPar'>COMPRAR ENTRADAS</h2>
+      </div>{/* 
+      <img className='imgBol' src={ImgTiburon2} width={1351} height={230} alt="..." /> */}
 
       <div className="contenedor-flex">
         <MapeoPartidos esAdmin={false}/>  

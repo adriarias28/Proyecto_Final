@@ -4,22 +4,12 @@ import '../../Components/MapeoLocalidad/MapeoLocalidad.css'
 import Swal from 'sweetalert2'
 import Paypal from '../../Components/Boleteria/PayPal'
 import TyCBoleteria from '../TerminosCondiciones/TyCBoleteria';
+import { FaTicketAlt } from 'react-icons/fa'
+
 function MapeoLocalidad({ esAdmin = false }) {
 
 const [aceptoTC, setAceptoTC] = useState(false); 
 
-
-//validacion para aceptar la compra
-/*const realizarCompra = () => {
-  if (!aceptoTC) return; //no hace nada si no ha aceptado
-
-  Swal.fire({
-    icon: 'success',
-    title: 'Compra realizada',
-    text: '¡Tus boletos han sido generados correctamente!',
-    confirmButtonColor: '#eb6e09'
-  });
-};*/
 
 const[guardarLocalidad, setGuardarLocalidad] = useState([])
     useEffect(() => {
@@ -84,11 +74,9 @@ const[guardarLocalidad, setGuardarLocalidad] = useState([])
   }
 
   return (
-    
-
 
     <div className='localidad-container'>
-     
+     <h2 className='LocalidadesH2'>Localidades</h2>
     {/* <MapeoPartidos/> */}
       {guardarLocalidad.map((dato, index) => {
         const cantidad = dato.cantidad || 0;
@@ -143,6 +131,7 @@ const[guardarLocalidad, setGuardarLocalidad] = useState([])
   
   {/* Mostrar total de entradas y total en colones */}
   <div className='total-container'>
+    <h2><FaTicketAlt className="iconDos" />Detalle de compra</h2><br />
     <p><strong>CANTIDAD DE ENTRADAS:</strong> {
       guardarLocalidad.reduce((acc, loc) => acc + (loc.cantidad || 0), 0)
     }</p>
@@ -152,14 +141,10 @@ const[guardarLocalidad, setGuardarLocalidad] = useState([])
     {
       guardarLocalidad.reduce((acc, loc) => acc + (loc.cantidad || 0) * parseFloat(loc.Precio || 0), 0).toLocaleString()
 
-    } <div>IVA incluido</div>
+    } <div>IVA incluido</div><br />
   </div>
     {/* Términos y Condiciones con modal */}
     <TyCBoleteria aceptoTC={aceptoTC} setAceptoTC={setAceptoTC} />
-
-    {/*bloquea si no acepta los terminos*/}
-    {/* <button className="btn-comprar" onClick={realizarCompra} disabled={!aceptoTC}>Comprar boletos</button> */}
-
   <Paypal valor={guardarLocalidad.reduce((acc, loc) => acc + (loc.cantidad || 0) * parseFloat(loc.Precio || 0), 0)}/>
 </div>
   )

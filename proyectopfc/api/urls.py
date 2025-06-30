@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import PartidosListCreateView,PartidosDetailView,UltimosResultadosListCreateView,UltimosResultadosDetailView, ProximosEventosListCreateView, ProximosEventosDetailView, BiografiaJugadorListCreateView, BiografiaJugadorDetailView, UsuarioListCreateView, UsuarioDetailView, MembresiaListCreateView, MembresiaDetailView, MetodosPagoListCreateView, MetodosPagoDetailView, LocalidadesListCreateView, LocalidadesDetailView, DetalleVentaListCreateView, DetalleVentaDetailView, LocalidadDetalleVentaListCreateView, LocalidadDetalleVentaDetailView, VentaListCreateView, VentaDetailView, UsuarioListCreateViewDos
+from .views import PartidosListCreateView,PartidosDetailView,UltimosResultadosListCreateView,UltimosResultadosDetailView, ProximosEventosListCreateView, ProximosEventosDetailView, BiografiaJugadorListCreateView, BiografiaJugadorDetailView, UsuarioListCreateView, UsuarioDetailView, MembresiaListCreateView, MembresiaDetailView, MetodosPagoListCreateView, MetodosPagoDetailView, LocalidadesListCreateView, LocalidadesDetailView, DetalleVentaListCreateView, DetalleVentaDetailView, LocalidadDetalleVentaListCreateView, LocalidadDetalleVentaDetailView, VentaListCreateView, VentaDetailView
 from .views import CustomTokenObtainPairView, UserGroupView
 from rest_framework_simplejwt.views import TokenRefreshView
 
@@ -13,7 +13,6 @@ urlpatterns = [
     path('biografiaJugador/',BiografiaJugadorListCreateView.as_view(),name='biografiaJugador-listar-crear'),
     path('biografiaJugador/<int:pk>/',BiografiaJugadorDetailView.as_view(), name='biografiaJugador-editar-actualizar'),
     path('usuario/',UsuarioListCreateView.as_view(),name='usuario-listar-crear'),
-    path('usuariolist/<int:pk>/',UsuarioListCreateViewDos.as_view(), name='usuario-editar-actualizar'),
     path('usuario/<int:pk>/',UsuarioDetailView.as_view(), name='usuario-editar-actualizar'),
     path('membresia/',MembresiaListCreateView.as_view(),name='membresia-listar-crear'),
     path('membresia/<int:pk>/',MembresiaDetailView.as_view(), name='membresia-editar-actualizar'),

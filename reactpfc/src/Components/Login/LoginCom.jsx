@@ -7,7 +7,7 @@ import Cookies from 'js-cookie'
 import tiburon from '../../Images/tiburon.png'
 import Swal from 'sweetalert2'
 
-function Test() {
+function LoginCom() {
 
     const[correoPersona,setcorreoPersona]=useState("")
     const[passwordPersona,setpasswordPersona]=useState("")
@@ -119,4 +119,4 @@ function Test() {
   )
 }
 
-export default Test
+export default LoginCom

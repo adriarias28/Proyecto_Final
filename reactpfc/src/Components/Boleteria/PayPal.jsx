@@ -15,9 +15,10 @@ const Paypal = ({valor}) => {
             };
            fetchTipoCambio()
         }, [])
+    
 
-    const tipoCambioRed = Math.round(tipoCambio?.dolar?.venta?.valor)   
-    const totalDolares = Math.round(valor/tipoCambioRed)
+    const tipoCambioRed = parseFloat(tipoCambio?.dolar?.venta?.valor) //	Obtiene la tasa de venta y la convierte en número seguro
+    const totalDolares = tipoCambioRed && valor > 0? Math.max(1, Math.ceil(valor / tipoCambioRed)): valor; 
 
     
     const initianlOptions = { //Cuenta de PAYPAL
@@ -56,11 +57,11 @@ const Paypal = ({valor}) => {
             <div className="paypal-card">
                 <h2 className="paypal-title"><FaPaypal className="paypal-icon" /> Pago con PayPal</h2>
 
-               {/*  <div className="paypal-summary">
-                    <p><strong>Producto:</strong> Entrada Estadio</p>
-                </div><br /> */}
-
                 <PayPalScriptProvider options={initianlOptions}>
+                    <p className="paypal-summary">
+                    <strong>Producto:</strong> Entrada Estadio<br />
+                    <strong>Total estimado (USD):</strong> ${totalDolares}
+                    </p>
                     <PayPalButtons 
                         style={{
                             layout: "horizontal",

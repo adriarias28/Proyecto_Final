@@ -11,6 +11,7 @@
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../../Images/contac.png');
   background-size: cover;
   background-position: center;
+  margin-top: 120px; /* para evitar que se oculte debajo del navbar fijo */
 }
 
 /* Formulario principal */

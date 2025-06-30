@@ -3,10 +3,8 @@
 .localidad-container {
   font-family: 'Poppins', sans-serif;
   max-width: 1000px;
-  margin: 2rem auto;
   padding: 2rem;
-  background: linear-gradient(135deg, #ffffff, #ffffff);
-  border-radius: 20px;
+  background: linear-gradient(135deg, #ebebeb, #ebebeb);
 }
 
 .localidad-card {
@@ -72,11 +70,11 @@
 }
 
 .total-container div {
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: #777;
 }
 
-.imagenFrase{
-  border-radius: 30px;
-
+.LocalidadesH2{
+  text-align: end;
 }
+

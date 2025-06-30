@@ -113,14 +113,14 @@ function RegistroCom({ esAdmin = true }) {
               <input className='inpuesti' value={passwordPersona} onChange={password} placeholder='Ingrese una contraseña' type="password" /><br /><br />
               <label htmlFor="">Telefono</label><br />
               <input className='inpuesti' value={telefonoPersona} onChange={telefono} placeholder='Ingrese un numero telefonico' type="number" /><br /><br />
-              <button className='btnRegis' onClick={btnRegistrar}>CREAR CUENTA</button><br /><br />
-              <p>¿Ya tienes una cuenta? <Link to= "/login" className='linkclass'>¡Inicia sesión aquí!</Link></p><br />
-               {esAdmin && (
+              {esAdmin && (
                 <div className="">
-                  <input type="checkbox" name="" id="" />
-                  <p>Registrar administrador</p>
+                  <input type="checkbox" name="" id="" /> 
+                  <p>Registrar como <strong>administrador</strong></p><br />
                 </div>
               )}
+              <button className='btnRegis' onClick={btnRegistrar}>CREAR CUENTA</button><br /><br />
+              <p>¿Ya tienes una cuenta? <Link to= "/login" className='linkclass'>¡Inicia sesión aquí!</Link></p><br />
           </div>
         </div>
     </div>
