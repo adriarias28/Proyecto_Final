@@ -12,6 +12,7 @@ const[guardarEvento, setguardarEvento] = useState([])
 
         async function fetchDataUsers() {
             const data = await EventosCrud.getEventos()
+            console.log();
             
             setguardarEvento(data)
         };
@@ -37,7 +38,6 @@ async function editarEvento(id) {
     html: `
       <input id="eventos" class="swal2-input" placeholder="Eventos" value="${evento.Eventos || ''}">
       <input id="descripcion" class="swal2-input" placeholder="Descripción" value="${evento.Descripcion || ''}">
-      <input id="swal-imagen" type="file" accept="image/*" class="swal2-file">
       <div class="swal2-file">
         <label for="imagen">Imagen (opcional)</label>
         <input id="imagen" type="file" accept="image/*">
@@ -50,9 +50,11 @@ async function editarEvento(id) {
     cancelButtonText: 'Cancelar',
 
     preConfirm: () => {
-
+    
+      
     const imagenActualizar = document.getElementById('imagen').files[0]
-
+      console.log(imagenActualizar);
+      
     const url = evento.Imagen
     const partes = url.split("/");
     const nombreArchivo = decodeURIComponent(partes[partes.length - 1]);
@@ -60,7 +62,7 @@ async function editarEvento(id) {
     const archivoOriginal = imagenActualizar; // por ejemplo, el que obtienes con un input type="file"
     const nuevoNombre = nombreArchivo;
 
-    const archivoRenombrado = new File([archivoOriginal], nuevoNombre, {
+   const archivoRenombrado = new File([archivoOriginal], nuevoNombre, {
       type: archivoOriginal.type,
       lastModified: archivoOriginal.lastModified,
 });
@@ -113,40 +115,22 @@ async function editarEvento(id) {
 
     location.reload();
     await EventosCrud.updateEventos(id, {
-      Eventos: formValues.Nombre_Completo,
-      Descripcion: formValues.Fecha_Nacimiento,
+      Eventos: formValues.Eventos,
+      Descripcion: formValues.Descripcion,
       Imagen_Url: imageUrl
     });
 
-    setGuardarJugadores(prev =>
-      prev.map(j =>
-        j.id === id ? { ...j, ...formValues, Imagen_Url: imageUrl } : j
-      )
-    );
 
-
-
-
-    await fetch(`/api/eventos/${id}`, {
-      method: 'PUT',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        Eventos: formValues.Eventos,
-        Descripcion: formValues.Descripcion,
-        Imagen: imageUrl
-      })
-    });
-
-    // 3. Actualiza estado local
     setguardarEvento(prev =>
-      prev.map(ev =>
-        ev.id === id ? { ...ev, ...formValues, Imagen_Url: imageUrl }: ev
+      prev.map(e =>
+        e.id === id ? { ...e, ...formValues, Imagen_Url: imageUrl }: e
       )
     );
 
     Swal.fire('Actualizado', 'Evento actualizado con éxito', 'success');
  }
 }
+
 
 
   return (

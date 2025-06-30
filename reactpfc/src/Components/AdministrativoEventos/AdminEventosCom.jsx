@@ -36,7 +36,7 @@ function AdminEventosCom() {
     const rest_amazon = await uploadImageToS3(imagenEvento)
     console.log(rest_amazon.Location);
     EventosCrud.postEventos(nombreEvento,nombreDescrip,rest_amazon.Location) 
-    location.reload();
+    /* location.reload(); */
     seteareventos()
 
   }
