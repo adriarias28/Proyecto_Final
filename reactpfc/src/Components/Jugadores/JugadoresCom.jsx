@@ -3,7 +3,8 @@ import CrudJugadores from '../../Services/CrudJugadores'
 import { useParams } from 'react-router-dom';
 import '../../Components/Jugadores/Jugadores.css'
 
-//useParams: es una libreria propia
+//useParams: es una libreria propia (es un gancho proporcionado 
+// por React Router que permite leer los parámetros de la URL actual)
 function JugadoresCom() {
 
 const { id } = useParams();
@@ -26,7 +27,6 @@ const[guardarJugadoresid, setGuardarJugadoresid] = useState({})
   return (
     
     <div className='infJug'>
-      {/* <p className="datBio">{guardarJugadoresid.Nombre_Completo}</p> */}
       <div className="contenedor-imagen">
         <img className='imgBio' src={guardarJugadoresid.Imagen} alt="" />
       </div>

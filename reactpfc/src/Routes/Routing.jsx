@@ -25,7 +25,7 @@ import Localidades from '../Pages/Localidades'
 import LocalidadesCRUD from '../Components/AccesoAdmin/LocalidadesCRUD'
 import MiPerfil from '../Pages/Perfil'
 import JugadoresCom from '../Components/Jugadores/JugadoresCom'
-
+import PrivateRoute from '../Components/Rutas Privadas/PrivateRoute';
 
 
 function Routing() {
@@ -33,14 +33,15 @@ function Routing() {
     <div>
       <Router>
         <Routes>
-            <Route path="/admin" element={<Administrador/>}>
-              <Route path="partidos" element={< PartidosCRUD />} />
-              <Route path="eventos" element={< EventosCRUD />} />
-              <Route path="jugadorescrud" element={<JugadoresCRUD/>}/>
-              <Route path="usuarios" element={<RegistroCRUD/>}/>
-              <Route path="localidades" element={<LocalidadesCRUD/>}/>
-              <Route path="ultimosResultados" element={<UltimosResCrud/>}/>
+            <Route path="/admin"element={<PrivateRoute element={<Administrador />} />}>
+              <Route path="partidos" element={<PartidosCRUD />} />
+              <Route path="eventos" element={<EventosCRUD />} />
+              <Route path="jugadorescrud" element={<JugadoresCRUD />} />
+              <Route path="usuarios" element={<RegistroCRUD />} />
+              <Route path="localidades" element={<LocalidadesCRUD />} />
+              <Route path="ultimosResultados" element={<UltimosResCrud />} />
             </Route>
+           {/*  <Route path="/mi-perfil"element={<PrivateRoute element={<MiPerfil />} />}></Route> */}
             <Route path="/acercade" element={<Acercasde/>}/>
             <Route path="/boleteria" element={<Boleteria/>}/>
             <Route path="/contactos" element={<Contactos/>}/>
@@ -59,8 +60,6 @@ function Routing() {
             <Route path="/terminosYCondiciones" element={<TerminosYCondiciones/>}/>
             <Route path="/mi-perfil" element={<MiPerfil/>}/>
             <Route path="/jugador/:id" element={<JugadoresCom />} />
-
-
         </Routes>
       </Router>
 

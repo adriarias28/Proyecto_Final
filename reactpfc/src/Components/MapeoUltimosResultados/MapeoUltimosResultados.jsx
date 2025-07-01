@@ -41,13 +41,14 @@ async function editar(id) {
   const resultado = guardarUltimosResultados.find(r => r.id === id);
 
   if (!resultado) return Swal.fire('Error', 'Resultado no encontrado', 'error');
-
+  /* console.log(resultado); */
+  
 
   const { value: formValues } = await Swal.fire({
     title: 'Editar Resultado',
     html: `
       <input id="resultado" class="swal2-input" placeholder="Resultado" value="${resultado.Resultado || ''}">
-      <input id="partidos_id" class="swal2-input" placeholder="partidos_id" value="${resultado.partidos_id || ''}">
+      
       <div class="swal2-file">
         <label for="imagen">Imagen (opcional)</label>
         <input id="imagen" type="file" accept="image/*">
@@ -101,11 +102,10 @@ async function editar(id) {
      
       const campos = {
         Resultado: document.getElementById('resultado').value.trim(),
-        Partidos_id: document.getElementById('partidos_id').value.trim(),
         ImagenFile: document.getElementById('imagen').files[0] || null
       };
 
-      console.log(campos);
+     /*  console.log(campos); */
       
 
       const hayVacios = Object.values(campos).some(val => !val && val !== null);
@@ -118,10 +118,10 @@ async function editar(id) {
     }
   });
 
-  if (formValues) {
-    let imageUrl = resultado.Imagen_Url;
+ /*  console.log(formValues) */
+  let imageUrl = resultado.Imagen_Url;
 
-    if (formValues.ImagenFile) {
+   /*  if (formValues.ImagenFile) {
       const fd = new FormData();
       fd.append('file', formValues.ImagenFile);
 
@@ -133,11 +133,10 @@ async function editar(id) {
       const { Location } = await res.json();
       imageUrl = Location;
     }
-    location.reload();
+    location.reload(); */
     await CrudUltimosResultados.updateUltimosResultados(id, {
       Resultado: formValues.Resultado,
-      Partidos_id: formValues.Partidos_id,
-      Imagen_Url: imageUrl
+      Imagen: imageUrl
     });
 
     setUltimosResultados(prev =>
@@ -147,7 +146,7 @@ async function editar(id) {
     );
 
     Swal.fire('Actualizado', 'Los datos del resultado han sido actualizados.', 'success');
-  }
+  
 }
 
 

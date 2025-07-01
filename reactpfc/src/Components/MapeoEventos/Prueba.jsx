@@ -11,10 +11,10 @@ const[guardarEvento, setguardarEvento] = useState([])
     useEffect(() => {
 
         async function fetchDataUsers() {
-            const dato = await EventosCrud.getEventos()
+            const data = await EventosCrud.getEventos()
             console.log();
             
-            setguardarEvento(dato)
+            setguardarEvento(data)
         };
         fetchDataUsers()
     }, []) 
@@ -27,37 +27,34 @@ const[guardarEvento, setguardarEvento] = useState([])
     }
 
 
-//EDITAR
+//EDITAR 
 async function editarEvento(id) {
-  
   const evento = guardarEvento.find(e => e.id === id);
-  console.log(evento);
+  if (!evento) return Swal.fire('Error', 'Evento no encontrado', 'error');
   
-
-  if (!evento) return Swal.fire('Error', 'Evento no encontrado', 'error');  
 
   const { value: formValues } = await Swal.fire({
-    title: 'Editar Eventos',
+    title: 'Editar Evento',
     html: `
       <input id="eventos" class="swal2-input" placeholder="Eventos" value="${evento.Eventos || ''}">
-      <input id="descripcion" class="swal2-input" placeholder="Descripcion" value="${evento.Descripcion || ''}">
+      <input id="descripcion" class="swal2-input" placeholder="Descripción" value="${evento.Descripcion || ''}">
       <div class="swal2-file">
         <label for="imagen">Imagen (opcional)</label>
         <input id="imagen" type="file" accept="image/*">
-        ${evento.Imagen ? `<img id="imagenPreview" src="${evento.Imagen}" alt="Imagen actual" style="max-width: 100px; margin-top: 10px;">` : ''}
+        ${evento.Imagen_Url ? `<img id="imagenPreview" src="${evento.Imagen_Url}" alt="Imagen actual" style="max-width: 100px; margin-top: 10px;">` : ''}
       </div>
-    `,
+      `,
     focusConfirm: false,
     showCancelButton: true,
     confirmButtonText: 'Guardar',
     cancelButtonText: 'Cancelar',
 
     preConfirm: () => {
-
-    const imagenActualizar = document.getElementById('imagen').files[0]
-    console.log(imagenActualizar);
     
-
+      
+    const imagenActualizar = document.getElementById('imagen').files[0]
+      console.log(imagenActualizar);
+      
     const url = evento.Imagen
     const partes = url.split("/");
     const nombreArchivo = decodeURIComponent(partes[partes.length - 1]);
@@ -65,13 +62,11 @@ async function editarEvento(id) {
     const archivoOriginal = imagenActualizar; // por ejemplo, el que obtienes con un input type="file"
     const nuevoNombre = nombreArchivo;
 
-    const archivoRenombrado = new File([archivoOriginal], nuevoNombre, {
+   const archivoRenombrado = new File([archivoOriginal], nuevoNombre, {
       type: archivoOriginal.type,
       lastModified: archivoOriginal.lastModified,
 });
 
-
-//Subir la nueva imagen
     subirAWS(archivoRenombrado)
     
     async  function subirAWS(imagenActualizar) {
@@ -81,34 +76,31 @@ async function editarEvento(id) {
         
     }
 
-      // Aqui hacemos la peticion a amazon para editar la imagen yb colocarla en el obj del la BD
-   
-     //   console.log(jugador.Imagen);
-      
-     
-      const campos = {
-        Eventos: document.getElementById('eventos').value.trim(),
-        Descripcion: document.getElementById('descripcion').value.trim(),
+
+      const campos ={
+        Eventos : document.getElementById('eventos').value.trim(),
+        Descripcion : document.getElementById('descripcion').value.trim(),
         ImagenFile: document.getElementById('imagen').files[0] || null
       };
 
       console.log(campos);
-      
+
+
 
       const hayVacios = Object.values(campos).some(val => !val && val !== null);
       if (hayVacios) {
         Swal.showValidationMessage('Por favor, completa todos los campos');
         return null;
       }
-
       return campos;
     }
   });
 
-  console.log(formValues)
-  let imageUrl = resultado.Imagen;
+  if (formValues){
+    let imageUrl = evento.Imagen_Url;
+  
 
-   /*  if (formValues.ImagenFile) {
+    if (formValues.ImagenFile) {
       const fd = new FormData();
       fd.append('file', formValues.ImagenFile);
 
@@ -120,21 +112,23 @@ async function editarEvento(id) {
       const { Location } = await res.json();
       imageUrl = Location;
     }
-    location.reload(); */
+
+    location.reload();
     await EventosCrud.updateEventos(id, {
       Eventos: formValues.Eventos,
       Descripcion: formValues.Descripcion,
-      Imagen: imageUrl
+      Imagen_Url: imageUrl
     });
+
 
     setguardarEvento(prev =>
       prev.map(e =>
-        e.id === id ? { ...e, ...formValues, Imagen_Url: imageUrl } : e
+        e.id === id ? { ...e, ...formValues, Imagen_Url: imageUrl }: e
       )
     );
 
-    Swal.fire('Actualizado', 'Los datos del Eventos han sido actualizados.', 'success');
-  
+    Swal.fire('Actualizado', 'Evento actualizado con éxito', 'success');
+ }
 }
 
 

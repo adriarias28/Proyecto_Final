@@ -64,9 +64,11 @@ async function postUltimosResultados(Resultado, partidos_id, Imagen) {
 //////////////LLAMADO UPDATE/////////////
 
 async function updateUltimosResultados(id, data) {
+    console.log(data);
+    
     try {
       const response = await fetch(`http://127.0.0.1:8000/api/ultimosResultados/${id}/`, {
-        method: 'PUT',
+        method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
            'Authorization': `Bearer ${token}`
