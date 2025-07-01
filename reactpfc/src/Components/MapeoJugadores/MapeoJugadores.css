@@ -1,58 +1,116 @@
-/* MapeoJugadores.css */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Poppins:wght@400;500&display=swap');
 
-h1 {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 2.5rem;
-  color: white;
-  text-align: center;
-  margin: 2rem 0;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
+
+.divJuga{
+  background-color: #000000;
 }
 
-.mapeoj {
+/* === TITULOS === */
+.titulosJugadores {
+  text-align: center;
+  padding: 120px 150px;
+  background-color: #000000;
+  color: white;
+}
+
+.subTituloPfc {
+  font-size: 2.5rem;
+  color: #fd800c;
+  letter-spacing: 3px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.tituloPrincipal {
+  font-size: 3rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: white;
+  letter-spacing: 1px;
+}
+
+.descripcionEquipo {
+  font-size: 15px;
+}
+
+/* === GRID === */
+.mapeojuga {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 2rem;
-  padding: 0 1rem;
+  gap: 25px;
+  padding: 0 100px;
+  padding-bottom: 70px;
 }
 
-.jugadorr {
-  background-color: #111;
-  border-radius: 12px;
-  padding: 1rem;
-  color: white;
-  transition: transform 0.3s ease;
-  text-align: center; /* Centra texto dentro de la tarjeta */
+/* === CARD JUGADOR === */
+.cardJugadores {
+  border-radius: 5px;
+  overflow: hidden;
+  text-align: center;
+  cursor: pointer;
 }
 
-.jugadorr img {
+/* Imagen */
+.jugadorImgn {
   width: 100%;
-  border-radius: 10px;
+  height: 300px;
+  object-fit: cover;
+  object-position: center;
 }
 
-.jugadorr:hover {
-  transform: scale(1.05);
+/* Info */
+.jugadorInfo {
+  padding: 20px 15px;
 }
 
-.divPp{
-  background-color: #f5f5f5;
-  margin-top: 120px; /* para evitar que se oculte debajo del navbar fijo */
+.JP {
+  font-size: 0.95rem;
+  color: #fd800c;
+  margin-bottom: 12px;
 }
 
-.dt{
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .tituloPrincipal {
+    font-size: 2.5rem;
+  }
+
+  .mapeoj {
+    padding: 0 20px;
+    gap: 30px;
+  }
+
+  .jugadorImg {
+    height: 250px;
+  }
+}
+
+/* Info debajo de la imagen */
+.jugadorInfo {
+  margin-top: 12px;
+}
+
+.JN {
   color: white;
-  font-family: 'Poppins', sans-serif;
-  font-weight: bolder;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
 }
-.td{
-  color: #f0811a;
-  font-family: 'Poppins', sans-serif;
-  font-weight: bolder;
+
+/* Botón principal */
+.contenedorBoton {
+  display: flex;
+  justify-content: center;
 }
-.imgs{
-  width: 50px;
-  margin: 20px;
-  height: 200px;
-  border-radius: 10px;
-  margin-right: 10px;
+
+.btnVerTodos {
+  background-color: rgb(231, 93, 1);
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-size: 1rem;
+  height: 55px;
+  cursor: pointer;
 }

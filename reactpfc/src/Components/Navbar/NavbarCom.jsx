@@ -2,8 +2,8 @@ import { Link, useNavigate} from 'react-router-dom'
 import '../../Components/Navbar/Navbar.css';
 import logo from '../../Images/logo.png'
 import NavSocialCom from './NavSocialCom';
-
-
+import { FaSignInAlt} from 'react-icons/fa';
+import { FaUserPlus, FaRegAddressCard, FaUserEdit } from 'react-icons/fa';
 
 function NavbarCom() {
 
@@ -36,8 +36,8 @@ function NavbarCom() {
           <li><Link to="/contactos">Contactanos</Link></li>
         </ul>
         <div className="nav-buttons">
-          <button onClick={btnIngreso}>Ingreso</button>
-          <button onClick={btnRegistro}>Registro</button>
+          <button onClick={btnIngreso}><FaSignInAlt /> Ingreso</button>
+          <button onClick={btnRegistro}><FaUserEdit />  Registro</button>
         </div>
       </nav>
     </div>

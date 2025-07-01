@@ -1,7 +1,6 @@
 import CrudJugadores from '../../Services/CrudJugadores'
 import React, { useEffect, useState } from 'react'
 import Swal from 'sweetalert2'
-import '../../Components/MapeoJugadores/Admin.css'
 
 
 import uploadImageToS3 from '../../Components/AWS/AwsConection'
@@ -173,6 +172,7 @@ async function editar(id) {
 
   return (
    <div className="divPp">
+
       <div className="mapeoj">
         {guardarJugadores.map((dato,index) => (
         <div key={dato.id} className="jugadorr">

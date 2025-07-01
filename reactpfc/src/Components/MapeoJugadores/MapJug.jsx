@@ -2,7 +2,7 @@ import CrudJugadores from '../../Services/CrudJugadores'
 import React, { useEffect, useState } from 'react'
 import '../../Components/MapeoJugadores/MapeoJugadores.css'
 import { Link, useNavigate } from 'react-router-dom';
-import '../../Components/MapeoJugadores/Admin.css'
+import '../../Components/MapeoJugadores/MapJug.css'
 
 function MapJug({ esAdmin = false }) {
 
@@ -21,23 +21,33 @@ const navigate= useNavigate()
     }, []) 
 
     function cargarid(id){
+
       console.log(id);
       navigate(`/jugador/${id}`)
+      
     }
   
   return (
     <div className='divPp'>
+      <h1 className='jugadoresTi'>Nuestros Jugadores</h1>
       <div className="mapeoj">
         {guardarJugadores.map((dato,index) => (
-        <div key={dato.id} className="jugadorr">
-          {esAdmin === false &&(
-            <div className='jugadoragregado'>
-            <img className='imgs' onClick={e=> cargarid(dato.id)} src={dato.Imagen} alt="im" />
-            <p className='dt'>{dato.Nombre_Completo}</p><br />
-            <p className='td'>{/* <strong>Posicion: </strong> */}{dato.Posicion}</p><br />
-            </div>
-          )}
-          </div>
+        <div key={dato.id} className="cardJugador">
+  <img
+    className="jugadorImg"
+    onClick={() => cargarid(dato.id)}
+    src={dato.Imagen}
+    alt={dato.Nombre_Completo}
+  />
+  <div className="jugadorInfo">
+    <h3 className="jugadorNombre">{dato.Nombre_Completo}</h3>
+    <p className="jugadorPosicion">{dato.Posicion}</p>
+    <button className="btnVerMas" onClick={() => cargarid(dato.id)}>
+  Ver más
+</button>
+  </div>
+</div>
+
             ))}
       </div>
     </div>

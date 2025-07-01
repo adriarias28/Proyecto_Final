@@ -92,7 +92,6 @@ function eliminar(id) {
 
   return (
    <div className="partidoss">
-    <h1 className='patrss'>PARTIDOS</h1>
         {guardarPartidos.slice(-1).map((dato,index) => (
         <div key={dato.id} className="cardpartido">
           {esAdmin === false &&(
@@ -124,7 +123,6 @@ function eliminar(id) {
           } 
         </div>
             ))} 
-
     </div>
   )
 }

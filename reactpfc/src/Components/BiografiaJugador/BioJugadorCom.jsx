@@ -71,7 +71,7 @@ const[imagenJugador,setImagenJugador] = useState(null)
     setImagenJugador(evento.target.files[0])
   }
 
-  function setear(){
+  function setear(){ 
     setNombreJugador('')
     setFechaNacimiento('')
     setEdadJugador('')
@@ -119,7 +119,6 @@ const[imagenJugador,setImagenJugador] = useState(null)
         </div><br />
       <div className='divCont'>
           <label className='labelBio'>Peso</label>
-          <label>Peso</label>
           <input className='inputTodos' placeholder='Peso' value={pesoJugador} onChange={peso} type="number" />
           <label className='labelBio'>Posicion</label>
           <input className='inputTodos' placeholder='Posicion' value={posicionJugador} onChange={posicion} type="text" />

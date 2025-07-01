@@ -16,9 +16,9 @@ function PaginaPrincipal() {
     <div>
       <NavbarCom/>
       <Video/>
-      <MapeoUltimosResultados/>
-      <PaginaPrin/>
       <MapeoPartidos esAdmin={false}/>  
+      <PaginaPrin/>
+      <MapeoUltimosResultados/>
       <MapeoJuga esAdmin={false}/>
       <MapeoEventos/>
       <FooderCom/>

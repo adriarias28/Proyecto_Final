@@ -1,11 +1,12 @@
-    import React from 'react'
-    import '../../Components/Perfil/MiPerfil.css'
-    import { Link, useNavigate } from 'react-router-dom'
-    import UsuariosCrud from '../../Services/UsuariosCrud'
-    import { useEffect, useState } from 'react'
-    import Cookies from 'js-cookie'
-    import tiburonpeque from '../../Images/tiburonpeque.ico'
-    import { FaUser, FaCalendarAlt, FaSignOutAlt, FaSave, FaTools} from 'react-icons/fa';
+import React from 'react'
+import '../../Components/Perfil/MiPerfil.css'
+import { Link, useNavigate } from 'react-router-dom'
+import UsuariosCrud from '../../Services/UsuariosCrud'
+import { useEffect, useState } from 'react'
+import Cookies from 'js-cookie'
+import tiburonpeque from '../../Images/tiburonpeque.ico'
+import { FaUser, FaCalendarAlt, FaSignOutAlt, FaSave, FaTools, FaEdit} from 'react-icons/fa';
+import Swal from 'sweetalert2';
 
 
     function MiperfilCom() {
@@ -19,71 +20,80 @@
     //para traer el rol y el id desde la cookie
     const id = Cookies.get('id')
     const rol = Cookies.get('role') 
+    //const para limpiar las cookies del application
+    const handleLogout = () => {
+      Cookies.remove('access_token');
+      Cookies.remove('refresh_token');
+      Cookies.remove('role');
+      Cookies.remove('id');
 
+      Swal.fire({
+        title: 'Sesión cerrada',
+        text: 'Gracias por tu visita. ¡Hasta pronto!',
+        icon: 'success',
+        confirmButtonColor: '#fd800c',
+        confirmButtonText: 'Aceptar'
+      }).then(() => {
+      navigate('/');
+      });
+    };
 
-        useEffect(() => {
-    
-            async function fetchDataUsers() {
-                const data = await UsuariosCrud.getUsuariosid(id)
-                console.log(data);
-                
-                setguardarPerfil(data)
-                setperfilNombre(data.username || "");
-                setperfilApellido(data.last_name || "");
-                setperfilCorreo(data.email || "");
-            };
-            fetchDataUsers()
-        }, []);
+    useEffect(() => {
 
-
-        function nombre(evento) {
-
-            setperfilNombre(evento.target.value)
+        async function fetchDataUsers() {
+            const data = await UsuariosCrud.getUsuariosid(id)
+            console.log(data);
             
-        }
-
-            function apellido(evento) {
-
-            setperfilApellido(evento.target.value)
-            
-        }
-
-            function correo(evento) {
-
-            setperfilCorreo(evento.target.value)
-            
-        }
-
-        async function btnCambios() {
-            try {
-            await UsuariosCrud.updateUsuarios(perfilNombre, perfilApellido, perfilCorreo, id);
-            alert("Perfil actualizado correctamente.");
-            location.reload();
-        } catch (error) {
-    
-        }
-        }
+            setguardarPerfil(data)
+            setperfilNombre(data.username || "");
+            setperfilApellido(data.last_name || "");
+            setperfilCorreo(data.email || "");
+        };
+        fetchDataUsers()
+    }, []);
 
 
-        function btnEdita() {
+    function nombre(evento) {
 
-            setperfilNombre(guardarPerfil.username || "")
-            setperfilApellido(guardarPerfil.last_name || "")
-            setperfilCorreo(guardarPerfil.email || "")
-
-        }
-
-        function btnCerrar() {
-
-        navigate('/')
-
-        }
-
-        function btnAdmin() {
+        setperfilNombre(evento.target.value)
         
-        navigate('/admin')
+    }
 
-        }
+    function apellido(evento) {
+
+        setperfilApellido(evento.target.value)
+        
+    }
+
+    function correo(evento) {
+
+        setperfilCorreo(evento.target.value)
+        
+    }
+
+    async function btnCambios() {
+        try {
+        await UsuariosCrud.updateUsuarios(perfilNombre, perfilApellido, perfilCorreo, id);
+        alert("Perfil actualizado correctamente.");
+        location.reload();
+    } catch (error) {
+
+    }
+    }
+
+    function btnEdita() {
+
+        setperfilNombre(guardarPerfil.username || "")
+        setperfilApellido(guardarPerfil.last_name || "")
+        setperfilCorreo(guardarPerfil.email || "")
+
+    }
+
+    function btnAdmin() {
+    
+    navigate('/admin')
+
+    }
 
 
   return (
@@ -102,13 +112,13 @@
 
           <div className="botones-perfil">
             <p className="but">
-              <button className="btnEditar" onClick={btnEdita}>Editar Perfil</button>
+              <button className="btnEditar" onClick={btnEdita}><FaEdit /> Editar Perfil</button>
             </p>
             {/* Validacion para administradores*/}
             {rol === 'admins' && (
               <button className="btnAdmin" onClick={btnAdmin}><FaTools /> Panel Administrativo</button>
             )}            
-              <button className="btnCerrar" onClick={btnCerrar}> <FaSignOutAlt /> Cerrar Sesión</button>
+              <button className="btnCerrar" onClick={handleLogout}> <FaSignOutAlt /> Cerrar Sesión</button>
           </div>
       </div>
       <div className="perfil-containerDos">

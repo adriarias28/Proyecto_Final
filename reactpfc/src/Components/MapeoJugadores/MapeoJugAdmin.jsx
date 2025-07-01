@@ -1,7 +1,7 @@
 import CrudJugadores from '../../Services/CrudJugadores'
 import React, { useEffect, useState } from 'react'
 import Swal from 'sweetalert2'
-import '../../Components/MapeoJugadores/Admin.css'
+import '../../Components/MapeoJugadores/MapeoJugAdmin.css'
 
 
 import uploadImageToS3 from '../../Components/AWS/AwsConection'
