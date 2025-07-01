@@ -65,7 +65,7 @@ async function postPartidos(Ubicacion,Fecha,Hora,Equipos) {
 async function updatePartidos(id, data) {
     try {
       const response = await fetch(`http://127.0.0.1:8000/api/partidos/${id}/`, {
-        method: 'PUT',
+        method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
             'Authorization': `Bearer ${token}`

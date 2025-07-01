@@ -133,9 +133,11 @@ async function postBiografiaJugador(Nombre_Completo,
 //////////////LLAMADO UPDATE/////////////
 
 async function updateBiografiaJugador(id, data) {
+    console.log(data);
+    
     try {
       const response = await fetch(`http://127.0.0.1:8000/api/biografiaJugador/${id}/`, {
-        method: 'PUT',
+        method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${token}`

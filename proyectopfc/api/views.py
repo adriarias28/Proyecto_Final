@@ -51,7 +51,7 @@ class BiografiaJugadorListCreateView(ListCreateAPIView):
 class BiografiaJugadorDetailView(RetrieveUpdateDestroyAPIView):
     queryset = BiografiaJugador.objects.all()
     serializer_class = BiografiaJugadoresSerializers
-    permission_classes = [IsAuthenticated, IsAdminUserGroup]
+    permission_classes = []
     
 class UsuarioListCreateView(ListCreateAPIView):
     queryset = User.objects.all()

@@ -33,7 +33,7 @@ async function editar(id) {
   const jugador = guardarJugadores.find(j => j.id === id);
 
   if (!jugador) return Swal.fire('Error', 'Jugador no encontrado', 'error');
-  console.log(jugador);
+ /*  console.log(jugador); */
   
 
   const { value: formValues } = await Swal.fire({
@@ -85,7 +85,7 @@ async function editar(id) {
       lastModified: archivoOriginal.lastModified,
 });
 
-  console.log(archivoRenombrado);
+/*   console.log(archivoRenombrado); */
   
 //Subir la nueva imagen
     subirAWS(archivoRenombrado)
@@ -117,10 +117,12 @@ async function editar(id) {
         ImagenFile: document.getElementById('imagen').files[0] || null
       };
 
-      console.log(campos);
+      /* console.log(campos); */
       
 
       const hayVacios = Object.values(campos).some(val => !val && val !== null);
+      /* console.log(hayVacios); */
+      
       if (hayVacios) {
         Swal.showValidationMessage('Por favor, completa todos los campos');
         return null;
@@ -130,9 +132,11 @@ async function editar(id) {
     }
   });
 
-  if (formValues) {
-    let imageUrl = jugador.Imagen_Url;
+/*   console.log(formValues); */
 
+
+     let imageUrl = jugador.Imagen;
+/*
     if (formValues.ImagenFile) {
       const fd = new FormData();
       fd.append('file', formValues.ImagenFile);
@@ -144,8 +148,21 @@ async function editar(id) {
       if (!res.ok) throw new Error(res.statusText);
       const { Location } = await res.json();
       imageUrl = Location;
-    }
-     location.reload();
+    } */
+
+  /*   console.log(formValues.Nombre_Completo,
+      formValues.Fecha_Nacimiento,
+      formValues.Edad,
+       formValues.Lugar_Nacimiento,
+       formValues.Nacionalidad,
+       formValues.Altura,
+      formValues.Peso,
+       formValues.Posicion,
+      formValues.Numero,
+       formValues.Club_Actual,
+      formValues.Pie_Dominante,
+     imageUrl); */
+    
     await CrudJugadores.updateBiografiaJugador(id, {
       Nombre_Completo: formValues.Nombre_Completo,
       Fecha_Nacimiento: formValues.Fecha_Nacimiento,
@@ -158,7 +175,7 @@ async function editar(id) {
       Numero: formValues.Numero,
       Club_Actual: formValues.Club_Actual,
       Pie_Dominante: formValues.Pie_Dominante,
-      Imagen_Url: imageUrl
+      Imagen: imageUrl
     });
 
     setGuardarJugadores(prev =>
@@ -168,7 +185,6 @@ async function editar(id) {
     );
 
     Swal.fire('Actualizado', 'Los datos del jugador han sido actualizados.', 'success');
-  }
 }
 
 
