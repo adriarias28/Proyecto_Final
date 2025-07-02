@@ -111,7 +111,6 @@ async function updateUsuarios(username, last_name, email, id )
             },
             body: JSON.stringify(userData)
         });
-
      
         return await response.json();
     } catch (error) {

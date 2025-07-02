@@ -37,7 +37,7 @@ const[precioLocalidad,setPrecioLocalidad] = useState('')
         <label className='labelLocal' htmlFor="">Precio</label>
         <input className="input-localidad" id="precio" placeholder="Ej: 10000" value={precioLocalidad} onChange={precio} type="number"/>
 
-        <button className="btn-agregar" onClick={btnAgregar}><FaPlusCircle className="icon" /> Agregar</button>
+        <button className="btn-agregar" onClick={btnAgregar}><FaPlusCircle className="icon" /> Agregar Localidad</button>
       </div>
     </div>
   );

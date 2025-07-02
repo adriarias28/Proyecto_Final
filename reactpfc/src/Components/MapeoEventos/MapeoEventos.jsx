@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import EventosCrud from '../../Services/EventosCrud'
 import '../../Components/MapeoEventos/MapeoEventos.css'
 import Swal from 'sweetalert2';
+import { FaTrashAlt, FaEdit } from 'react-icons/fa';
 
 import uploadImageToS3 from '../../Components/AWS/AwsConection'
 function MapeoEventos({ esAdmin = false }) {
@@ -141,7 +142,8 @@ async function editarEvento(id) {
 
   return (
     <div className="eventos-container">
-        <h1 className='pxev'>Próximos Eventos</h1>
+        <p className='pxevDos'><strong>PRÓXIMOS</strong></p>
+        <h1 className='pxev'> Eventos</h1>
          {guardarEvento.map((data,index) => ( 
             <div key={data.id} className="asd">
                 <div>
@@ -151,10 +153,8 @@ async function editarEvento(id) {
                      
                     {esAdmin && (
                         <div className='botones'>
-                            <p className='butt'>
-                                <button className='botonEliminar' onClick={() => eliminarEvento(data.id)}>Eliminar</button>
-                                <button className='botonEditar' onClick={() => editarEvento(data.id)}>Editar</button>
-                            </p>
+                                <button className='botonEliminar' onClick={() => eliminarEvento(data.id)}><FaTrashAlt style={{ marginRight: '5px' }} />Eliminar</button>
+                                <button className='botonEditar' onClick={() => editarEvento(data.id)}><FaEdit style={{ marginRight: '5px' }} />Editar</button>
                         </div>
                     )}
                 </div>

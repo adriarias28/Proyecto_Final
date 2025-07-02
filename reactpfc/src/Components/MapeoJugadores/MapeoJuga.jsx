@@ -3,8 +3,7 @@ import React, { useEffect, useState } from 'react'
 import '../../Components/MapeoJugadores/MapeoJugadores.css'
 import { Link, useNavigate } from 'react-router-dom';
 
-//COMPONENTE DE CARDS EN PERFIL
-
+//COMPONENTE DE CARDS EN PAGINA PRINCIPAL
 function MapeoJuga({ esAdmin = false }) {
 
 const[guardarJugadores, setGuardarJugadores] = useState([])
@@ -51,7 +50,7 @@ const navigate= useNavigate()
             ))}
       </div>
             <div className="contenedorBoton">
-              <button onClick={btnTodos} className="btnVerTodos">Ver Todos Los Jugadores</button>
+              <button onClick={btnTodos} className="btnVerTodos">Ver todos los jugadores</button>
             </div><br /><br /><br /><br /><br />
     </div>
   )

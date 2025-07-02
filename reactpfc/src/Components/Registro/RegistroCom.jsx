@@ -14,6 +14,7 @@ function RegistroCom({ esAdmin = true }) {
     const [correoPersona,setcorreoPersona]=useState("")
     const [passwordPersona,setpasswordPersona]=useState("")
     const [telefonoPersona,settelefonoPersona]=useState("")
+    const [registrarAdmin, setRegistrarAdmin] = useState(false);
 
     
 
@@ -57,9 +58,13 @@ function RegistroCom({ esAdmin = true }) {
 
     }
 
+    function cambiarCheck(evento) {
+
+      setRegistrarAdmin(evento.target.checked);
+
+    }
+
     async function btnRegistrar() {
-
-
 
       seteo()
 
@@ -77,9 +82,14 @@ function RegistroCom({ esAdmin = true }) {
       
       const respuesta = await UsuariosCrud.postUsuarios(nombrePersona, apellidoPersona, correoPersona, passwordPersona);
       console.log(respuesta);
-      const respuestaDos = await UserGroupCrud.postUserGroup(respuesta.id)
-      console.log(respuestaDos);
-      
+
+        if (registrarAdmin) {
+          const respuestaAdmin = await UserGroupCrud.postUserGroupAdmin(respuesta.id);
+          console.log("Registrado como administrador:", respuestaAdmin);
+        } else {
+          const respuestaUser = await UserGroupCrud.postUserGroup(respuesta.id);
+          console.log("Registrado como usuario:", respuestaUser);
+        }
       
       Swal.fire({
           title: "Registrado correctamente",
@@ -113,10 +123,10 @@ function RegistroCom({ esAdmin = true }) {
               <input className='inpuesti' value={passwordPersona} onChange={password} placeholder='Ingrese una contraseña' type="password" /><br /><br />
               <label htmlFor="">Telefono</label><br />
               <input className='inpuesti' value={telefonoPersona} onChange={telefono} placeholder='Ingrese un numero telefonico' type="number" /><br /><br />
-              {esAdmin && (
-                <div className="">
-                  <input type="checkbox" name="" id="" /> 
-                  <p>Registrar como <strong>administrador</strong></p><br />
+              {/* //Aplicamos un ckeckbox que solo se puede ver en el panel de administrador para agregar administradores */}
+              {esAdmin && ( 
+                <div className="contenedorCheckbox">
+                  <input type="checkbox" checked={registrarAdmin} onChange={cambiarCheck}/><span style={{ marginLeft: "8px" }}>Registrar como <strong>administrador</strong></span><br /><br />
                 </div>
               )}
               <button className='btnRegis' onClick={btnRegistrar}>CREAR CUENTA</button><br /><br />

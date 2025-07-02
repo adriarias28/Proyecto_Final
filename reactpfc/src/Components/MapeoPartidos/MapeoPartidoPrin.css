@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Poppins:wght@400;500&display=swap');
+
+.conte{
+  background-color: #f5f5f5;
+}
+
+.cardpartid{
+  margin-left: 550px;
+}
+
+.parraPartido{
+  padding-left: 200px;
+  padding-top: 70px;
+  color: #fd800c;
+}
+
+.tituloPTS::after{  
+  content: '';
+  display: block;
+  height: 5px;
+  background: linear-gradient(to right, #fd800c, transparent);
+  margin: 1px 0 20px ;
+  border-radius: 50px;
+  max-width: 80%;
+}
+
+.tituloPTS{
+  text-align: left;
+  padding-left: 200px;
+  font-size: 4rem;
+  color: #2e2e2e;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* === Overlay de carga === */
+.LoadingOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(109, 109, 108, 0.651);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.LoadingContent {
+  position: relative;
+  text-align: center;
+}
+
+.LoadingLogo {
+  width: 150px;
+  height: 150px;
+  border-radius: 12px;
+  z-index: 2;
+  position: relative;
+}
+
+/* === Spinner circular alrededor === */
+.Spinner {
+  position: absolute;
+  top: -25px;
+  left: -15px;
+  width: 180px;
+  height: 180px;
+  border: 4px solid transparent;
+  border-top: 4px solid #eb6e09;
+  border-right: 4px solid #1a1a1a;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  z-index: 1;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.btnBoleteria {
+  font-size: 1.25rem;
+  background: linear-gradient(135deg, #dfdfdf, #f0ecec);
+  color: #000000;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-family: 'Poppins', sans-serif;
+  gap: 10px;
+}
+
+.btnBoleteria:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #f8802f, #ca7c2e);
+}
+
+.contenido-partido {
+  display: flex;
+  justify-content: space-between;
+  border-radius: 16px;
+}

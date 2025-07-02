@@ -20,8 +20,8 @@ import Swal from 'sweetalert2';
     //para traer el rol y el id desde la cookie
     const id = Cookies.get('id')
     const rol = Cookies.get('role') 
-    //const para limpiar las cookies del application
-    const handleLogout = () => {
+    //const con funcion para limpiar las cookies del application
+    const btnCerrarSe = () => {
       Cookies.remove('access_token');
       Cookies.remove('refresh_token');
       Cookies.remove('role');
@@ -75,7 +75,6 @@ import Swal from 'sweetalert2';
         try {
         await UsuariosCrud.updateUsuarios(perfilNombre, perfilApellido, perfilCorreo, id);
         alert("Perfil actualizado correctamente.");
-        location.reload();
     } catch (error) {
 
     }
@@ -86,7 +85,6 @@ import Swal from 'sweetalert2';
         setperfilNombre(guardarPerfil.username || "")
         setperfilApellido(guardarPerfil.last_name || "")
         setperfilCorreo(guardarPerfil.email || "")
-
     }
 
     function btnAdmin() {
@@ -118,7 +116,7 @@ import Swal from 'sweetalert2';
             {rol === 'admins' && (
               <button className="btnAdmin" onClick={btnAdmin}><FaTools /> Panel Administrativo</button>
             )}            
-              <button className="btnCerrar" onClick={handleLogout}> <FaSignOutAlt /> Cerrar Sesión</button>
+              <button className="btnCerrar" onClick={btnCerrarSe}> <FaSignOutAlt /> Cerrar Sesión</button>
           </div>
       </div>
       <div className="perfil-containerDos">

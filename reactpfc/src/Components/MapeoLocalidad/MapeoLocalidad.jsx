@@ -5,6 +5,7 @@ import Swal from 'sweetalert2'
 import Paypal from '../../Components/Boleteria/PayPal'
 import TyCBoleteria from '../TerminosCondiciones/TyCBoleteria';
 import { FaTicketAlt } from 'react-icons/fa'
+import { FaTrashAlt, FaEdit } from 'react-icons/fa';
 
 function MapeoLocalidad({ esAdmin = false }) {
 
@@ -121,8 +122,8 @@ const[guardarLocalidad, setGuardarLocalidad] = useState([])
         </div>
         {esAdmin && (
           <div className="botones-partidos">
-            <button className='boton delete' onClick={() => eliminar(dato.id)}>Eliminar</button>
-            <button className='boton update' onClick={() => editar(dato.id)}>Editar</button>
+            <button className='botonDelete' onClick={() => eliminar(dato.id)}><FaTrashAlt style={{ marginRight: '5px' }} />Eliminar</button>
+            <button className='botonUpdate' onClick={() => editar(dato.id)}><FaEdit style={{ marginRight: '5px' }} />Editar</button>
           </div>
         )}
       </div>

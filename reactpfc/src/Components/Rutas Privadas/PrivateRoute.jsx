@@ -19,7 +19,6 @@ const PrivateRoute = ({ element }) => {
 export default PrivateRoute
 
 
-
 //PARA "MI-PERFIL"
 // PrivateRoutes.jsx
 /* import { Navigate, Outlet } from 'react-router-dom';

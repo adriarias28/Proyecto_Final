@@ -2,8 +2,9 @@ import CrudJugadores from '../../Services/CrudJugadores'
 import React, { useEffect, useState } from 'react'
 import Swal from 'sweetalert2'
 import '../../Components/MapeoJugadores/MapeoJugAdmin.css'
+import { FaTrashAlt, FaEdit } from 'react-icons/fa';
 
-
+//COMPONENTE DE PAGINA ADMINISTRADOR
 import uploadImageToS3 from '../../Components/AWS/AwsConection'
 function MapeoJugAdmin() {
 const[guardarJugadores, setGuardarJugadores] = useState([])
@@ -210,14 +211,10 @@ async function editar(id) {
                       <img className='imgs' src={dato.Imagen} alt="im" />
                       
                       <div className="botones-jugador">
-                        <p className='butt'>
-                            <button className='botoness' onClick={() => eliminar(dato.id)}>Eliminar</button>
-                            <button className='botoness' onClick={() => editar(dato.id)}>Editar</button>
-                        </p>
+                            <button className='boton1' onClick={() => eliminar(dato.id)}><FaTrashAlt style={{ marginRight: '5px' }} />Eliminar</button>
+                            <button className='boton2' onClick={() => editar(dato.id)}><FaEdit style={{ marginRight: '5px' }} />Editar</button>
                       </div>
                   </div>
-                
-            
             </div>
            ))} 
       </div>

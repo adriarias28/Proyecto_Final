@@ -1,11 +1,11 @@
 import CrudJugadores from '../../Services/CrudJugadores'
 import React, { useEffect, useState } from 'react'
-import '../../Components/MapeoJugadores/MapeoJugadores.css'
 import { Link, useNavigate } from 'react-router-dom';
 import '../../Components/MapeoJugadores/MapJug.css'
 
 function MapJug({ esAdmin = false }) {
 
+//CONTENEDOR DE PAGINA JUGADORES
 const[guardarJugadores, setGuardarJugadores] = useState([])
 const navigate= useNavigate()
 
@@ -28,7 +28,7 @@ const navigate= useNavigate()
     }
   
   return (
-    <div className='divPp'>
+    <div className='divP'>
       <h1 className='jugadoresTi'>Nuestros Jugadores</h1>
       <div className="mapeoj">
         {guardarJugadores.map((dato,index) => (

@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import CrudPartidos from '../../Services/CrudPartidos'
-import '../../Components/MapeoPartidos/Mapeo.css'
+import '../../Components/MapeoPartidos/MapeoPartidoPrin.css'
 import Swal from 'sweetalert2'
-import { FaMapMarkerAlt, FaCalendarAlt, FaClock, FaUsers, FaTrashAlt, FaEdit } from 'react-icons/fa'
-
+import { Link, useNavigate} from 'react-router-dom'
+import { FaMapMarkerAlt, FaCalendarAlt, FaClock, FaUsers, FaTrashAlt, FaEdit, FaTicketAlt } from 'react-icons/fa'
+import tiburon from '../../Images/tiburon.png'
 
 function MapeoPartidos({ esAdmin = false }) {
 
@@ -19,6 +20,17 @@ const[guardarPartidos, setGuardarPartidos] = useState([])
         };
         fetchDataUsers()
     }, []) 
+    
+//Loading que me redirecciona a pag Boleteria    
+const navigate = useNavigate();
+const [loading, setLoading] = useState(false);
+
+
+    const btnBoleteria = () => {
+        setLoading(true);
+        setTimeout(() => navigate('/boleteria'), 2000);
+
+};
 
 //ELIMINAR
 function eliminar(id) {
@@ -91,19 +103,37 @@ function eliminar(id) {
 
 
   return (
-   <div className="partidoss">
+
+   <div className="conte">
+
+        <div> {/* me carga la pag con el icono*/}
+          {loading && (
+            <div className="LoadingOverlay">
+              <div className="LoadingContent">
+                  <img src={tiburon} alt="Cargando" className="LoadingLogo" />
+                  <div className="Spinner"></div>
+              </div>
+            </div>
+          )}
+        </div>
+        <p className='parraPartido'>PRÓXIMO <span><strong>PARTIDO</strong></span></p>
+        <h1 className='tituloPTS'>Partido</h1><br />
         {guardarPartidos.slice(-1).map((dato,index) => (
-        <div key={dato.id} className="cardpartido">
+        <div key={dato.id} className="cardpartid">
           {esAdmin === false &&(
-             <div className='partido-agregado'>
-              <h1 className='tituloPT'>Partido</h1><br />
+            <div className="">
                 <p><FaMapMarkerAlt className="icon" /><strong className='pa'> Ubicación: </strong>{dato.Ubicacion}</p>
                 <p><FaCalendarAlt className="icon" /><strong className='pa'> Fecha: </strong>{dato.Fecha}</p>
                 <p><FaClock className="icon" /><strong className='pa'> Hora: </strong>{dato.Hora}</p>
-                <p><FaUsers className="icon" /><strong className='pa'> Equipos: </strong>{dato.Equipos}</p>
+                <p><FaUsers className="icon" /><strong className='pa'> Equipos: </strong>{dato.Equipos}</p><br /><br />
             </div>
           )
-          }        
+          }
+        {esAdmin === false &&(
+        <button className='btnBoleteria' onClick={btnBoleteria}> <FaTicketAlt style={{ marginRight: '10px' }} />Comprar boletos</button>
+        )
+          }
+        
         </div>
             ))} 
             {guardarPartidos.map((dato,index) => (

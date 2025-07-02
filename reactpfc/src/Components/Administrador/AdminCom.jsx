@@ -47,13 +47,13 @@ function AdminCom() {
       <div className={`sidebar ${sidebarOpen ? 'open' : 'closed'}`}>
         <h2 className='tituloadmi'><FaHome /> Panel administrativo</h2>
         <nav>
-          <Link to="/Admin">Pagina Administrador</Link>
+          <Link to="/Admin">Página Administrador</Link>
           <Link to="jugadorescrud">Crud Jugadores</Link>
           <Link to="partidos">Crud Partidos</Link>
           <Link to="eventos">Crud Eventos</Link>
           <Link to="localidades">Crud Localidades</Link>
           <Link to="usuarios">Crud Usuarios</Link>
-          <Link to="ultimosResultados">Crud Ultimos Resultados</Link>
+          <Link to="ultimosResultados">Crud Últimos Resultados</Link>
         </nav>
         <button className="logout-btn" onClick={handleLogout}> <FaSignOutAlt /> Cerrar sesión</button>
         <button onClick={backBtn} className='back-btn'>← Volver</button>

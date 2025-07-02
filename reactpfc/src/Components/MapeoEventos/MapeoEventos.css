@@ -1,12 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Poppins:wght@400;500&display=swap');
 
- /* Contenedor principal */
+
 .eventos-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  background-color: #f5f5f5;/* fondo suave */
-  padding: 20px;
-  margin-top: 135px; /* para evitar que se oculte debajo del navbar fijo */
+  padding: 100px 200px;
+  background-color: #ececec;
 }
 
 /* Tarjeta Neumorphic con layout en columna */
@@ -55,43 +52,64 @@
   font-weight: 600;
 }
 
-/* Botones con estilo neumórfico */
-.botones {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  margin-top: 12px;
-}
-
 .botonEliminar,
 .botonEditar {
-  background: #f0811a;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
   border: none;
   border-radius: 8px;
-  padding: 8px 12px;
-  margin: 4px;
-  box-shadow:
-    4px 4px 8px rgba(0,0,0,0.1),
-   -4px -4px 8px rgba(255,255,255,0.7);
   cursor: pointer;
-  transition: background 0.2s, box-shadow 0.2s;
-  font-family: sans-serif;
-  color: #333;
+  color: white;
+  transition: background 0.3s ease;
 }
 
-.botonEliminar:hover,
+.botonEliminar {
+  background-color: #E63946;
+}
+
+.botonEliminar:hover {
+  background-color: #C82333;
+}
+
+.botonEditar {
+  background-color: #0077CC;
+}
+
 .botonEditar:hover {
-  background: #f0811a;
+  background-color: #005FA3;
+}
+
+.pxevDos{
+  text-align: left  ;
+  color:  #fd800c;
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
 }
 
 .pxev {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 2.5rem;
-  color: black;
-  text-align: center;           /* centrar horizontalmente */
-  margin: 2rem 0;                /* espacio arriba y abajo */
-  width: 100%;                   /* que ocupe todo el ancho disponible */
+  text-align: left  ;
+  font-size: 3.8rem;
+  color:  #2e2e2e;
+  font-family: 'Poppins', sans-serif;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  padding-bottom: 70px;
 }
+
+.pxev::after {
+  content: '';
+  display: block;
+  width: 850px;
+  height: 4px;
+  background: #fd800c;
+  margin: 10px auto 0;
+  border-radius: 5px;
+  background: linear-gradient(to right, transparent, #fd800c, transparent);
+}
+
 .str{
   color:#f0811a;
 }

@@ -3,7 +3,7 @@ import '../../Components/UltimosResultados/UltimosResul.css'
 import CrudUltimosResultados from '../../Services/CrudUltimosResultados'
 import CrudPartidos from '../../Services/CrudPartidos'
 import uploadImageToS3 from '../../Components/AWS/AwsConection'
-
+import { FaPlusCircle } from 'react-icons/fa';
 
 function UltimosResulCom() {
 
@@ -51,10 +51,10 @@ const[imagenEquipos,setImagenEquipos] = useState(null)
 
   return (
     <div className='bodyUltimosResul'>
-       <h3 className='tituloUl'>ÚLTIMOS RESULTADOS</h3>
-          <label>Resultado</label>
-          <input className='inputTodos' placeholder='Resultado' value={resultadonPartido} onChange={resultado} type="text" /> 
-          <input className='img' placeholder='Imagen' onChange={imagen} type="file"/><br /><br />
+       <h3 className='tituloUl'>Agregar Resultados</h3>
+          <label>Resultado Partido:</label>
+          <input className='inputTodos' placeholder='Último Resultado' value={resultadonPartido} onChange={resultado} type="text" /> 
+          <input className="file-input" placeholder='Imagen' onChange={imagen} type="file"/><br /><br />
           <h1>Fecha y Equipos</h1>
         <select name="" id="" onChange={seleccionado} value={datoselect}>
             {guardarPartidos.map((dato) => (
@@ -65,9 +65,7 @@ const[imagenEquipos,setImagenEquipos] = useState(null)
             ))}
         </select>
           
-
-
-          <button className='butt' onClick={button}>Agregar Partido</button><br /><br /> 
+          <button className='butt' onClick={button}><FaPlusCircle className="icon" /> Agregar Partido</button><br /><br /> 
 
     </div>
   );

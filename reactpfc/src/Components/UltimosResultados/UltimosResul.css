@@ -10,12 +10,11 @@
   max-width: 540px;
   margin: 40px auto;
   padding: 26px;
-  background-color: #fff;
-  border: 4px solid #FF6000; /* naranja PFC :contentReference[oaicite:1]{index=1} */
+  background-color: #1e1e1e;
   border-radius: 10px;
   box-shadow: 0 3px 10px rgba(0,0,0,0.3);
   font-family: 'Roboto', sans-serif;
-  color: #000;
+  color: #cacaca;
 }
 
 /* Título grande con acento de estadio */
@@ -24,17 +23,15 @@
   font-size: 2rem;
   margin-bottom: 18px;
   color: #FF6000;
-  text-shadow: 1px 1px #000;
   letter-spacing: 2px;
 }
 
-/* Etiquetas estilo marcador */
 .bodyUltimosResul label {
   display: block;
   margin-bottom: 6px;
   font-size: 1rem;
   font-weight: 600;
-  color: #FF6000;
+  color: #f0f0f0;
 }
 
 /* Inputs blancos con borde y sombra suave */
@@ -42,11 +39,11 @@
   width: 100%;
   padding: 10px 12px;
   margin-bottom: 16px;
-  border: 2px solid #000;
+  border: 2px solid #272727;
   border-radius: 6px;
   background-color: #fff;
   font-size: 1rem;
-  color: #000;
+  color: #ffffff;
   transition: border-color 0.2s, box-shadow 0.2s;
 }
 .inputTodos:focus {
@@ -60,7 +57,7 @@
   width: 100%;
   padding: 10px 12px;
   margin-bottom: 20px;
-  border: 2px solid #000;
+  border: 1px solid #000;
   border-radius: 6px;
   background-color: #fff;
   font-size: 1rem;
@@ -72,41 +69,28 @@
   outline: none;
 }
 
-/* Botón con estilo camiseta PFC y efecto hover */
-/* (el resto del CSS permanece igual, solo se actualiza la sección del botón) */
-
-/* Botón compacto con estilo camiseta PFC, centrado */
 .butt {
-  display: block;
-  width: 60%;                /* botón más pequeño */
-  max-width: 200px;
-  margin: 10px auto 0;       /* centrado con margin auto */
-  padding: 10px 0;           /* alto reducido */
-  font-size: 1rem;
-  font-weight: 700;
+  width: 100%;
+  padding: 12px;
+  background-color: #000000;
+  color: white;
   border: none;
-  border-radius: 8px;
-  background-color: #FF6000; /* naranja oficial */
-  color: #fff;
+  font-size: 16px;
+  border-radius: 6px;
   cursor: pointer;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  transition: background-color 0.2s, transform 0.1s, box-shadow 0.2s;
+  transition: background-color 0.3s ease;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+
 .butt:hover {
-  background-color: #e65500;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
-}
-.butt:active {
-  transform: scale(0.97);
+  background-color: #d44e0a;
 }
 
-
-/* Encabezado secundario con estilo de cancha */
 .bodyUltimosResul h1 {
   font-size: 1.4rem;
   margin: 30px 0 12px;
-  color: #000;
+  color: #ffffff;
   text-align: center;
   border-bottom: 2px solid #FF6000;
   padding-bottom: 4px;

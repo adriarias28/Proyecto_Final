@@ -11,7 +11,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 200px; /* para evitar que se oculte debajo del navbar fijo */
+  margin-top: 140px; /* para evitar que se oculte debajo del navbar fijo */
 }
 
 .contenedor-flex {

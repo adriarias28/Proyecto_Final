@@ -3,6 +3,7 @@ import CrudUltimosResultados from '../../Services/CrudUltimosResultados'
 import Swal from 'sweetalert2'
 import '../../Components/MapeoUltimosResultados/MapUResultados.css'
 import Escudopfc from '../../Images/Escudopfc.png'
+import { FaTrashAlt, FaEdit } from 'react-icons/fa';
 
 
 import uploadImageToS3 from '../../Components/AWS/AwsConection'
@@ -15,7 +16,7 @@ const[guardarUltimosResultados, setUltimosResultados] = useState([])
         async function fetchDataUsers() {
             const dato = await CrudUltimosResultados.getUltimosResultados()
             console.log(dato);
-            
+              
             setUltimosResultados(dato)
         };
         fetchDataUsers()
@@ -152,25 +153,27 @@ async function editar(id) {
 
 
   return (
-    <div>
-      <h1 className="urcl">ÚLTIMOS RESULTADOS</h1>
-      <div className="divPrin">
-        {guardarUltimosResultados.map(dato => (
-          <div key={dato.id} className="caj">
-            <div className="hh">
-              <p className="ps"><strong>Resultado:</strong> {dato.Resultado}</p>
-              <p className="ps"><strong>Fecha:</strong> {dato.fecha}</p>
-              <p className="ps"><strong>Equipos:</strong> {dato.equipos}</p>
-              <div className="vs">
-                <img className="imgEscudo" src={Escudopfc} alt="" />
-                <p className="vs"><strong>VS</strong></p>
-                <img src={dato.Imagen} className="imagenEquipo" alt="" />
-              </div>
-            </div>
+    <div className='contenedorResul'>
+      <h1 className="urcl">Últimos Resultados</h1>
+      <p className="subtituloResultados" >Resultados recientes | Mantente al día con el rendimiento del equipo del pueblo.</p>
+      <div className="vitrinaResultados">
+        {guardarUltimosResultados.slice(-3).map(dato => ( //Utilizamos un slice para que solo mapee los ultimos tres resultados
+          <div key={dato.id} className="cardResultado">
+        <div className="equipoLocal">
+          <img src={Escudopfc} alt="PFC" className="escudoLocal" />
+        </div>
+        <div className="detalleResultado">
+          <p className="resultadoTexto">{dato.Resultado}</p>
+          <p className="equipoTexto"><strong>{dato.equipos}</strong></p>
+          <p className="fechaTexto">{dato.fecha}</p>
+        </div>
+        <div className="equipoVisitante">
+          <img src={dato.Imagen} alt="Rival" className="escudoVisitante" />
+        </div>
             {esAdmin && (
-              <div className="bottns">
-                <button className="boton delete" onClick={() => eliminar(dato.id)}>Eliminar</button>
-                <button className="boton update" onClick={() => editar(dato.id)}>Editar</button>
+              <div className="accionesAdmin">
+                <button className="botonDelete" onClick={() => eliminar(dato.id)}><FaTrashAlt style={{ marginRight: '5px' }} />Eliminar</button>
+                <button className="botonUpdate" onClick={() => editar(dato.id)}><FaEdit style={{ marginRight: '5px' }} />Editar</button>
               </div>
             )}
           </div>
