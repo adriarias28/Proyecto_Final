@@ -4,7 +4,6 @@ import '../../Components/MapeoEventos/MapeoEventos.css'
 import Swal from 'sweetalert2';
 import { FaTrashAlt, FaEdit } from 'react-icons/fa';
 
-import uploadImageToS3 from '../../Components/AWS/AwsConection'
 function MapeoEventos({ esAdmin = false }) {
 
 const[guardarEvento, setguardarEvento] = useState([])
@@ -29,7 +28,7 @@ const[guardarEvento, setguardarEvento] = useState([])
 
 
 //EDITAR
-async function editarEvento(id) {
+/* async function editarEvento(id) {
   
   const evento = guardarEvento.find(e => e.id === id);
   console.log(evento);
@@ -63,7 +62,7 @@ async function editarEvento(id) {
     const partes = url.split("/");
     const nombreArchivo = decodeURIComponent(partes[partes.length - 1]);
 
-    const archivoOriginal = imagenActualizar; // por ejemplo, el que obtienes con un input type="file"
+    const archivoOriginal = imagenActualizar; por ejemplo, el que obtienes con un input type="file"
     const nuevoNombre = nombreArchivo;
 
     const archivoRenombrado = new File([archivoOriginal], nuevoNombre, {
@@ -72,7 +71,7 @@ async function editarEvento(id) {
 });
 
 
-//Subir la nueva imagen
+Subir la nueva imagen
     subirAWS(archivoRenombrado)
     
     async  function subirAWS(imagenActualizar) {
@@ -82,9 +81,9 @@ async function editarEvento(id) {
         
     }
 
-      // Aqui hacemos la peticion a amazon para editar la imagen yb colocarla en el obj del la BD
+       Aqui hacemos la peticion a amazon para editar la imagen yb colocarla en el obj del la BD
    
-     //   console.log(jugador.Imagen);
+     console.log(jugador.Imagen);
       
      
       const campos = {
@@ -109,7 +108,7 @@ async function editarEvento(id) {
   console.log(formValues)
   let imageUrl = resultado.Imagen;
 
-   /*  if (formValues.ImagenFile) {
+     if (formValues.ImagenFile) {
       const fd = new FormData();
       fd.append('file', formValues.ImagenFile);
 
@@ -121,7 +120,7 @@ async function editarEvento(id) {
       const { Location } = await res.json();
       imageUrl = Location;
     }
-    location.reload(); */
+    location.reload(); 
     await EventosCrud.updateEventos(id, {
       Eventos: formValues.Eventos,
       Descripcion: formValues.Descripcion,
@@ -136,7 +135,7 @@ async function editarEvento(id) {
 
     Swal.fire('Actualizado', 'Los datos del Eventos han sido actualizados.', 'success');
   
-}
+} */
 
 
 
@@ -150,11 +149,14 @@ async function editarEvento(id) {
                     <img src={data.Imagen} className='imagenDato' alt="" />
                      <p className='datoevento'><strong className='str'>Evento: </strong>{data.Eventos}</p>
                      <p className='datoevento'><strong className='str'>Descripcion: </strong>{data.Descripcion}</p>
-                     
                     {esAdmin && (
                         <div className='botones'>
                                 <button className='botonEliminar' onClick={() => eliminarEvento(data.id)}><FaTrashAlt style={{ marginRight: '5px' }} />Eliminar</button>
                                 <button className='botonEditar' onClick={() => editarEvento(data.id)}><FaEdit style={{ marginRight: '5px' }} />Editar</button>
+                            <p className='butt'>
+                                <button className='botonEliminar' onClick={() => eliminarEvento(data.id)}>Eliminar</button>
+                                {/* <button className='botonEditar' onClick={() => editarEvento(data.id)}>Editar</button> */}
+                            </p>
                         </div>
                     )}
                 </div>

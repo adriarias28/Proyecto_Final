@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Poppins:wght@400;500&display=swap');
+
+/* Contenedor grid */
+.divPrin {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 80px;
+  padding: 20px;
+  margin: 100px;
+}
+
+/* Tarjeta individual */
+.caj{
+/*   background-image:url('../../Images/Captura de pantalla (79).png');
+ */  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  padding: 16px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.caj:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* Contenido dentro de tarjeta */
+.jugador-agregado {
+  margin-bottom: 12px;
+}
+.jugador-agregado .hh {
+  margin-bottom: 16px;
+}
+.ps {
+  margin: 4px 0;
+  font-size: 0.95rem;
+  color: #333;
+}
+.ps strong {
+  color: #000;
+}
+
+/* Botones de acción estilo futbolero */
+.bottns {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+.boton {
+  padding: 6px 14px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.boton.delete {
+  background-color:  #f0811a;
+  color: #fff;
+}
+.boton.delete:hover {
+  background-color: #f0811a;
+}
+.boton.update {
+  background-color: #f0811a;
+  color: #fff;
+}
+.boton.update:hover {
+  background-color: #31b0d5;
+}
+
+.imgEscudo{
+  width: 50px;
+  margin-right: 10%;
+}
+
+.imagenEquipo{
+  width: 50px;
+  margin-left: 15px;
+}
+
+.vs {
+  display: flex;
+  align-items: center;      /* centra verticalmente */
+  justify-content: center; 
+  gap: 10px;      
+  margin-right: 10px;          
+}
+
+.urs{
+  color: black;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.5rem;
+  color: black;
+  text-align: center;
+  margin: 2rem 
+}
+.urcl {/* 
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 2rem;
+  margin: 40px auto 20px auto;
+  width: 100%; */
+  color: #333;
+}

@@ -1,136 +1,44 @@
 import React, { useEffect, useState } from 'react'
 import EventosCrud from '../../Services/EventosCrud'
 import '../../Components/MapeoEventos/MapeoEventos.css'
-import Swal from 'sweetalert2';
+/* import Swal from 'sweetalert2'; */
 
 import uploadImageToS3 from '../../Components/AWS/AwsConection'
 function MapeoEventos({ esAdmin = false }) {
 
 const[guardarEvento, setguardarEvento] = useState([])
 
+
     useEffect(() => {
 
         async function fetchDataUsers() {
-            const data = await EventosCrud.getEventos()
+            const dato = await EventosCrud.getEventos()
             console.log();
             
-            setguardarEvento(data)
+            setguardarEvento(dato)
         };
         fetchDataUsers()
     }, []) 
 
 
-//ELIMINAR 
+/*  ELIMINAR 
     function eliminarEvento(id) {
         EventosCrud.deleteEventos(id)
         location.reload();
-    }
+    } */
 
 
-//EDITAR 
+
 async function editarEvento(id) {
-  const evento = guardarEvento.find(e => e.id === id);
-  if (!evento) return Swal.fire('Error', 'Evento no encontrado', 'error');
   
-
-  const { value: formValues } = await Swal.fire({
-    title: 'Editar Evento',
-    html: `
-      <input id="eventos" class="swal2-input" placeholder="Eventos" value="${evento.Eventos || ''}">
-      <input id="descripcion" class="swal2-input" placeholder="Descripción" value="${evento.Descripcion || ''}">
-      <div class="swal2-file">
-        <label for="imagen">Imagen (opcional)</label>
-        <input id="imagen" type="file" accept="image/*">
-        ${evento.Imagen_Url ? `<img id="imagenPreview" src="${evento.Imagen_Url}" alt="Imagen actual" style="max-width: 100px; margin-top: 10px;">` : ''}
-      </div>
-      `,
-    focusConfirm: false,
-    showCancelButton: true,
-    confirmButtonText: 'Guardar',
-    cancelButtonText: 'Cancelar',
-
-    preConfirm: () => {
-    
-      
-    const imagenActualizar = document.getElementById('imagen').files[0]
-      console.log(imagenActualizar);
-      
-    const url = evento.Imagen
-    const partes = url.split("/");
-    const nombreArchivo = decodeURIComponent(partes[partes.length - 1]);
-
-    const archivoOriginal = imagenActualizar; // por ejemplo, el que obtienes con un input type="file"
-    const nuevoNombre = nombreArchivo;
-
-   const archivoRenombrado = new File([archivoOriginal], nuevoNombre, {
-      type: archivoOriginal.type,
-      lastModified: archivoOriginal.lastModified,
-});
-
-    subirAWS(archivoRenombrado)
-    
-    async  function subirAWS(imagenActualizar) {
-        const rest_amazon = await uploadImageToS3(imagenActualizar)
-
-        console.log(rest_amazon);
-        
-    }
-
-
-      const campos ={
-        Eventos : document.getElementById('eventos').value.trim(),
-        Descripcion : document.getElementById('descripcion').value.trim(),
-        ImagenFile: document.getElementById('imagen').files[0] || null
-      };
-
-      console.log(campos);
-
-
-
-      const hayVacios = Object.values(campos).some(val => !val && val !== null);
-      if (hayVacios) {
-        Swal.showValidationMessage('Por favor, completa todos los campos');
-        return null;
+         try {
+          await EventosCrud.updateEventos(nombreEvento, nombreDescrip, imagenEvento);
+          alert("Evento actualizado correctamente.");
+          location.reload();
+      } catch (error) {
       }
-      return campos;
-    }
-  });
 
-  if (formValues){
-    let imageUrl = evento.Imagen_Url;
-  
-
-    if (formValues.ImagenFile) {
-      const fd = new FormData();
-      fd.append('file', formValues.ImagenFile);
-
-      const res = await fetch('/upload-s3', {
-        method: 'POST',
-        body: fd
-      });
-      if (!res.ok) throw new Error(res.statusText);
-      const { Location } = await res.json();
-      imageUrl = Location;
-    }
-
-    location.reload();
-    await EventosCrud.updateEventos(id, {
-      Eventos: formValues.Eventos,
-      Descripcion: formValues.Descripcion,
-      Imagen_Url: imageUrl
-    });
-
-
-    setguardarEvento(prev =>
-      prev.map(e =>
-        e.id === id ? { ...e, ...formValues, Imagen_Url: imageUrl }: e
-      )
-    );
-
-    Swal.fire('Actualizado', 'Evento actualizado con éxito', 'success');
  }
-}
-
 
 
   return (
@@ -147,7 +55,7 @@ async function editarEvento(id) {
                         <div className='botones'>
                             <p className='butt'>
                                 <button className='botonEliminar' onClick={() => eliminarEvento(data.id)}>Eliminar</button>
-                                <button className='botonEditar' onClick={() => editarEvento(data.id)}>Editar</button>
+                                <button className='botonEditar' onClick={() => editarEvento(data.id)}>Editar</button> 
                             </p>
                         </div>
                     )}

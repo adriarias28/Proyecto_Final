@@ -63,7 +63,6 @@ async function postEventos(Eventos, Descripcion,Imagen) {
 //http://127.0.0.1:8000/api/proximosEventos/
 
 
-
 async function updateEventos(id, data) {
     try {
       const response = await fetch(`http://127.0.0.1:8000/api/proximosEventos/${id}/`, {
