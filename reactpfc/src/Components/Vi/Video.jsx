@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import '../../Components/Vi/Video.css'
-import VidPFC from '../../Components/Vi/VidePFC.mp4'
+import VideoNuevo from '../../Components/Vi/VideoNuevo.mp4'
 
 function Video() {
     
@@ -15,7 +15,7 @@ function Video() {
       </div>
       <div>
         <video className="vid" autoPlay loop muted playsInline>
-          <source src={VidPFC} />
+          <source src={VideoNuevo} />
         </video>
       </div>
     </div>
