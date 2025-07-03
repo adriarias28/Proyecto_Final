@@ -6,13 +6,51 @@
 }
 
 .carrusel-wrapper {
-  padding: 50px 0;  
-  text-align: center;
+  padding: 20px 0;  
+  padding-left: 100px;
+}
+
+.parrafoPatro{
+    color: #fd800c;
+    font-weight: 500;
 }
 
 .titulo-carrusel {
   font-family: 'Poppins', sans-serif;
-  font-size: 2.5rem;
-  color: #fd800c;
+  font-size: 2rem;
+  color: #333;
   position: relative;
+}
+
+.slider {
+  overflow: hidden;
+  margin-bottom: 70px;
+}
+
+.slide-track {
+  display: flex;
+  width: calc(200px * 20 repeat) ; 
+  animation: scroll 6s linear infinite;
+  gap: 20px;
+}
+
+.slide {
+  width: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.imgPa{
+  border-radius: 10px;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }

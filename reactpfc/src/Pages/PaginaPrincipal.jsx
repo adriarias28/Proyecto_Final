@@ -7,7 +7,6 @@ import FooderCom from '../Components/Fooder/FooderCom'
 import MapeoUltimosResultados from '../Components/MapeoUltimosResultados/MapeoUltimosResultados'
 /* import UltimosResulCom from '../Components/UltimosResultados/UltimosResulCom' */
 import MapeoEventos from '../Components/MapeoEventos/MapeoEventos'
-import MapeoPartidos from '../Components/MapeoPartidos/MapeoPartidos'
 import MapeoJuga from '../Components/MapeoJugadores/MapeoJuga'
 import MapeoPartidosPrin from '../Components/MapeoPartidos/MapeoPartidosPrin'
 import PatrocinadoresCom from '../Components/Patrocinadores/PatrocinadoresCom'
