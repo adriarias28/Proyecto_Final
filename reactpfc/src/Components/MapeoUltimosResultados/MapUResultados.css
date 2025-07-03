@@ -1,108 +1,112 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Poppins:wght@400;500&display=swap');
-
-/* Contenedor grid */
-.divPrin {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 80px;
-  padding: 20px;
-  margin: 100px;
+.contenedorResul {
+  background-color: #F5F5F5;
+  padding-top: 150px;
+  padding-bottom: 80px;
 }
-
-/* Tarjeta individual */
-.caj{
-/*   background-image:url('../../Images/Captura de pantalla (79).png');
- */  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-  padding: 16px;
-  transition: transform 0.2s, box-shadow 0.2s;
+.urcl {
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 3.8rem;
+  color: #2E2E2E;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+  margin-bottom: 30px;
+  position: relative;
+}
+.urcl::after {
+  content: '';
+  display: block;
+  width: 700px;
+  height: 5px;
+  margin-left: 600px;
+  background: linear-gradient(to left, #FD800C, transparent);
+  border-radius: 8px;
+}
+.vitrinaResultados {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  gap: 25px;
+  padding: 60px;
+  width: 950px;
+  justify-content: center;
+    margin: 0 auto; /* CENTRADO HORIZONTAL */
 }
-.caj:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+.cardResultado {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.747);
+  border-radius: 5px;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 5px solid #c5c5c56e;
 }
-
-/* Contenido dentro de tarjeta */
-.jugador-agregado {
-  margin-bottom: 12px;
-}
-.jugador-agregado .hh {
-  margin-bottom: 16px;
-}
-.ps {
-  margin: 4px 0;
-  font-size: 0.95rem;
-  color: #333;
-}
-.ps strong {
-  color: #000;
-}
-
-/* Botones de acción estilo futbolero */
-.bottns {
+.equipoLocal, .equipoVisitante {
   display: flex;
   justify-content: center;
-  gap: 12px;
+  align-items: center;
 }
-.boton {
-  padding: 6px 14px;
-  font-size: 0.9rem;
-  font-weight: bold;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.2s;
+.escudoLocal, .escudoVisitante {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
 }
-.boton.delete {
-  background-color:  #f0811a;
-  color: #fff;
-}
-.boton.delete:hover {
-  background-color: #f0811a;
-}
-.boton.update {
-  background-color: #f0811a;
-  color: #fff;
-}
-.boton.update:hover {
-  background-color: #31b0d5;
-}
-
-.imgEscudo{
-  width: 50px;
-  margin-right: 10%;
-}
-
-.imagenEquipo{
-  width: 50px;
-  margin-left: 15px;
-}
-
-.vs {
-  display: flex;
-  align-items: center;      /* centra verticalmente */
-  justify-content: center; 
-  gap: 10px;      
-  margin-right: 10px;          
-}
-
-.urs{
-  color: black;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 2.5rem;
-  color: black;
+.detalleResultado {
   text-align: center;
-  margin: 2rem 
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.5;
 }
-.urcl {/* 
-  text-align: center;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 600;
+.resultadoTexto {
   font-size: 2rem;
-  margin: 40px auto 20px auto;
-  width: 100%; */
-  color: #333;
+  font-weight: 800;
+  color: #FF6600;
+  margin-bottom: 8px;
+}
+.equipoTexto {
+  font-size: 1.1rem;
+  color: #222;
+  font-weight: 500;
+}
+.fechaTexto {
+  font-size: 0.95rem;
+  color: #777;
+}
+.accionesAdmin {
+  position: absolute;
+  bottom: 15px;
+  right: 20px;
+  display: flex;
+  gap: 10px;
+}
+.subtituloResultados {
+  text-align: center;
+  font-size: 1rem;
+  color: #555;
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 10px;
+}
+.botonDelete, .botonUpdate {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+.botonDelete {
+  background-color: #E63946;
+  color: white;
+}
+.botonDelete:hover {
+  background-color: #C82333;
+}
+.botonUpdate {
+  background-color: #0077CC;
+  color: white;
+}
+.botonUpdate:hover {
+  background-color: #005FA3;
 }

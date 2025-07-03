@@ -26,6 +26,7 @@ import LocalidadesCRUD from '../Components/AccesoAdmin/LocalidadesCRUD'
 import MiPerfil from '../Pages/Perfil'
 import JugadoresCom from '../Components/Jugadores/JugadoresCom'
 import PrivateRoute from '../Components/Rutas Privadas/PrivateRoute';
+import AdminEventosCom from '../Components/AdministrativoEventos/AdminEventosCom'
 
 
 function Routing() {
@@ -60,6 +61,7 @@ function Routing() {
             <Route path="/terminosYCondiciones" element={<TerminosYCondiciones/>}/>
             <Route path="/mi-perfil" element={<MiPerfil/>}/>
             <Route path="/jugador/:id" element={<JugadoresCom />} />
+            <Route path="/event/:id" element={<PrivateRoute element={<AdminEventosCom />}/>} />
         </Routes>
       </Router>
 
